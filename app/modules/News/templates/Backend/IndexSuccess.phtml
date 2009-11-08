@@ -1,0 +1,91 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		// Check All Handler
+		$('.xrx-check-all').click( function() {
+			$('.xrx-check-column').children().attr('checked', $(this).attr('checked'));
+		})
+
+		// Delete Button Handler
+		$('.xrx-delete-button').click( function(e) {
+			var valid = false;
+
+			$('td.xrx-check-column').children().each( function(idx, el) {
+				if ($(el).attr('checked')) {
+					valid = true;
+					return;
+				}
+			})
+
+			if (! valid) {
+				alert('<?= $tm->_('please select a news.', '.news') ?>');
+				e.preventDefault();
+				return false;
+			}
+
+			// Sure?
+			if (! confirm('<?= $tm->_('are you sure?', '.news') ?>')) {
+				e.preventDefault();
+			}
+		})
+	})
+	// -->
+</script>
+
+
+<h2>
+	<img class="xrx-icon-32" src="/images/news/news-32.png" alt="<?= $tm->_('news list', '.news'); ?>" /><?= $tm->_('news list', '.news'); ?>
+</h2>
+
+<form action="<?= $ro->gen('default', array('path' => 'admin/news/delete')) ?>" method="post">
+	<table class="xrx-table-list">
+		<thead>
+			<tr class="xrx-<?= $t['_align']; ?>-text">
+				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
+				<th class="xrx-title-column"><?= $tm->_('title', '.news') ?></th>
+				<th><?= $tm->_('date', '.news') ?></th>
+				<th><?= $tm->_('author', '.news') ?></th>
+				<th><?= $tm->_('published', '.news') ?></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr class="xrx-<?= $t['_align']; ?>-text">
+				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
+				<th class="xrx-title-column"><?= $tm->_('title', '.news') ?></th>
+				<th><?= $tm->_('date', '.news') ?></th>
+				<th><?= $tm->_('author', '.news') ?></th>
+				<th><?= $tm->_('published', '.news') ?></th>
+			</tr>
+		</tfoot>
+		<tbody>
+		<? if ( count ($t['news']) > 0 ): ?>
+			<? foreach ($t['news'] as $news): ?>
+			<tr title="<?= strip_tags($news->content); ?>">
+				<td class="xrx-check-column">
+					<input type="checkbox" name="id[]" value="<?= $news->id ?>" />
+				</td>
+				<td class="xrx-title-column">
+					<a href="<?= $ro->gen('default', array('path'=>'admin/news/edit', 'id'=>$news->id)) ?>"
+					   title="<?= sprintf($tm->_('edit \'%s\'', '.news'), $news->title) ?>"><?= $news->title ?></a>
+				</td>
+				<td>
+					<?= $news->date ?>
+				</td>
+				<td>
+					<a href="<?= $ro->gen('default', array('path'=>'user/edit', 'id'=>$news->author_id)) ?>"><?= $news->username ?></a>
+				</td>
+				<td>
+					<?= $news->published ? $tm->_('yes', '.news') : $tm->_('no', '.news'); ?>
+				</td>
+			</tr>
+			<? endforeach; ?>
+		<? else: ?>
+			<tr>
+				<td colspan="5" class="xrx-center-text xrx-italic-text"><?= $tm->_("There's no news.", '.news') ?></td>
+			</tr>
+		<? endif ?>
+		</tbody>
+	</table>
+
+	<input type="submit" class="xrx-button xrx-delete-button" value="<?= $tm->_('delete', '.news') ?>" />
+</form>

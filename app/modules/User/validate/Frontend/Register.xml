@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/User/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For POST Method -->
+		<validators method="write">
+
+			<!-- Username -->
+			<validator class="string" provides="username_required">
+				<arguments>
+					<argument>username</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">3</ae:parameter>
+					<ae:parameter name="max">60</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The username field has an invalid value.</error>
+					<error for="required">Please provide a username.</error>
+					<error for="min">The username must be longer than 3 characters.</error>
+					<error for="max">The username must be shorter than 60 characters.</error>
+				</errors>
+			</validator>
+
+			<!-- Password -->
+			<validator class="string" provides="password_required">
+				<arguments>
+					<argument>password</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">6</ae:parameter>
+					<ae:parameter name="max">64</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The password field has an invalid value.</error>
+					<error for="required">Please provide a password.</error>
+					<error for="min">The password must be longer than 6 characters.</error>
+					<error for="max">The password must be shorter than 64 characters.</error>
+				</errors>
+			</validator>
+
+			<!-- Password Confirmation -->
+			<validator class="string" provides="confirm_required">
+				<arguments>
+					<argument>password_confirmation</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">6</ae:parameter>
+					<ae:parameter name="max">64</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The password confirmation field has an invalid value.</error>
+					<error for="required">Password confirmation is required.</error>
+					<error for="min">The password confirmation must be longer than 6 characters.</error>
+					<error for="max">The password confirmation must be shorter than 64 characters.</error>
+				</errors>
+			</validator>
+
+			<!-- Password & Password Confirmation Should Be The Same -->
+			<validator class="equals" provides="password_matches" depends="password_required confirm_required">
+				<arguments>
+					<argument>password_confirmation</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="value">password</ae:parameter>
+					<ae:parameter name="asparam">true</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Password confirmation doesn't match Password.</error>
+				</errors>
+			</validator>
+
+			<!-- E-Mail -->
+			<validator class="email" provides="email_required">
+				<arguments>
+					<argument>email</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">7</ae:parameter>
+					<ae:parameter name="max">100</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The email field has an invalid value.</error>
+					<error for="required">Please provide an email address.</error>
+					<error for="min">The email must be longer than 7 characters.</error>
+					<error for="max">The email must be shorter than 100 characters.</error>
+				</errors>
+			</validator>
+
+			<!-- Username & Email Uniqness Validation Against Database  -->
+			<validator class="User_RegistrationValidator" depends="username_required email_required password_matches">
+				<arguments>
+					<argument>username</argument>
+					<argument>email</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error for="username">The username you entered is already registered.</error>
+					<error for="email">The email you entered is already registered.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

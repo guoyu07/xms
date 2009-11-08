@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/User/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For POST Data -->
+		<validators method="write">
+
+			<!-- Username -->
+			<validator class="string">
+				<arguments>
+					<argument>username</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">3</ae:parameter>
+					<ae:parameter name="max">60</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid username.</error>
+					<error for="required">Please provide your username.</error>
+					<error for="min">The username must be longer than 3 characters.</error>
+					<error for="max">The username must be shorter than 60 characters.</error>
+				</errors>
+			</validator>
+
+			<!-- Password -->
+			<validator class="string">
+				<arguments>
+					<argument>password</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">6</ae:parameter>
+					<ae:parameter name="max">64</ae:parameter>
+					<ae:parameter name="translation_domain">.user</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid password.</error>
+					<error for="required">Please provide your password.</error>
+					<error for="min">The password must be longer than 6 characters.</error>
+					<error for="max">The password must be shorter than 64 characters.</error>
+				</errors>
+			</validator>
+			
+			<!-- Remember Me -->
+			<validator class="isset">
+				<arguments>
+					<argument>remember</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

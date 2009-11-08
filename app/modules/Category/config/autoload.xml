@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<autoload name="XRXCategoryBackendAction">%core.module_dir%/Category/lib/action/XRXCategoryBackendAction.class.php</autoload>
+		<autoload name="XRXCategoryFrontendAction">%core.module_dir%/Category/lib/action/XRXCategoryFrontendAction.class.php</autoload>
+		<autoload name="XRXCategoryBaseModel">%core.module_dir%/Category/lib/model/XRXCategoryBaseModel.class.php</autoload>
+		<autoload name="XRXCategoryBackendView">%core.module_dir%/Category/lib/view/XRXCategoryBackendView.class.php</autoload>
+		<autoload name="XRXCategoryFrontendView">%core.module_dir%/Category/lib/view/XRXCategoryFrontendView.class.php</autoload>
+
+		<!-- Validators -->
+		<autoload name="Category_GenuineIdValidator">%core.module_dir%/Category/lib/validator/GenuineIdValidator.class.php</autoload>
+		<autoload name="Category_GenuineParentIdValidator">%core.module_dir%/Category/lib/validator/GenuineParentIdValidator.class.php</autoload>
+		<autoload name="Category_GenuineModuleIdValidator">%core.module_dir%/Category/lib/validator/GenuineModuleIdValidator.class.php</autoload>
+	</ae:configuration>
+</ae:configurations>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/News/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For POST Method -->
+		<validators method="write">
+			
+			<!-- Translation's Checkbox -->
+			<validator class="isset" provides="translation_filled">
+				<arguments base="translation[]">
+					<argument>check</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+			</validator>
+
+
+			<!-- Translation's Title -->
+			<validator class="string" depends="[translation_filled]">
+				<arguments base="translation[]">
+					<argument>title</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="max">200</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The title field has an invalid value.</error>
+					<error for="max">The title must be shorter than 200 characters.</error>
+					<error for="required">Please provide a title.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Translation's Content -->
+			<validator class="string" depends="[translation_filled]">
+				<arguments base="translation[]">
+					<argument>content</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The content field has an invalid value.</error>
+					<error for="required">Please provide a content.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Date -->
+			<validator class="datetime">
+				<arguments>
+					<argument>date</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="formats">
+						<ae:parameters>
+							<ae:parameter>
+								<!-- English Date Format -->
+								<ae:parameter name="locale">en_US</ae:parameter>
+								<ae:parameter name="type">datetime</ae:parameter>
+								<ae:parameter name="format">%XRX.dateFormat.en%</ae:parameter>
+								<ae:parameter name="required">true</ae:parameter>
+							</ae:parameter>
+							<ae:parameter>
+								<!-- Persian Date Format -->
+								<ae:parameter name="locale">fa_IR</ae:parameter>
+								<ae:parameter name="type">datetime</ae:parameter>
+								<ae:parameter name="format">%XRX.dateFormat.fa%</ae:parameter>
+								<ae:parameter name="required">true</ae:parameter>
+							</ae:parameter>
+						</ae:parameters>
+					</ae:parameter>
+					<ae:parameter name="export">date</ae:parameter>
+					<ae:parameter name="cast_to">
+						<ae:parameters>
+							<ae:parameter name="type">datetime</ae:parameter>
+							<ae:parameter name="format">%XRX.dateFormat.db%</ae:parameter>
+							<ae:parameter name="required">true</ae:parameter>
+						</ae:parameters>
+					</ae:parameter>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid date format.</error>
+					<error for="required">Please provide date.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Category -->
+			<validator class="number">
+				<arguments>
+					<argument>category</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid category.</error>
+					<error for="required">Please select a category.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Publish -->
+			<validator class="number">
+				<arguments>
+					<argument>published</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid published value.</error>
+					<error for="required">Please provide published value.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

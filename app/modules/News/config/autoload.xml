@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<autoload name="XRXNewsBackendAction">%core.module_dir%/News/lib/action/XRXNewsBackendAction.class.php</autoload>
+		<autoload name="XRXNewsFrontendAction">%core.module_dir%/News/lib/action/XRXNewsFrontendAction.class.php</autoload>
+		<autoload name="XRXNewsBaseModel">%core.module_dir%/News/lib/model/XRXNewsBaseModel.class.php</autoload>
+		<autoload name="XRXNewsBackendView">%core.module_dir%/News/lib/view/XRXNewsBackendView.class.php</autoload>
+		<autoload name="XRXNewsFrontendView">%core.module_dir%/News/lib/view/XRXNewsFrontendView.class.php</autoload>
+
+		<!-- Validators -->
+		<autoload name="News_GenuineIdValidator">%core.module_dir%/News/lib/validator/GenuineIdValidator.class.php</autoload>
+		
+	</ae:configuration>
+</ae:configurations>

@@ -1,0 +1,22 @@
+<form action="<?= $ro->gen('default', array('path' => 'user/login')); ?>" method="post">
+	<fieldset>
+		<legend><?= $tm->_('user login', '.user'); ?></legend>
+		<ol>
+			<li>
+				<label for="username"><?= $tm->_('username', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="text" id="username" name="username" maxlength="60" />
+			</li>
+			<li>
+				<label for="password"><?= $tm->_('password', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="password" id="password" name="password" maxlength="64" />
+			</li>
+			<li>
+				<label for="remember"><?= $tm->_('remember me', '.user'); ?></label>
+				<input type="checkbox" id="remember" name="remember" />
+			</li>
+			<li>
+				<input type="submit" value="<?= $tm->_('submit', '.user'); ?>" />
+			</li>
+		</ol>
+	</fieldset>
+</form>

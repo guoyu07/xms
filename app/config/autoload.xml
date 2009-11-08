@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" parent="%core.system_config_dir%/autoload.xml">
+
+	<!-- Global Configurations -->
+	<ae:configuration>
+		<autoload name="XRXBaseAction">%core.lib_dir%/action/XRXBaseAction.class.php</autoload>
+		<autoload name="XRXBackendAction">%core.lib_dir%/action/XRXBackendAction.class.php</autoload>
+		<autoload name="XRXFrontendAction">%core.lib_dir%/action/XRXFrontendAction.class.php</autoload>
+		<autoload name="XRXBaseModel">%core.lib_dir%/model/XRXBaseModel.class.php</autoload>
+		<autoload name="XRXBaseView">%core.lib_dir%/view/XRXBaseView.class.php</autoload>
+		<autoload name="XRXBackendView">%core.lib_dir%/view/XRXBackendView.class.php</autoload>
+		<autoload name="XRXFrontendView">%core.lib_dir%/view/XRXFrontendView.class.php</autoload>
+
+		<!-- Load Locale Routing Callback -->
+		<autoload name="XRXLocaleRoutingCallback">%core.lib_dir%/routing/XRXLocaleRoutingCallback.class.php</autoload>
+		<!-- Load Default Routing Callback -->
+		<autoload name="XRXDefaultRoutingCallback">%core.lib_dir%/routing/XRXDefaultRoutingCallback.class.php</autoload>
+
+		<!-- Load RBAC Security User -->
+		<autoload name="XRXRbacSecurityUser">%core.lib_dir%/user/XRXRbacSecurityUser.class.php</autoload>
+	</ae:configuration>
+
+
+	<!-- Development Configurations -->
+	<ae:configuration environment="development.*">
+		<!-- Load FirePHP -->
+		<autoload name="FirePHP">%core.app_dir%/../libs/FirePHPCore/FirePHP.class.php</autoload>
+	</ae:configuration>
+
+</ae:configurations>

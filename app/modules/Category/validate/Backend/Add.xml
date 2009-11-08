@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/Category/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For POST Method -->
+		<validators method="write">
+			
+			<!-- Name -->
+			<validator class="string">
+				<arguments>
+					<argument>name</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="max">100</ae:parameter>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid name.</error>
+					<error for="required">Please provide category name.</error>
+					<error for="max">The name must be shorter than 100 characters.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Parent -->
+			<validator class="number">
+				<arguments>
+					<argument>parent</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid parent.</error>
+					<error for="required">Please select a parent.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Or -->
+			<validator class="or">
+				<validators>
+
+					<!-- Not -->
+					<validator class="not" provides="parent_not_zero">
+						<validators>
+							<!-- Parent -->
+							<validator class="equals">
+								<arguments>
+									<argument>parent</argument>
+								</arguments>
+								<ae:parameters>
+									<ae:parameter name="value">0</ae:parameter>
+								</ae:parameters>
+							</validator>
+						</validators>
+						<ae:parameters>
+							<ae:parameter name="severity">silent</ae:parameter>
+						</ae:parameters>
+					</validator>
+
+					<!-- Modules -->
+					<validator class="number">
+						<arguments base="module[]">
+							<argument />
+						</arguments>
+						<ae:parameters>
+							<ae:parameter name="required">true</ae:parameter>
+							<ae:parameter name="translation_domain">.category</ae:parameter>
+						</ae:parameters>
+						<errors>
+							<error>Invalid module.</error>
+							<error for="required">Please select a module.</error>
+						</errors>
+					</validator>
+
+				</validators>
+				<!--<ae:parameters>
+					<ae:parameter name="severity">silent</ae:parameter>
+				</ae:parameters>-->
+			</validator>
+
+
+			<!-- ParentId Genuine Validation -->
+			<validator class="Category_GenuineParentIdValidator" depends="parent_not_zero">
+				<arguments>
+					<argument>parent</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid parent.</error>
+				</errors>
+			</validator>
+
+
+			<!-- ModuleId Genuine Validation -->
+			<validator class="Category_GenuineModuleIdValidator" depends="[module_selected]">
+				<arguments base="module">
+					<argument />
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid module(s).</error>
+				</errors>
+			</validator>
+
+
+			<!-- Description -->
+			<validator class="string">
+				<arguments>
+					<argument>description</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid description.</error>
+				</errors>
+			</validator>
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

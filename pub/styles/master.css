@@ -1,0 +1,225 @@
+/* General */
+
+body {
+	margin: 0px;
+	padding: 0px;
+    font: 0.8em Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: #21759B;
+}
+
+a:hover {
+	color: #D54E21;
+}
+
+img {
+	border: 0px;
+	vertical-align: middle;
+}
+
+label {
+	vertical-align: top;
+}
+
+input {
+	vertical-align: middle;
+}
+
+input[type='text'],
+input[type='submit'],
+input[type='button']{
+	font: 1em Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+select, option {
+	font-size: 0.95em;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.xrx-hidden {
+	display: none;
+}
+
+.xrx-pointer {
+	cursor: pointer;
+}
+
+.xrx-left {
+	float: left;
+}
+
+.xrx-right {
+	float: right;
+}
+
+.xrx-left-text {
+	text-align: left;
+}
+
+.xrx-right-text {
+	text-align: right;
+}
+
+.xrx-center-text {
+	text-align: center;
+}
+
+.xrx-italic-text {
+	font-style: italic;
+}
+
+.xrx-required {
+	font-weight: bold;
+	font-style: normal;
+	color: #F00;
+}
+
+.xrx-icon-16 {
+	width: 16px;
+	height: 16px;
+	margin: 0 3px;
+}
+
+.xrx-icon-32 {
+	width: 32px;
+	height: 32px;
+	margin: 0 5px;
+}
+
+
+
+/* Validation Messages */
+
+.xrx-errors {
+	width: 310px;
+	margin: 5px 5px 10px 5px;
+	padding: 0px;
+	border: 1px dotted #D63301;
+	background-color: #FFCCBA;
+}
+
+.xrx-error {
+	margin: 0px;
+	padding: 5px;
+	color: #D63301;
+	list-style: none;
+}
+
+
+
+/* Content */
+
+#xrx-content {
+	margin: 30px 10px;
+	padding: 0 10px;
+}
+
+#xrx-content.left {
+	margin-left: 200px;
+}
+
+#xrx-content.right {
+	margin-right: 200px;
+}
+
+#xrx-content h2 {
+	margin: 0px;
+	padding-top: 15px;
+	color: #464646;
+	font: italic 2em Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+	line-height: 35px;
+}
+
+
+
+/* Forms */
+
+input[type='text'],
+input[type='password'] {
+	width: 200px;
+}
+
+textarea {
+	width: 400px;
+	height: 200px;
+}
+
+select {
+	margin: 0;
+	padding: 0;
+	min-width: 205px;
+}
+
+form fieldset {
+	margin-bottom: 10px;
+	border-style: solid;
+	border-color: #DDD;
+	border-width: 1px 0 0 0;
+	background: transparent url(/images/general/fieldset-bg.png) repeat-x scroll left top;
+}
+
+form legend {
+	margin: 10px;
+	padding: 0px 10px;
+	font-weight: bold;
+}
+
+form fieldset legend input[type="checkbox"] {
+	vertical-align: bottom;
+}
+
+form fieldset label {
+	display: inline-block;
+	width: 120px;
+	line-height: 1.8;
+	vertical-align: top;
+}
+
+form fieldset label.xrx-label-radio {
+	width: auto;
+	vertical-align: middle;
+}
+
+form fieldset ol {
+	margin: 0;
+	padding: 0;
+}
+
+form fieldset li {
+	list-style: none;
+	margin: 0;
+	padding: 5px;
+}
+
+input[type=submit],
+input[type=button],
+input[type=reset],
+button {
+	padding: 2px 8px;
+	cursor: pointer;
+	color: #464646;
+	font-size: 0.9em;
+	border: 1px solid #BBBBBB;
+	text-shadow: 0 1px 0 #FFFFFF;
+	background: #F2F2F2 url(/images/general/button-bg.png) repeat-x scroll left top;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+button:hover {
+	color: #000000;
+	border-color: #666666;
+}
+
+input[type=submit]:active,
+input[type=button]:active,
+input[type=reset]:active,
+button:active {
+	background: #EEEEEE url(/images/general/button-active-bg.png) repeat-x scroll left top;
+}

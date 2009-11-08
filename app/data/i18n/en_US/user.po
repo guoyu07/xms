@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-20 00:21+0430\n"
+"PO-Revision-Date: 2009-08-20 00:30+0330\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/LoginInput.phtml:1
+#: c:/xampp/htdocs/Portal/app/modules/User/views/frontend/LoginInputView.class.php:27
+msgid "user login"
+msgstr "User Login"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/LoginInput.phtml:4
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterInput.phtml:6
+msgid "username"
+msgstr "Username"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/LoginInput.phtml:7
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterInput.phtml:10
+msgid "password"
+msgstr "Password"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/LoginInput.phtml:10
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterInput.phtml:22
+msgid "submit"
+msgstr "Submit"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/LoginSuccess.phtml:1
+msgid "you've successfully logged in."
+msgstr "You've Successfully Logged In."
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/LogoutSuccess.phtml:1
+msgid "you've successfully logged out."
+msgstr "You've Successfully Logged Out."
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterInput.phtml:1
+#: c:/xampp/htdocs/Portal/app/modules/User/views/frontend/RegisterInputView.class.php:10
+msgid "user registration"
+msgstr "User Registration"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterInput.phtml:14
+msgid "confirm password"
+msgstr "Confirm Password"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterInput.phtml:18
+msgid "email"
+msgstr "Email"
+
+#: c:/xampp/htdocs/Portal/app/modules/User/templates/frontend/RegisterSuccess.phtml:1
+msgid "you've successfully registered."
+msgstr "You've Successfully Registered."
+
+#: c:/xampp/htdocs/Portal/app/modules/User/views/frontend/LoginErrorView.class.php:15
+msgid "Invalid "
+msgstr ""
+
+#: c:/xampp/htdocs/Portal/app/modules/User/views/frontend/LoginErrorView.class.php:22
+msgid "user.login.error"
+msgstr ""
+
+#: c:/xampp/htdocs/Portal/app/modules/User/views/frontend/LoginSuccessView.class.php:36
+msgid "logged in"
+msgstr ""
+
+#: c:/xampp/htdocs/Portal/app/modules/User/views/frontend/LogoutSuccessView.class.php:20
+msgid "logged out"
+msgstr ""
+

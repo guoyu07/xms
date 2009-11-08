@@ -1,0 +1,38 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready(function() {
+		var content = $('#xrx-content');
+		var menu	= $('#xrx-menu');
+
+		if (content && menu.height() < content.height()) {
+			menu.height(content.outerHeight(true));
+		}
+	});
+	// -->
+</script>
+
+
+
+<div id="xrx-menu" class="xrx-<?= $t['_align'] ?>">
+	<? if (isset ($t['menu'])): ?>
+	<ul>
+		<? foreach ($t['menu'] as $attribute): ?>
+		<li>
+			<h4>
+				<img class="xrx-icon-16" src="<?= $attribute['icon'] ?>" alt="<?= $attribute['title'] ?>" />
+				<a href="<?= $ro->gen('default', array('path' => $attribute['url'])) ?>"><?= $attribute['title'] ?></a>
+			</h4>
+			<? if ( !empty ($attribute['items'])): ?>
+			<ul>
+				<? foreach ($attribute['items'] as $menu): ?>
+				<li>
+					<a href="<?= $ro->gen('default', array('path' => $menu['url'])) ?>"><?= $menu['title'] ?></a>
+				</li>
+				<? endforeach ?>
+			</ul>
+			<? endif ?>
+		</li>
+		<? endforeach ?>
+	</ul>
+	<? endif ?>
+</div>

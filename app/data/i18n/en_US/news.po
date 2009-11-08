@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-06 17:29+0430\n"
+"PO-Revision-Date: 2009-09-06 17:38+0330\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:15
+msgid "add news"
+msgstr "Add News"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:19
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:6
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:14
+msgid "title"
+msgstr "Title"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:25
+msgid "content"
+msgstr "Content"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:37
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:7
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:15
+msgid "date"
+msgstr "Date"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:40
+msgid "Date selector"
+msgstr "Date Selector"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:55
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:9
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:17
+msgid "published"
+msgstr "Published"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:59
+msgid "submit"
+msgstr "Submit"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddSuccess.phtml:1
+msgid "news has been successfully added"
+msgstr "News has been successfully added"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:1
+msgid "news list"
+msgstr "News List"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:8
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:16
+msgid "author"
+msgstr "Author"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:28
+msgid "yes"
+msgstr "Yes"
+
+#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:28
+msgid "no"
+msgstr "No"
+

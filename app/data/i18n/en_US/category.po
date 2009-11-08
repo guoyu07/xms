@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-28 17:46+0330\n"
+"PO-Revision-Date: 2009-10-28 17:51+0330\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:26
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/AddInputView.class.php:9
+msgid "add category"
+msgstr "Add Category"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:29
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:29
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:45
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:52
+msgid "name"
+msgstr "Name"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:33
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:33
+msgid "parent"
+msgstr "Parent"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:45
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:45
+msgid "module"
+msgstr "Module"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:55
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:56
+msgid "description"
+msgstr "Description"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:60
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:63
+msgid "submit"
+msgstr "Submit"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddInput.phtml:62
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:65
+msgid "cancel"
+msgstr "Cancel"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/AddSuccess.phtml:1
+msgid "category has been successfully added"
+msgstr "Category has been successfully added."
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditInput.phtml:26
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/EditInputView.class.php:9
+msgid "edit category"
+msgstr "Edit Category"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/EditSuccess.phtml:1
+msgid "category has been successfully updated"
+msgstr "Category has been successfully updated."
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:21
+msgid "please select a category."
+msgstr "Please select a category."
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:27
+msgid "are you sure?"
+msgstr "Are you sure?"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:37
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/IndexSuccessView.class.php:9
+msgid "category list"
+msgstr "Category List"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:46
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:53
+msgid "modules"
+msgstr "Modules"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:66
+#, php-format
+msgid "edit '%s'"
+msgstr "Edit %s"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:87
+msgid "There's no category."
+msgstr "There's no category."
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/templates/backend/IndexSuccess.phtml:93
+msgid "delete"
+msgstr "Delete"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/AddSuccessView.class.php:11
+msgid "category added successfully"
+msgstr "Category added successfully."
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/EditErrorView.class.php:14
+msgid "category edit error"
+msgstr "Category edit error"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/EditSuccessView.class.php:11
+msgid "category updated successfully"
+msgstr "Category updated successfully"
+
+#: c:/xampp/htdocs/XRX/app/modules/Category/views/backend/EditSuccessView.class.php:11
+msgid ".category"
+msgstr ""
+

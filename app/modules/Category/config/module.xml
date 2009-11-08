@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/module/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<module enabled="true">
+			<settings>
+				<setting name="id">5</setting>
+				<setting name="title">Category</setting>
+				<setting name="version">1.0</setting>
+				<setting name="authors">
+					<ae:parameter name="me@khashayar.me">Khashayar Hajian</ae:parameter>
+				</setting>
+				<setting name="homepage">http://khashayar.me</setting>
+				<setting name="update_url" />
+				<setting name="description">Category Module</setting>
+			</settings>
+		</module>
+		
+	</ae:configuration>
+</ae:configurations>

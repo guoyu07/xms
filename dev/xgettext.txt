@@ -1,0 +1,1 @@
+xgettext --language=PHP --from-code=UTF-8 --keyword=_ --keyword=__:1,2 --output=default.po c:/xampp/htdocs/XRX/app/modules/Default/templates/frontend/*.phtml c:/xampp/htdocs/XRX/app/modules/Default/templates/backend/*.phtml c:/xampp/htdocs/XRX/app/modules/Default/views/frontend/*.class.php c:/xampp/htdocs/XRX/app/modules/Default/views/backend/*.class.php

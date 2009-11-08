@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/News/config/validators.xml"
+>
+	<ae:configuration>
+		
+		<validators method="write">
+
+			<!-- ID -->
+			<validator class="number">
+				<arguments base="id[]">
+					<argument />
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid news id.</error>
+					<error for="required">At least one news id is required.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

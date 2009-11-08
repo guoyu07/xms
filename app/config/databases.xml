@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" xmlns="http://agavi.org/agavi/config/parts/databases/1.0">
+
+	<ae:configuration environment="development">
+		<databases default="pdo_mysql_main">
+			
+			<database name="pdo_mysql_main" class="AgaviPdoDatabase">
+				<ae:parameter name="dsn">mysql:host=localhost;dbname=self_portal</ae:parameter>
+				<ae:parameter name="username">root</ae:parameter>
+				<ae:parameter name="password"></ae:parameter>
+				<ae:parameter name="options">
+					<ae:parameter name="PDO::MYSQL_ATTR_INIT_COMMAND">SET NAMES utf8</ae:parameter>
+					<!--<ae:parameter name="PDO::MYSQL_ATTR_USE_BUFFERED_QUERY">true</ae:parameter>-->
+				</ae:parameter>
+			</database>
+			
+		</databases>
+	</ae:configuration>
+
+	<ae:configuration environment="production">
+		<databases default="pdo_mysql_main">
+
+			<database name="pdo_mysql_main" class="AgaviPdoDatabase">
+				<ae:parameter name="dsn">mysql:host=localhost;dbname=self_portal</ae:parameter>
+				<ae:parameter name="username">root</ae:parameter>
+				<ae:parameter name="password"></ae:parameter>
+				<ae:parameter name="options">
+					<ae:parameter name="PDO::MYSQL_ATTR_INIT_COMMAND">SET NAMES utf8</ae:parameter>
+				</ae:parameter>
+			</database>
+
+		</databases>
+	</ae:configuration>
+	
+</ae:configurations>

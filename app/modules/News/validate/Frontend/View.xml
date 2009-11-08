@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/News/config/validators.xml"
+>
+	<ae:configuration>
+		
+		<validators>
+
+			<!-- ID -->
+			<validator class="number" severity="critical">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The id has an invalid value.</error>
+					<error for="required">Please provide an id.</error>
+				</errors>
+			</validator>
+
+			<!-- ID Genuine Validation -->
+			<validator class="News_GenuineIdValidator">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>There's no news with provided id.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

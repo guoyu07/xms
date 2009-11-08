@@ -1,0 +1,18 @@
+<?php
+// Create links to other languages' translation
+if ( isset($t['translations']) ) {
+	foreach ($t['translations'] as $tl) {
+		$links[] = "<a href='" . $tl['link'] . "'>" . $tl['title'] . "</a>";
+	}
+}
+?>
+
+<? if ( isset($t['translations']) ) : ?>
+<p><?= sprintf($tm->_('this news also available in %s', '.news'), implode(' | ', $links)); ?></p>
+<? endif ?>
+
+<h1><?= $t['news']->title ?></h1>
+
+<p><?= $tm->_('publish date', '.news') ?>: <?= $tm->_d($t['news']->date) ?></p>
+<p><?= $tm->_('last modified', '.news') ?>: <?= $tm->_d($t['news']->modified) ?></p>
+<div><?= $t['news']->content ?></div>

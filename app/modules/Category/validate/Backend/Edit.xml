@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	parent="%core.module_dir%/Category/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For GET & POST Methods -->
+		<validators>
+
+			<!-- ID -->
+			<validator class="number">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The id has an invalid value.</error>
+					<error for="required">Please provide an id.</error>
+				</errors>
+			</validator>
+
+			<!-- ID Genuine Validation -->
+			<validator class="Category_GenuineIdValidator" method="read">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>There's no category with provided id.</error>
+				</errors>
+			</validator>
+
+		</validators>
+
+		<!-- Since "EditAction" using the "AddInput" template,
+			 to prevent code duplication, that validation part included from "Add.xml" -->
+		<xi:include href="%core.module_dir%/Category/validate/Backend/Add.xml"
+					xpointer="xmlns(ae=http://agavi.org/agavi/config/global/envelope/1.0)
+							  xmlns(ot=http://agavi.org/agavi/config/parts/validators/1.0)
+							  xpointer(/ae:configurations/ae:configuration/*)" />
+		
+	</ae:configuration>
+</ae:configurations>

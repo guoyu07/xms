@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0" xmlns="http://agavi.org/agavi/config/parts/routing/1.0">
+	<ae:configuration>
+		<routes>
+
+			<!-- Local Routing -->
+			<route name="locale" pattern="^/({locale:[a-z]{2}(_[A-Z]{2})?})" stop="false" imply="true" cut="true" locale="${locale}">
+				<callbacks>
+					<callback class="XRXLocaleRoutingCallback" />
+				</callbacks>
+				<ignores>
+					<ignore>locale</ignore>
+				</ignores>
+			</route>
+
+			<!-- JSON Routing -->
+			<route pattern="application/json" source="_SERVER[HTTP_ACCEPT]" output_type="json" stop="false" />
+
+			<!-- Administration Routing -->
+			<route name="admin" pattern="^/admin$" module="%actions.default_module%" action="Backend.Index" />
+
+			<!-- Default Routing -->
+			<route name="default" pattern="^/({path:[a-zA-Z0-9\-_\/=\s]*})$" imply="true" cut="true">
+				<callbacks>
+					<callback class="XRXDefaultRoutingCallback" />
+				</callbacks>
+				<ignores>
+					<ignore>path</ignore>
+				</ignores>
+			</route>
+
+			<!-- Index Routing -->
+			<route name="index" pattern="^$" module="%actions.default_module%" action="%actions.default_action%" />
+
+		</routes>
+	</ae:configuration>
+</ae:configurations>

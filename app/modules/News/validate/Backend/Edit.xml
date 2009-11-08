@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	parent="%core.module_dir%/News/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For GET & POST Methods -->
+		<validators>
+
+			<!-- ID -->
+			<validator class="number">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The id has an invalid value.</error>
+					<error for="required">Please provide an id.</error>
+				</errors>
+			</validator>
+
+			<!-- ID Genuine Validation -->
+			<validator class="News_GenuineIdValidator" method="read">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>There's no news with provided id in current language.</error>
+				</errors>
+			</validator>
+
+			<!-- Deleted (Hidden) -->
+			<validator class="string" method="write">
+				<arguments base="deleted[]">
+					<argument />
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid deleted items.</error>
+				</errors>
+			</validator>
+
+		</validators>
+
+		<!-- Since "EditAction" using the "AddInput" template,
+			 to prevent code duplication, that validation part included from "Add.xml" -->
+		<xi:include href="%core.module_dir%/News/validate/Backend/Add.xml"
+					xpointer="xmlns(ae=http://agavi.org/agavi/config/global/envelope/1.0)
+							  xmlns(ot=http://agavi.org/agavi/config/parts/validators/1.0)
+							  xpointer(/ae:configurations/ae:configuration/*)" />
+
+	</ae:configuration>
+</ae:configurations>

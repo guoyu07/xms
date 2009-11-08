@@ -1,0 +1,68 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		var parent	= $('#xrx-category-parent');
+		var li		= $('#xrx-category-module').parent('li');
+
+		// Parent ComboBox Handler
+		parent.change( function(e) {
+			if ($(this).val() != 0) {
+				li.hide('fast');
+			} else {
+				li.show('fast');
+			}
+		})
+
+		if (parent.val() != 0) {
+			li.hide();
+		}
+	})
+	// -->
+</script>
+
+
+<form action="<?= $ro->gen(null); ?>" method="post">
+	<fieldset>
+		<legend><?= $tm->_('edit category', '.category') ?></legend>
+		<ol>
+			<li>
+				<label for="xrx-category-name"><?= $tm->_('name', '.category') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-category-name" name="name" value="<?= $t['category']->name ?>" maxlength="100" />
+			</li>
+			<li>
+				<label for="xrx-category-parent"><?= $tm->_('parent', '.category') ?><em class="xrx-required">*</em></label>
+				<select id="xrx-category-parent" name="parent">
+				<? if (! empty ($t['categories'])): ?>
+					<? foreach ($t['categories'] as $category): ?>
+					<option value="<?= $category->id ?>"<? if ($category->id == $t['category']->parent_id) echo ' selected="selected"' ?><? if ($category->id == $t['category']->id) echo ' disabled="disabled"' ?>>
+						<?= @str_repeat('&#160;&#160;&#160;', $category->depth - 1) . $category->name ?>
+					</option>
+					<? endforeach; ?>
+				<? endif; ?>
+				</select>
+			</li>
+			<li>
+				<label for="xrx-category-module"><?= $tm->_('module', '.category') ?><em class="xrx-required">*</em></label>
+				<select id="xrx-category-module" name="module[]" multiple="multiple">
+				<? foreach ($t['modules'] as $module): ?>
+					<? $s = (array_key_exists($module->id, $t['category']->modules)) ? ' selected="selected"' : '' ?>
+					<option value="<?= $module->id ?>"<?= $s ?>>
+						<?= $tm->_(strtolower($module->name), '.' . strtolower($module->name)) ?>
+					</option>
+				<? endforeach; ?>
+				</select>
+			</li>
+			<li>
+				<label for="xrx-category-description"><?= $tm->_('description', '.category') ?></label>
+				<textarea id="xrx-category-description" name="description"><?= $t['category']->description ?></textarea>
+			</li>
+		</ol>
+	</fieldset>
+	
+	<input type="hidden" name="id" value="<?= $t['category']->id ?>" />
+	<input type="submit" value="<?= $tm->_('submit', '.category'); ?>" />
+	<a href="<?= $ro->gen('default', array('path' => 'admin/category')) ?>">
+		<input type="button" value="<?= $tm->_('cancel', '.category'); ?>" />
+	</a>
+</form>
+

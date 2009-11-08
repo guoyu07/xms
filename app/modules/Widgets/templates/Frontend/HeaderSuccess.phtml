@@ -1,0 +1,11 @@
+<div id="xrx-header">
+	<p><?= $tm->_d(time()); ?></p>
+
+	<?php if($us->isAuthenticated()): ?>
+		<p><?= $tm->_('You are logged in.', '.widgets'); ?>
+			<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>">
+				<?= $tm->_('Log Out', '.widgets'); ?>
+			</a>
+		</p>
+	<?php endif; ?>
+</div>

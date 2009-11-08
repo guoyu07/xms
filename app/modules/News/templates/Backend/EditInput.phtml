@@ -1,0 +1,120 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		// Handle fieldset checkboxes
+		var checkBox = $('legend > input[type="checkbox"]');
+
+		checkBox.each( function(idx, item) {
+			if ($(item).attr('checked')) {
+				$(item).parents('fieldset')
+					   .children('ol')
+					   .slideDown();
+			}
+		})
+
+		checkBox.click( function() {
+			$(this).parents('fieldset')
+				   .children('ol')
+				   .slideToggle( checkBox.attr('checked') );
+		})
+
+
+		// Handle "Delete Translation" buttons
+		var btnDelete = $('.xrx-news-delete');
+
+		btnDelete.click( function() {
+			if ( confirm("<?= $tm->_('are you sure?', '.news')?>")) {
+				var lang = this.id.split('-')[3];
+				$('#xrx-news-fieldset-' + lang).remove();
+				$('form').append('<input type="hidden" name="deleted[]" value="' + lang + '"');
+			}
+		})
+	})
+	// -->
+</script>
+
+
+
+<form action="<?= $ro->gen(null); ?>" method="post">
+	<?php foreach ($t['locales'] as $locale): ?>
+	<fieldset id="xrx-news-fieldset-<?= $locale->lang ?>" dir="<?= $locale->dir ?>">
+		<legend>
+			<? if ($locale->id == $t['currentLocale']): ?>
+				<?= $tm->_('edit news', '.news') ?>
+				<input type="checkbox" class="xrx-hidden" name="<?= "translation[$locale->lang][check]" ?>" checked="checked" />
+			<? else: ?>
+				<input type="checkbox" id="xrx-news-translation-<?= $locale->lang ?>" class="xrx-pointer" name="<?= "translation[$locale->lang][check]" ?>" <? if (isset($t['news'][$locale->lang])): ?>checked="checked"<? endif ?> />
+				<label for="xrx-news-translation-<?= $locale->lang ?>" class="xrx-pointer"><?= sprintf($tm->_('translate to %s', '.news', $locale->id), $locale->desc) ?></label>
+			<? endif; ?>
+		</legend>
+		<ol <?= ( $locale->id == $t['currentLocale'] || isset($t['news'][$locale->lang]) ) ? '' : 'class="xrx-hidden"' ?>>
+			<li>
+				<label for="xrx-news-title-<?= $locale->lang ?>"><?= $tm->_('title', '.news', $locale->id) ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-news-title-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][title]" ?>" value="<?= $t['news'][$locale->lang]->title ?>" maxlength="200" />
+			</li>
+			<li>
+				<label for="xrx-news-content-<?= $locale->lang ?>"><?= $tm->_('content', '.news', $locale->id) ?><em class="xrx-required">*</em></label>
+				<textarea id="xrx-news-content-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][content]" ?>"><?= $t['news'][$locale->lang]->content ?></textarea>
+				<script type="text/javascript">
+					<!--
+					CKEDITOR.replace('xrx-news-content-<?= $locale->lang ?>', {
+						language: '<?= $locale->lang ?>',
+						contentsLangDirection: '<?= $locale->dir ?>'
+					});
+					// -->
+				</script>
+			</li>
+			<? if ($locale->id == $t['currentLocale']): ?>
+			<li>
+				<label for="xrx-news-date"><?= $tm->_('date', '.news') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-news-date" name="date" value="<?= $t['news'][$locale->lang]->date ?>" maxlength="20">
+					<img src="scripts/JalaliJSCalendar/examples/cal.png" id="xrx-news-cal-trigger" title="<?= $tm->_('Date selector', '.news'); ?>" alt="<?= $tm->_('Date selector', '.news'); ?>" />
+				</input>
+				<script type="text/javascript">
+					<!--
+					Calendar.setup({
+						inputField: "xrx-news-date",
+						showsTime: true,
+						dateType: "<?= (isset ($t['jalali'])) ? 'jalali' : 'gregorian'; ?>",
+						ifFormat: "<?= $t['dateFormat'] ?>",
+						button: "xrx-news-cal-trigger"
+					});
+					// -->
+				</script>
+			</li>
+			<li>
+				<label for="xrx-news-category"><?= $tm->_('category', '.news') ?><em class="xrx-required">*</em></label>
+				<select id="xrx-news-category" name="category">
+				<? foreach ($t['categories'] as $category): ?>
+					<option value="<?= $category->id ?>"<? if ($t['news'][$t['_language']]->category_id == $category->id) echo 'selected="selected"' ?>>
+						<?= str_repeat('&#160;&#160;&#160;', $category->depth - 1) . $category->name ?>
+					</option>
+				<? endforeach; ?>
+				</select>
+			</li>
+			<li>
+				<label><?= $tm->_('published', '.news') ?></label>
+				
+				<input id="xrx-news-published-yes" type="radio" name="published" value="1" <? if ($t['news'][$locale->lang]->published): ?>checked="checked"<? endif ?> />
+				<label for="xrx-news-published-yes" class="xrx-label-radio"><?= $tm->_('yes', '.news') ?></label>
+
+				<input id="xrx-news-published-no" type="radio" name="published" value="0" <? if (!$t['news'][$locale->lang]->published): ?>checked="checked"<? endif ?> />
+				<label for="xrx-news-published-no" class="xrx-label-radio"><?= $tm->_('no', '.news') ?></label>
+			</li>
+			<? else: ?>
+			<? if ($locale->translated): ?>
+			<li>
+				<button type="button" id="xrx-news-delete-<?= $locale->lang ?>" class="xrx-news-delete"><?= sprintf($tm->_('delete %s translation', '.news'), $locale->desc) ?></button>
+			</li>
+			<? endif; ?>
+			<? endif; ?>
+		</ol>
+	</fieldset>
+	<?php endforeach; ?>
+	
+	<input type="hidden" name="id" value="<?= $t['news'][$t['_language']]->id ?>" />
+	<input type="submit" value="<?= $tm->_('submit', '.news'); ?>" />
+	<a href="<?= $ro->gen('default', array('path' => 'admin/news')) ?>">
+		<input type="button" value="<?= $tm->_('cancel', '.news'); ?>" />
+	</a>
+</form>

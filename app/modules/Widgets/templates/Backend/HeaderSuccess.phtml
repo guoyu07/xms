@@ -1,0 +1,25 @@
+<div id="xrx-header">
+	<h1 class="xrx-<?= $t['_align']; ?>">
+		<a href="<?= $ro->gen('index'); ?>" title="<?= $tm->_('visit site', '.widgets'); ?>"><?= AgaviConfig::get('core.app_name') . " " . $tm->_('administration area', '.widgets'); ?></a>
+
+		<?php
+		foreach ($tm->getAvailableLocales() as $lc) {
+			$href = $ro->gen(null, array('locale' => $lc['identifier']));
+			$flag = $lc['identifierData']['territory'];
+			$desc = $lc['parameters']['description'];
+			echo "<a class='xrx-language-flag xrx-pointer' href='$href'><img src='/images/flags/$flag.png' title='$desc' alt='$desc' /></a>";
+		}
+		?>
+	</h1>
+
+	<div id="xrx-date-<?= $t['_xalign']; ?>"><?= $tm->_d(time()); ?></div>
+
+	<div id="xrx-user-info" class="xrx-<?= $t['_xalign']; ?>">
+		<p>
+			<?= $tm->_('you are logged in as', '.widgets'); ?>
+			<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'index')); ?>" title="<?= $tm->_('edit your profile', '.widgets'); ?>"><?= $us->getAttribute('username'); ?></a>
+			|
+			<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>" title="<?= $tm->_('log out', '.widgets'); ?>"><?= $tm->_('log out', '.widgets'); ?></a>
+		</p>
+	</div>
+</div>

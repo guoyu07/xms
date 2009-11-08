@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<autoload name="XRXWidgetsBackendAction">%core.module_dir%/Widgets/lib/action/XRXWidgetsBackendAction.class.php</autoload>
+		<autoload name="XRXWidgetsFrontendAction">%core.module_dir%/Widgets/lib/action/XRXWidgetsFrontendAction.class.php</autoload>
+		<autoload name="XRXWidgetsBaseModel">%core.module_dir%/Widgets/lib/model/XRXWidgetsBaseModel.class.php</autoload>
+		<autoload name="XRXWidgetsBackendView">%core.module_dir%/Widgets/lib/view/XRXWidgetsBackendView.class.php</autoload>
+		<autoload name="XRXWidgetsFrontendView">%core.module_dir%/Widgets/lib/view/XRXWidgetsFrontendView.class.php</autoload>
+
+		<!-- Config Handlers -->
+		<autoload name="XRXMenuConfigHandler">%core.app_dir%/lib/config/XRXMenuConfigHandler.class.php</autoload>
+		
+	</ae:configuration>
+</ae:configurations>

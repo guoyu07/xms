@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/Category/config/validators.xml"
+>
+	<ae:configuration>
+
+		<validators method="write">
+
+			<!-- ID -->
+			<validator class="not">
+				<validator class="equals">
+					<arguments base="id[]">
+						<argument />
+					</arguments>
+					<ae:parameters>
+						<ae:parameter name="value">1</ae:parameter>
+					</ae:parameters>
+				</validator>
+				<ae:parameters>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>This category can not be deleted.</error>
+				</errors>
+			</validator>
+
+			<!-- ID -->
+			<validator class="number">
+				<arguments base="id[]">
+					<argument />
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.category</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid category id.</error>
+					<error for="required">At least one category id is required.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>
