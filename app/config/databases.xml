@@ -5,7 +5,7 @@
 		<databases default="pdo_mysql_main">
 			
 			<database name="pdo_mysql_main" class="AgaviPdoDatabase">
-				<ae:parameter name="dsn">mysql:host=localhost;dbname=self_portal</ae:parameter>
+				<ae:parameter name="dsn">mysql:host=localhost;dbname=xrx</ae:parameter>
 				<ae:parameter name="username">root</ae:parameter>
 				<ae:parameter name="password"></ae:parameter>
 				<ae:parameter name="options">
@@ -21,7 +21,7 @@
 		<databases default="pdo_mysql_main">
 
 			<database name="pdo_mysql_main" class="AgaviPdoDatabase">
-				<ae:parameter name="dsn">mysql:host=localhost;dbname=self_portal</ae:parameter>
+				<ae:parameter name="dsn">mysql:host=localhost;dbname=xrx</ae:parameter>
 				<ae:parameter name="username">root</ae:parameter>
 				<ae:parameter name="password"></ae:parameter>
 				<ae:parameter name="options">

@@ -6,7 +6,7 @@ class News_Frontend_IndexSuccessView extends XRXNewsFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', $this->tm->_('Frontend.Index', '.news'));
+		$this->setAttribute('_title', $this->tm->_('lastest news', '.news'));
 	}
 }
 

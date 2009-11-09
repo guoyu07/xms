@@ -74,7 +74,7 @@
 				<select id="xrx-news-category" name="category">
 				<? foreach ($t['categories'] as $category): ?>
 					<option value="<?= $category->id ?>">
-						<?= str_repeat('&#160;&#160;&#160;', $category->depth - 1) . $category->name ?>
+						<?= @str_repeat('&#160;&#160;&#160;', $category->depth - 1) . $category->name ?>
 					</option>
 				<? endforeach; ?>
 				</select>

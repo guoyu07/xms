@@ -1,1 +1,10 @@
-News Frontend Index
+<ul>
+<? foreach ($t['news'] as $news): ?>
+	<li>
+		<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id)) ?>">
+			<?= $news->title ?></a>
+		</h2>
+		<p><?= substr($news->content, 0, 500); ?>...</p>
+	</li>
+<? endforeach; ?>
+</ul>

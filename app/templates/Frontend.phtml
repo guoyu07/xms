@@ -6,6 +6,7 @@
 		<base href="<?php echo $ro->getBaseHref(); ?>" />
 
 		<!-- Cascading Style Sheets -->
+		<link rel="stylesheet" type="text/css" href="styles/reset.css" media="all" />
 		<link rel="stylesheet" type="text/css" href="styles/master.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="styles/frontend.css" media="screen" />
 
@@ -18,7 +19,9 @@
 		<?php echo $slots['header']; ?>
 
 		<div id="xrx-content">
-			<?php echo $inner; ?>
+			<div class="xrx-wrapper">
+				<?php echo $inner; ?>
+			</div>
 		</div>
 
 		<?php echo $slots['footer']; ?>

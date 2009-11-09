@@ -64,7 +64,7 @@
 				</td>
 				<td class="xrx-title-column">
 					<a href="<?= $ro->gen('default', array('path'=>'admin/category/edit', 'id'=>$category->id)) ?>" title="<?= sprintf($tm->_('edit \'%s\'', '.category'), $category->name) ?>">
-						<?= str_repeat('— ', $category->depth - 1) . $category->name ?>
+						<?= @str_repeat('— ', $category->depth - 1) . $category->name ?>
 					</a>
 				</td>
 				<td>

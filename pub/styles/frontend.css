@@ -1,0 +1,39 @@
+/* Header */
+
+#xrx-header {
+	height: 50px;
+	color: #999;
+	background: #464646 none repeat scroll 0 0;
+}
+
+.xrx-wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 5px;
+	clear: both;
+}
+
+
+
+/* Contetn */
+
+#xrx-content {
+	color: #555;
+}
+
+
+
+/* Footer */
+
+#xrx-footer {
+	margin: 0px;
+	padding: 1px 5px;
+	height: 46px;
+	color: #999;
+	clear: both;
+	background: #464646 none repeat scroll 0 0;
+}
+
+
+
+/* News */

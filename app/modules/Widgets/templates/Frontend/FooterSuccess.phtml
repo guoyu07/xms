@@ -1,17 +1,19 @@
 <div id="xrx-footer">
-	<p>
-<?php
-echo $tm->__('Alternative language:', 'Alternative languages:', count($t['locales']), '.default');
-foreach($t['locales'] as $locale): ?>
-	<?php if($locale['identifier'] == $t['current_locale']): ?>
-		<?= htmlspecialchars($locale['parameters']['description']); ?>
-	<?php else: ?>
-		<a href="<?= $ro->gen(null, array('locale' => $locale['identifier'])); ?>" hreflang="<?= $locale['identifier']; ?>">
+	<div class="xrx-wrapper">
+		<p>
+	<?php
+	echo $tm->__('Alternative language:', 'Alternative languages:', count($t['locales']), '.default');
+	foreach($t['locales'] as $locale): ?>
+		<?php if($locale['identifier'] == $t['current_locale']): ?>
 			<?= htmlspecialchars($locale['parameters']['description']); ?>
-		</a>
-	<?php endif; ?>
-<?php endforeach; ?>
-	</p>
+		<?php else: ?>
+			<a href="<?= $ro->gen(null, array('locale' => $locale['identifier'])); ?>" hreflang="<?= $locale['identifier']; ?>">
+				<?= htmlspecialchars($locale['parameters']['description']); ?>
+			</a>
+		<?php endif; ?>
+	<?php endforeach; ?>
+		</p>
 
-	<p>Copyright © 2005-2009 The Agavi Project</p>
+		<p>Copyright © 2005-2009 The Agavi Project</p>
+	</div>
 </div>

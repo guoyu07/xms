@@ -3,8 +3,9 @@
 class News_Frontend_IndexAction extends XRXNewsFrontendAction
 {
 	/**
-	 * Returns the default view if the action does not serve the request
-	 * method used.
+	 * Serves Read (GET) requests
+	 *
+	 * @param      AgaviRequestDataHolder the incoming request data
 	 *
 	 * @return     mixed <ul>
 	 *                     <li>A string containing the view name associated
@@ -14,8 +15,14 @@ class News_Frontend_IndexAction extends XRXNewsFrontendAction
 	 *                     executed.</li>
 	 *                   </ul>
 	 */
-	public function getDefaultViewName()
+	public function executeRead(AgaviRequestDataHolder $rd)
 	{
+		// Get lastest news
+		$news = $this->getContext()->getModel('NewsManager', 'News')->retrieveLatest(null, 10);
+		
+		// Pass to view
+		$this->setAttributeByRef('news', $news);
+
 		return 'Success';
 	}
 }

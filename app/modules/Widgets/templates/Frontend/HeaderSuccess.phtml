@@ -1,11 +1,13 @@
 <div id="xrx-header">
-	<p><?= $tm->_d(time()); ?></p>
+	<div class="xrx-wrapper">
+		<p><?= $tm->_d(time()); ?></p>
 
-	<?php if($us->isAuthenticated()): ?>
-		<p><?= $tm->_('You are logged in.', '.widgets'); ?>
-			<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>">
-				<?= $tm->_('Log Out', '.widgets'); ?>
-			</a>
-		</p>
-	<?php endif; ?>
+		<? if ($us->isAuthenticated()): ?>
+			<p><?= $tm->_('You are logged in.', '.widgets'); ?>
+				<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>">
+					<?= $tm->_('Log Out', '.widgets'); ?>
+				</a>
+			</p>
+		<? endif; ?>
+	</div>
 </div>
