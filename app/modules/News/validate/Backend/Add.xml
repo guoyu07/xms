@@ -38,6 +38,21 @@
 			</validator>
 
 
+			<!-- Translation's Summary -->
+			<validator class="string" depends="[translation_filled]">
+				<arguments base="translation[]">
+					<argument>summary</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The summary field has an invalid value.</error>
+				</errors>
+			</validator>
+
+
 			<!-- Translation's Content -->
 			<validator class="string" depends="[translation_filled]">
 				<arguments base="translation[]">

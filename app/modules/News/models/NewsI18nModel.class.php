@@ -6,6 +6,7 @@ class News_NewsI18nModel extends XRXNewsBaseModel
 
 	private $news_id;
 	private $title;
+	private $summary;
 	private $content;
 	private $language;
 
@@ -38,6 +39,16 @@ class News_NewsI18nModel extends XRXNewsBaseModel
 		$this->title = $title;
 	}
 
+	public function getSummary()
+	{
+		return $this->summary;
+	}
+
+	public function setSummary($summary)
+	{
+		$this->summary = $summary;
+	}
+
 	public function getContent()
 	{
 		return $this->content;
@@ -62,6 +73,7 @@ class News_NewsI18nModel extends XRXNewsBaseModel
 	{
 		$this->setNewsId($data['news_id']);
 		$this->setTitle($data['title']);
+		$this->setSummary($data['summary']);
 		$this->setContent($data['content']);
 		$this->setLanguage($data['language']);
 	}
@@ -71,6 +83,7 @@ class News_NewsI18nModel extends XRXNewsBaseModel
 		$data = array();
 		$data['news_id']	= $this->getNewsId();
 		$data['title']		= $this->getTitle();
+		$data['summary']	= $this->getSummary();
 		$data['content']	= $this->getContent();
 		$data['language']	= $this->getLanguage();
 

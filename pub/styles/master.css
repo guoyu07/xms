@@ -15,13 +15,21 @@ a:hover {
 	color: #D54E21;
 }
 
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.7em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
 img {
 	border: 0px;
 	vertical-align: middle;
-}
-
-label {
-	vertical-align: top;
 }
 
 input {
@@ -34,10 +42,22 @@ input[type='button']{
 	font: 1em Tahoma, Verdana, Arial, Helvetica, sans-serif;
 }
 
+label {
+	vertical-align: top;
+}
+
 select, option {
 	font-size: 0.95em;
 	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
 }
+
+small {
+	color: #999;
+	line-height: 1.5em;
+	font-size: 0.85em;
+}
+
+
 
 .xrx-hidden {
 	display: none;
@@ -113,7 +133,7 @@ select, option {
 /* Content */
 
 #xrx-content {
-	margin: 30px 10px;
+	margin: 20px 10px;
 	padding: 0 10px;
 }
 
@@ -127,9 +147,10 @@ select, option {
 
 #xrx-content h2 {
 	margin: 0px;
-	padding-top: 15px;
 	color: #464646;
-	font: italic 2em Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+	font-style: italic;
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
 	line-height: 35px;
 }
 

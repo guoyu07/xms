@@ -1,19 +1,14 @@
 <div id="xrx-footer">
 	<div class="xrx-wrapper">
-		<p>
-	<?php
-	echo $tm->__('Alternative language:', 'Alternative languages:', count($t['locales']), '.default');
-	foreach($t['locales'] as $locale): ?>
-		<?php if($locale['identifier'] == $t['current_locale']): ?>
-			<?= htmlspecialchars($locale['parameters']['description']); ?>
-		<?php else: ?>
-			<a href="<?= $ro->gen(null, array('locale' => $locale['identifier'])); ?>" hreflang="<?= $locale['identifier']; ?>">
-				<?= htmlspecialchars($locale['parameters']['description']); ?>
-			</a>
-		<?php endif; ?>
-	<?php endforeach; ?>
-		</p>
-
-		<p>Copyright © 2005-2009 The Agavi Project</p>
+		<? if ($us->isAuthenticated()): ?>
+		<div class="xrx-<?= $t['_xalign'] ?>">
+			<?= $tm->_('You are logged in.', '.widgets'); ?>
+				<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>">
+					<?= $tm->_('Log Out', '.widgets'); ?>
+				</a>
+		</div>
+		<? endif; ?>
+		
+		<p>Copyright © 2009-2010 XRX Content Management System</p>
 	</div>
 </div>

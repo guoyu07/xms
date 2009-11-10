@@ -8,11 +8,16 @@ if ( isset($t['translations']) ) {
 ?>
 
 <? if ( isset($t['translations']) ) : ?>
-<p><?= sprintf($tm->_('this news also available in %s', '.news'), implode(' | ', $links)); ?></p>
+	<div class="xrx-news-toolbox xrx-<?= $t['_xalign'] ?>">
+		<?= sprintf($tm->_('this news also available in %s', '.news'), implode(' | ', $links)); ?>
+	</div>
 <? endif ?>
 
-<h1><?= $t['news']->title ?></h1>
+<h2><?= $t['news']->title ?></h2>
 
-<p><?= $tm->_('publish date', '.news') ?>: <?= $tm->_d($t['news']->date) ?></p>
-<p><?= $tm->_('last modified', '.news') ?>: <?= $tm->_d($t['news']->modified) ?></p>
-<div><?= $t['news']->content ?></div>
+<small><?= sprintf($tm->_('written by %s'), $t['news']->username) ?></small><br />
+<small><?= $tm->_d($t['news']->date) ?></small>
+
+<div class="xrx-news-entry"><?= $t['news']->content ?></div>
+
+<small><?= sprintf('last updated on %s', $tm->_d($t['news']->modified)) ?></small>

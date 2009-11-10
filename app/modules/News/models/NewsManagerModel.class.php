@@ -7,17 +7,17 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 		if (empty ($id))
 			return null;
 
-		$sql = "SELECT n.*, ni.*
+		$sql = "SELECT n.*, ni.*, u.username
 				FROM %s AS n
-				LEFT JOIN %s AS ni
-				ON (n.id = ni.news_id)
+				LEFT JOIN %s AS ni ON (n.id = ni.news_id)
+				LEFT JOIN %s AS u ON (n.author_id = u.id)
 				WHERE n.id = :id ";
 
 		if (isset ($language)) {
 			$sql .= "AND ni.language = :language";
 		}
 
-		$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N);
+		$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::USERS);
 		$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
@@ -32,9 +32,10 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 		if (! $result) {
 			return null;
 		}
-
+		
 		foreach ($result as $n) {
-			$t = $this->getContext()->getModel('News', 'News', array($n))->toArray();
+			$t = $this->getContext()->getModel('User', 'User', array($n))->toArray();
+			$t = array_merge($t, $this->getContext()->getModel('News', 'News', array($n))->toArray());
 			$t = array_merge($t, $this->getContext()->getModel('NewsI18n', 'News', array($n))->toArray());
 			
 			$news[$t['language']] = (object) $t;
@@ -65,7 +66,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 			$stmt->bindValue(':start', $start, PDO::PARAM_INT);
 			$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
 
-			if (!empty($language)) {
+			if (! empty($language)) {
 				$stmt->bindValue(':language', $language, PDO::PARAM_STR);
 			}
 
@@ -123,7 +124,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 
 
 			// 2. Insert data into News_I18N Table
-			$sql = "INSERT INTO %s (news_id, title, content, language)
+			$sql = "INSERT INTO %s (news_id, title, summary, content, language)
 					VALUES";
 
 			$sql = sprintf($sql, self::NEWS_I18N);
@@ -131,7 +132,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 			// Create Values clause for each language
 			foreach ($newsI18n as $ni) {
 				$l		= $ni->getLanguage();
-				$temp[] = "(:news_id_$l, :title_$l, :content_$l, :language_$l)";
+				$temp[] = "(:news_id_$l, :title_$l, :summary_$l, :content_$l, :language_$l)";
 
 				// To prevent extra loop, it's better to update id here
 				$ni->setNewsId( $news->getId() );
@@ -147,6 +148,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 				
 				$stmt->bindValue(":news_id_$l", $ni->getNewsId(), PDO::PARAM_INT);
 				$stmt->bindValue(":title_$l", $ni->getTitle(), PDO::PARAM_STR);
+				$stmt->bindValue(":summary_$l", $ni->getSummary(), PDO::PARAM_STR);
 				$stmt->bindValue(":content_$l", $ni->getContent(), PDO::PARAM_STR);
 				$stmt->bindValue(":language_$l", $ni->getLanguage(), PDO::PARAM_STR);
 			}

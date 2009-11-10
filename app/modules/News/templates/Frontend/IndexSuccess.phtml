@@ -1,14 +1,15 @@
-<? if (count ($t['news']) > 0): ?>
+<? if ($t['news']): ?>
 	<ul>
 	<? foreach ($t['news'] as $news): ?>
-		<li>
-			<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id)) ?>">
-				<?= $news->title ?></a>
-			</h2>
-			<p><?= substr($news->content, 0, 500); ?>...</p>
+		<li class="xrx-news-content">
+			<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id)) ?>"><?= $news->title ?></a></h2>
+			<small><?= sprintf($tm->_('written by %s'), $news->username) ?></small><br />
+			<small><?= $tm->_d($t['news']->date) ?></small>
+			
+			<div class="xrx-news-entry"><?= ($news->summary) ? $news->summary : $news->content; ?></div>
 		</li>
 	<? endforeach; ?>
 	</ul>
 <? else: ?>
-	<p><?= $tm->_("There's no news.", '.news') ?></p>
+	<p><?= $tm->_("there's no news available for current language.", '.news') ?></p>
 <? endif; ?>

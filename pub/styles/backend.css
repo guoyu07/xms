@@ -177,3 +177,20 @@ table.xrx-table-list td {
 #xrx-footer a:hover {
 	text-decoration: underline;
 }
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+
+
+
+/* News */
+
+.xrx-news-title {
+	width: 650px !important;
+}
+
+.xrx-news-summary {
+	width: 650px !important;
+	height: 100px !important;
+}

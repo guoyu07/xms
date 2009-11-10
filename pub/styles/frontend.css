@@ -6,6 +6,25 @@
 	background: #464646 none repeat scroll 0 0;
 }
 
+#xrx-header h1 {
+	margin: 0px;
+	padding: 4px 0px;
+	font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
+}
+
+#xrx-header h1 a {
+	margin-top: 2px;
+	color: #FFF;
+}
+
+#xrx-header a:hover {
+	text-decoration: underline;
+}
+
+.xrx-language-flag {
+	margin: 0 2px;
+}
+
 .xrx-wrapper {
 	width: 960px;
 	margin: 0 auto;
@@ -15,7 +34,7 @@
 
 
 
-/* Contetn */
+/* Content */
 
 #xrx-content {
 	color: #555;
@@ -36,4 +55,22 @@
 
 
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+
+
+
 /* News */
+
+.xrx-news-content {
+	padding: 10px 0px;
+}
+
+.xrx-news-entry {
+	margin: 10px 5px;
+	text-align: justify;
+	line-height: 1.4em;
+}
+
+.xrx-news-toolbox {
+	padding: 10px 0px;
+}

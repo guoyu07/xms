@@ -1,13 +1,20 @@
 <div id="xrx-header">
 	<div class="xrx-wrapper">
-		<p><?= $tm->_d(time()); ?></p>
+		<div class="xrx-<?= $t['_xalign'] ?>">
+			<p><?= $tm->_d(time()); ?></p>
+		</div>
 
-		<? if ($us->isAuthenticated()): ?>
-			<p><?= $tm->_('You are logged in.', '.widgets'); ?>
-				<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>">
-					<?= $tm->_('Log Out', '.widgets'); ?>
-				</a>
-			</p>
-		<? endif; ?>
+		<h1 id="xrx-logo">
+			<a href="<?= $ro->getBaseHref(); ?>" title="<?= $tm->_('main page', '.widgets') ?>"><?= AgaviConfig::get('core.app_name') ?></a>
+
+			<?php
+			foreach ($tm->getAvailableLocales() as $lc) {
+				$href = $ro->gen(null, array('locale' => $lc['identifier']));
+				$flag = $lc['identifierData']['territory'];
+				$desc = $lc['parameters']['description'];
+				echo "<a class='xrx-language-flag xrx-pointer' href='$href'><img src='/images/flags/$flag.png' title='$desc' alt='$desc' /></a>";
+			}
+			?>
+		</h1>
 	</div>
 </div>
