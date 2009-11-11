@@ -110,4 +110,10 @@
 		</filters>
 	</ae:configuration>
 
+	<ae:configuration environment="production.*">
+		<filters>
+			<filter name="TidyFilter" enabled="false" />
+		</filters>
+	</ae:configuration>
+
 </ae:configurations>
