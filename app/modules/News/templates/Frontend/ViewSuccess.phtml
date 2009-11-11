@@ -15,7 +15,7 @@ if ( isset($t['translations']) ) {
 
 <h2><?= $t['news']->title ?></h2>
 
-<small><?= sprintf($tm->_('written by %s'), $t['news']->username) ?></small><br />
+<small><?= sprintf($tm->_('written by %s in %s'), $t['news']->username, $t['news']->category_name) ?></small><br />
 <small><?= $tm->_d($t['news']->date) ?></small>
 
 <div class="xrx-news-entry"><?= $t['news']->content ?></div>

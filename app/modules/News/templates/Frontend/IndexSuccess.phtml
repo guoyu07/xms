@@ -3,7 +3,7 @@
 	<? foreach ($t['news'] as $news): ?>
 		<li class="xrx-news-content">
 			<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id)) ?>"><?= $news->title ?></a></h2>
-			<small><?= sprintf($tm->_('written by %s'), $news->username) ?></small><br />
+			<small><?= sprintf($tm->_('written by %s in %s'), $news->username, $news->category_name) ?></small><br />
 			<small><?= $tm->_d($t['news']->date) ?></small>
 			
 			<div class="xrx-news-entry"><?= ($news->summary) ? $news->summary : $news->content; ?></div>

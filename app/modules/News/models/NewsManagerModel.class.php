@@ -7,9 +7,14 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 		if (empty ($id))
 			return null;
 
-		$sql = "SELECT n.*, ni.*, u.username
+		$sql = "SELECT
+					n.*,
+					ni.*,
+					c.name AS category_name,
+					u.username
 				FROM %s AS n
 				LEFT JOIN %s AS ni ON (n.id = ni.news_id)
+				LEFT JOIN %s AS c ON (n.category_id = c.id)
 				LEFT JOIN %s AS u ON (n.author_id = u.id)
 				WHERE n.id = :id ";
 
@@ -17,7 +22,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 			$sql .= "AND ni.language = :language";
 		}
 
-		$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::USERS);
+		$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::CATEGORIES, self::USERS);
 		$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
@@ -34,7 +39,11 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 		}
 		
 		foreach ($result as $n) {
-			$t = $this->getContext()->getModel('User', 'User', array($n))->toArray();
+			$t = array(
+				'username'		=> $n['username'],
+				'category_name'	=> $n['category_name']
+			);
+			
 			$t = array_merge($t, $this->getContext()->getModel('News', 'News', array($n))->toArray());
 			$t = array_merge($t, $this->getContext()->getModel('NewsI18n', 'News', array($n))->toArray());
 			
@@ -48,10 +57,15 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 	public function retrieveLatest($language = null, $limit = 10, $start = 0)
 	{
 		try {
-			$sql = "SELECT n.*, ni.*, u.username
+			$sql = "SELECT
+						n.*,
+						ni.*,
+						c.name AS category_name,
+						u.username
 					FROM %s AS n
-					LEFT JOIN (%s AS ni, %s AS u)
-					ON (n.id = ni.news_id AND n.author_id = u.id) ";
+					LEFT JOIN %s AS ni ON (n.id = ni.news_id)
+					LEFT JOIN %s AS c ON (n.category_id = c.id)
+					LEFT JOIN %s AS u ON (n.author_id = u.id) ";
 
 			if (!empty($language)) {
 				$sql .= "WHERE ni.language = :language
@@ -61,7 +75,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 				$sql .= "LIMIT :start, :limit";
 			}
 
-			$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::USERS);
+			$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::CATEGORIES, self::USERS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':start', $start, PDO::PARAM_INT);
 			$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
@@ -79,12 +93,16 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 			}
 			
 			foreach ($result as $n) {
-				$t = $this->getContext()->getModel('User', 'User', array($n))->toArray();
+				$t = array(
+					'username'		=> $n['username'],
+					'category_name'	=> $n['category_name']
+				);
+
 				$t = array_merge($t, $this->getContext()->getModel('NewsI18n', 'News', array($n))->toArray());
 				$t = array_merge($t, $this->getContext()->getModel('News', 'News', array($n))->toArray());
 				$news[] = (object) $t;
 			}
-
+			
 			return $news;
 		}
 		catch (PDOException $e) {
@@ -201,14 +219,18 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 			// Update each language
 			foreach ($newsI18n as $ni) {
 				// 2. Insert/Update data into News_I18N Table
-				$sql = "INSERT INTO %s (news_id, title, content, language)
-						VALUES (:news_id, :title, :content, :language)
-						ON DUPLICATE KEY UPDATE title = VALUES(title), content = VALUES(content)";
+				$sql = "INSERT INTO %s (news_id, title, summary, content, language)
+						VALUES (:news_id, :title, :summary, :content, :language)
+						ON DUPLICATE KEY UPDATE 
+							title = VALUES(title),
+							summary = VALUES(summary),
+							content = VALUES(content)";
 				
 				$sql	= sprintf($sql, self::NEWS_I18N);
 				$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 				$stmt->bindValue(':news_id', $ni->getNewsId(), PDO::PARAM_INT);
 				$stmt->bindValue(':title', $ni->getTitle(), PDO::PARAM_STR);
+				$stmt->bindValue(':summary', $ni->getSummary(), PDO::PARAM_STR);
 				$stmt->bindValue(':content', $ni->getContent(), PDO::PARAM_STR);
 				$stmt->bindValue(':language', $ni->getLanguage(), PDO::PARAM_STR);
 				$stmt->execute();

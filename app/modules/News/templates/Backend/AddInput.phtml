@@ -57,6 +57,10 @@
 			</li>
 			<? if ($locale->id == $t['currentLocale']): ?>
 			<li>
+				<label for="xrx-news-image"><?= $tm->_('image', '.news') ?></label>
+				<input type="file" id="xrx-news-image" name="<?= "translation[$locale->lang][title]" ?>" maxlength="200" />
+			</li>
+			<li>
 				<label for="xrx-news-date"><?= $tm->_('date', '.news') ?><em class="xrx-required">*</em></label>
 				<input type="text" id="xrx-news-date" name="date" maxlength="20">
 					<img src="scripts/JalaliJSCalendar/examples/cal.png" id="xrx-news-cal-trigger" title="<?= $tm->_('Date selector', '.news'); ?>" alt="<?= $tm->_('Date selector', '.news'); ?>" />

@@ -50,7 +50,11 @@
 		<ol <?= ( $locale->id == $t['currentLocale'] || isset($t['news'][$locale->lang]) ) ? '' : 'class="xrx-hidden"' ?>>
 			<li>
 				<label for="xrx-news-title-<?= $locale->lang ?>"><?= $tm->_('title', '.news', $locale->id) ?><em class="xrx-required">*</em></label>
-				<input type="text" id="xrx-news-title-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][title]" ?>" value="<?= $t['news'][$locale->lang]->title ?>" maxlength="200" />
+				<input type="text" id="xrx-news-title-<?= $locale->lang ?>" class="xrx-news-title" name="<?= "translation[$locale->lang][title]" ?>" value="<?= $t['news'][$locale->lang]->title ?>" maxlength="200" />
+			</li>
+			<li>
+				<label for="xrx-news-summary-<?= $locale->lang ?>"><?= $tm->_('summary', '.news', $locale->id) ?></label>
+				<textarea id="xrx-news-summary-<?= $locale->lang ?>" class="xrx-news-summary" name="<?= "translation[$locale->lang][summary]" ?>"><?= $t['news'][$locale->lang]->summary ?></textarea>
 			</li>
 			<li>
 				<label for="xrx-news-content-<?= $locale->lang ?>"><?= $tm->_('content', '.news', $locale->id) ?><em class="xrx-required">*</em></label>
