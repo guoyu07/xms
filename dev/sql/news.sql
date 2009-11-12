@@ -10,11 +10,6 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
 -- Database: `self_portal`
 --
@@ -30,12 +25,13 @@ CREATE TABLE IF NOT EXISTS `news` (
   `date` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `published` tinyint(1) NOT NULL DEFAULT '1',
+  `image` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `author_id` bigint(20) unsigned NOT NULL,
   `category_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `author_id` (`author_id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `news`

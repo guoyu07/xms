@@ -41,9 +41,10 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 	 */
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
-		$trans = $rd->getParameter('translation');
-		
-		// Prepare values to send to model
+		$file	= $rd->getFile('image');
+		$trans	= $rd->getParameter('translation');
+
+		// Prepare translatable values to send to model
 		foreach ($trans as $key => $val) {
 			if (count($trans[$key]) > 0) {
 				$trans[$key]['language'] = $key;
@@ -53,9 +54,28 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 			}
 		}
 
+		// Handle image file
+		if ($file) {
+			$dir = AgaviConfig::get('core.pub_dir') . '/modules/news/';
+
+			switch ($file->getType()) {
+				case 'image/jpeg':
+				case 'image/pjpeg':
+					$name = md5(microtime(true)) . '.jpg';
+					break;
+
+				case 'image/gif':
+					$name = md5(microtime(true)) . '.gif';
+					break;
+			}
+
+			$file->move("$dir/$name");
+		}
+
 		$params = array(
 			'date'			=> $rd->getParameter('date'),
 			'published'		=> (boolean) $rd->getParameter('published'),
+			'image'			=> $name,
 			'author_id'		=> $this->getContext()->getUser()->getAttribute('userId'),
 			'category_id'	=> $rd->getParameter('category'),
 			'translations'	=> $trans

@@ -69,6 +69,24 @@
 			</validator>
 
 
+			<!-- Image -->
+			<validator class="imagefile">
+				<arguments>
+					<argument>image</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="format">gif jpeg</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid image.</error>
+					<error for="no_image">Uploaded file is not an image.</error>
+					<error for="format">Image file format is invalid.</error>
+				</errors>
+			</validator>
+
+
 			<!-- Date -->
 			<validator class="datetime">
 				<arguments>

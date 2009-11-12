@@ -22,7 +22,7 @@
 
 
 
-<form action="<?= $ro->gen(null); ?>" method="post">
+<form action="<?= $ro->gen(null); ?>" method="post" enctype="multipart/form-data">
 	<?php foreach ($t['locales'] as $locale): ?>
 	<fieldset dir="<?= $locale->dir ?>">
 		<legend>
@@ -58,7 +58,7 @@
 			<? if ($locale->id == $t['currentLocale']): ?>
 			<li>
 				<label for="xrx-news-image"><?= $tm->_('image', '.news') ?></label>
-				<input type="file" id="xrx-news-image" name="<?= "translation[$locale->lang][title]" ?>" maxlength="200" />
+				<input type="file" id="xrx-news-image" name="image" />
 			</li>
 			<li>
 				<label for="xrx-news-date"><?= $tm->_('date', '.news') ?><em class="xrx-required">*</em></label>

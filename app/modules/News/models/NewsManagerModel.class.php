@@ -126,13 +126,14 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 
 
 			// 1. Insert data into News Table
-			$sql = "INSERT INTO %s (date, published, author_id, category_id)
-					VALUES(:date, :published, :author_id, :category_id)";
+			$sql = "INSERT INTO %s (date, published, image, author_id, category_id)
+					VALUES(:date, :published, :image, :author_id, :category_id)";
 
 			$sql	= sprintf($sql, self::NEWS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':date', $news->getDate(), PDO::PARAM_STR);
 			$stmt->bindValue(':published', $news->getPublished(), PDO::PARAM_BOOL);
+			$stmt->bindValue(':image', $news->getImage(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_id', $news->getAuthorId(), PDO::PARAM_INT);
 			$stmt->bindValue(':category_id', $news->getCategoryId(), PDO::PARAM_INT);
 			$stmt->execute();

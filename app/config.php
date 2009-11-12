@@ -52,6 +52,6 @@ AgaviConfig::set('core.app_dir', dirname(__FILE__));
 // |  - core.module_dir   (defaults to "<core.app_dir>/modules")               |
 // |  - core.template_dir (defaults to "<core.app_dir>/templates")             |
 // +---------------------------------------------------------------------------+
-AgaviConfig::set('core.module_dir', AgaviConfig::get('core.app_dir') . DIRECTORY_SEPARATOR . 'modules');
+AgaviConfig::set('core.pub_dir', realpath(dirname(__FILE__) . '/../pub'));
 
 ?>

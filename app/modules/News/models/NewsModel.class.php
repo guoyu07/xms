@@ -6,6 +6,7 @@ class News_NewsModel extends XRXNewsBaseModel
 	private $date;
 	private $modified;
 	private $published;
+	private $image;
 	private $author_id;
 	private $category_id;
 
@@ -58,6 +59,16 @@ class News_NewsModel extends XRXNewsBaseModel
 		$this->published = $published;
 	}
 
+	public function getImage()
+	{
+		return $this->image;
+	}
+
+	public function setImage($image)
+	{
+		$this->image = $image;
+	}
+
 	public function getAuthorId()
 	{
 		return $this->author_id;
@@ -84,6 +95,7 @@ class News_NewsModel extends XRXNewsBaseModel
 		$this->setDate($data['date']);
 		$this->setModified($data['modified']);
 		$this->setPublished($data['published']);
+		$this->setImage($data['image']);
 		$this->setAuthorId($data['author_id']);
 		$this->setCategoryId($data['category_id']);
 	}
@@ -95,6 +107,7 @@ class News_NewsModel extends XRXNewsBaseModel
 		$data['date']			= $this->getDate();
 		$data['modified']		= $this->getModified();
 		$data['published']		= $this->getPublished();
+		$data['image']			= $this->getImage();
 		$data['author_id']		= $this->getAuthorId();
 		$data['category_id']	= $this->getCategoryId();
 
