@@ -81,7 +81,7 @@ class Category_CategoryManagerModel extends XRXCategoryBaseModel
 	}
 
 
-	// Returns Assocaited Modules
+	// Returns all categories with their Assocaited Modules
 	public function retrieveAllWithAssociates($root = null)
 	{
 		// Return top level root node?
@@ -196,6 +196,44 @@ class Category_CategoryManagerModel extends XRXCategoryBaseModel
 		catch (PDOException $e) {
 			throw new AgaviDatabaseException($e->getMessage());
 		}
+	}
+
+
+	// Find all modules associated with specific category id
+	public function retrieveModulesAssociatedWith($id)
+	{
+		if (empty ($id)) {
+			return null;
+		}
+
+		// If wanna fetch multiple ids relations
+		if (is_array ($id)) {
+			$id = "'" . implode("','", $id) . "'";
+		}
+		
+		try {
+			$sql = "SELECT DISTINCT
+						m.*
+					FROM %s AS m
+					LEFT JOIN %s AS cm ON(m.id = cm.module_id)
+					WHERE cm.category_id IN (%s)";
+
+			$sql	= sprintf($sql, self::MODULES, self::CATEGORY_MODULE, $id);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+
+		// No result?
+		if (! $result) {
+			return null;
+		}
+
+		return $result;
 	}
 
 

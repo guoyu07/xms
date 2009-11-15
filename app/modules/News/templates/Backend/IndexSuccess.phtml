@@ -43,6 +43,7 @@
 			<tr class="xrx-<?= $t['_align']; ?>-text">
 				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
 				<th class="xrx-title-column"><?= $tm->_('title', '.news') ?></th>
+				<th><?= $tm->_('category', '.news') ?></th>
 				<th><?= $tm->_('date', '.news') ?></th>
 				<th><?= $tm->_('author', '.news') ?></th>
 				<th><?= $tm->_('published', '.news') ?></th>
@@ -52,6 +53,7 @@
 			<tr class="xrx-<?= $t['_align']; ?>-text">
 				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
 				<th class="xrx-title-column"><?= $tm->_('title', '.news') ?></th>
+				<th><?= $tm->_('category', '.news') ?></th>
 				<th><?= $tm->_('date', '.news') ?></th>
 				<th><?= $tm->_('author', '.news') ?></th>
 				<th><?= $tm->_('published', '.news') ?></th>
@@ -61,22 +63,18 @@
 		<? if ( count ($t['news']) > 0 ): ?>
 			<? foreach ($t['news'] as $news): ?>
 			<tr title="<?= strip_tags($news->content); ?>">
-				<td class="xrx-check-column">
-					<input type="checkbox" name="id[]" value="<?= $news->id ?>" />
-				</td>
+				<td class="xrx-check-column"><input type="checkbox" name="id[]" value="<?= $news->id ?>" /></td>
 				<td class="xrx-title-column">
 					<a href="<?= $ro->gen('default', array('path'=>'admin/news/edit', 'id'=>$news->id)) ?>"
 					   title="<?= sprintf($tm->_('edit \'%s\'', '.news'), $news->title) ?>"><?= $news->title ?></a>
 				</td>
 				<td>
-					<?= $news->date ?>
+					<a href="<?= $ro->gen('default', array('path'=>'admin/category/edit', 'id'=>$news->category_id)) ?>"
+					   title="<?= sprintf($tm->_('edit \'%s\'', '.news'), $news->category_name) ?>"><?= $news->category_name ?></a>
 				</td>
-				<td>
-					<a href="<?= $ro->gen('default', array('path'=>'user/edit', 'id'=>$news->author_id)) ?>"><?= $news->username ?></a>
-				</td>
-				<td>
-					<?= $news->published ? $tm->_('yes', '.news') : $tm->_('no', '.news'); ?>
-				</td>
+				<td><?= $news->date ?></td>
+				<td><a href="<?= $ro->gen('default', array('path'=>'user/edit', 'id'=>$news->author_id)) ?>"><?= $news->username ?></a></td>
+				<td><?= $news->published ? $tm->_('yes', '.news') : $tm->_('no', '.news'); ?></td>
 			</tr>
 			<? endforeach; ?>
 		<? else: ?>

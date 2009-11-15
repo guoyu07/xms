@@ -17,8 +17,17 @@ class News_Frontend_ViewAction extends XRXNewsFrontendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
+		$news = $rd->getParameter('news');
+		$lang = $this->getContext()->getTranslationManager()
+					 ->getCurrentLocale()->getLocaleLanguage();
+
+		// If it's not published
+		if (! $news[$lang]->published) {
+			return 'Error';
+		}
+
 		// Set passed news from Validator to view
-		$this->setAttributeByRef('news', $rd->getParameter('news'));
+		$this->setAttributeByRef('news', $news);
 
 		return 'Success';
 	}

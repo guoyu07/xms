@@ -21,7 +21,7 @@ class News_Frontend_IndexAction extends XRXNewsFrontendAction
 		
 		// Get lastest news
 		$news = $this->getContext()->getModel('NewsManager', 'News')
-					 ->retrieveLatest($locale->getLocaleLanguage(), 10);
+					 ->retrieveLatest($locale->getLocaleLanguage(), 10, 0, true);
 		
 		// Pass to view
 		$this->setAttributeByRef('news', $news);

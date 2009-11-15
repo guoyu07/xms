@@ -8,8 +8,14 @@
 		<autoload name="XRXNewsBackendView">%core.module_dir%/News/lib/view/XRXNewsBackendView.class.php</autoload>
 		<autoload name="XRXNewsFrontendView">%core.module_dir%/News/lib/view/XRXNewsFrontendView.class.php</autoload>
 
+		<!-- Interfaces -->
+		<autoload name="XRXICategoryModel">%core.lib_dir%/model/XRXICategoryModel.interface.php</autoload>
+
 		<!-- Validators -->
 		<autoload name="News_GenuineIdValidator">%core.module_dir%/News/lib/validator/GenuineIdValidator.class.php</autoload>
+
+		<!-- Image Manipulation Library -->
+		<autoload name="WideImage">%core.app_dir%/../libs/WideImage/WideImage.php</autoload>
 		
 	</ae:configuration>
 </ae:configurations>

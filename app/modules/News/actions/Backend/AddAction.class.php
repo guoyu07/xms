@@ -56,26 +56,34 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 
 		// Handle image file
 		if ($file) {
-			$dir = AgaviConfig::get('core.pub_dir') . '/modules/news/';
+			$dir = AgaviConfig::get('core.upload_dir') . '/news/';
 
 			switch ($file->getType()) {
 				case 'image/jpeg':
 				case 'image/pjpeg':
-					$name = md5(microtime(true)) . '.jpg';
+					$name	= md5(microtime(true));
+					$ext	= '.jpg';
 					break;
 
 				case 'image/gif':
-					$name = md5(microtime(true)) . '.gif';
+					$name	= md5(microtime(true));
+					$ext	= '.gif';
 					break;
 			}
 
-			$file->move("$dir/$name");
+			// Save image on disk
+			$fname	= "$dir/$name$ext";
+			$file->move($fname);
+
+			// let's make some thumbnails
+			WideImage::load($fname)->resize(40, 40)->saveToFile("$dir/$name" . "_40$ext");
+			WideImage::load($fname)->resize(60, 60)->saveToFile("$dir/$name" . "_60$ext");
 		}
 
 		$params = array(
 			'date'			=> $rd->getParameter('date'),
 			'published'		=> (boolean) $rd->getParameter('published'),
-			'image'			=> $name,
+			'image'			=> $name . $ext,
 			'author_id'		=> $this->getContext()->getUser()->getAttribute('userId'),
 			'category_id'	=> $rd->getParameter('category'),
 			'translations'	=> $trans

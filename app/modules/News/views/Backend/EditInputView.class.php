@@ -70,6 +70,11 @@ class News_Backend_EditInputView extends XRXNewsBackendView
 
 		$this->setAttribute('currentLocale', $current);
 		$this->setAttribute('locales', $availableLocales);
+		
+		
+		if (isset ($news[$lang]->image)) {
+			$news[$lang]->image = str_replace('.', '_40.', $news[$lang]->image);
+		}
 
 
 

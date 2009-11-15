@@ -20,9 +20,31 @@ class Category_Backend_DeleteAction extends XRXCategoryBackendAction
 		$ids = $rd->getParameter('id');
 		$catManager = $this->getContext()->getModel('CategoryManager', 'Category');
 
+		// Find modules has been linked to these category ids.
+		$modules = $catManager->retrieveModulesAssociatedWith($ids);
+
 		foreach ($ids as $id) {
+			// Thanks to InnoDB, there's no need to worry about deleting
+			// relations in category-module table.
 			$catManager->deleteById($id);
 		}
+
+		
+		// InnoDB sets the category_id's value to null, so we just
+		// need to loop through each related modules and update the
+		// category_id to "Uncategorized" with id of 1.
+		foreach ($modules as $m) {
+			$moduleName = ucfirst(strtolower($m->name));
+			$model = $this->getContext()->getModel("{$moduleName}Manager", $moduleName);
+
+			if ($model instanceof XRXICategoryModel) {
+				$model->resetCategoryId();
+			}
+			else {
+				throw new AgaviException("Class {$moduleName}Manager is not instance of XRXICategoryModel");
+			}
+		}
+
 		
 		return "Success";
 	}

@@ -18,6 +18,12 @@ if ( isset($t['translations']) ) {
 <small><?= sprintf($tm->_('written by %s in %s'), $t['news']->username, $t['news']->category_name) ?></small><br />
 <small><?= $tm->_d($t['news']->date) ?></small>
 
-<div class="xrx-news-entry"><?= $t['news']->content ?></div>
+<div class="xrx-news-entry">
+	<? if ($t['news']->image): ?>
+		<img class="xrx-<?= $t['_align'] ?>" src="/uploads/news/<?= $t['news']->image ?>" />
+	<? endif; ?>
+	<p><strong><?= $t['news']->summary ?></strong></p>
+	<?= $t['news']->content ?>
+</div>
 
 <small><?= sprintf('last updated on %s', $tm->_d($t['news']->modified)) ?></small>

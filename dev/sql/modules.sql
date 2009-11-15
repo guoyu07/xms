@@ -9,14 +9,8 @@
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
--- Database: `self_portal`
+-- Database: `xrx`
 --
 
 -- --------------------------------------------------------
@@ -37,12 +31,8 @@ CREATE TABLE IF NOT EXISTS `modules` (
 --
 
 INSERT INTO `modules` (`id`, `name`, `use_category`) VALUES
-(1, 'Default', 1),
+(1, 'Default', 0),
 (2, 'Widgets', 0),
 (3, 'User', 0),
 (4, 'News', 1),
 (5, 'Category', 0);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

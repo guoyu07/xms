@@ -70,6 +70,14 @@
 			</li>
 			<? if ($locale->id == $t['currentLocale']): ?>
 			<li>
+				<label for="xrx-news-image"><?= $tm->_('image', '.news') ?></label>
+				<? if (empty ($t['news'][$t['_language']]->image)): ?>
+					<input type="file" id="xrx-news-image" name="image" />
+				<? else: ?>
+					<img class="xrx-thumbnail-40" src="/uploads/news/<?= $t['news'][$t['_language']]->image ?>" />
+				<? endif; ?>
+			</li>
+			<li>
 				<label for="xrx-news-date"><?= $tm->_('date', '.news') ?><em class="xrx-required">*</em></label>
 				<input type="text" id="xrx-news-date" name="date" value="<?= $t['news'][$locale->lang]->date ?>" maxlength="20">
 					<img src="scripts/JalaliJSCalendar/examples/cal.png" id="xrx-news-cal-trigger" title="<?= $tm->_('Date selector', '.news'); ?>" alt="<?= $tm->_('Date selector', '.news'); ?>" />

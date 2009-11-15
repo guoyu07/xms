@@ -32,7 +32,6 @@ CREATE TABLE IF NOT EXISTS `category_module` (
 --
 
 INSERT INTO `category_module` (`category_id`, `module_id`) VALUES
-(1, 1),
 (1, 4);
 
 --

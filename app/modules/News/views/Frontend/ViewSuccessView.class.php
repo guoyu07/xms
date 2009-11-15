@@ -29,7 +29,7 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 		if (count($translations) > 0) {
 			$this->setAttribute('translations', $translations);
 		}
-
+		
 		// Set title
 		$this->setAttribute('_title', sprintf($this->tm->_('view news: %s', '.news'), $news->title));
 	}

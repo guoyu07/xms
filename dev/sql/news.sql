@@ -11,7 +11,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 --
--- Database: `self_portal`
+-- Database: `xrx`
 --
 
 -- --------------------------------------------------------
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `date` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `published` tinyint(1) NOT NULL DEFAULT '1',
-  `image` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
   `author_id` bigint(20) unsigned NOT NULL,
   `category_id` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
@@ -47,4 +47,4 @@ CREATE TABLE IF NOT EXISTS `news` (
 --
 ALTER TABLE `news`
   ADD CONSTRAINT `news_ibfk_3` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `news_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `news_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;

@@ -50,7 +50,6 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 	 */
 	public function onNotMatched(AgaviExecutionContainer $container)
 	{
-		FirePHP::getInstance(true)->log($module, $action);
 		return false;
 	}
 
@@ -97,12 +96,20 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 		}
 
 		// Search for extra parameters...
-		$extraParams = '/';
+		$extraParams = '';
 		foreach ($userParameters as $key => $value) {
 			if ($key == 'path' || $key == 'locale')
 				continue;
 			
-			$extraParams .= $key . '/' . $value;
+			if ($key == 'title') {
+				$userParameters['title']->setValueNeedsEncoding(false);
+				
+				$userParameters['title']->setValue(
+					preg_replace('/\W/', '-', strtolower($value->getValue()))
+				);
+			}
+			
+			$extraParams .= "/$key/$value";
 		}
 
 		// ... and append them to url

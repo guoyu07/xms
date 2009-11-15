@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $t['_language']; ?>" lang="<?php echo $t['_language']; ?>" dir="<?php echo $t['_dir']; ?>">
+	<head>
+		<meta http-equiv="Content-Type" content="<?php echo $container->getOutputType()->getParameter('http_headers[Content-Type]', 'text/html; charset=utf-8'); ?>" />
+		<title><?php if(isset($t['_title'])) echo htmlspecialchars($t['_title']) . ' - '; echo AgaviConfig::get('core.app_name'); ?></title>
+		<base href="<?= $ro->getBaseHref(); ?>" />
+
+		<!-- Cascading Style Sheets -->
+		<link rel="stylesheet" type="text/css" href="templates/default/styles/reset.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="templates/default/styles/master.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="templates/default/styles/frontend.css" media="screen" />
+
+		<!-- Javascript -->
+		<script type="text/javascript" src="/scripts/jQuery/jquery.js"></script>
+	</head>
+
+	<body>
+
+		<?php echo $slots['header']; ?>
+
+		<div id="xrx-content">
+			<div class="xrx-wrapper">
+				<?php echo $inner; ?>
+			</div>
+		</div>
+
+		<?php echo $slots['footer']; ?>
+
+	</body>
+</html>

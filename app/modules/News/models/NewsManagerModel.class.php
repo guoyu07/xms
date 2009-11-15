@@ -1,6 +1,6 @@
 <?php
 
-class News_NewsManagerModel extends XRXNewsBaseModel
+class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryModel
 {
 	public function retrieveById($id, $language = null)
 	{
@@ -54,7 +54,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 	}
 
 
-	public function retrieveLatest($language = null, $limit = 10, $start = 0)
+	public function retrieveLatest($language = null, $limit = 10, $start = 0, $published = null)
 	{
 		try {
 			$sql = "SELECT
@@ -67,22 +67,31 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 					LEFT JOIN %s AS c ON (n.category_id = c.id)
 					LEFT JOIN %s AS u ON (n.author_id = u.id) ";
 
-			if (!empty($language)) {
-				$sql .= "WHERE ni.language = :language
-						LIMIT :start, :limit";
+
+			if (isset ($language) && isset ($published)) {
+				$sql.= "WHERE ni.language = :language AND n.published = :published ";
 			}
-			else {
-				$sql .= "LIMIT :start, :limit";
+			elseif (isset ($language) XOR isset ($published)) {
+				$sql .= "WHERE ";
+				$sql .= (isset ($language)) ? "ni.language = :language " : "n.published = :published";
 			}
+			
+			$sql .= "LIMIT :start, :limit";
+
 
 			$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::CATEGORIES, self::USERS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':start', $start, PDO::PARAM_INT);
 			$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
 
-			if (! empty($language)) {
+			if (isset ($language)) {
 				$stmt->bindValue(':language', $language, PDO::PARAM_STR);
 			}
+
+			if (isset ($published)) {
+				$stmt->bindValue(':published', $published, PDO::PARAM_BOOL);
+			}
+
 
 			$stmt->execute();
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -331,6 +340,26 @@ class News_NewsManagerModel extends XRXNewsBaseModel
 			$sql		= sprintf($sql, self::NEWS_I18N, $language);
 			$stmt		= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+			$stmt->execute();
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+
+		return true;
+	}
+
+
+	// Implements XRXICategoryModel.interface.php
+	public function resetCategoryId()
+	{
+		try {
+			$sql = "UPDATE %s AS n
+					SET n.category_id = 1
+					WHERE n.category_id IS NULL";
+
+			$sql	= sprintf($sql, self::NEWS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->execute();
 		}
 		catch (PDOException $e) {
