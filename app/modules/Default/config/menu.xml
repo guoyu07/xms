@@ -4,7 +4,7 @@
 
 		<members>
 			<index>1</index>
-			<title>Dashboard</title>
+			<title>dashboard</title>
 			<url>admin</url>
 			<icon>/images/default/dashboard.png</icon>
 		</members>

@@ -6,7 +6,7 @@ class Default_Frontend_Error404SuccessView extends XRXDefaultFrontendView
 	{
 		$this->setupHtml($rd);
 		
-		$this->setAttribute('_title', $this->tm->_('404 Not Found', '.default'));
+		$this->setAttribute('_title', $this->tm->_('404 not found', '.default'));
 		
 		$this->getResponse()->setHttpStatusCode('404');
 	}

@@ -4,17 +4,17 @@
 
 		<members>
 			<index>2</index>
-			<title>News</title>
+			<title>news</title>
 			<url>admin/news</url>
 			<icon>/images/news/news-16.png</icon>
 
 			<member>
-				<title>Manage</title>
+				<title>manage</title>
 				<url>admin/news</url>
 			</member>
 
 			<member>
-				<title>Add</title>
+				<title>add</title>
 				<url>admin/news/add</url>
 			</member>
 		</members>

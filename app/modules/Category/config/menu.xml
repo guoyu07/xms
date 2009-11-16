@@ -4,17 +4,17 @@
 
 		<members>
 			<index>3</index>
-			<title>Categories</title>
+			<title>categories</title>
 			<url>admin/category</url>
 			<icon>/images/category/category-16.png</icon>
 
 			<member>
-				<title>Manage</title>
+				<title>manage</title>
 				<url>admin/category</url>
 			</member>
 
 			<member>
-				<title>Add</title>
+				<title>add</title>
 				<url>admin/category/add</url>
 			</member>
 		</members>

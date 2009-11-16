@@ -6,7 +6,7 @@ class Default_Frontend_IndexSuccessView extends XRXDefaultFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', $this->tm->_('Main Page', '.defau;t'));
+		$this->setAttribute('_title', $this->tm->_('main page', '.default'));
 	}
 }
 

@@ -6,7 +6,7 @@ class Default_Frontend_UnavailableSuccessView extends XRXDefaultFrontendView
 	{
 		$this->setupHtml($rd);
 		
-		$this->setAttribute('_title', $this->tm->_('Application Unavailable', '.defau;t'));
+		$this->setAttribute('_title', $this->tm->_('application unavailable', '.default'));
 		
 		$this->getResponse()->setHttpStatusCode('503');
 	}

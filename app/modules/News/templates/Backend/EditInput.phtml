@@ -116,7 +116,7 @@
 			<? else: ?>
 			<? if ($locale->translated): ?>
 			<li>
-				<button type="button" id="xrx-news-delete-<?= $locale->lang ?>" class="xrx-news-delete"><?= sprintf($tm->_('delete %s translation', '.news'), $locale->desc) ?></button>
+				<button type="button" id="xrx-news-delete-<?= $locale->lang ?>" class="xrx-news-delete"><?= sprintf($tm->_('delete %s translation', '.news', $locale->lang), $locale->desc) ?></button>
 			</li>
 			<? endif; ?>
 			<? endif; ?>

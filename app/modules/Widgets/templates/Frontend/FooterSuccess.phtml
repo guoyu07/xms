@@ -2,13 +2,13 @@
 	<div class="xrx-wrapper">
 		<? if ($us->isAuthenticated()): ?>
 		<div class="xrx-<?= $t['_xalign'] ?>">
-			<?= $tm->_('You are logged in.', '.widgets'); ?>
+			<?= $tm->_('you are logged in.', '.widgets'); ?>
 				<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>">
-					<?= $tm->_('Log Out', '.widgets'); ?>
+					<?= $tm->_('log out', '.widgets'); ?>
 				</a>
 		</div>
 		<? endif; ?>
 		
-		<p>Copyright © 2009-2010 XRX Content Management System</p>
+		<p><?= $tm->_('Copyright © 2009-2010 XRX Content Management System', '.widgets') ?></p>
 	</div>
 </div>

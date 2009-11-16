@@ -6,10 +6,12 @@ class News_Frontend_IndexSuccessView extends XRXNewsFrontendView
 	{
 		$this->setupHtml($rd);
 
-		// If news has an image, pass the 60x60 pixel thumbnail to template
-		foreach ($this->getAttribute('news') as $n) {
-			if (isset ($n->image)) {
-				$n->image = str_replace('.', '_60.', $n->image);
+		if ($this->getAttribute('news')) {
+			foreach ($this->getAttribute('news') as $n) {
+				// If news has an image, pass the 60x60 pixel thumbnail to template
+				if (isset ($n->image)) {
+					$n->image = str_replace('.', '_60.', $n->image);
+				}
 			}
 		}
 

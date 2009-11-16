@@ -6,7 +6,7 @@ class Default_Frontend_SecureSuccessView extends XRXDefaultFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', $this->tm->_('Access Denied', '.defau;t'));
+		$this->setAttribute('_title', $this->tm->_('access denied', '.default'));
 		
 		$this->getResponse()->setHttpStatusCode('403');
 	}

@@ -20,13 +20,13 @@
 		<li>
 			<h4>
 				<img class="xrx-icon-16" src="<?= $attribute['icon'] ?>" alt="<?= $attribute['title'] ?>" />
-				<a href="<?= $ro->gen('default', array('path' => $attribute['url'])) ?>"><?= $attribute['title'] ?></a>
+				<a href="<?= $ro->gen('default', array('path' => $attribute['url'])) ?>"><?= $tm->_($attribute['title'], '.widgets') ?></a>
 			</h4>
 			<? if ( !empty ($attribute['items'])): ?>
 			<ul>
 				<? foreach ($attribute['items'] as $menu): ?>
 				<li>
-					<a href="<?= $ro->gen('default', array('path' => $menu['url'])) ?>"><?= $menu['title'] ?></a>
+					<a href="<?= $ro->gen('default', array('path' => $menu['url'])) ?>"><?= $tm->_($menu['title'], '.widgets') ?></a>
 				</li>
 				<? endforeach ?>
 			</ul>

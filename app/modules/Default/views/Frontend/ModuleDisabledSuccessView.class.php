@@ -6,7 +6,7 @@ class Default_Frontend_ModuleDisabledSuccessView extends XRXDefaultFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', $this->tm->_('Module Disabled', '.defau;t'));
+		$this->setAttribute('_title', $this->tm->_('module disabled', '.default'));
 		
 		$this->getResponse()->setHttpStatusCode('503');
 	}
