@@ -20,7 +20,7 @@
 			<route name="admin" pattern="^/admin$" module="%actions.default_module%" action="Backend.Index" />
 
 			<!-- Default Routing -->
-			<route name="default" pattern="^/({path:[a-zA-Z0-9\-_\/=\s]*})$" imply="true" cut="true">
+			<route name="default" pattern="^/({path:.*})$" imply="true" cut="true">
 				<callbacks>
 					<callback class="XRXDefaultRoutingCallback" />
 				</callbacks>

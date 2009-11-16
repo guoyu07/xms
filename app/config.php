@@ -54,7 +54,7 @@ AgaviConfig::set('core.app_dir', dirname(__FILE__));
 // +---------------------------------------------------------------------------+
 AgaviConfig::set('core.pub_dir', AgaviConfig::get('core.app_dir') . '/../pub');
 
-AgaviConfig::set('core.template_dir', AgaviConfig::get('core.pub_dir') . '/templates/default');
+AgaviConfig::set('core.template_dir', AgaviConfig::get('core.pub_dir') . '/templates/khashayar');
 
 AgaviConfig::set('core.upload_dir', AgaviConfig::get('core.pub_dir') . '/uploads');
 
