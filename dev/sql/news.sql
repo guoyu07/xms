@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `published` tinyint(1) NOT NULL DEFAULT '1',
   `image` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
   `author_id` bigint(20) unsigned NOT NULL,
-  `category_id` bigint(20) unsigned NOT NULL,
+  `category_id` bigint(20) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `author_id` (`author_id`),
   KEY `category_id` (`category_id`)

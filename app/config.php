@@ -52,7 +52,6 @@ AgaviConfig::set('core.app_dir', dirname(__FILE__));
 // |  - core.module_dir   (defaults to "<core.app_dir>/modules")               |
 // |  - core.template_dir (defaults to "<core.app_dir>/templates")             |
 // +---------------------------------------------------------------------------+
-AgaviConfig::set('core.pub_dir', AgaviConfig::get('core.app_dir') . '/../pub');
 
 AgaviConfig::set('core.template_dir', AgaviConfig::get('core.pub_dir') . '/templates/default');
 

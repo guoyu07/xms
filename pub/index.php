@@ -6,6 +6,11 @@
 require('C:\xampp\php\pear\agavi/agavi.php');
 
 // +---------------------------------------------------------------------------+
+// | An absolute filesystem path to your public directory.                     |
+// +---------------------------------------------------------------------------+
+AgaviConfig::set('core.pub_dir', dirname(__FILE__));
+
+// +---------------------------------------------------------------------------+
 // | An absolute filesystem path to our app/config.php script.                 |
 // +---------------------------------------------------------------------------+
 require('../app/config.php');
