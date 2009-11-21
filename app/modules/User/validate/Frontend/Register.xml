@@ -28,6 +28,7 @@
 				</errors>
 			</validator>
 
+
 			<!-- Password -->
 			<validator class="string" provides="password_required">
 				<arguments>
@@ -46,6 +47,7 @@
 					<error for="max">The password must be shorter than 64 characters.</error>
 				</errors>
 			</validator>
+
 
 			<!-- Password Confirmation -->
 			<validator class="string" provides="confirm_required">
@@ -66,6 +68,7 @@
 				</errors>
 			</validator>
 
+
 			<!-- Password & Password Confirmation Should Be The Same -->
 			<validator class="equals" provides="password_matches" depends="password_required confirm_required">
 				<arguments>
@@ -80,6 +83,7 @@
 					<error>Password confirmation doesn't match Password.</error>
 				</errors>
 			</validator>
+
 
 			<!-- E-Mail -->
 			<validator class="email" provides="email_required">
@@ -99,6 +103,7 @@
 					<error for="max">The email must be shorter than 100 characters.</error>
 				</errors>
 			</validator>
+
 
 			<!-- Username & Email Uniqness Validation Against Database  -->
 			<validator class="User_RegistrationValidator" depends="username_required email_required password_matches">

@@ -1,6 +1,6 @@
 <?php
 
-class Comment_Backend_EditSuccessView extends XRXCommentBaseView
+class Comment_Backend_EditSuccessView extends XRXCommentBackendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{

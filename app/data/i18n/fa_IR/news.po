@@ -7,66 +7,196 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-06 17:29+0430\n"
-"PO-Revision-Date: 2009-09-06 17:40+0330\n"
-"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
+"POT-Creation-Date: 2009-11-17 01:30+0330\n"
+"PO-Revision-Date: 2009-11-17 01:51+0330\n"
+"Last-Translator: Khashayar <me@khashayar.me>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:15
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/IndexSuccess.phtml:6
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/ViewSuccess.phtml:18
+#, php-format
+msgid "written by %s in %s"
+msgstr "نوشته شده توسط %s در %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/IndexSuccess.phtml:19
+msgid "there's no news available for current language."
+msgstr "هیچ خبری برای زبان جاری وجود ندارد."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/ViewSuccess.phtml:12
+#, php-format
+msgid "this news also available in %s"
+msgstr "این خبر به زبان %s نیز وجود دارد."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:30
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/AddInputView.class.php:52
 msgid "add news"
 msgstr "خبر جدید"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:19
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:6
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:14
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:34
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:47
+#, php-format
+msgid "translate to %s"
+msgstr "ترجمه به %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:39
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:52
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:45
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:55
 msgid "title"
 msgstr "عنوان"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:25
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:43
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:56
+msgid "summary"
+msgstr "خلاصه"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:47
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:60
 msgid "content"
 msgstr "متن"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:37
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:7
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:15
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:60
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:73
+msgid "image"
+msgstr "تصویر"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:64
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:81
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:47
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:57
 msgid "date"
 msgstr "تاریخ"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:40
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:66
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:83
 msgid "Date selector"
 msgstr "انتخاب تاریخ"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:55
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:9
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:17
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:81
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:98
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:46
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:56
+msgid "category"
+msgstr "دسته"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:91
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:108
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:49
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:59
 msgid "published"
 msgstr "انتشار یابد؟"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:59
-msgid "submit"
-msgstr "ارسال"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddSuccess.phtml:1
-msgid "news has been successfully added"
-msgstr "خبر با موفقیت اضافه گردید"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:1
-msgid "news list"
-msgstr "ليست اخبار"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:8
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:16
-msgid "author"
-msgstr "نویسنده"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:28
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:94
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:111
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:77
 msgid "yes"
 msgstr "بله"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:28
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:97
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:114
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:77
 msgid "no"
 msgstr "خیر"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:104
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:128
+msgid "submit"
+msgstr "ارسال"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:105
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:130
+msgid "cancel"
+msgstr "انصراف"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddSuccess.phtml:1
+msgid "news has been successfully added"
+msgstr "خبر با موفقیت اضافه گردید"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/DeleteSuccess.phtml:1
+msgid "news has been successfully deleted"
+msgstr "خبر با موفقیت خذف شد."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:26
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:27
+msgid "are you sure?"
+msgstr "اطمینان دارید؟"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:43
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditInputView.class.php:82
+msgid "edit news"
+msgstr "ویرایش خبر"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:119
+#, php-format
+msgid "delete %s translation"
+msgstr "حذف ترجمه %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditSuccess.phtml:1
+msgid "news has been successfully updated"
+msgstr "خبر با موفقیت به روز گردید."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:21
+msgid "please select a news."
+msgstr "لطفا یک خبر را انتخاب کنید."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:37
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/IndexSuccessView.class.php:9
+msgid "news list"
+msgstr "لیست اخبار"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:48
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:58
+msgid "author"
+msgstr "نویسنده"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:69
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:73
+#, php-format
+msgid "edit '%s'"
+msgstr "ویرایش '%s'"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:82
+msgid "there's no news."
+msgstr "هیچ خبری وجود ندارد."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:88
+msgid "delete"
+msgstr "حذف"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Frontend/IndexSuccessView.class.php:18
+msgid "lastest news"
+msgstr "آخرین اخبار"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Frontend/ViewSuccessView.class.php:34
+#, php-format
+msgid "view news: %s"
+msgstr "نمایش خبر: %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/AddSuccessView.class.php:11
+msgid "news added successfully"
+msgstr "خبر با موفقیت اضافه شد."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/DeleteErrorView.class.php:14
+msgid "news delete error"
+msgstr "خطا در حذف خبر"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/DeleteSuccessView.class.php:11
+msgid "news deleted successfully"
+msgstr "خبر با موفقیت اضافه گردید."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/DeleteSuccessView.class.php:11
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditSuccessView.class.php:11
+msgid ".news"
+msgstr ""
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditErrorView.class.php:14
+msgid "news edit error"
+msgstr "خطا در ویرایش خبر"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditSuccessView.class.php:11
+msgid "news updated successfully"
+msgstr "خبر با موفقیت به روز شد."
 

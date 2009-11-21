@@ -2,9 +2,11 @@
 <ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
 	<ae:configuration>
 		
-		<autoload name="XRXCommentBaseAction">%core.module_dir%/Comment/lib/action/XRXCommentBaseAction.class.php</autoload>
+		<autoload name="XRXCommentBackendAction">%core.module_dir%/Comment/lib/action/XRXCommentBackendAction.class.php</autoload>
+		<autoload name="XRXCommentFrontendAction">%core.module_dir%/Comment/lib/action/XRXCommentFrontendAction.class.php</autoload>
 		<autoload name="XRXCommentBaseModel">%core.module_dir%/Comment/lib/model/XRXCommentBaseModel.class.php</autoload>
-		<autoload name="XRXCommentBaseView">%core.module_dir%/Comment/lib/view/XRXCommentBaseView.class.php</autoload>
+		<autoload name="XRXCommentBackendView">%core.module_dir%/Comment/lib/view/XRXCommentBackendView.class.php</autoload>
+		<autoload name="XRXCommentFrontendView">%core.module_dir%/Comment/lib/view/XRXCommentFrontendView.class.php</autoload>
 		
 	</ae:configuration>
 </ae:configurations>

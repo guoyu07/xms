@@ -29,6 +29,28 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 		if (count($translations) > 0) {
 			$this->setAttribute('translations', $translations);
 		}
+
+
+
+		// Create a Slot to view the comments
+		$layer = $this->getLayer('content');
+		$layer->setSlot('comments',
+			$this->createSlotContainer('Comment', 'Frontend.List', array(
+				'module_id'	=> AgaviConfig::get('modules.news.id'),
+				'owner_id'	=> $news->id
+			))
+		);
+
+		// Create a Slot to view the comments' form
+		$layer = $this->getLayer('content');
+		$layer->setSlot('comment-form',
+			$this->createSlotContainer('Comment', 'Frontend.Add', array(
+				'module_id'	=> AgaviConfig::get('modules.news.id'),
+				'owner_id'	=> $news->id
+			))
+		);
+
+
 		
 		// Set title
 		$this->setAttribute('_title', sprintf($this->tm->_('view news: %s', '.news'), $news->title));

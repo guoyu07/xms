@@ -1,6 +1,6 @@
 <?php
 
-class Comment_Backend_EditErrorView extends XRXCommentBaseView
+class Comment_Backend_EditErrorView extends XRXCommentBackendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{

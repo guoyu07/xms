@@ -1,3 +1,13 @@
+/* General */
+
+legend {
+	padding-top: 15px;
+	padding-bottom: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+
 /* Header */
 
 #xrx-header {
@@ -81,4 +91,19 @@
 
 .xrx-news-toolbox {
 	padding: 10px 0px;
+}
+
+
+
+/* Comments */
+
+#xrx-comments-list {
+	margin: 20px 0px;
+	border-top: 5px solid #999;
+}
+
+#xrx-comments-list li {
+	margin: 10px 0;
+	padding: 10px 0;
+	border-bottom: 1px dotted #CCC;
 }

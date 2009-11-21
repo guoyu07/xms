@@ -7,66 +7,196 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-06 17:29+0430\n"
-"PO-Revision-Date: 2009-09-06 17:38+0330\n"
-"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
+"POT-Creation-Date: 2009-11-17 01:30+0330\n"
+"PO-Revision-Date: 2009-11-17 02:35+0330\n"
+"Last-Translator: Khashayar <me@khashayar.me>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:15
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/IndexSuccess.phtml:6
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/ViewSuccess.phtml:18
+#, php-format
+msgid "written by %s in %s"
+msgstr "Written by %s in %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/IndexSuccess.phtml:19
+msgid "there's no news available for current language."
+msgstr "There's no news available for current language."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Frontend/ViewSuccess.phtml:12
+#, php-format
+msgid "this news also available in %s"
+msgstr "This news also available in %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:30
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/AddInputView.class.php:52
 msgid "add news"
 msgstr "Add News"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:19
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:6
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:14
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:34
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:47
+#, php-format
+msgid "translate to %s"
+msgstr "Translate to %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:39
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:52
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:45
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:55
 msgid "title"
 msgstr "Title"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:25
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:43
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:56
+msgid "summary"
+msgstr "Summary"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:47
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:60
 msgid "content"
 msgstr "Content"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:37
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:7
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:15
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:60
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:73
+msgid "image"
+msgstr "Image"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:64
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:81
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:47
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:57
 msgid "date"
 msgstr "Date"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:40
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:66
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:83
 msgid "Date selector"
 msgstr "Date Selector"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:55
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:9
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:17
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:81
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:98
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:46
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:56
+msgid "category"
+msgstr "Category"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:91
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:108
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:49
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:59
 msgid "published"
 msgstr "Published"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddInput.phtml:59
-msgid "submit"
-msgstr "Submit"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/AddSuccess.phtml:1
-msgid "news has been successfully added"
-msgstr "News has been successfully added"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:1
-msgid "news list"
-msgstr "News List"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:8
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:16
-msgid "author"
-msgstr "Author"
-
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:28
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:94
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:111
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:77
 msgid "yes"
 msgstr "Yes"
 
-#: c:/xampp/htdocs/Portal/app/modules/News/templates/Backend/IndexSuccess.phtml:28
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:97
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:114
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:77
 msgid "no"
 msgstr "No"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:104
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:128
+msgid "submit"
+msgstr "Submit"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddInput.phtml:105
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:130
+msgid "cancel"
+msgstr "Cancel"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/AddSuccess.phtml:1
+msgid "news has been successfully added"
+msgstr "News has been successfully added."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/DeleteSuccess.phtml:1
+msgid "news has been successfully deleted"
+msgstr "News has been successfully deleted."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:26
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:27
+msgid "are you sure?"
+msgstr "Are you sure?"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:43
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditInputView.class.php:82
+msgid "edit news"
+msgstr "Edit News"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:119
+#, php-format
+msgid "delete %s translation"
+msgstr "Delete %s Translation"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditSuccess.phtml:1
+msgid "news has been successfully updated"
+msgstr "News has been successfully updated."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:21
+msgid "please select a news."
+msgstr "Please select a news."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:37
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/IndexSuccessView.class.php:9
+msgid "news list"
+msgstr "News list"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:48
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:58
+msgid "author"
+msgstr "Author"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:69
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:73
+#, php-format
+msgid "edit '%s'"
+msgstr "Edit '%s'"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:82
+msgid "there's no news."
+msgstr "There's no news."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:88
+msgid "delete"
+msgstr "Delete"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Frontend/IndexSuccessView.class.php:18
+msgid "lastest news"
+msgstr "Latest News"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Frontend/ViewSuccessView.class.php:34
+#, php-format
+msgid "view news: %s"
+msgstr "View News: %s"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/AddSuccessView.class.php:11
+msgid "news added successfully"
+msgstr "News added successfully."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/DeleteErrorView.class.php:14
+msgid "news delete error"
+msgstr "News delete error"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/DeleteSuccessView.class.php:11
+msgid "news deleted successfully"
+msgstr "News deleted successfully."
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/DeleteSuccessView.class.php:11
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditSuccessView.class.php:11
+msgid ".news"
+msgstr ""
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditErrorView.class.php:14
+msgid "news edit error"
+msgstr "News edit error"
+
+#: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/views/Backend/EditSuccessView.class.php:11
+msgid "news updated successfully"
+msgstr "News updated successfully."
 

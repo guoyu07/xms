@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 30, 2009 at 08:19 PM
+-- Generation Time: Nov 21, 2009 at 11:45 PM
 -- Server version: 5.1.37
 -- PHP Version: 5.3.0
 
@@ -23,16 +23,18 @@ CREATE TABLE IF NOT EXISTS `modules` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `use_category` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `use_comment` tinyint(1) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `modules`
 --
 
-INSERT INTO `modules` (`id`, `name`, `use_category`) VALUES
-(1, 'Default', 0),
-(2, 'Widgets', 0),
-(3, 'User', 0),
-(4, 'News', 1),
-(5, 'Category', 0);
+INSERT INTO `modules` (`id`, `name`, `use_category`, `use_comment`) VALUES
+(1, 'Default', 0, 0),
+(2, 'Widgets', 0, 0),
+(3, 'User', 0, 0),
+(4, 'News', 1, 1),
+(5, 'Category', 0, 0),
+(6, 'Comment', 0, 0);

@@ -9,6 +9,8 @@ class XRXBaseModel extends AgaviModel
 
 	const CATEGORY_MODULE	= "category_module";
 
+	const COMMENTS			= "comments";
+
 	const NEWS				= "news";
 
 	const NEWS_I18N			= "news_i18n";

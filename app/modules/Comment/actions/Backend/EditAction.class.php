@@ -1,6 +1,6 @@
 <?php
 
-class Comment_Backend_EditAction extends XRXCommentBaseAction
+class Comment_Backend_EditAction extends XRXCommentBackendAction
 {
 	/**
 	 * Returns the default view if the action does not serve the request

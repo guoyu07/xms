@@ -3,7 +3,7 @@
 // +---------------------------------------------------------------------------+
 // | An absolute filesystem path to the agavi/agavi.php script.                |
 // +---------------------------------------------------------------------------+
-require('C:\xampp\php\pear\agavi/agavi.php');
+require('agavi.php');
 
 // +---------------------------------------------------------------------------+
 // | An absolute filesystem path to your public directory.                     |

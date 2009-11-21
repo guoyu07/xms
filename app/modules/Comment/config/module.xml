@@ -4,16 +4,15 @@
 		
 		<module enabled="true">
 			<settings>
-				<setting name="title">Comment Module</setting>
+				<setting name="id">6</setting>
+				<setting name="title">Comment</setting>
 				<setting name="version">1.0</setting>
-<!--
 				<setting name="authors">
-					<ae:parameter name="joe.cool@peanuts.com">Snoopy</ae:parameter>
+					<ae:parameter name="me@khashayar.me">Khashayar Hajian</ae:parameter>
 				</setting>
-				<setting name="homepage">http://www.agavi.org</setting>
+				<setting name="homepage">http://khashayar.me</setting>
 				<setting name="update_url" />
-				<setting name="description">An example module</setting>
--->
+				<setting name="description">Comment Module</setting>
 			</settings>
 		</module>
 		

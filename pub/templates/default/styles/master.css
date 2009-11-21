@@ -16,14 +16,17 @@ a:hover {
 }
 
 h1 {
+	margin: 20px 0;
 	font-size: 2em;
 }
 
 h2 {
+	margin: 15px 0;
 	font-size: 1.7em;
 }
 
 h3 {
+	margin: 10px 0;
 	font-size: 1.5em;
 }
 
@@ -191,23 +194,6 @@ select {
 	margin: 0;
 	padding: 0;
 	min-width: 205px;
-}
-
-form fieldset {
-	margin: 10px 0;
-	border-style: solid;
-	border-color: #DDD;
-	border-width: 1px 0 0 0;
-	background: transparent url(/images/general/fieldset-bg.png) repeat-x scroll left top;
-}
-
-form legend {
-	padding: 10px;
-	font-weight: bold;
-}
-
-form fieldset legend input[type="checkbox"] {
-	vertical-align: bottom;
 }
 
 form fieldset label {
