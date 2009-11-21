@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<autoload name="XRXCommentBaseAction">%core.module_dir%/Comment/lib/action/XRXCommentBaseAction.class.php</autoload>
+		<autoload name="XRXCommentBaseModel">%core.module_dir%/Comment/lib/model/XRXCommentBaseModel.class.php</autoload>
+		<autoload name="XRXCommentBaseView">%core.module_dir%/Comment/lib/view/XRXCommentBaseView.class.php</autoload>
+		
+	</ae:configuration>
+</ae:configurations>
