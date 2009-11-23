@@ -2,9 +2,9 @@
 
 class Comment_CommentManagerModel extends XRXCommentBaseModel
 {
-	public function retrieveByOwnerId($ownerId, $moduleId, $language = null)
+	public function retrieveByOwnerId($owner_id, $module_id, $language = null)
 	{
-		if (empty ($ownerId) || empty ($moduleId)) {
+		if (empty ($owner_id) || empty ($module_id)) {
 			return null;
 		}
 
@@ -19,8 +19,8 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 
 			$sql	= sprintf($sql, self::COMMENTS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-			$stmt->bindValue(':owner_id', $ownerId, PDO::PARAM_INT);
-			$stmt->bindValue(':module_id', $moduleId, PDO::PARAM_INT);
+			$stmt->bindValue(':owner_id', $owner_id, PDO::PARAM_INT);
+			$stmt->bindValue(':module_id', $module_id, PDO::PARAM_INT);
 
 			if (isset ($language)) {
 				$stmt->bindValue(':language', $language, PDO::PARAM_STR);
@@ -46,17 +46,30 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 	}
 
 
-	public function retrieveAll($language = null, $limit = 10, $start = 0)
+	public function retrieveAllByModuleId($module_id, $tables, $language = null, $limit = 10, $start = 0)
 	{
 		try {
 			$sql = "SELECT
 						c.*,
 						m.*
 					FROM %s AS c
-					LEFT JOIN %s AS m ON (c.module_id = m.id)
-					LEFT JOIN
-					WHERE c.owner_id = :owner_id AND c.module_id = :module_id ";
+					WHERE c.module_id = :module_id ";
 
+			foreach ($tables as $c => $table) {
+				$sql .= "LEFT JOIN " . 'xxx' . " AS t$c ";
+
+				if ($c < 1) {
+					$sql .= "ON (c.module_id = t$c." . $table['field'] . ") ";
+				} else {
+					// Previous table
+					$pt = $tables[$c-1];
+					
+					$sql .= "ON (t" . $c-1 . "." . $pt['field'] . "= t$c." . $table['field'] . ") ";
+				}
+			}
+			echo $sql;
+			return;
+			
 			if (isset ($language)) {
 				$sql .= "AND c.language = :language";
 			}

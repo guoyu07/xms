@@ -7,6 +7,8 @@
 		<autoload name="XRXCommentBaseModel">%core.module_dir%/Comment/lib/model/XRXCommentBaseModel.class.php</autoload>
 		<autoload name="XRXCommentBackendView">%core.module_dir%/Comment/lib/view/XRXCommentBackendView.class.php</autoload>
 		<autoload name="XRXCommentFrontendView">%core.module_dir%/Comment/lib/view/XRXCommentFrontendView.class.php</autoload>
-		
+
+		<!-- Config Handlers -->
+		<autoload name="XRXCommentConfigHandler">%core.app_dir%/lib/config/XRXCommentConfigHandler.class.php</autoload>
 	</ae:configuration>
 </ae:configurations>

@@ -17,6 +17,11 @@
 				<title>add</title>
 				<url>admin/news/add</url>
 			</member>
+
+			<member>
+				<title>Comments</title>
+				<url>admin/comment/module/news</url>
+			</member>
 		</members>
 
 	</ae:configuration>

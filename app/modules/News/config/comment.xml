@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/comment/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+
+		<tables>
+			<table>
+				<name>news</name>
+				<field>id</field>
+			</table>
+
+			<table>
+				<name>news_i18n</name>
+				<field>news_id</field>
+				<title>title</title>
+			</table>
+		</tables>
+
+	</ae:configuration>
+</ae:configurations>

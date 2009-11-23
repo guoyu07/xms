@@ -35,12 +35,26 @@ class Comment_Backend_IndexAction extends XRXCommentBackendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
-		$commentManager = $this->getContext()->getModel('CommentManager', 'Comment');
-		$language		= $this->getContext()->getTranslationManager()
-											 ->getCurrentLocale()
-											 ->getLocaleLanguage();
+		
+//		$language		= $this->getContext()->getTranslationManager()
+//											 ->getCurrentLocale()
+//											 ->getLocaleLanguage();
+//
+//		$this->setAttribute('comments', $commentManager->retrieveAll());
 
-		$this->setAttribute('comments', $commentManager->retrieveAll());
+
+		// Path for "comment.xml"
+		$file = AgaviConfig::get('core.module_dir') . "/News/config/comment.xml";
+
+		// Leave it if it's not readable
+		if (! is_readable($file)) {
+			return "Error";
+		}
+		
+		include(AgaviConfigCache::checkConfig($file));
+
+		$commentManager = $this->getContext()->getModel('CommentManager', 'Comment');
+		$this->setAttribute('comments', $commentManager->retrieveAllByModuleId(4, $tables));
 
 		return 'Success';
 	}
