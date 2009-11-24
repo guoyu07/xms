@@ -5,11 +5,14 @@
 	<? foreach ($t['comments'] as $comment): ?>
 		<li id="xrx-comment-<?= $comment->getId() ?>">
 			<h5>
-				<a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>" target="_blank">
+				<? if ($comment->getAuthorUrl()): ?>
+				<a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>"
+				   target="_blank"><?= $comment->getAuthorName() ?></a>
+				<? else: ?>
 					<?= $comment->getAuthorName() ?>
-				</a>
+				<? endif; ?>
 			</h5>
-			<small><?= $comment->getDate() ?></small>
+			<small><?= $tm->_d($comment->getDate()) ?></small>
 			<p><?= $comment->getContent() ?></p>
 		</li>
 	<? endforeach; ?>

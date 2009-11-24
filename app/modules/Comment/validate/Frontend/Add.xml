@@ -49,60 +49,86 @@
 		<!-- For POST Method -->
 		<validators method="write">
 
-			<!-- Name -->
-			<validator class="string">
-				<arguments>
-					<argument>name</argument>
-				</arguments>
-				<ae:parameters>
-					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="max">60</ae:parameter>
-					<ae:parameter name="translation_domain">.comment</ae:parameter>
-				</ae:parameters>
-				<errors>
-					<error>The name field has an invalid value.</error>
-					<error for="max">The name must be shorter than 60 characters.</error>
-					<error for="required">Please provide your name.</error>
-				</errors>
-			</validator>
+			<validator class="or">
+				<validators>
+
+					<!-- Author ID -->
+					<validator class="number">
+						<arguments>
+							<argument>author_id</argument>
+						</arguments>
+						<ae:parameters>
+							<ae:parameter name="required">false</ae:parameter>
+						</ae:parameters>
+						<errors>
+							<error>The author id field has an invalid value.</error>
+						</errors>
+					</validator>
+
+				</validators>
+
+				<validator class="and">
+					<validators>
+						
+						<!-- Name -->
+						<validator class="string">
+							<arguments>
+								<argument>name</argument>
+							</arguments>
+							<ae:parameters>
+								<ae:parameter name="required">true</ae:parameter>
+								<ae:parameter name="max">60</ae:parameter>
+								<ae:parameter name="translation_domain">.comment</ae:parameter>
+							</ae:parameters>
+							<errors>
+								<error>The name field has an invalid value.</error>
+								<error for="max">The name must be shorter than 60 characters.</error>
+								<error for="required">Please provide your name.</error>
+							</errors>
+						</validator>
 
 
-			<!-- E-Mail -->
-			<validator class="email">
-				<arguments>
-					<argument>email</argument>
-				</arguments>
-				<ae:parameters>
-					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="min">7</ae:parameter>
-					<ae:parameter name="max">100</ae:parameter>
-					<ae:parameter name="translation_domain">.comment</ae:parameter>
-				</ae:parameters>
-				<errors>
-					<error>The email field has an invalid value.</error>
-					<error for="required">Please provide your email address.</error>
-					<error for="min">The email must be longer than 7 characters.</error>
-					<error for="max">The email must be shorter than 100 characters.</error>
-				</errors>
-			</validator>
+						<!-- E-Mail -->
+						<validator class="email">
+							<arguments>
+								<argument>email</argument>
+							</arguments>
+							<ae:parameters>
+								<ae:parameter name="required">true</ae:parameter>
+								<ae:parameter name="min">7</ae:parameter>
+								<ae:parameter name="max">100</ae:parameter>
+								<ae:parameter name="translation_domain">.comment</ae:parameter>
+							</ae:parameters>
+							<errors>
+								<error>The email field has an invalid value.</error>
+								<error for="required">Please provide your email address.</error>
+								<error for="min">The email must be longer than 7 characters.</error>
+								<error for="max">The email must be shorter than 100 characters.</error>
+							</errors>
+						</validator>
 
 
-			<!-- URL -->
-			<validator class="string">
-				<arguments>
-					<argument>url</argument>
-				</arguments>
-				<ae:parameters>
-					<ae:parameter name="required">false</ae:parameter>
-					<ae:parameter name="min">7</ae:parameter>
-					<ae:parameter name="max">200</ae:parameter>
-					<ae:parameter name="translation_domain">.comment</ae:parameter>
-				</ae:parameters>
-				<errors>
-					<error>The url field has an invalid value.</error>
-					<error for="min">The url must be longer than 7 characters.</error>
-					<error for="max">The url must be shorter than 200 characters.</error>
-				</errors>
+						<!-- URL -->
+						<validator class="string">
+							<arguments>
+								<argument>url</argument>
+							</arguments>
+							<ae:parameters>
+								<ae:parameter name="required">false</ae:parameter>
+								<ae:parameter name="min">7</ae:parameter>
+								<ae:parameter name="max">200</ae:parameter>
+								<ae:parameter name="translation_domain">.comment</ae:parameter>
+							</ae:parameters>
+							<errors>
+								<error>The url field has an invalid value.</error>
+								<error for="min">The url must be longer than 7 characters.</error>
+								<error for="max">The url must be shorter than 200 characters.</error>
+							</errors>
+						</validator>
+					
+					</validators>
+
+				</validator>
 			</validator>
 
 

@@ -19,7 +19,6 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	{
 		$this->setAttribute('module_id', $rd->getParameter('module_id'));
 		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
-
 		return 'Input';
 	}
 
@@ -39,15 +38,19 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	 */
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
+		// Authenticated?
+		if ($this->getContext()->getUser()->isAuthenticated()) {
+			$params['author_id'] = $this->getContext()->getUser()->getAttribute('userId');
+		} else {
+			$params['author_name']	= $rd->getParameter('name');
+			$params['author_email'] = $rd->getParameter('email');
+			$params['author_url']	= $rd->getParameter('url');
+		}
+
 		// Prepare Parameters to send to model.
-		$params = array(
-			'owner_id'		=> $rd->getParameter('owner_id'),
-			'module_id'		=> $rd->getParameter('module_id'),
-			'author_name'	=> $rd->getParameter('name'),
-			'author_email'	=> $rd->getParameter('email'),
-			'author_url'	=> $rd->getParameter('url'),
-			'content'		=> $rd->getParameter('content')
-		);
+		$params['owner_id']	= $rd->getParameter('owner_id');
+		$params['module_id']= $rd->getParameter('module_id');
+		$params['content']	= $rd->getParameter('content');
 
 		// Get current language
 		$language = $this->getContext()->getTranslationManager()

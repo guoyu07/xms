@@ -9,15 +9,19 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 		}
 
 		try {
-			$sql = "SELECT c.*
+			$sql = "SELECT 
+						c.*,
+						IF (ISNULL(u.username), c.author_name, u.username) AS author_name,
+						IF (ISNULL(u.email), c.author_email, u.email) AS author_email
 					FROM %s AS c
+					LEFT JOIN %s AS u ON (u.id = c.author_id)
 					WHERE c.owner_id = :owner_id AND c.module_id = :module_id ";
 
 			if (isset ($language)) {
 				$sql .= "AND c.language = :language";
 			}
 
-			$sql	= sprintf($sql, self::COMMENTS);
+			$sql	= sprintf($sql, self::COMMENTS, self::USERS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':owner_id', $owner_id, PDO::PARAM_INT);
 			$stmt->bindValue(':module_id', $module_id, PDO::PARAM_INT);
@@ -55,8 +59,11 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 		try {
 			$sql = "SELECT
 						c.*,
+						IF (ISNULL(u.username), c.author_name, u.username) AS author_name,
+						IF (ISNULL(u.email), c.author_email, u.email) AS author_email,
 						tbl.%s AS owner_title
 					FROM %s AS c
+					LEFT JOIN %s AS u ON (u.id = c.author_id)
 					LEFT JOIN %s AS tbl ON (c.owner_id = tbl.%s)
 					WHERE c.module_id = :module_id AND c.language = tbl.language ";
 			
@@ -66,7 +73,7 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 
 			$sql .= "ORDER BY c.date DESC";
 
-			$sql	= sprintf($sql, $title, self::COMMENTS, $table, $id);
+			$sql	= sprintf($sql, $title, self::COMMENTS, self::USERS, $table, $id);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':module_id', $module_id, PDO::PARAM_INT);
 

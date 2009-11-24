@@ -68,10 +68,24 @@
 					<a href="<?= $ro->gen('default', array('path'=>'admin/comment/edit', 'id'=>$comment->id)) ?>"
 					   title="<?= sprintf($tm->_('edit \'%s\'', '.comment'), $comment->content) ?>"><?= $comment->content ?></a>
 				</td>
-				<td><?= $comment->author_name ?></td>
+				<td>
+					<? if ($comment->author_id): ?>
+						<a href="<?= $ro->gen('default', array('path'=>'admin/user/view', 'id'=>$comment->author_id)) ?>"
+						   title="<?= sprintf($tm->_('edit profile \'%s\'', '.comment'), $comment->author_name) ?>"><?= $comment->author_name ?></a>
+					<? else: ?>
+						<?= $comment->author_name ?>
+					<? endif; ?>
+					<br /><small><?= $comment->author_email ?></small>
+					<br /><small><?= $comment->author_url ?></small>
+				</td>
 				<td><?= $comment->date ?></td>
 				<td><?= $comment->status ?></td>
-				<td><?= (strlen($comment->owner_title) > 50) ? substr($comment->owner_title, 0, 50) . '...' : $comment->owner_title; ?></td>
+				<td>
+					<a href="<?= $ro->gen('default', array('path'=>'admin/' . strtolower($t['module_name']) . '/view', 'id'=>$comment->owner_id, 'title'=>$comment->owner_title)) ?>"
+					   title="<?= sprintf($tm->_('view \'%s\'', '.comment'), $comment->owner_title) ?>">
+						<?= (strlen($comment->owner_title) > 50) ? substr($comment->owner_title, 0, 50) . '...' : $comment->owner_title; ?>
+					</a>
+				</td>
 			</tr>
 			<? endforeach; ?>
 		<? else: ?>

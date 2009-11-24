@@ -2,6 +2,21 @@
 	<fieldset>
 		<legend><?= $tm->_('leave a comment', '.comment') ?></legend>
 		<ol>
+			<? if ($us->isAuthenticated()): ?>
+			<li>
+				<label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-comment-name" name="name" value="<?= $us->getAttribute('username') ?>" maxlength="60" disabled="disabled" />
+				<input type="hidden" name="author_id" value="<?= $us->getAttribute('userId') ?>" />
+			</li>
+			<li>
+				<label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-comment-email" name="email" value="<?= $us->getAttribute('email') ?>" maxlength="100" disabled="disabled" />
+			</li>
+			<li>
+				<label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label>
+				<input type="text" id="xrx-comment-url" name="url" value="<?= $us->getAttribute('website') ?>" maxlength="200" disabled="disabled" />
+			</li>
+			<? else: ?>
 			<li>
 				<label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?><em class="xrx-required">*</em></label>
 				<input type="text" id="xrx-comment-name" name="name" maxlength="60" />
@@ -14,6 +29,7 @@
 				<label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label>
 				<input type="text" id="xrx-comment-url" name="url" maxlength="200" />
 			</li>
+			<? endif; ?>
 			<li>
 				<label for="xrx-comment-content"><?= $tm->_('comment', '.comment') ?><em class="xrx-required">*</em></label>
 				<textarea id="xrx-comment-content" name="content"></textarea>
