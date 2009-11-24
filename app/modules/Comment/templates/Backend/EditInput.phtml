@@ -1,1 +1,45 @@
+<form action="<?= $ro->gen(null); ?>" method="post">
+	<fieldset>
+		<legend><?= $tm->_('edit comment', '.category') ?></legend>
+		<ol>
+			<li>
+				<label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-comment-name" name="name" value="<?= $t['comment']->author_name ?>" maxlength="60" />
+			</li>
+			<li>
+				<label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-comment-email" name="email" value="<?= $t['comment']->author_email ?>" maxlength="100" />
+			</li>
+			<li>
+				<label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label>
+				<input type="text" id="xrx-comment-url" name="url" value="<?= $t['comment']->author_url ?>" maxlength="200" />
+			</li>
+			<li>
+				<label for="xrx-comment-date"><?= $tm->_('date', '.comment') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-comment-date" name="date" value="<?= $t['comment']->date ?>" maxlength="20" />
+			</li>
+			<li>
+				<label><?= $tm->_('status', '.comment') ?></label>
 
+				<input type="radio" id="xrx-comment-status-pending" name="status" value="pending" <? if ($t['comment']->status == 'pending'): ?>checked="checked"<? endif; ?> />
+				<label for="xrx-comment-status-pending"><?= $tm->_('pending', '.comment') ?></label>
+				
+				<input type="radio" id="xrx-comment-status-approved" name="status" value="approved" <? if ($t['comment']->status == 'approved'): ?>checked="checked"<? endif; ?> />
+				<label for="xrx-comment-status-approved"><?= $tm->_('approved', '.comment') ?></label>
+
+				<input type="radio" id="xrx-comment-status-rejected" name="status" value="rejected" <? if ($t['comment']->status == 'rejected'): ?>checked="checked"<? endif; ?> />
+				<label for="xrx-comment-status-rejected"><?= $tm->_('rejected', '.comment') ?></label>
+			</li>
+			<li>
+				<label for="xrx-comment-content"><?= $tm->_('comment', '.comment') ?><em class="xrx-required">*</em></label>
+				<textarea id="xrx-comment-content" name="content"><?= $t['comment']->content ?></textarea>
+			</li>
+		</ol>
+	</fieldset>
+
+	<input type="hidden" name="id" value="<?= $t['comment']->id ?>" />
+	<input type="submit" value="<?= $tm->_('submit', '.comment'); ?>" />
+	<a href="<?= $ro->gen('default', array('path' => 'admin')) ?>">
+		<input type="button" value="<?= $tm->_('cancel', '.comment'); ?>" />
+	</a>
+</form>

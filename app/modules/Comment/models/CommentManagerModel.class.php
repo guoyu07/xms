@@ -2,6 +2,44 @@
 
 class Comment_CommentManagerModel extends XRXCommentBaseModel
 {
+	public function retrieveById($id, $language)
+	{
+		if (empty ($id) || empty ($language)) {
+			return null;
+		}
+
+		try {
+			$sql = "SELECT
+						c.*,
+						IF (ISNULL(u.username), c.author_name, u.username) AS author_name,
+						IF (ISNULL(u.email), c.author_email, u.email) AS author_email
+					FROM %s AS c
+					LEFT JOIN %s AS u ON (u.id = c.author_id)
+					WHERE c.id = :id AND c.language = :language";
+
+			$sql	= sprintf($sql, self::COMMENTS, self::USERS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+			$stmt->bindValue(':language', $language, PDO::PARAM_STR);
+
+			$stmt->execute();
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			// No record?
+			if (! $result) {
+				return null;
+			}
+
+			$comment = $this->getContext()->getModel('Comment', 'Comment', array($result))->toArray();
+
+			return (object) $comment;
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+	}
+
+	
 	public function retrieveByOwnerId($owner_id, $module_id, $language = null)
 	{
 		if (empty ($owner_id) || empty ($module_id)) {
