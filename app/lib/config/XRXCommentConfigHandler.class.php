@@ -33,28 +33,18 @@ class XRXCommentConfigHandler extends AgaviXmlConfigHandler
 		// remember the config file path
 		$config = $document->documentURI;
 
-		$tables = array();
-
 		foreach ($document->getConfigurationElements() as $cfg) {
+			if ($cfg->has('table'))
+				$schema['table'] = $cfg->get('table')->item(0)->getValue();
 
-			if ($cfg->has('tables')) {
-				foreach($cfg->get('tables') as $table) {
+			if ($cfg->has('id'))
+				$schema['id']	 = $cfg->get('id')->item(0)->getValue();
 
-					if ($table->has('name'))
-						$temp['name']  = $table->get('name')->item(0)->getValue();
-
-					if ($table->has('field'))
-						$temp['field'] = $table->get('field')->item(0)->getValue();
-
-					if ($table->has('title'))
-						$temp['title'] = $table->get('title')->item(0)->getValue();
-
-					$tables[] = $temp;
-				}
-			}
+			if ($cfg->has('title'))
+				$schema['title'] = $cfg->get('title')->item(0)->getValue();
 		}
 		
-		$code = '$tables = ' . var_export($tables, true);
+		$code = '$schema = ' . var_export($schema, true);
 		return $this->generate($code, $config);
 	}
 }

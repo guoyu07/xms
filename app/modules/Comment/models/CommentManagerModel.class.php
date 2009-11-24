@@ -46,38 +46,29 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 	}
 
 
-	public function retrieveAllByModuleId($module_id, $tables, $language = null, $limit = 10, $start = 0)
+	public function retrieveAllByModuleId($module_id, $table_info, $language = null, $limit = 10, $start = 0)
 	{
+		$table	= $table_info['table'];
+		$id		= $table_info['id'];
+		$title	= $table_info['title'];
+
 		try {
 			$sql = "SELECT
 						c.*,
-						m.*
+						tbl.%s AS owner_title
 					FROM %s AS c
-					WHERE c.module_id = :module_id ";
-
-			foreach ($tables as $c => $table) {
-				$sql .= "LEFT JOIN " . 'xxx' . " AS t$c ";
-
-				if ($c < 1) {
-					$sql .= "ON (c.module_id = t$c." . $table['field'] . ") ";
-				} else {
-					// Previous table
-					$pt = $tables[$c-1];
-					
-					$sql .= "ON (t" . $c-1 . "." . $pt['field'] . "= t$c." . $table['field'] . ") ";
-				}
-			}
-			echo $sql;
-			return;
+					LEFT JOIN %s AS tbl ON (c.owner_id = tbl.%s)
+					WHERE c.module_id = :module_id AND c.language = tbl.language ";
 			
 			if (isset ($language)) {
-				$sql .= "AND c.language = :language";
+				$sql .= "AND c.language = :language ";
 			}
 
-			$sql	= sprintf($sql, self::COMMENTS);
+			$sql .= "ORDER BY c.date DESC";
+
+			$sql	= sprintf($sql, $title, self::COMMENTS, $table, $id);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-			$stmt->bindValue(':owner_id', $ownerId, PDO::PARAM_INT);
-			$stmt->bindValue(':module_id', $moduleId, PDO::PARAM_INT);
+			$stmt->bindValue(':module_id', $module_id, PDO::PARAM_INT);
 
 			if (isset ($language)) {
 				$stmt->bindValue(':language', $language, PDO::PARAM_STR);
@@ -85,16 +76,18 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 
 			$stmt->execute();
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+			
 			// No record?
 			if (! $result) {
 				return null;
 			}
 
 			foreach ($result as $r) {
-				$comments[] = $this->getContext()->getModel('Comment', 'Comment', array($r));
+				$temp = $this->getContext()->getModel('Comment', 'Comment', array($r))->toArray();
+				$temp['owner_title'] = $r['owner_title'];
+				$comments[] = (object) $temp;
 			}
-
+			
 			return $comments;
 		}
 		catch (PDOException $e) {

@@ -35,26 +35,30 @@ class Comment_Backend_IndexAction extends XRXCommentBackendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
-		
-//		$language		= $this->getContext()->getTranslationManager()
-//											 ->getCurrentLocale()
-//											 ->getLocaleLanguage();
-//
-//		$this->setAttribute('comments', $commentManager->retrieveAll());
-
+		// Get Module by its id.
+		$module = $this->getContext()->getModel('Modules')->retrieveById($rd->getParameter('module'));
 
 		// Path for "comment.xml"
-		$file = AgaviConfig::get('core.module_dir') . "/News/config/comment.xml";
+		$file = AgaviConfig::get('core.module_dir') . "/{$module->name}/config/comment.xml";
 
 		// Leave it if it's not readable
 		if (! is_readable($file)) {
-			return "Error";
+			throw new AgaviException(sprintf("Couldn't find 'comment.xml' in %s", $file));
 		}
 		
 		include(AgaviConfigCache::checkConfig($file));
+		
+		// Current Language
+		$language = $this->getContext()->getTranslationManager()
+						 ->getCurrentLocale()->getLocaleLanguage();
 
-		$commentManager = $this->getContext()->getModel('CommentManager', 'Comment');
-		$this->setAttribute('comments', $commentManager->retrieveAllByModuleId(4, $tables));
+		// Get List of comments for passed module & current language.
+		$comments = $this->getContext()->getModel('CommentManager', 'Comment')
+						 ->retrieveAllByModuleId(4, $schema, $language);
+
+		// Pass variables to view
+		$this->setAttribute('module_name', $module->name);
+		$this->setAttribute('comments', $comments);
 
 		return 'Success';
 	}

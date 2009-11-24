@@ -34,7 +34,7 @@
 
 
 <h2>
-	<img class="xrx-icon-32" src="/images/comment/comment-32.png" alt="<?= $tm->_('comment list', '.comment'); ?>" /><?= $tm->_('comment list', '.comment'); ?>
+	<img class="xrx-icon-32" src="/images/comment/comment-32.png" alt="<?= $tm->_('comment list', '.comment'); ?>" /><?= sprintf($tm->_('comment list for %s', '.comment'), $t['module_name']); ?>
 </h2>
 
 <form action="<?= $ro->gen('default', array('path' => 'admin/comment/delete')) ?>" method="post">
@@ -45,8 +45,8 @@
 				<th class="xrx-title-column"><?= $tm->_('comment', '.comment') ?></th>
 				<th><?= $tm->_('author', '.comment') ?></th>
 				<th><?= $tm->_('date', '.comment') ?></th>
+				<th><?= $tm->_('status', '.comment') ?></th>
 				<th><?= $tm->_('owner', '.comment') ?></th>
-				<th><?= $tm->_('module', '.comment') ?></th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -55,8 +55,8 @@
 				<th class="xrx-title-column"><?= $tm->_('comment', '.comment') ?></th>
 				<th><?= $tm->_('author', '.comment') ?></th>
 				<th><?= $tm->_('date', '.comment') ?></th>
+				<th><?= $tm->_('status', '.comment') ?></th>
 				<th><?= $tm->_('owner', '.comment') ?></th>
-				<th><?= $tm->_('module', '.comment') ?></th>
 			</tr>
 		</tfoot>
 		<tbody>
@@ -70,8 +70,8 @@
 				</td>
 				<td><?= $comment->author_name ?></td>
 				<td><?= $comment->date ?></td>
-				<td><?= $comment->owner_title ?></td>
-				<td><?= $comment->module ?></td>
+				<td><?= $comment->status ?></td>
+				<td><?= (strlen($comment->owner_title) > 50) ? substr($comment->owner_title, 0, 50) . '...' : $comment->owner_title; ?></td>
 			</tr>
 			<? endforeach; ?>
 		<? else: ?>

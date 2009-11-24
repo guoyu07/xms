@@ -81,6 +81,32 @@ class ModulesModel extends XRXBaseModel implements AgaviISingletonModel
 			throw new AgaviDatabaseException($e->getMessage());
 		}
 	}
+
+
+	public function retrieveCommentEnabled()
+	{
+		try {
+			$sql = "SELECT m.*
+					FROM %s AS m
+					WHERE m.use_comment = true";
+
+			$sql	= sprintf($sql, self::MODULES);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+			// No module set to use category yet?
+			if (! $result) {
+				return null;
+			}
+
+			return $result;
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+	}
 }
 
 ?>
