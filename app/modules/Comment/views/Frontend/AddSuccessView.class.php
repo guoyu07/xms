@@ -4,11 +4,12 @@ class Comment_Frontend_AddSuccessView extends XRXCommentFrontendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{
-		// Get original request URL redirect
-		$url = $this->us->removeAttribute('redirect', 'org.agavi.XRX.comment');
+		$this->setupHtml($rd, 'redirect');
 
-		// Redirect to original url
-		$this->getContainer()->getResponse()->setRedirect($url);
+		// Set original request URL redirect
+		$this->setAttribute('_url', $rd->getParameter('redirect'));
+		$this->setAttribute('_type', 'success');
+		$this->setAttribute('_title', $this->tm->_('redirecting...', '.comment'));
 	}
 }
 
