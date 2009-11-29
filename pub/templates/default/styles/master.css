@@ -42,6 +42,7 @@ input {
 input[type='text'],
 input[type='submit'],
 input[type='button'],
+textarea,
 button {
 	font: 1em Tahoma, Verdana, Arial, Helvetica, sans-serif;
 }

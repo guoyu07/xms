@@ -38,6 +38,8 @@
 	</fieldset>
 
 	<input type="hidden" name="id" value="<?= $t['comment']->id ?>" />
+	<input type="hidden" name="author_id" value="<?= $t['comment']->author_id ?>" />
+	<input type="hidden" name="referer" value="<?= $t['referer'] ?>" />
 	<input type="submit" value="<?= $tm->_('submit', '.comment'); ?>" />
 	<a href="<?= $ro->gen('default', array('path' => 'admin')) ?>">
 		<input type="button" value="<?= $tm->_('cancel', '.comment'); ?>" />

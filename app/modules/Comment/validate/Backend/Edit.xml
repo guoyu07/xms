@@ -24,8 +24,9 @@
 				</errors>
 			</validator>
 
+
 			<!-- ID Genuine Validation -->
-			<validator class="Comment_GenuineIdValidator" translation_domain=".comment">
+			<validator class="Comment_GenuineIdValidator" method="read" translation_domain=".comment">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
@@ -37,10 +38,25 @@
 		</validators>
 
 
+
 		<!-- For POST Methods -->
 		<validators method="write">
 
-			<!-- Name -->
+			<!-- Author ID -->
+			<validator class="number">
+				<arguments>
+					<argument>author_id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The author id field has an invalid value.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Author Name -->
 			<validator class="string" translation_domain=".comment">
 				<arguments>
 					<argument>name</argument>
@@ -57,7 +73,7 @@
 			</validator>
 
 
-			<!-- E-Mail -->
+			<!-- Author E-Mail -->
 			<validator class="email" translation_domain=".comment">
 				<arguments>
 					<argument>email</argument>
@@ -76,7 +92,7 @@
 			</validator>
 
 
-			<!-- URL -->
+			<!-- Author URL -->
 			<validator class="string" translation_domain=".comment">
 				<arguments>
 					<argument>url</argument>
@@ -93,22 +109,18 @@
 				</errors>
 			</validator>
 
-			<validator class="datetime" translation_domain=".comment">
+
+			<!-- Date -->
+			<validator class="string" translation_domain=".comment">
 				<arguments>
 					<argument>date</argument>
 				</arguments>
 				<ae:parameters>
-					<!--<ae:parameter name="formats">dd.MM.yyyy</ae:parameter>-->
-					<!--<ae:parameter name="export">casted_birthday</ae:parameter>-->
-					<!--<ae:parameter name="cast_to">
-						<ae:parameters>
-							<ae:parameter name="type">date</ae:parameter>
-							<ae:parameter name="format">yyyy-MM-dd</ae:parameter>
-						</ae:parameters>
-					</ae:parameter>-->
+					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid date format.</error>
+					<error>The date field has an invalid value.</error>
+					<error for="required">Please provide date.</error>
 				</errors>
 			</validator>
 
@@ -122,7 +134,7 @@
 					<ae:parameter name="sep">,</ae:parameter>
 					<ae:parameter name="case">true</ae:parameter>
 					<ae:parameter name="type">string</ae:parameter>
-					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="values">pending,approved,rejected</ae:parameter>
 				</ae:parameters>
 				<errors>
@@ -143,6 +155,21 @@
 				<errors>
 					<error>The content field has an invalid value.</error>
 					<error for="required">Please provide content.</error>
+				</errors>
+			</validator>
+
+
+			<!-- URL (Hidden) -->
+			<validator class="string" translation_domain=".comment">
+				<arguments>
+					<argument>referer</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The redirect url field has an invalid value.</error>
+					<error for="required">Please provide a url to redirect to.</error>
 				</errors>
 			</validator>
 

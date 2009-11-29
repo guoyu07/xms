@@ -214,3 +214,19 @@ table.xrx-table-list td {
 	width: 650px !important;
 	height: 100px !important;
 }
+
+
+
+/* Comment */
+
+.xrx-comment-pending {
+	color: orange;
+}
+
+.xrx-comment-approved {
+	color: green;
+}
+
+.xrx-comment-rejected {
+	color: red;
+}

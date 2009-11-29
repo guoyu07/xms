@@ -39,7 +39,21 @@ class Comment_Backend_EditAction extends XRXCommentBackendAction
 	 */
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
-		return 'Input';
+		// Prepare parameters
+		$params = array(
+			'id'			=> $rd->getParameter('id'),
+			'author_name'	=> $rd->getParameter('name'),
+			'author_email'	=> $rd->getParameter('email'),
+			'author_url'	=> $rd->getParameter('url'),
+			'date'			=> $rd->getParameter('date'),
+			'status'		=> $rd->getParameter('status'),
+			'content'		=> $rd->getParameter('content'),
+		);
+
+		// Update the comment
+		$this->getContext()->getModel('CommentManager', 'Comment')->update($params);
+
+		return 'Success';
 	}
 
 

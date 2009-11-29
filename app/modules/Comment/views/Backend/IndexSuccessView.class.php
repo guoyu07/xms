@@ -6,7 +6,7 @@ class Comment_Backend_IndexSuccessView extends XRXCommentBackendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', 'Backend.Index');
+		$this->setAttribute('_title', $this->tm->_("comments' list", '.comment'));
 	}
 }
 

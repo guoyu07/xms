@@ -151,7 +151,7 @@
 			<!-- URL (Hidden) -->
 			<validator class="string">
 				<arguments>
-					<argument>redirect</argument>
+					<argument>referer</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>

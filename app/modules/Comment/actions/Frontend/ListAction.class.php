@@ -24,7 +24,7 @@ class Comment_Frontend_ListAction extends XRXCommentFrontendAction
 
 		$this->setAttribute('comments',
 			$this->getContext()->getModel('CommentManager', 'Comment')
-							   ->retrieveByOwnerId($owner_id, $module_id, $language)
+							   ->retrieveByOwnerId($owner_id, $module_id, $language, 'approved')
 		);
 		
 		return 'Success';

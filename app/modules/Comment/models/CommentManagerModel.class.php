@@ -40,7 +40,7 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 	}
 
 	
-	public function retrieveByOwnerId($owner_id, $module_id, $language = null)
+	public function retrieveByOwnerId($owner_id, $module_id, $language = null, $status = null)
 	{
 		if (empty ($owner_id) || empty ($module_id)) {
 			return null;
@@ -55,8 +55,14 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 					LEFT JOIN %s AS u ON (u.id = c.author_id)
 					WHERE c.owner_id = :owner_id AND c.module_id = :module_id ";
 
+			// Language?
 			if (isset ($language)) {
-				$sql .= "AND c.language = :language";
+				$sql .= "AND c.language = :language ";
+			}
+			
+			// Status?
+			if (isset ($language)) {
+				$sql .= "AND c.status = :status";
 			}
 
 			$sql	= sprintf($sql, self::COMMENTS, self::USERS);
@@ -66,6 +72,10 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 
 			if (isset ($language)) {
 				$stmt->bindValue(':language', $language, PDO::PARAM_STR);
+			}
+
+			if (isset ($status)) {
+				$stmt->bindValue(':status', $status, PDO::PARAM_STR);
 			}
 
 			$stmt->execute();
@@ -164,6 +174,39 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 			$stmt->bindValue(':author_email', $comment->getAuthorEmail(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_url', $comment->getAuthorUrl(), PDO::PARAM_STR);
 			$stmt->bindValue(':language', $language, PDO::PARAM_STR);
+			$stmt->execute();
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+
+		return true;
+	}
+
+
+	public function update(array $data)
+	{
+		$comment = $this->getContext()->getModel('Comment', 'Comment', array($data));
+
+		try {
+			$sql = "UPDATE %s AS c
+					SET c.content = :content,
+						c.date = :date,
+						c.status = :status,
+						c.author_name = :author_name,
+						c.author_email = :author_email,
+						c.author_url = :author_url
+					WHERE c.id = :id";
+
+			$sql	= sprintf($sql, self::COMMENTS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':content', $comment->getContent(), PDO::PARAM_STR);
+			$stmt->bindValue(':date', $comment->getDate(), PDO::PARAM_STR);
+			$stmt->bindValue(':status', $comment->getStatus(), PDO::PARAM_STR);
+			$stmt->bindValue(':author_name', $comment->getAuthorName(), PDO::PARAM_STR);
+			$stmt->bindValue(':author_email', $comment->getAuthorEmail(), PDO::PARAM_STR);
+			$stmt->bindValue(':author_url', $comment->getAuthorUrl(), PDO::PARAM_STR);
+			$stmt->bindValue(':id', $comment->getId(), PDO::PARAM_INT);
 			$stmt->execute();
 		}
 		catch (PDOException $e) {
