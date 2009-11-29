@@ -16,10 +16,133 @@
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
 				</ae:parameters>
 				<errors>
 					<error>The id has an invalid value.</error>
 					<error for="required">Please provide an id.</error>
+				</errors>
+			</validator>
+
+			<!-- ID Genuine Validation -->
+			<validator class="Comment_GenuineIdValidator" translation_domain=".comment">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<errors>
+					<error>There's no comment with provided id in current language.</error>
+				</errors>
+			</validator>
+
+		</validators>
+
+
+		<!-- For POST Methods -->
+		<validators method="write">
+
+			<!-- Name -->
+			<validator class="string" translation_domain=".comment">
+				<arguments>
+					<argument>name</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="max">60</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The name field has an invalid value.</error>
+					<error for="max">The name must be shorter than 60 characters.</error>
+					<error for="required">Please provide your name.</error>
+				</errors>
+			</validator>
+
+
+			<!-- E-Mail -->
+			<validator class="email" translation_domain=".comment">
+				<arguments>
+					<argument>email</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="min">7</ae:parameter>
+					<ae:parameter name="max">100</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The email field has an invalid value.</error>
+					<error for="required">Please provide your email address.</error>
+					<error for="min">The email must be longer than 7 characters.</error>
+					<error for="max">The email must be shorter than 100 characters.</error>
+				</errors>
+			</validator>
+
+
+			<!-- URL -->
+			<validator class="string" translation_domain=".comment">
+				<arguments>
+					<argument>url</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="min">7</ae:parameter>
+					<ae:parameter name="max">200</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The url field has an invalid value.</error>
+					<error for="min">The url must be longer than 7 characters.</error>
+					<error for="max">The url must be shorter than 200 characters.</error>
+				</errors>
+			</validator>
+
+			<validator class="datetime" translation_domain=".comment">
+				<arguments>
+					<argument>date</argument>
+				</arguments>
+				<ae:parameters>
+					<!--<ae:parameter name="formats">dd.MM.yyyy</ae:parameter>-->
+					<!--<ae:parameter name="export">casted_birthday</ae:parameter>-->
+					<!--<ae:parameter name="cast_to">
+						<ae:parameters>
+							<ae:parameter name="type">date</ae:parameter>
+							<ae:parameter name="format">yyyy-MM-dd</ae:parameter>
+						</ae:parameters>
+					</ae:parameter>-->
+				</ae:parameters>
+				<errors>
+					<error>Invalid date format.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Status -->
+			<validator class="inarray">
+				<arguments>
+					<argument>status</argument>
+				</arguments>
+					<ae:parameters>
+					<ae:parameter name="sep">,</ae:parameter>
+					<ae:parameter name="case">true</ae:parameter>
+					<ae:parameter name="type">string</ae:parameter>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="values">pending,approved,rejected</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The status field has an invalid value.</error>
+					<error for="required">Please provide comment's status.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Content -->
+			<validator class="string" translation_domain=".comment">
+				<arguments>
+					<argument>content</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The content field has an invalid value.</error>
+					<error for="required">Please provide content.</error>
 				</errors>
 			</validator>
 
