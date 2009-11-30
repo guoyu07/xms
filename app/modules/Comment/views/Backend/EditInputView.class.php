@@ -7,7 +7,7 @@ class Comment_Backend_EditInputView extends XRXCommentBackendView
 		$this->setupHtml($rd);
 
 		// Set URL to redirect back to.
-		$this->setAttribute('referer', $this->rq->getUrl());
+		$this->setAttribute('referer', $rd->getHeader('REFERER'));
 		$this->setAttribute('_title', $this->tm->_('edit comment', '.comment'));
 	}
 }

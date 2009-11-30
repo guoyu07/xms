@@ -35,6 +35,14 @@
 				</errors>
 			</validator>
 
+
+			<!-- $_SERVER['REFERER'] -->
+			<validator class="string" source="headers">
+				<arguments>
+					<argument>REFERER</argument>
+				</arguments>
+			</validator>
+
 		</validators>
 
 

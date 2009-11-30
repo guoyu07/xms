@@ -16,7 +16,7 @@ class Comment_Backend_EditAction extends XRXCommentBackendAction
 	 *                   </ul>
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
-	{
+	{	
 		// Comment object send by validator
 		$this->setAttribute('comment', $rd->getParameter('comment'));
 		

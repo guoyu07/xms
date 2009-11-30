@@ -215,6 +215,33 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 
 		return true;
 	}
+
+
+	public function deleteById($id)
+	{
+		if (empty ($id)) {
+			return false;
+		}
+
+		if (! is_array($id)) {
+			$id = array($id);
+		}
+
+		try {
+			$sql = "DELETE c FROM %s AS c
+					WHERE c.id IN (%s)";
+
+			$id		= "'" . implode("','", $id) . "'";
+			$sql	= sprintf($sql, self::COMMENTS, $id);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->execute();
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+
+		return true;
+	}
 }
 
 ?>
