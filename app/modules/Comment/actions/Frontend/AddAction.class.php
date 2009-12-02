@@ -19,6 +19,8 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	{
 		$this->setAttribute('module_id', $rd->getParameter('module_id'));
 		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
+		$this->setAttribute('error', $rd->getParameter('error'));
+
 		return 'Input';
 	}
 
@@ -78,6 +80,7 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	 */
 	public function handleReadError(AgaviRequestDataHolder $rd)
 	{
+		//print_r($this->getContainer()->getValidationManager()->getErrorMessages());
 		return 'Error';
 	}
 
@@ -97,7 +100,12 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	 */
 	public function handleWriteError(AgaviRequestDataHolder $rd)
 	{
-		return 'Input';
+		print_r($rd->getParameters('error'));
+		$this->setAttribute('module_id', $rd->getParameter('module_id'));
+		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
+		$this->setAttribute('error', $rd->getParameter('error'));
+		
+		return 'Error';
 	}
 }
 

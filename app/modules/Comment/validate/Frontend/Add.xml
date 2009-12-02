@@ -42,6 +42,22 @@
 				</errors>
 			</validator>
 
+
+			<!-- Data to redirect back on Validation Error -->
+			<validator class="string">
+				<arguments base="error[]">
+					<argument />
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.comment</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The error array has an invalid value.</error>
+					<error for="required">Please provide data to redirect on validation error.</error>
+				</errors>
+			</validator>
+
 		</validators>
 
 
