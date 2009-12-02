@@ -19,7 +19,6 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	{
 		$this->setAttribute('module_id', $rd->getParameter('module_id'));
 		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
-		$this->setAttribute('error', $rd->getParameter('error'));
 
 		return 'Input';
 	}
@@ -40,6 +39,11 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	 */
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
+		// Prepare Parameters to send to model.
+		$params['owner_id']	= $rd->getParameter('owner_id');
+		$params['module_id']= $rd->getParameter('module_id');
+		$params['content']	= $rd->getParameter('content');
+
 		// Authenticated?
 		if ($this->getContext()->getUser()->isAuthenticated()) {
 			$params['author_id'] = $this->getContext()->getUser()->getAttribute('userId');
@@ -49,14 +53,9 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 			$params['author_url']	= $rd->getParameter('url');
 		}
 
-		// Prepare Parameters to send to model.
-		$params['owner_id']	= $rd->getParameter('owner_id');
-		$params['module_id']= $rd->getParameter('module_id');
-		$params['content']	= $rd->getParameter('content');
-
 		// Get current language
 		$language = $this->getContext()->getTranslationManager()
-						   ->getCurrentLocale()->getLocaleLanguage();
+						 ->getCurrentLocale()->getLocaleLanguage();
 
 		// Add comment in database
 		$this->getContext()->getModel('CommentManager', 'Comment')->create($params, $language);
@@ -80,7 +79,6 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	 */
 	public function handleReadError(AgaviRequestDataHolder $rd)
 	{
-		//print_r($this->getContainer()->getValidationManager()->getErrorMessages());
 		return 'Error';
 	}
 
@@ -100,10 +98,8 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	 */
 	public function handleWriteError(AgaviRequestDataHolder $rd)
 	{
-		print_r($rd->getParameters('error'));
 		$this->setAttribute('module_id', $rd->getParameter('module_id'));
 		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
-		$this->setAttribute('error', $rd->getParameter('error'));
 		
 		return 'Error';
 	}

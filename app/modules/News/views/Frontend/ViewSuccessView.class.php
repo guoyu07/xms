@@ -46,17 +46,9 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 		$layer->setSlot('comment-form',
 			$this->createSlotContainer('Comment', 'Frontend.Add', array(
 				'module_id'	=> AgaviConfig::get('modules.news.id'),
-				'owner_id'	=> $news->id,
-				'error'		=> array(
-					'module'	=> AgaviConfig::get('modules.news.title'),
-					'action'	=> 'Frontend.View',
-					//'parameters'=> array('id' => $news->id),
-					'method'	=> 'read',
-				)
+				'owner_id'	=> $news->id
 			))
 		);
-
-
 		
 		// Set title
 		$this->setAttribute('_title', sprintf($this->tm->_('view news: %s', '.news'), $news->title));
