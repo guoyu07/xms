@@ -6,6 +6,7 @@ class News_NewsModel extends XRXNewsBaseModel
 	private $date;
 	private $modified;
 	private $published;
+	private $comment_status;
 	private $image;
 	private $author_id;
 	private $category_id;
@@ -59,6 +60,16 @@ class News_NewsModel extends XRXNewsBaseModel
 		$this->published = $published;
 	}
 
+	public function getCommentStatus()
+	{
+		return $this->comment_status;
+	}
+
+	public function setCommentStatus($comment_status)
+	{
+		$this->comment_status = $comment_status;
+	}
+
 	public function getImage()
 	{
 		return $this->image;
@@ -95,6 +106,7 @@ class News_NewsModel extends XRXNewsBaseModel
 		$this->setDate($data['date']);
 		$this->setModified($data['modified']);
 		$this->setPublished($data['published']);
+		$this->setCommentStatus($data['comment_status']);
 		$this->setImage($data['image']);
 		$this->setAuthorId($data['author_id']);
 		$this->setCategoryId($data['category_id']);
@@ -107,6 +119,7 @@ class News_NewsModel extends XRXNewsBaseModel
 		$data['date']			= $this->getDate();
 		$data['modified']		= $this->getModified();
 		$data['published']		= $this->getPublished();
+		$data['comment_status']	= $this->getCommentStatus();
 		$data['image']			= $this->getImage();
 		$data['author_id']		= $this->getAuthorId();
 		$data['category_id']	= $this->getCategoryId();

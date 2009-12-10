@@ -149,7 +149,7 @@
 
 
 			<!-- URL (Hidden) -->
-			<validator class="string">
+			<!--<validator class="string">
 				<arguments>
 					<argument>referer</argument>
 				</arguments>
@@ -161,7 +161,7 @@
 					<error>The redirect url field has an invalid value.</error>
 					<error for="required">Please provide a url to redirect to.</error>
 				</errors>
-			</validator>
+			</validator>-->
 
 		</validators>
 		

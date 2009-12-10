@@ -54,7 +54,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 	}
 
 
-	public function retrieveLatest($language = null, $limit = 10, $start = 0, $published = null)
+	public function retrieveLatest($language = null, $limit = 10, $start = 0, $published = null, $category_id = null)
 	{
 		try {
 			$sql = "SELECT
@@ -67,16 +67,25 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 					LEFT JOIN %s AS c ON (n.category_id = c.id)
 					LEFT JOIN %s AS u ON (n.author_id = u.id) ";
 
-
-			if (isset ($language) && isset ($published)) {
-				$sql.= "WHERE ni.language = :language AND n.published = :published ";
+			// Language
+			if (isset ($language)) {
+				$sql.= "WHERE ni.language = :language ";
 			}
-			elseif (isset ($language) XOR isset ($published)) {
-				$sql .= "WHERE ";
-				$sql .= (isset ($language)) ? "ni.language = :language " : "n.published = :published";
+
+			// Published
+			if (isset ($published)) {
+				$sql .= (strpos($sql, "WHERE") != false) ? "AND " : "WHERE ";
+				$sql .= "n.published = :published ";
+			}
+
+			// Category
+			if (isset ($category_id)) {
+				$sql .= (strpos($sql, "WHERE") != false) ? "AND " : "WHERE ";
+				$sql .= "n.category_id = :category_id ";
 			}
 			
-			$sql .= "LIMIT :start, :limit";
+			$sql .= "ORDER BY n.date DESC
+					 LIMIT :start, :limit";
 
 
 			$sql	= sprintf($sql, self::NEWS, self::NEWS_I18N, self::CATEGORIES, self::USERS);
@@ -90,6 +99,10 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 
 			if (isset ($published)) {
 				$stmt->bindValue(':published', $published, PDO::PARAM_BOOL);
+			}
+
+			if (isset ($category_id)) {
+				$stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
 			}
 
 
@@ -135,13 +148,14 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 
 
 			// 1. Insert data into News Table
-			$sql = "INSERT INTO %s (date, published, image, author_id, category_id)
-					VALUES(:date, :published, :image, :author_id, :category_id)";
+			$sql = "INSERT INTO %s (date, published, comment_status, image, author_id, category_id)
+					VALUES(:date, :published, :comment_status, :image, :author_id, :category_id)";
 
 			$sql	= sprintf($sql, self::NEWS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':date', $news->getDate(), PDO::PARAM_STR);
 			$stmt->bindValue(':published', $news->getPublished(), PDO::PARAM_BOOL);
+			$stmt->bindValue(':comment_status', $news->getCommentStatus(), PDO::PARAM_BOOL);
 			$stmt->bindValue(':image', $news->getImage(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_id', $news->getAuthorId(), PDO::PARAM_INT);
 			$stmt->bindValue(':category_id', $news->getCategoryId(), PDO::PARAM_INT);
@@ -214,6 +228,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 					SET n.date = :date,
 						n.modified = NOW(),
 						n.published = :published,
+						n.comment_status = :comment_status,
 						n.category_id = :category_id
 					WHERE n.id = :id";
 
@@ -222,6 +237,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 			$stmt->bindValue(':id', $news->getId(), PDO::PARAM_INT);
 			$stmt->bindValue(':date', $news->getDate(), PDO::PARAM_STR);
 			$stmt->bindValue(':published', $news->getPublished(), PDO::PARAM_BOOL);
+			$stmt->bindValue(':comment_status', $news->getCommentStatus(), PDO::PARAM_BOOL);
 			$stmt->bindValue(':category_id', $news->getCategoryId(), PDO::PARAM_INT);
 			$stmt->execute();
 			

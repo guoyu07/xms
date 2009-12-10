@@ -160,6 +160,22 @@
 				</errors>
 			</validator>
 
+
+			<!-- Comments -->
+			<validator class="number">
+				<arguments>
+					<argument>comments</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="translation_domain">.news</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid comment status.</error>
+					<error for="required">Please provide comment status.</error>
+				</errors>
+			</validator>
+
 		</validators>
 		
 	</ae:configuration>

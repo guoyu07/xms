@@ -1,7 +1,12 @@
+<div class="xrx-news-category xrx-<?= $t['_align'] ?>">
+	<h3><?= $tm->_('categories', '.news') ?></h3>
+	<?= $slots['categories'] ?>
+</div>
+
 <? if ($t['news']): ?>
-	<ul>
+	<ul class="xrx-news-list-<?= $t['_xalign'] ?>">
 	<? foreach ($t['news'] as $news): ?>
-		<li class="xrx-news-content xrx-clear">
+		<li class="xrx-news-content">
 			<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id, 'title'=>$news->title)) ?>"><?= $news->title ?></a></h2>
 			<small><?= sprintf($tm->_('written by %s in %s'), $news->username, $news->category_name) ?></small><br />
 			<small><?= $tm->_d($t['news']->date) ?></small>

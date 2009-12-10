@@ -1,6 +1,6 @@
 <?php
 
-class News_Frontend_ViewErrorView extends XRXNewsFrontendView
+class Category_Frontend_ListErrorView extends XRXCategoryFrontendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{

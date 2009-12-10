@@ -30,6 +30,11 @@ h3 {
 	font-size: 1.5em;
 }
 
+h3 {
+	margin: 5px 0;
+	font-size: 1.2em;
+}
+
 img {
 	border: 0px;
 	vertical-align: middle;

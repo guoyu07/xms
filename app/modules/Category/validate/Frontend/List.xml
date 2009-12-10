@@ -2,23 +2,24 @@
 <ae:configurations
 	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
 	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
-	parent="%core.module_dir%/News/config/validators.xml"
+	parent="%core.module_dir%/Category/config/validators.xml"
 >
 	<ae:configuration>
-
+		
 		<!-- For GET Method -->
 		<validators method="read">
 
 			<!-- Module Id -->
-			<validator class="number" translation_domain=".news">
+			<validator class="number" translation_domain=".comment">
 				<arguments>
-					<argument>category</argument>
+					<argument>module_id</argument>
 				</arguments>
 				<ae:parameters>
-					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The category id has an invalid value.</error>
+					<error>The module id has an invalid value.</error>
+					<error for="required">Please provide a module id.</error>
 				</errors>
 			</validator>
 

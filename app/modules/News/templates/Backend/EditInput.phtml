@@ -113,6 +113,15 @@
 				<input id="xrx-news-published-no" type="radio" name="published" value="0" <? if (!$t['news'][$locale->lang]->published): ?>checked="checked"<? endif ?> />
 				<label for="xrx-news-published-no" class="xrx-label-radio"><?= $tm->_('no', '.news') ?></label>
 			</li>
+			<li>
+				<label><?= $tm->_('allow comments', '.news') ?></label>
+				
+				<input id="xrx-news-comments-yes" type="radio" name="comments" value="1" <? if ($t['news'][$locale->lang]->comment_status): ?>checked="checked"<? endif ?> />
+				<label for="xrx-news-comments-yes" class="xrx-label-radio"><?= $tm->_('yes', '.news') ?></label>
+
+				<input id="xrx-news-comments-no" type="radio" name="comments" value="0" <? if (!$t['news'][$locale->lang]->comment_status): ?>checked="checked"<? endif ?> />
+				<label for="xrx-news-comments-no" class="xrx-label-radio"><?= $tm->_('no', '.news') ?></label>
+			</li>
 			<? else: ?>
 			<? if ($locale->translated): ?>
 			<li>

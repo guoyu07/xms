@@ -13,7 +13,17 @@ class News_Frontend_IndexSuccessView extends XRXNewsFrontendView
 					$n->image = str_replace('.', '_60.', $n->image);
 				}
 			}
-		}
+		};
+
+
+
+		// Create a Slot to view categories
+		$layer = $this->getLayer('content');
+		$layer->setSlot('categories',
+			$this->createSlotContainer('Category', 'Frontend.List', array(
+				'module_id'	=> AgaviConfig::get('modules.news.id')
+			))
+		);
 
 		$this->setAttribute('_title', $this->tm->_('lastest news', '.news'));
 	}

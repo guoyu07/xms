@@ -83,6 +83,7 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 		$params = array(
 			'date'			=> $rd->getParameter('date'),
 			'published'		=> (boolean) $rd->getParameter('published'),
+			'comment_status'=> (boolean) $rd->getParameter('comments'),
 			'image'			=> $name . $ext,
 			'author_id'		=> $this->getContext()->getUser()->getAttribute('userId'),
 			'category_id'	=> $rd->getParameter('category'),

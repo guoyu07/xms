@@ -18,10 +18,11 @@ class News_Frontend_IndexAction extends XRXNewsFrontendAction
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
 		$locale = $this->getContext()->getTranslationManager()->getCurrentLocale();
+		$cid	= $rd->getParameter('category', null);
 		
 		// Get lastest news
 		$news = $this->getContext()->getModel('NewsManager', 'News')
-					 ->retrieveLatest($locale->getLocaleLanguage(), 10, 0, true);
+					 ->retrieveLatest($locale->getLocaleLanguage(), 10, 0, true, $cid);
 		
 		// Pass to view
 		$this->setAttributeByRef('news', $news);

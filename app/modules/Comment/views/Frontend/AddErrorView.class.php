@@ -7,8 +7,14 @@ class Comment_Frontend_AddErrorView extends XRXCommentFrontendView
 		$this->setupHtml($rd);
 		
 		if ( $this->getContainer()->getRequestMethod() == 'read' ) {
-			$this->setAttribute('message', $this->tm->_('insufficient arguments', '.comment'));
+
+			return $this->createForwardContainer(
+				AgaviConfig::get('actions.error404_module'),
+				AgaviConfig::get('actions.error404_action')
+			);
+
 		} else {
+
 			// Set Validation Report for FPF to see the errors in new container
 			$report = $this->getContainer()->getValidationManager()->getReport();
 			$this->rq->setAttribute('validation_report', $report, 'org.agavi.filter.FormPopulationFilter');
@@ -22,6 +28,7 @@ class Comment_Frontend_AddErrorView extends XRXCommentFrontendView
 				null,
 				'read'
 			);
+
 		}
 	}
 }

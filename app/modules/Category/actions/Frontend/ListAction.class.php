@@ -1,10 +1,11 @@
 <?php
 
-class Category_Frontend_IndexAction extends XRXCategoryFrontendAction
+class Category_Frontend_ListAction extends XRXCategoryFrontendAction
 {
 	/**
-	 * Returns the default view if the action does not serve the request
-	 * method used.
+	 * Serves Read (GET) requests
+	 *
+	 * @param      AgaviRequestDataHolder the incoming request data
 	 *
 	 * @return     mixed <ul>
 	 *                     <li>A string containing the view name associated
@@ -14,8 +15,13 @@ class Category_Frontend_IndexAction extends XRXCategoryFrontendAction
 	 *                     executed.</li>
 	 *                   </ul>
 	 */
-	public function getDefaultViewName()
+	public function executeRead(AgaviRequestDataHolder $rd)
 	{
+		$this->setAttribute('categories',
+			$this->getContext()->getModel('CategoryManager', 'Category')
+							   ->retrieveAssociatedWith( $rd->getParameter('module_id') )
+		);
+
 		return 'Success';
 	}
 }

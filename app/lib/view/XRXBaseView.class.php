@@ -28,6 +28,11 @@ class XRXBaseView extends AgaviView
 	protected $us;
 
 	/**
+	 * @var bool
+	 */
+	protected $isSlot = false;
+
+	/**
 	 * Initialize this view.
 	 *
 	 * @param      AgaviExecutionContainer This View's execution container.
@@ -41,6 +46,8 @@ class XRXBaseView extends AgaviView
 		$this->rq = $this->getContext()->getRequest();
 		$this->tm = $this->getContext()->getTranslationManager();
 		$this->us = $this->getContext()->getUser();
+
+		$this->isSlot = $container->hasParameter('is_slot');
 
 		// Pass Info About Page Align & Direction
 		list($dir, $align, $xalign) = ($this->tm->getCurrentLocale()->getCharacterOrientation() == 'right-to-left')

@@ -1,0 +1,12 @@
+<? if (isset ($t['categories'])): ?>
+<ul>
+	<? foreach ($t['categories'] as $category): ?>
+	<li>
+		<?= @str_repeat('&#160;&#160;&#160;', $category->depth - 1) ?><small>&gt;</small>
+		<a href="<?= $ro->gen('default', array('path' => 'news/index', 'category' => $category->id)) ?>">
+			<?= $category->name ?>
+		</a>
+	</li>
+	<? endforeach ?>
+</ul>
+<? endif ?>

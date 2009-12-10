@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `date` datetime NOT NULL,
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `published` tinyint(1) NOT NULL DEFAULT '1',
+  `comment_status` tinyint(1) NOT NULL DEFAULT '1',
   `image` varchar(36) COLLATE utf8_unicode_ci DEFAULT NULL,
   `author_id` bigint(20) unsigned NOT NULL,
   `category_id` bigint(20) unsigned DEFAULT NULL,
