@@ -19,6 +19,7 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	{
 		$this->setAttribute('module_id', $rd->getParameter('module_id'));
 		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
+		$this->setAttribute('parameters', $rd->getParameter('parameters'));
 
 		return 'Input';
 	}

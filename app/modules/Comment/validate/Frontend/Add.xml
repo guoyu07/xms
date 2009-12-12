@@ -42,6 +42,24 @@
 				</errors>
 			</validator>
 
+
+			<!-- Module Info -->
+			<validator class="string" method="read">
+				<arguments base="parameters">
+					<argument>module_name</argument>
+					<argument>action_name</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
+					<ae:parameter name="translation_domain">.comment</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The parameters has an invalid value.</error>
+					<error for="required">Please provide parameters.</error>
+				</errors>
+			</validator>
+
 		</validators>
 
 
@@ -146,22 +164,6 @@
 					<error for="required">Please provide content.</error>
 				</errors>
 			</validator>
-
-
-			<!-- URL (Hidden) -->
-			<!--<validator class="string">
-				<arguments>
-					<argument>referer</argument>
-				</arguments>
-				<ae:parameters>
-					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.comment</ae:parameter>
-				</ae:parameters>
-				<errors>
-					<error>The redirect url field has an invalid value.</error>
-					<error for="required">Please provide a url to redirect to.</error>
-				</errors>
-			</validator>-->
 
 		</validators>
 		

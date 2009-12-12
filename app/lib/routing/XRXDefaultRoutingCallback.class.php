@@ -103,7 +103,7 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 			
 			if ($key == 'title') {
 				$userParameters['title']->setValueNeedsEncoding(true);
-				$userParameters['title']->setValue(	str_replace(' ', '-', $value->getValue()) );
+				$userParameters['title']->setValue(	str_replace(array(' '), '-', $value->getValue()) );
 			}
 			
 			$extraParams .= "/$key/$value";

@@ -72,7 +72,7 @@
 					<a href="<?= $ro->gen('default', array('path'=>'admin/category/edit', 'id'=>$news->category_id)) ?>"
 					   title="<?= sprintf($tm->_('edit \'%s\'', '.news'), $news->category_name) ?>"><?= $news->category_name ?></a>
 				</td>
-				<td><?= $news->date ?></td>
+				<td><?= $tm->_d($news->date) ?></td>
 				<td><a href="<?= $ro->gen('default', array('path'=>'user/edit', 'id'=>$news->author_id)) ?>"><?= $news->username ?></a></td>
 				<td><?= $news->published ? $tm->_('yes', '.news') : $tm->_('no', '.news'); ?></td>
 			</tr>

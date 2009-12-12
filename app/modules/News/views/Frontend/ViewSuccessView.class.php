@@ -32,11 +32,15 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 
 
 
+		$module_name	= $this->getContainer()->getModuleName();
+		$module_id		= AgaviConfig::get('modules.' . strtolower($module_name) . '.id');
+		$action_name	= $this->getContainer()->getActionName();
+
 		// Create a Slot to view the comments
 		$layer = $this->getLayer('content');
 		$layer->setSlot('comments',
 			$this->createSlotContainer('Comment', 'Frontend.List', array(
-				'module_id'	=> AgaviConfig::get('modules.news.id'),
+				'module_id'	=> $module_id,
 				'owner_id'	=> $news->id
 			))
 		);
@@ -45,8 +49,12 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 		$layer = $this->getLayer('content');
 		$layer->setSlot('comment-form',
 			$this->createSlotContainer('Comment', 'Frontend.Add', array(
-				'module_id'	=> AgaviConfig::get('modules.news.id'),
-				'owner_id'	=> $news->id
+				'module_id'	=> $module_id,
+				'owner_id'	=> $news->id,
+				'parameters'=> array(
+					'module_name'	=> $module_name,
+					'action_name'	=> $action_name
+				)
 			))
 		);
 		

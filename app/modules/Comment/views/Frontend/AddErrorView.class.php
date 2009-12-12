@@ -4,7 +4,6 @@ class Comment_Frontend_AddErrorView extends XRXCommentFrontendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{
-		$this->setupHtml($rd);
 		
 		if ( $this->getContainer()->getRequestMethod() == 'read' ) {
 
@@ -20,16 +19,28 @@ class Comment_Frontend_AddErrorView extends XRXCommentFrontendView
 			$this->rq->setAttribute('validation_report', $report, 'org.agavi.filter.FormPopulationFilter');
 
 
+			// Prepare data for forward container
+			$module_id	= $this->getAttribute('module_id');
+			$owner_id	= $this->getAttribute('owner_id');
+			$params		= $this->us->getAttribute($module_id . $owner_id, 'comment');
+			
+			// Oops!
+			if (empty ($params)) {
+				// Redirect user to main page if there's no data in session.
+				$this->getContainer()->getResponse()->setRedirect( $this->ro->gen('index') );
+				return;
+			}
+
 			// Display Comment's AddInput as a slot in the owner's page when error happened
 			return $this->createForwardContainer(
-				'News',
-				'Frontend.View',
-				array('id' => $this->getAttribute('owner_id')),
+				$params['module_name'],
+				$params['action_name'],
+				$params['arguments'],
 				null,
 				'read'
 			);
-
 		}
+		
 	}
 }
 
