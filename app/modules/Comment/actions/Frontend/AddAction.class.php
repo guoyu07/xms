@@ -45,6 +45,7 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 		$params['module_id']= $rd->getParameter('module_id');
 		$params['content']	= $rd->getParameter('content');
 
+
 		// Authenticated?
 		if ($this->getContext()->getUser()->isAuthenticated()) {
 			$params['author_id'] = $this->getContext()->getUser()->getAttribute('userId');

@@ -1,10 +1,45 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		var registered	= $('#xrx-comment-type-registered');
+		var guest		= $('#xrx-comment-type-guest');
+
+		registered.change( function() {
+			$('#xrx-comment-name').hide();
+			$('#xrx-comment-author-id').show();
+		})
+
+		guest.change( function() {
+			$('#xrx-comment-name').show();
+			$('#xrx-comment-author-id').hide();
+		})
+	})
+	// -->
+</script>
+
+
 <form action="<?= $ro->gen(null); ?>" method="post">
 	<fieldset>
 		<legend><?= $tm->_('edit comment', '.category') ?></legend>
 		<ol>
 			<li>
+				<label><?= $tm->_('author type', '.comment') ?><em class="xrx-required">*</em></label>
+
+				<input type="radio" id="xrx-comment-type-registered" name="author_type" value="registered" <? if ($t['comment']->user_type == 'registered'): ?>checked="checked"<? endif; ?> />
+				<label for="xrx-comment-type-registered"><?= $tm->_('registered', '.comment') ?></label>
+
+				<input type="radio" id="xrx-comment-type-guest" name="author_type" value="guest" <? if ($t['comment']->user_type == 'guest'): ?>checked="checked"<? endif; ?> />
+				<label for="xrx-comment-type-guest"><?= $tm->_('guest', '.comment') ?></label>
+			</li>
+			<li>
 				<label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?><em class="xrx-required">*</em></label>
-				<input type="text" id="xrx-comment-name" name="name" value="<?= $t['comment']->author_name ?>" maxlength="60" />
+				<input type="text" id="xrx-comment-name" <? if ($t['comment']->user_type == 'registered'): ?>class="xrx-hidden"<? endif; ?> name="name" value="<?= $t['comment']->author_name ?>" maxlength="60" />
+				<select id="xrx-comment-author-id" <? if ($t['comment']->user_type == 'guest'): ?>class="xrx-hidden"<? endif; ?> name="author_id">
+				<? foreach ($t['users'] as $user): ?>
+					<? $s = ($user->id == $t['comment']->author_id) ? ' selected="selected"' : '' ?>
+					<option value="<?= $user->id ?>"<?= $s ?>><?= $user->username ?></option>
+				<? endforeach; ?>
+				</select>
 			</li>
 			<li>
 				<label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?><em class="xrx-required">*</em></label>
@@ -38,7 +73,6 @@
 	</fieldset>
 
 	<input type="hidden" name="id" value="<?= $t['comment']->id ?>" />
-	<input type="hidden" name="author_id" value="<?= $t['comment']->author_id ?>" />
 	<input type="hidden" name="referer" value="<?= $t['referer'] ?>" />
 	<input type="submit" value="<?= $tm->_('submit', '.comment'); ?>" />
 	<a href="<?= $ro->gen('default', array('path' => 'admin')) ?>">

@@ -31,7 +31,7 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 			}
 
 			$comment = $this->getContext()->getModel('Comment', 'Comment', array($result))->toArray();
-
+			
 			return (object) $comment;
 		}
 		catch (PDOException $e) {
@@ -193,6 +193,7 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 					SET c.content = :content,
 						c.date = :date,
 						c.status = :status,
+						c.author_id = :author_id,
 						c.author_name = :author_name,
 						c.author_email = :author_email,
 						c.author_url = :author_url
@@ -203,6 +204,7 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 			$stmt->bindValue(':content', $comment->getContent(), PDO::PARAM_STR);
 			$stmt->bindValue(':date', $comment->getDate(), PDO::PARAM_STR);
 			$stmt->bindValue(':status', $comment->getStatus(), PDO::PARAM_STR);
+			$stmt->bindValue(':author_id', $comment->getAuthorId(), PDO::PARAM_INT);
 			$stmt->bindValue(':author_name', $comment->getAuthorName(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_email', $comment->getAuthorEmail(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_url', $comment->getAuthorUrl(), PDO::PARAM_STR);

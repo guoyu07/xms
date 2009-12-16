@@ -18,7 +18,13 @@ class Comment_Backend_EditAction extends XRXCommentBackendAction
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{	
 		// Comment object send by validator
-		$this->setAttribute('comment', $rd->getParameter('comment'));
+		$comment = $rd->getParameter('comment');
+		$comment->user_type = $comment->author_id ? 'registered' : 'guest';
+		
+		$this->setAttribute('comment', $comment);
+		$this->setAttribute('users', $this->getContext()
+										  ->getModel('UserManager', 'User')
+										  ->getAll());
 		
 		return 'Input';
 	}
@@ -40,16 +46,21 @@ class Comment_Backend_EditAction extends XRXCommentBackendAction
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
 		// Prepare parameters
-		$params = array(
-			'id'			=> $rd->getParameter('id'),
-			'author_name'	=> $rd->getParameter('name'),
-			'author_email'	=> $rd->getParameter('email'),
-			'author_url'	=> $rd->getParameter('url'),
-			'date'			=> $rd->getParameter('date'),
-			'status'		=> $rd->getParameter('status'),
-			'content'		=> $rd->getParameter('content'),
-		);
-
+		$params['id']		= $rd->getParameter('id');
+		$params['date']		= $rd->getParameter('date');
+		$params['status']	= $rd->getParameter('status');
+		$params['content']	= $rd->getParameter('content');
+		
+		
+		if ($rd->getParameter('author_type') == 'registered') {
+			$params['author_id'] = $rd->getParameter('author_id');
+		} else {
+			$params['author_id']	= null;
+			$params['author_name']	= $rd->getParameter('name');
+			$params['author_email'] = $rd->getParameter('email');
+			$params['author_url']	= $rd->getParameter('url');
+		}
+		
 		// Update the comment
 		$this->getContext()->getModel('CommentManager', 'Comment')->update($params);
 

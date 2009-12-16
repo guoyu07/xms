@@ -50,6 +50,19 @@
 		<!-- For POST Methods -->
 		<validators method="write">
 
+			<!-- Author Type -->
+			<validator class="string">
+				<arguments>
+					<argument>author_type</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The author type field has an invalid value.</error>
+				</errors>
+			</validator>
+
 			<!-- Author ID -->
 			<validator class="number">
 				<arguments>
