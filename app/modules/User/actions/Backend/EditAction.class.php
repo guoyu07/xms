@@ -1,6 +1,6 @@
 <?php
 
-class User_Frontend_RegisterAction extends XRXUserFrontendAction
+class User_Backend_EditAction extends XRXUserBackendAction
 {
 	/**
 	 * Serves Read (GET) requests
@@ -17,7 +17,10 @@ class User_Frontend_RegisterAction extends XRXUserFrontendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
-		return "Input";
+		// User object send by validator
+		$this->setAttribute('user', $rd->getParameter('user'));
+
+		return 'Input';
 	}
 
 
@@ -36,20 +39,25 @@ class User_Frontend_RegisterAction extends XRXUserFrontendAction
 	 */
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
+		$params['id']		= $rd->getParameter('id');
 		$params['username'] = $rd->getParameter('username');
-		$params['password'] = sha1($rd->getParameter('password'));
 		$params['email']	= $rd->getParameter('email');
+
+		if ($rd->hasParameter('password')) {
+			$params['password'] = $this->getContext()
+									   ->getUser()
+									   ->computeHash($rd->getParameter('password'));
+		}
 		
-		// Insert in database
-		$userManager = $this->getContext()->getModel('UserManager', 'User');
-		$userManager->create($params);
+		// Update database
+		$this->getContext()->getModel('UserManager', 'User')->update($params);
 
 		return "Success";
 	}
 
 
 	/**
-	 * Returns the view if there's an error
+	 * Returns the view if there's an error in Read (GET) requests
 	 *
 	 * @param      AgaviRequestDataHolder the incoming request data
 	 *
@@ -61,9 +69,28 @@ class User_Frontend_RegisterAction extends XRXUserFrontendAction
 	 *                     executed.</li>
 	 *                   </ul>
 	 */
-	public function handleError(AgaviRequestDataHolder $rd)
+	public function handleReadError(AgaviRequestDataHolder $rd)
 	{
-		return "Input";
+		return 'Error';
+	}
+
+
+	/**
+	 * Returns the view if there's an error in Write (POST) requests
+	 *
+	 * @param      AgaviRequestDataHolder the incoming request data
+	 *
+	 * @return     mixed <ul>
+	 *                     <li>A string containing the view name associated
+	 *                     with this action; or</li>
+	 *                     <li>An array with two indices: the parent module
+	 *                     of the view to be executed and the view to be
+	 *                     executed.</li>
+	 *                   </ul>
+	 */
+	public function handleWriteError(AgaviRequestDataHolder $rd)
+	{
+		return 'Input';
 	}
 }
 

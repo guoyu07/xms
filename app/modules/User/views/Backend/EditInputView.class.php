@@ -1,0 +1,13 @@
+<?php
+
+class User_Backend_EditInputView extends XRXUserBackendView
+{
+	public function executeHtml(AgaviRequestDataHolder $rd)
+	{
+		$this->setupHtml($rd);
+
+		$this->setAttribute('_title', 'Backend.Edit');
+	}
+}
+
+?>

@@ -3,24 +3,23 @@
 		<legend><?= $tm->_('user registration', '.user'); ?></legend>
 		<ol>
 			<li>
-				<label for="username"><?= $tm->_('username', '.user'); ?><em class="xrx-required">*</em></label>
-				<input type="text" id="username" name="username" maxlength="60" />
+				<label for="xrx-user-username"><?= $tm->_('username', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-user-username" name="username" maxlength="60" />
 			</li>
 			<li>
-				<label for="password"><?= $tm->_('password', '.user'); ?><em class="xrx-required">*</em></label>
-				<input type="password" id="password" name="password" maxlength="64" />
+				<label for="xrx-user-password"><?= $tm->_('password', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="password" id="xrx-user-password" name="password" maxlength="64" />
 			</li>
 			<li>
-				<label for="password_confirmation"><?= $tm->_('confirm password', '.user'); ?><em class="xrx-required">*</em></label>
-				<input type="password" id="password_confirmation" name="password_confirmation" maxlength="64" />
+				<label for="xrx-user-password-confirm"><?= $tm->_('confirm password', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="password" id="xrx-user-password-confirm" name="password_confirmation" maxlength="64" />
 			</li>
 			<li>
-				<label for="email"><?= $tm->_('email', '.user'); ?><em class="xrx-required">*</em></label>
-				<input type="text" id="email" name="email" maxlength="100" />
-			</li>
-			<li>
-				<input type="submit" value="<?= $tm->_('submit', '.user'); ?>" />
+				<label for="xrx-user-email"><?= $tm->_('email', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-user-email" name="email" maxlength="100" />
 			</li>
 		</ol>
 	</fieldset>
+
+	<input type="submit" value="<?= $tm->_('submit', '.user'); ?>" />
 </form>

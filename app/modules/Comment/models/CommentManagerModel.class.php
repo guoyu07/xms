@@ -230,7 +230,8 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 		}
 
 		try {
-			$sql = "DELETE c FROM %s AS c
+			$sql = "DELETE c
+					FROM %s AS c
 					WHERE c.id IN (%s)";
 
 			$id		= "'" . implode("','", $id) . "'";

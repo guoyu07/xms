@@ -1,27 +1,9 @@
 <?php
 
-class Category_Backend_IndexAction extends XRXCategoryBackendAction
+class User_Backend_DeleteAction extends XRXUserBackendAction
 {
 	/**
-	 * Returns the default view if the action does not serve the request
-	 * method used.
-	 *
-	 * @return     mixed <ul>
-	 *                     <li>A string containing the view name associated
-	 *                     with this action; or</li>
-	 *                     <li>An array with two indices: the parent module
-	 *                     of the view to be executed and the view to be
-	 *                     executed.</li>
-	 *                   </ul>
-	 */
-	public function getDefaultViewName()
-	{
-		return 'Success';
-	}
-
-
-	/**
-	 * Serves Read (GET) requests
+	 * Serves Write (POST) requests
 	 *
 	 * @param      AgaviRequestDataHolder the incoming request data
 	 *
@@ -33,14 +15,34 @@ class Category_Backend_IndexAction extends XRXCategoryBackendAction
 	 *                     executed.</li>
 	 *                   </ul>
 	 */
-	public function executeRead(AgaviRequestDataHolder $rd)
+	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
-		// Set Categories
-		$this->setAttribute('categories', $this->getContext()
-											   ->getModel('CategoryManager', 'Category')
-											   ->retrieveAllWithAssociates());
-		
-		return 'Success';
+		$ids = $rd->getParameter('id');
+
+		$commentManager = $this->getContext()
+							   ->getModel('UserManager', 'User')
+							   ->deleteById($ids);
+
+		return "Success";
+	}
+
+
+	/**
+	 * Returns the view if there's an error in Write (POST) requests
+	 *
+	 * @param      AgaviRequestDataHolder the incoming request data
+	 *
+	 * @return     mixed <ul>
+	 *                     <li>A string containing the view name associated
+	 *                     with this action; or</li>
+	 *                     <li>An array with two indices: the parent module
+	 *                     of the view to be executed and the view to be
+	 *                     executed.</li>
+	 *                   </ul>
+	 */
+	public function handleWriteError(AgaviRequestDataHolder $rd)
+	{
+		return 'Error';
 	}
 }
 

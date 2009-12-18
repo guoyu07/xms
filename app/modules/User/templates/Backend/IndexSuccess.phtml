@@ -1,3 +1,38 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		// Check All Handler
+		$('.xrx-check-all').click( function() {
+			$('.xrx-check-column').children().attr('checked', $(this).attr('checked'));
+		})
+
+		// Delete Button Handler
+		$('.xrx-delete-button').click( function(e) {
+			var valid = false;
+
+			$('td.xrx-check-column').children().each( function(idx, el) {
+				if ($(el).attr('checked')) {
+					valid = true;
+					return;
+				}
+			})
+
+			if (! valid) {
+				alert('<?= $tm->_('please select a user.', '.user') ?>');
+				e.preventDefault();
+				return false;
+			}
+
+			// Sure?
+			if (! confirm('<?= $tm->_('are you sure?', '.user') ?>')) {
+				e.preventDefault();
+			}
+		})
+	})
+	// -->
+</script>
+
+
 <h2>
 	<img class="xrx-icon-32" src="/images/user/user-16.png" alt="<?= $tm->_('users list', '.user'); ?>" /><?= $tm->_('users list', '.user'); ?>
 </h2>
@@ -7,44 +42,32 @@
 		<thead>
 			<tr class="xrx-<?= $t['_align']; ?>-text">
 				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
-				<th class="xrx-title-column"><?= $tm->_('title', '.user') ?></th>
-				<th><?= $tm->_('category', '.user') ?></th>
-				<th><?= $tm->_('date', '.user') ?></th>
-				<th><?= $tm->_('author', '.user') ?></th>
-				<th><?= $tm->_('published', '.user') ?></th>
+				<th class="xrx-title-column"><?= $tm->_('username', '.user') ?></th>
+				<th><?= $tm->_('email', '.user') ?></th>
 			</tr>
 		</thead>
 		<tfoot>
 			<tr class="xrx-<?= $t['_align']; ?>-text">
 				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
-				<th class="xrx-title-column"><?= $tm->_('title', '.user') ?></th>
-				<th><?= $tm->_('category', '.user') ?></th>
-				<th><?= $tm->_('date', '.user') ?></th>
-				<th><?= $tm->_('author', '.user') ?></th>
-				<th><?= $tm->_('published', '.user') ?></th>
+				<th class="xrx-title-column"><?= $tm->_('username', '.user') ?></th>
+				<th><?= $tm->_('email', '.user') ?></th>
 			</tr>
 		</tfoot>
 		<tbody>
-		<? if ( count ($t['news']) > 0 ): ?>
-			<? foreach ($t['news'] as $news): ?>
-			<tr title="<?= strip_tags($news->content); ?>">
-				<td class="xrx-check-column"><input type="checkbox" name="id[]" value="<?= $news->id ?>" /></td>
+		<? if ( count ($t['users']) > 0 ): ?>
+			<? foreach ($t['users'] as $user): ?>
+			<tr>
+				<td class="xrx-check-column"><input type="checkbox" name="id[]" value="<?= $user->id ?>" /></td>
 				<td class="xrx-title-column">
-					<a href="<?= $ro->gen('default', array('path'=>'admin/news/edit', 'id'=>$news->id)) ?>"
-					   title="<?= sprintf($tm->_('edit \'%s\'', '.user'), $news->title) ?>"><?= $news->title ?></a>
+					<a href="<?= $ro->gen('default', array('path'=>'admin/user/edit', 'id'=>$user->id)) ?>"
+					   title="<?= sprintf($tm->_('edit \'%s\'', '.user'), $user->username) ?>"><?= $user->username ?></a>
 				</td>
-				<td>
-					<a href="<?= $ro->gen('default', array('path'=>'admin/category/edit', 'id'=>$news->category_id)) ?>"
-					   title="<?= sprintf($tm->_('edit \'%s\'', '.user'), $news->category_name) ?>"><?= $news->category_name ?></a>
-				</td>
-				<td><?= $tm->_d($news->date) ?></td>
-				<td><a href="<?= $ro->gen('default', array('path'=>'user/edit', 'id'=>$news->author_id)) ?>"><?= $news->username ?></a></td>
-				<td><?= $news->published ? $tm->_('yes', '.user') : $tm->_('no', '.user'); ?></td>
+				<td><?= $user->email ?></td>
 			</tr>
 			<? endforeach; ?>
 		<? else: ?>
 			<tr>
-				<td colspan="5" class="xrx-center-text xrx-italic-text"><?= $tm->_("there's no user.", '.user') ?></td>
+				<td colspan="3" class="xrx-center-text xrx-italic-text"><?= $tm->_("there's no user.", '.user') ?></td>
 			</tr>
 		<? endif ?>
 		</tbody>

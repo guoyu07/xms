@@ -8,7 +8,7 @@ class Category_Backend_DeleteSuccessView extends XRXCategoryBackendView
 
 		$this->setAttribute('_url', $this->ro->gen('default', array('path' => 'admin/category')));
 		$this->setAttribute('_type', 'success');
-		$this->setAttribute('_title', $this->tm->_('category(s) deleted successfully'. '.category'));
+		$this->setAttribute('_title', $this->tm->_('redirecting...'. '.category'));
 	}
 }
 

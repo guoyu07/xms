@@ -42,7 +42,7 @@ class XRXRbacSecurityUser extends AgaviRbacSecurityUser
 	{
 		try {
 			$userManager = $this->getContext()->getModel('UserManager', 'User');
-			$this->user	 = $userManager->getByUsername($username);
+			$this->user	 = $userManager->retrieveByUsername($username);
 		} catch(AgaviSecurityException $e) {
 
 		}

@@ -5,7 +5,7 @@
 		<members>
 			<index>4</index>
 			<title>users</title>
-			<url>admin/users</url>
+			<url>admin/user</url>
 			<icon>/images/user/user-16.png</icon>
 
 			<member>

@@ -19,7 +19,7 @@ class User_RegistrationValidator extends AgaviValidator
 		$email		= $this->getData($arguments[1]);
 
 		$userManager = $this->getContext()->getModel('UserManager', 'User');
-		$user		 = $userManager->getByUsernameOrEmail($username, $email);
+		$user		 = $userManager->retrieveByUsernameOrEmail($username, $email);
 		
 		// Checking for uniquness!
 		if ($user) {

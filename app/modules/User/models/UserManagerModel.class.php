@@ -2,23 +2,36 @@
 
 class User_UserManagerModel extends XRXUserBaseModel
 {
-	public function getById($id)
+	public function retrieveById($id)
 	{
-		$sql = "SELECT u.*
-				FROM %s AS u
-				WHERE u.id = :id";
+		try {
+			$sql = "SELECT u.*
+					FROM %s AS u
+					WHERE u.id = :id";
 
-		$sql	= sprintf($sql, self::USERS);
-		$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-		$stmt->execute();
-		
-		$result = $stmt->fetchObject();
-		FirePHP::getInstance(true)->log($result);
+			$sql	= sprintf($sql, self::USERS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+			$stmt->execute();
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			// No record?
+			if (! $result) {
+				return null;
+			}
+
+			$user = $this->getContext()->getModel('User', 'User', array($result))->toArray();
+
+			return (object) $user;
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
 	}
 
 
-	public function getAll()
+	public function retrieveAll()
 	{
 		try {
 			$sql = "SELECT u.*
@@ -48,62 +61,142 @@ class User_UserManagerModel extends XRXUserBaseModel
 	}
 
 
-	public function getByUsername($username)
+	public function retrieveByUsername($username)
 	{
-		$sql = "SELECT u.*
-				FROM %s AS u
-				WHERE username = :username";
+		try {
+			$sql = "SELECT u.*
+					FROM %s AS u
+					WHERE username = :username";
 
-		$sql	= sprintf($sql, self::USERS);
-		$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-		$stmt->bindValue(':username', $username, PDO::PARAM_STR);
-		$stmt->execute();
+			$sql	= sprintf($sql, self::USERS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':username', $username, PDO::PARAM_STR);
 
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			$stmt->execute();
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-		if ($result != false) {
+			// No record?
+			if (! $result) {
+				return null;
+			}
+
 			return $this->getContext()->getModel('User', 'User', array($result));
 		}
-
-		return null;
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
 	}
 
 
-	public function getByUsernameOrEmail($username, $email)
+	public function retrieveByUsernameOrEmail($username, $email)
 	{
-		$sql = "SELECT u.*
-				FROM %s AS u
-				WHERE username = :username OR email = :email";
+		try {
+			$sql = "SELECT u.*
+					FROM %s AS u
+					WHERE username = :username OR email = :email";
 
-		$sql	= sprintf($sql, self::USERS);
-		$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-		$stmt->bindValue(':username', $username, PDO::PARAM_STR);
-		$stmt->bindValue(':email', $email, PDO::PARAM_STR);
-		$stmt->execute();
-		
-		$result = $stmt->fetch(PDO::FETCH_ASSOC);
-		
-		if ($result != false) {
+			$sql	= sprintf($sql, self::USERS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+			$stmt->bindValue(':email', $email, PDO::PARAM_STR);
+
+			$stmt->execute();
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			// No record?
+			if (! $result) {
+				return null;
+			}
+
 			return $this->getContext()->getModel('User', 'User', array($result));
 		}
-
-		return null;
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
 	}
 
 
-	public function add(array $data)
+	public function create(array $data)
+	{
+		try {
+			$user = $this->getContext()->getModel('User', 'User', array($data));
+
+			$sql = "INSERT INTO %s (username, password, email)
+					VALUES(:username, :password, :email)";
+
+			$sql	= sprintf($sql, self::USERS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
+			$stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
+			$stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
+			$stmt->execute();
+
+			return true;
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+	}
+
+
+	public function update(array $data)
 	{
 		$user = $this->getContext()->getModel('User', 'User', array($data));
 		
-		$sql = "INSERT INTO %s (username, password, email)
-				VALUES(:username, :password, :email)";
+		try {
+			$sql = "UPDATE %s AS u
+					SET u.username = :username,";
 
-		$sql	= sprintf($sql, self::USERS);
-		$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-		$stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
-		$stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
-		$stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
-		$stmt->execute();
+			if ($user->getPassword()) {
+				$sql .= "u.password = :password,";
+			}
+
+			$sql .= "u.email = :email
+					WHERE u.id = :id";
+
+			$sql	= sprintf($sql, self::USERS);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':username', $user->getUsername(), PDO::PARAM_STR);
+
+			if ($user->getPassword()) {
+				$stmt->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
+			}
+			
+			$stmt->bindValue(':email', $user->getEmail(), PDO::PARAM_STR);
+			$stmt->bindValue(':id', $user->getId(), PDO::PARAM_INT);
+			$stmt->execute();
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+
+		return true;
+	}
+
+
+	public function deleteById($id)
+	{
+		if (empty ($id)) {
+			return false;
+		}
+
+		if (! is_array($id)) {
+			$id = array($id);
+		}
+
+		try {
+			$sql = "DELETE u
+					FROM %s AS u
+					WHERE u.id IN (%s)";
+
+			$id		= "'" . implode("','", $id) . "'";
+			$sql	= sprintf($sql, self::USERS, $id);
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->execute();
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
 
 		return true;
 	}

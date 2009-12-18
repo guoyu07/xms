@@ -9,6 +9,7 @@
 		<autoload name="XRXUserFrontendView">%core.module_dir%/User/lib/view/XRXUserFrontendView.class.php</autoload>
 
 		<!-- Validators -->
+		<autoload name="User_GenuineIdValidator">%core.module_dir%/User/lib/validator/GenuineIdValidator.class.php</autoload>
 		<autoload name="User_RegistrationValidator">%core.module_dir%/User/lib/validator/RegistrationValidator.class.php</autoload>
 		
 	</ae:configuration>

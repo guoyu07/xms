@@ -24,7 +24,7 @@ class Comment_Backend_EditAction extends XRXCommentBackendAction
 		$this->setAttribute('comment', $comment);
 		$this->setAttribute('users', $this->getContext()
 										  ->getModel('UserManager', 'User')
-										  ->getAll());
+										  ->retrieveAll());
 		
 		return 'Input';
 	}

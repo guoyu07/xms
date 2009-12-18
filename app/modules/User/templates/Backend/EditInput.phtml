@@ -1,0 +1,29 @@
+<form action="<?= $ro->gen(null); ?>" method="post">
+	<fieldset>
+		<legend><?= $tm->_('edit user', '.user') ?></legend>
+		<ol>
+			<li>
+				<label for="xrx-user-username"><?= $tm->_('username', '.user') ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-user-username" name="username" value="<?= $t['user']->username ?>" maxlength="60" />
+			</li>
+			<li>
+				<label for="xrx-user-email"><?= $tm->_('email', '.user'); ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-user-email" name="email" value="<?= $t['user']->email ?>" maxlength="100" />
+			</li>
+			<li>
+				<label for="xrx-user-password"><?= $tm->_('password', '.user'); ?></label>
+				<input type="password" id="xrx-user-password" name="password" maxlength="64" />
+			</li>
+			<li>
+				<label for="xrx-user-password-confirm"><?= $tm->_('confirm password', '.user'); ?></label>
+				<input type="password" id="xrx-user-password-confirm" name="password_confirmation" maxlength="64" />
+			</li>
+		</ol>
+	</fieldset>
+
+	<input type="hidden" name="id" value="<?= $t['user']->id ?>" />
+	<input type="submit" value="<?= $tm->_('submit', '.user'); ?>" />
+	<a href="<?= $ro->gen('default', array('path' => 'admin/user')) ?>">
+		<input type="button" value="<?= $tm->_('cancel', '.user'); ?>" />
+	</a>
+</form>
