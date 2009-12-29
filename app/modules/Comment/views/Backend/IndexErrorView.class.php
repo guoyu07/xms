@@ -11,7 +11,7 @@ class Comment_Backend_IndexErrorView extends XRXCommentBackendView
 
 		$this->setAttribute('_url', $this->ro->gen('default', array('path' => 'admin')));
 		$this->setAttribute('_type', 'error');
-		$this->setAttribute('_title', $this->tm->_('redirecting...', '.news'));
+		$this->setAttribute('_title', $this->tm->_('redirecting...', '.comment'));
 	}
 }
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-17 01:30+0330\n"
-"PO-Revision-Date: 2009-11-17 01:51+0330\n"
+"PO-Revision-Date: 2009-12-29 00:33+0330\n"
 "Last-Translator: Khashayar <me@khashayar.me>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -117,7 +117,7 @@ msgstr "خبر با موفقیت اضافه گردید"
 
 #: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/DeleteSuccess.phtml:1
 msgid "news has been successfully deleted"
-msgstr "خبر با موفقیت خذف شد."
+msgstr "خبر با موفقیت حذف شد."
 
 #: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/EditInput.phtml:26
 #: c:/xampp/htdocs/PHP/XRX/trunk/app/modules/News/templates/Backend/IndexSuccess.phtml:27

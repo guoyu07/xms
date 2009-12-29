@@ -9,7 +9,7 @@
 		<validators method="write">
 
 			<!-- ID -->
-			<validator class="number" translation_domain=".comment">
+			<validator class="number" translation_domain=".comment.validation">
 				<arguments base="id[]">
 					<argument />
 				</arguments>
@@ -17,8 +17,8 @@
 					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid comment id.</error>
-					<error for="required">At least one comment id is required.</error>
+					<error>invalid comment id</error>
+					<error for="required">at least one comment id is required</error>
 				</errors>
 			</validator>
 

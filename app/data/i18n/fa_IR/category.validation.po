@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Language-Team: \n"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:22
+msgid "invalid name"
+msgstr "نام نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:23
+msgid "please provide category name"
+msgstr "لطفا نام دسته را وارد نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:24
+msgid "the name must be shorter than 100 characters"
+msgstr "نام باید کمتر از 100 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:40
+msgid "please select a parent"
+msgstr "لطفا یک والد انتخاب کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:76
+msgid "invalid module"
+msgstr "ماژول نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:77
+msgid "please select a module"
+msgstr "لطفا یک ماژول انتخاب کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:94
+msgid "invalid parent"
+msgstr "والد نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:105
+msgid "invalid module(s)"
+msgstr "ماژول نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Add.xml:119
+msgid "invalid description"
+msgstr "توضیحات نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Delete.xml:22
+msgid "this category can not be deleted"
+msgstr "امکان حذف این دسته وجود ندارد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Delete.xml:35
+msgid "invalid category id"
+msgstr "شناسه دسته نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Delete.xml:36
+msgid "at least one category id is required"
+msgstr "انتخاب حداقل یک دسته الزامی است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:23
+msgid "the id has an invalid value"
+msgstr "مقدار شناسه نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:24
+msgid "please provide an id"
+msgstr "اطفا شناسه را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:34
+msgid "there's no category with provided id"
+msgstr "دسته ای برای شناسه مورد نظر وجود ندارد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\List.xml:21
+msgid "the module id has an invalid value"
+msgstr "مقدار شناسه ماژول نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\List.xml:22
+msgid "please provide a module id"
+msgstr "لطفا شناسه ماژول را مشخص کنید"
+

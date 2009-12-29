@@ -10,33 +10,31 @@
 		<validators method="read">
 
 			<!-- Module Id -->
-			<validator class="number">
+			<validator class="number" translation_domain=".comment.validation">
 				<arguments>
 					<argument>module_id</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.comment</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The module id has an invalid value.</error>
-					<error for="required">Please provide a module id.</error>
+					<error>the module id has an invalid value</error>
+					<error for="required">please provide a module id</error>
 				</errors>
 			</validator>
 
 
 			<!-- Owner Id -->
-			<validator class="number">
+			<validator class="number" translation_domain=".comment.validation">
 				<arguments>
 					<argument>owner_id</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.comment</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The owner id has an invalid value.</error>
-					<error for="required">Please provide an owner id.</error>
+					<error>the owner id has an invalid value</error>
+					<error for="required">please provide an owner id</error>
 				</errors>
 			</validator>
 

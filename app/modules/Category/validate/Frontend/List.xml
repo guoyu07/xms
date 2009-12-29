@@ -10,7 +10,7 @@
 		<validators method="read">
 
 			<!-- Module Id -->
-			<validator class="number" translation_domain=".comment">
+			<validator class="number" translation_domain=".category.validation">
 				<arguments>
 					<argument>module_id</argument>
 				</arguments>
@@ -18,8 +18,8 @@
 					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The module id has an invalid value.</error>
-					<error for="required">Please provide a module id.</error>
+					<error>the module id has an invalid value</error>
+					<error for="required">please provide a module id</error>
 				</errors>
 			</validator>
 

@@ -70,7 +70,7 @@
 				</td>
 				<td>
 					<? if ($comment->author_id): ?>
-						<a href="<?= $ro->gen('default', array('path'=>'admin/user/view', 'id'=>$comment->author_id)) ?>"
+						<a href="<?= $ro->gen('default', array('path'=>'admin/user/edit', 'id'=>$comment->author_id)) ?>"
 						   title="<?= sprintf($tm->_('edit profile \'%s\'', '.comment'), $comment->author_name) ?>"><?= $comment->author_name ?></a>
 					<? else: ?>
 						<?= $comment->author_name ?>
@@ -79,9 +79,7 @@
 					<br /><small><?= $comment->author_url ?></small>
 				</td>
 				<td><?= $comment->date ?></td>
-				<td class="xrx-comment-<?= $comment->status ?>">
-					<?= $comment->status ?>
-				</td>
+				<td class="xrx-comment-<?= $comment->status ?>"><?= $tm->_($comment->status, '.comment') ?></td>
 				<td>
 					<a href="<?= $ro->gen('default', array('path'=>'admin/' . strtolower($t['module_name']) . '/edit', 'id'=>$comment->owner_id)) ?>"
 					   title="<?= sprintf($tm->_('edit \'%s\'', '.comment'), $comment->owner_title) ?>">

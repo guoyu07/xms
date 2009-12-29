@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Language-Team: \n"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Delete.xml:20
+msgid "invalid comment id"
+msgstr "شناسه نظر غیر معتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Delete.xml:21
+msgid "at least one comment id is required"
+msgstr "انتخاب حداقل یک نظر الزامی است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:22
+msgid "the id has an invalid value"
+msgstr "مقدار شناسه نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:23
+msgid "please provide an id"
+msgstr "اطفا شناسه را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:34
+msgid "there's no comment with provided id in current language"
+msgstr "دسته ای برای شناسه مورد نظر در زبان جاری وجود ندارد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:62
+msgid "the author type field has an invalid value"
+msgstr "نوع نویسنده نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:75
+msgid "the author id field has an invalid value"
+msgstr "شناسه نویسنده نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:90
+msgid "the name field has an invalid value"
+msgstr "نام نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:108
+msgid "the email field has an invalid value"
+msgstr "پست الکترونیکی نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:127
+msgid "the url field has an invalid value"
+msgstr "آدرس وب سایت نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:143
+msgid "the date field has an invalid value"
+msgstr "تاریخ نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:144
+msgid "please provide date"
+msgstr "لطفا تاریخ را وارد نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:162
+msgid "the status field has an invalid value"
+msgstr "وضعیت نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:163
+msgid "please provide comment's status"
+msgstr "لطفا وضعیت نظر را مشخص نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:177
+msgid "the content field has an invalid value"
+msgstr "متن نظر نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:192
+msgid "the redirect url field has an invalid value"
+msgstr "لینک تغییر مسیر نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Backend\Edit.xml:193
+msgid "please provide a url to redirect to"
+msgstr "لطفا لینک تغییر مسیر را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:55
+msgid "the parameters has an invalid value"
+msgstr "پارامترهای ارسالی نامعتبر می باشند"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:56
+msgid "please provide parameters"
+msgstr "لطفا پارامترها را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:79
+msgid "the author id has an invalid value"
+msgstr "شناسه نویسنده نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:98
+msgid "the name has an invalid value"
+msgstr "نام نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:99
+msgid "the name must be shorter than 60 characters"
+msgstr "نام باید کمتر از 60 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:100
+msgid "please provide your name"
+msgstr "لطفا نام خود را وارد نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:116
+msgid "the email has an invalid value"
+msgstr "پست الکترونیکی نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:117
+msgid "please provide your email address"
+msgstr "لطفا پست الکترونیکی خود را وارد نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:118
+msgid "the email must be longer than 7 characters"
+msgstr "پست الکترونیکی باید بیش از 7 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:119
+msgid "the email must be shorter than 100 characters"
+msgstr "پست الکترونیکی باید کمتر از 100 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:135
+msgid "the url has an invalid value"
+msgstr "آدرس وب سایت نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:136
+msgid "the url must be longer than 7 characters"
+msgstr "آدرس وب سایت باید بیش از 7 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:137
+msgid "the url must be shorter than 200 characters"
+msgstr "آدرس وب سایت باید کمتر از 200 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:156
+msgid "the content has an invalid value"
+msgstr "متن نظر نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\Add.xml:157
+msgid "please provide content"
+msgstr "لطفا نظر را وارد نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\List.xml:21
+msgid "the module id has an invalid value"
+msgstr "شناسه ماژول نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\List.xml:22
+msgid "please provide a module id"
+msgstr "لطفا شناسه ماژول را مشخص نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\List.xml:36
+msgid "the owner id has an invalid value"
+msgstr "شناسه دارنده نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\validate\Frontend\List.xml:37
+msgid "please provide an owner id"
+msgstr "اطفا شناسه دارنده را مشخص نمایید"
+

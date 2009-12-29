@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Language-Team: \n"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\DeleteSuccess.php:1
+msgid "comment(s) has been successfully deleted"
+msgstr "Comment(s) has been successfully deleted"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:26
+msgid "author type"
+msgstr "Author type"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:29
+msgid "registered"
+msgstr "Registered"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:32
+msgid "guest"
+msgstr "Guest"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:60
+msgid "pending"
+msgstr "Pending"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:63
+msgid "approved"
+msgstr "Approved"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:66
+msgid "rejected"
+msgstr "Rejected"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:77
+msgid "submit"
+msgstr "Submit"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:79
+msgid "cancel"
+msgstr "Cancel"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditSuccess.php:1
+msgid "comment has been successfully updated"
+msgstr "Comment has been successfully updated"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:21
+msgid "please select a comment."
+msgstr "Please select a comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:27
+msgid "are you sure?"
+msgstr "Are you sure?"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:37
+msgid "comment list"
+msgstr "Comment list"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:37
+msgid "comment list for %s"
+msgstr "Comment list for %s"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:56
+msgid "author"
+msgstr "Author"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:57
+msgid "date"
+msgstr "Date"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:58
+msgid "status"
+msgstr "Status"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:59
+msgid "owner"
+msgstr "Owner"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:74
+msgid "edit profile '%s'"
+msgstr "Edit profile '%s'"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:87
+msgid "edit '%s'"
+msgstr "Edit '%s'"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:95
+msgid "There's no comment."
+msgstr "There's no comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:101
+msgid "delete"
+msgstr "Delete"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:3
+msgid "leave a comment"
+msgstr "Leave a comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:21
+msgid "name"
+msgstr "Name"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:25
+msgid "email"
+msgstr "Email"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:29
+msgid "website"
+msgstr "Website"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:34
+msgid "comment"
+msgstr "Comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:42
+msgid "submit comment"
+msgstr "Submit comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddSuccess.php:1
+msgid "your comment has been successfully added"
+msgstr "Your comment has been successfully added"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\ListSuccess.php:1
+msgid "comments"
+msgstr "Comments"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\ListSuccess.php:21
+msgid "there's no comments"
+msgstr "There's no comments"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Backend\EditInputView.class.php:11
+msgid "edit comment"
+msgstr "Edit comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Backend\IndexSuccessView.class.php:9
+msgid "comments' list"
+msgstr "Comments' list"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Frontend\AddInputView.class.php:26
+msgid "add comment"
+msgstr "Add comment"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Frontend\AddSuccessView.class.php:36
+msgid "redirecting..."
+msgstr "Redirecting..."
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Frontend\ListSuccessView.class.php:9
+msgid "list comments"
+msgstr "List comments"
+

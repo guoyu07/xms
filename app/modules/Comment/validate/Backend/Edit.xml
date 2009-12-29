@@ -10,7 +10,7 @@
 		<validators>
 
 			<!-- ID -->
-			<validator class="number" translation_domain=".comment">
+			<validator class="number" translation_domain=".comment.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
@@ -19,19 +19,19 @@
 					<ae:parameter name="severity">critical</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The id has an invalid value.</error>
-					<error for="required">Please provide an id.</error>
+					<error>the id has an invalid value</error>
+					<error for="required">please provide an id</error>
 				</errors>
 			</validator>
 
 
 			<!-- ID Genuine Validation -->
-			<validator class="Comment_GenuineIdValidator" method="read" translation_domain=".comment">
+			<validator class="Comment_GenuineIdValidator" method="read" translation_domain=".comment.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
 				<errors>
-					<error>There's no comment with provided id in current language.</error>
+					<error>there's no comment with provided id in current language</error>
 				</errors>
 			</validator>
 
@@ -51,7 +51,7 @@
 		<validators method="write">
 
 			<!-- Author Type -->
-			<validator class="string">
+			<validator class="string" translation_domain=".comment.validation">
 				<arguments>
 					<argument>author_type</argument>
 				</arguments>
@@ -59,12 +59,12 @@
 					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The author type field has an invalid value.</error>
+					<error>the author type field has an invalid value</error>
 				</errors>
 			</validator>
 
 			<!-- Author ID -->
-			<validator class="number">
+			<validator class="number" translation_domain=".comment.validation">
 				<arguments>
 					<argument>author_id</argument>
 				</arguments>
@@ -72,13 +72,13 @@
 					<ae:parameter name="required">false</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The author id field has an invalid value.</error>
+					<error>the author id field has an invalid value</error>
 				</errors>
 			</validator>
 
 
 			<!-- Author Name -->
-			<validator class="string" translation_domain=".comment">
+			<validator class="string" translation_domain=".comment.validation">
 				<arguments>
 					<argument>name</argument>
 				</arguments>
@@ -87,15 +87,15 @@
 					<ae:parameter name="max">60</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The name field has an invalid value.</error>
-					<error for="max">The name must be shorter than 60 characters.</error>
-					<error for="required">Please provide your name.</error>
+					<error>the name field has an invalid value</error>
+					<error for="max">the name must be shorter than 60 characters</error>
+					<error for="required">please provide your name</error>
 				</errors>
 			</validator>
 
 
 			<!-- Author E-Mail -->
-			<validator class="email" translation_domain=".comment">
+			<validator class="email" translation_domain=".comment.validation">
 				<arguments>
 					<argument>email</argument>
 				</arguments>
@@ -105,16 +105,16 @@
 					<ae:parameter name="max">100</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The email field has an invalid value.</error>
-					<error for="required">Please provide your email address.</error>
-					<error for="min">The email must be longer than 7 characters.</error>
-					<error for="max">The email must be shorter than 100 characters.</error>
+					<error>the email field has an invalid value</error>
+					<error for="required">please provide your email address</error>
+					<error for="min">the email must be longer than 7 characters</error>
+					<error for="max">the email must be shorter than 100 characters</error>
 				</errors>
 			</validator>
 
 
 			<!-- Author URL -->
-			<validator class="string" translation_domain=".comment">
+			<validator class="string" translation_domain=".comment.validation">
 				<arguments>
 					<argument>url</argument>
 				</arguments>
@@ -124,15 +124,15 @@
 					<ae:parameter name="max">200</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The url field has an invalid value.</error>
-					<error for="min">The url must be longer than 7 characters.</error>
-					<error for="max">The url must be shorter than 200 characters.</error>
+					<error>the url field has an invalid value</error>
+					<error for="min">the url must be longer than 7 characters</error>
+					<error for="max">the url must be shorter than 200 characters</error>
 				</errors>
 			</validator>
 
 
 			<!-- Date -->
-			<validator class="string" translation_domain=".comment">
+			<validator class="string" translation_domain=".comment.validation">
 				<arguments>
 					<argument>date</argument>
 				</arguments>
@@ -140,14 +140,14 @@
 					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The date field has an invalid value.</error>
-					<error for="required">Please provide date.</error>
+					<error>the date field has an invalid value</error>
+					<error for="required">please provide date</error>
 				</errors>
 			</validator>
 
 
 			<!-- Status -->
-			<validator class="inarray">
+			<validator class="inarray" translation_domain=".comment.validation">
 				<arguments>
 					<argument>status</argument>
 				</arguments>
@@ -159,14 +159,14 @@
 					<ae:parameter name="values">pending,approved,rejected</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The status field has an invalid value.</error>
-					<error for="required">Please provide comment's status.</error>
+					<error>the status field has an invalid value</error>
+					<error for="required">please provide comment's status</error>
 				</errors>
 			</validator>
 
 
 			<!-- Content -->
-			<validator class="string" translation_domain=".comment">
+			<validator class="string" translation_domain=".comment.validation">
 				<arguments>
 					<argument>content</argument>
 				</arguments>
@@ -174,14 +174,14 @@
 					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The content field has an invalid value.</error>
-					<error for="required">Please provide content.</error>
+					<error>the content field has an invalid value</error>
+					<error for="required">please provide content</error>
 				</errors>
 			</validator>
 
 
 			<!-- URL (Hidden) -->
-			<validator class="string" translation_domain=".comment">
+			<validator class="string" translation_domain=".comment.validation">
 				<arguments>
 					<argument>referer</argument>
 				</arguments>
@@ -189,8 +189,8 @@
 					<ae:parameter name="required">true</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The redirect url field has an invalid value.</error>
-					<error for="required">Please provide a url to redirect to.</error>
+					<error>the redirect url field has an invalid value</error>
+					<error for="required">please provide a url to redirect to</error>
 				</errors>
 			</validator>
 

@@ -10,36 +10,34 @@
 		<validators method="write">
 			
 			<!-- Name -->
-			<validator class="string">
+			<validator class="string" translation_domain=".category.validation">
 				<arguments>
 					<argument>name</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="max">100</ae:parameter>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid name.</error>
-					<error for="required">Please provide category name.</error>
-					<error for="max">The name must be shorter than 100 characters.</error>
+					<error>invalid name</error>
+					<error for="required">please provide category name</error>
+					<error for="max">the name must be shorter than 100 characters</error>
 				</errors>
 			</validator>
 
 
 			<!-- Parent -->
-			<validator class="number">
+			<validator class="number" translation_domain=".category.validation">
 				<arguments>
 					<argument>parent</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="severity">critical</ae:parameter>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid parent.</error>
-					<error for="required">Please select a parent.</error>
+					<error>invalid parent</error>
+					<error for="required">please select a parent</error>
 				</errors>
 			</validator>
 
@@ -67,17 +65,16 @@
 					</validator>
 
 					<!-- Modules -->
-					<validator class="number">
+					<validator class="number" translation_domain=".category.validation">
 						<arguments base="module[]">
 							<argument />
 						</arguments>
 						<ae:parameters>
 							<ae:parameter name="required">true</ae:parameter>
-							<ae:parameter name="translation_domain">.category</ae:parameter>
 						</ae:parameters>
 						<errors>
-							<error>Invalid module.</error>
-							<error for="required">Please select a module.</error>
+							<error>invalid module</error>
+							<error for="required">please select a module</error>
 						</errors>
 					</validator>
 
@@ -89,44 +86,37 @@
 
 
 			<!-- ParentId Genuine Validation -->
-			<validator class="Category_GenuineParentIdValidator" depends="parent_not_zero">
+			<validator class="Category_GenuineParentIdValidator" depends="parent_not_zero" translation_domain=".category.validation">
 				<arguments>
 					<argument>parent</argument>
 				</arguments>
-				<ae:parameters>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
-				</ae:parameters>
 				<errors>
-					<error>Invalid parent.</error>
+					<error>invalid parent</error>
 				</errors>
 			</validator>
 
 
 			<!-- ModuleId Genuine Validation -->
-			<validator class="Category_GenuineModuleIdValidator" depends="[module_selected]">
+			<validator class="Category_GenuineModuleIdValidator" depends="[module_selected]" translation_domain=".category.validation">
 				<arguments base="module">
 					<argument />
 				</arguments>
-				<ae:parameters>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
-				</ae:parameters>
 				<errors>
-					<error>Invalid module(s).</error>
+					<error>invalid module(s)</error>
 				</errors>
 			</validator>
 
 
 			<!-- Description -->
-			<validator class="string">
+			<validator class="string" translation_domain=".category.validation">
 				<arguments>
 					<argument>description</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">false</ae:parameter>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid description.</error>
+					<error>invalid description</error>
 				</errors>
 			</validator>
 		</validators>

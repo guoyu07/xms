@@ -9,7 +9,7 @@
 		<validators method="write">
 
 			<!-- ID -->
-			<validator class="not">
+			<validator class="not" translation_domain=".category.validation">
 				<validator class="equals">
 					<arguments base="id[]">
 						<argument />
@@ -18,26 +18,22 @@
 						<ae:parameter name="value">1</ae:parameter>
 					</ae:parameters>
 				</validator>
-				<ae:parameters>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
-				</ae:parameters>
 				<errors>
-					<error>This category can not be deleted.</error>
+					<error>this category can not be deleted</error>
 				</errors>
 			</validator>
 
 			<!-- ID -->
-			<validator class="number">
+			<validator class="number" translation_domain=".category.validation">
 				<arguments base="id[]">
 					<argument />
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid category id.</error>
-					<error for="required">At least one category id is required.</error>
+					<error>invalid category id</error>
+					<error for="required">at least one category id is required</error>
 				</errors>
 			</validator>
 

@@ -11,31 +11,27 @@
 		<validators>
 
 			<!-- ID -->
-			<validator class="number">
+			<validator class="number" translation_domain=".category.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="severity">critical</ae:parameter>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The id has an invalid value.</error>
-					<error for="required">Please provide an id.</error>
+					<error>the id has an invalid value</error>
+					<error for="required">please provide an id</error>
 				</errors>
 			</validator>
 
 			<!-- ID Genuine Validation -->
-			<validator class="Category_GenuineIdValidator" method="read">
+			<validator class="Category_GenuineIdValidator" method="read" translation_domain=".category.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
-				<ae:parameters>
-					<ae:parameter name="translation_domain">.category</ae:parameter>
-				</ae:parameters>
 				<errors>
-					<error>There's no category with provided id.</error>
+					<error>there's no category with provided id</error>
 				</errors>
 			</validator>
 
