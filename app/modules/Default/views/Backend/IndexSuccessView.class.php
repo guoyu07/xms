@@ -8,8 +8,7 @@ class Default_Backend_IndexSuccessView extends XRXDefaultBackendView
 
 		$this->setAttribute('_title', $this->tm->_('Dashboard', '.default'));
 
-		$this->paginator()->setRecordPerPage(2);
-		$this->paginator()->setTotalRecords(29);
+		$this->paginator()->setTotalRecords(131);
 	}
 }
 
