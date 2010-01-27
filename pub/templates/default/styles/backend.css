@@ -1,5 +1,6 @@
-/* General */
-
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* General
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 form fieldset {
 	margin: 10px 0;
 	border-style: solid;
@@ -18,7 +19,10 @@ form fieldset legend input[type="checkbox"] {
 }
 
 
-/* Header */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* Header
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 #xrx-header {
 	margin: 0px;
@@ -85,7 +89,9 @@ form fieldset legend input[type="checkbox"] {
 
 
 
-/* Menu */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* Menu
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 #xrx-menu {
 	width: 200px;
@@ -127,7 +133,63 @@ form fieldset legend input[type="checkbox"] {
 
 
 
-/* Table List */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* Content
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+
+.xrx-list-nav {
+	height: 30px;
+	margin: 6px 0px;
+	vertical-align: middle;
+}
+
+.xrx-list-nav .xrx-page-status {
+	margin-right: 10px;
+	color: #777777;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.xrx-list-nav .xrx-pagination {
+	color: #555555;
+	font-size: 11px;
+}
+
+.xrx-list-nav .xrx-pagination .xrx-current {
+	border-color: #D3D3D3;
+	background: #DFDFDF none repeat scroll 0 0;
+}
+
+.xrx-list-nav .xrx-pagination a {
+	border-color: #E3E3E3;
+	background-color: #EEEEEE;
+}
+
+.xrx-list-nav .xrx-pagination a:hover {
+	color: #D54321;
+	border-color: #D54321;
+}
+
+.xrx-list-nav a.xrx-page-number {
+	padding: 0 2px;
+	font-weight: bold;
+}
+
+.xrx-list-nav .xrx-pagination a,
+.xrx-list-nav .xrx-pagination span.xrx-current {
+	margin-right: 3px;
+	padding: 3px 6px;
+	border-width: 1px;
+	border-style: solid;
+	text-decoration: none;
+	-moz-border-radius: 5px;
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* Table List
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 table tr.xrx-left-text th {
 	text-align: left; /* Dumb IE */
@@ -178,7 +240,9 @@ table.xrx-table-list td {
 
 
 
-/* Footer */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* Footer
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 #xrx-footer {
 	margin: 0px;
@@ -201,10 +265,8 @@ table.xrx-table-list td {
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
-
-
-
-/* News */
+/* News
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 .xrx-news-title {
 	width: 650px !important;
@@ -217,7 +279,9 @@ table.xrx-table-list td {
 
 
 
-/* Comment */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
+/* Comment
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 .xrx-comment-pending {
 	color: orange;

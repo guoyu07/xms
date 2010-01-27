@@ -58,6 +58,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 	{
 		try {
 			$sql = "SELECT
+						SQL_CALC_FOUND_ROWS *,
 						n.*,
 						ni.*,
 						c.name AS category_name,

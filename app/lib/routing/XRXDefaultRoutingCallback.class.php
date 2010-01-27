@@ -23,7 +23,7 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 			$idx = 0;
 			$section = 'Frontend.';
 		}
-
+		
 		// Assgin the others as parameters
 		for ($i = 2 + $idx; $i < count($params); ++$i) {
 			$parameters[strtolower($params[$i])] = $params[++$i];
@@ -98,8 +98,9 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 		// Search for extra parameters...
 		$extraParams = '';
 		foreach ($userParameters as $key => $value) {
-			if ($key == 'path' || $key == 'locale')
+			if ($key == 'path' || $key == 'locale' || $key == 'page') {
 				continue;
+			}
 			
 			if ($key == 'title') {
 				$userParameters['title']->setValueNeedsEncoding(true);

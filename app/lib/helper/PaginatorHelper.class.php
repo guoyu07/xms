@@ -39,11 +39,21 @@ class PaginatorHelper extends XRXHelper
 	private $template;
 
 	
-    public function paginator($page = null)
+    public function paginator($page = null, $totalRecords = null)
 	{
 		if (empty ($page)) {
 			return $this;
 		}
+
+		if (isset ($totalRecords)) {
+			$this->setTotalRecords($totalRecords);
+		}
+		
+		// Don't show anything if there's no need!
+		if ($this->totalRecords <= $this->itemCountPerPage) {
+			return;
+		}
+
 
 		$this->first	= 1;
 		$this->current	= (integer) $page;
@@ -203,44 +213,60 @@ class PaginatorHelper extends XRXHelper
 
 	public function out($pages)
 	{
-		
-		// Template //
+		// - - - - - -
+		// Template
+		// - - - - - -
+
+		// Display Info
+		$tm		= $this->view->getContext()->getTranslationManager();
+		$status = "<span class='xrx-page-status'>displaying %s&ndash;%s of %s</span>";
+
+		$iStart	= ($this->current - 1) * $this->itemCountPerPage + 1;
+		$iEnd	= $this->current * $this->itemCountPerPage;
+		$iEnd	= ($iEnd < $this->totalRecords) ? $iEnd : $this->totalRecords;
+		echo sprintf($tm->_($status), $iStart, $iEnd, $this->totalRecords);
+
+
 
 		// First page link
 		if (isset ($this->previous)) {
-			echo '<a href="' . $this->createURL($this->first) . '">First</a> - ';
+			echo "<a href='{$this->createURL($this->first)}'>&laquo;</a>";
 		} else {
-			echo "<span class='disabled'>First</span> - ";
+			echo "<span class='xrx-hidden'>&laquo;</span>";
 		}
 
+		/*
 		// Previous page link
 		if (isset ($this->previous)) {
-			echo '<a href="' . $this->createURL($this->previous) . '">&lt; Previous</a> - ';
+			echo '<a href="' . $this->createURL($this->previous) . '">&lt;</a>';
 		} else {
-			echo "<span class='disabled'>&lt; Previous</span> - ";
+			echo "<span class='xrx-hidden'>&lt;</span>";
 		}
+		*/
 
 		// Numbered page links
 		foreach ($pages as $page) {
 			if ($page != $this->current) {
-				echo '<a href="' . $this->createURL($page) . '">' . $page . '</a> - ';
+				echo "<a class='xrx-page-number' href='{$this->createURL($page)}'>$page</a>";
 			} else {
-				echo "$page - ";
+				echo "<span class='xrx-current xrx-page-number'>$page</span>";
 			}
 		}
 
+		/*
 		// Next page link
 		if (isset ($this->next)) {
-			echo '<a href="' . $this->createURL($this->next) . '">Next &gt;</a> - ';
+			echo '<a href="' . $this->createURL($this->next) . '">&gt;</a>';
 		} else {
-			echo '<span class="disabled">Next &gt;</span> - ';
+			echo '<span class="disabled">&gt;</span>';
 		}
+		*/
 
 		// Last page link
 		if (isset ($this->next)) {
-			echo '<a href="' . $this->createURL($this->last) . '">End</a>';
+			echo "<a class='xrx-page-number' href='{$this->createURL($this->last)}'>&raquo;</a>";
 		} else {
-			echo '<span class="disabled">End</span>';
+			echo '<span class="xrx-hidden">&raquo;</span>';
 		}
 		
 	}

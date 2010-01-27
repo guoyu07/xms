@@ -35,11 +35,15 @@ class News_Backend_IndexAction extends XRXNewsBackendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
+		$page		 = $rd->getParameter('page', '1');
+		$limit		 = 10;
+		$start		 = ($page - 1) * 10;
+		$language	 = $this->getContext()->getTranslationManager()->getCurrentLocale()->getLocaleLanguage();
 		$newsManager = $this->getContext()->getModel('NewsManager', 'News');
-		$this->setAttribute('news', $newsManager->retrieveLatest($this->getContext()
-																	  ->getTranslationManager()
-																	  ->getCurrentLocale()
-																	  ->getLocaleLanguage()));
+		
+		$this->setAttribute('news', $newsManager->retrieveLatest($language, $limit, $start));
+		$this->setAttribute('page', $page);
+		$this->setAttribute('total', $newsManager->getTotalCount());
 
 		return 'Success';
 	}
