@@ -11,18 +11,27 @@
 		<autoload name="XRXBackendView">%core.lib_dir%/view/XRXBackendView.class.php</autoload>
 		<autoload name="XRXFrontendView">%core.lib_dir%/view/XRXFrontendView.class.php</autoload>
 
-		<!-- Load Locale Routing Callback -->
+
+		<!-- Load Routing Callback -->
 		<autoload name="XRXLocaleRoutingCallback">%core.lib_dir%/routing/XRXLocaleRoutingCallback.class.php</autoload>
-		<!-- Load Default Routing Callback -->
 		<autoload name="XRXDefaultRoutingCallback">%core.lib_dir%/routing/XRXDefaultRoutingCallback.class.php</autoload>
+
 
 		<!-- Load RBAC Security User -->
 		<autoload name="XRXRbacSecurityUser">%core.lib_dir%/user/XRXRbacSecurityUser.class.php</autoload>
 
+
 		<!-- Load Helper -->
 		<autoload name="XRXIHelper">%core.lib_dir%/helper/XRXIHelper.interface.php</autoload>
 		<autoload name="XRXHelper">%core.lib_dir%/helper/XRXHelper.class.php</autoload>
+
+
+		<!-- Load Components -->
+		<autoload name="XRXDataGrid">%core.lib_dir%/components/DataGrid/XRXDataGrid.class.php</autoload>
+		<autoload name="XRXDataGridColumnModel">%core.lib_dir%/components/DataGrid/XRXDataGridColumnModel.class.php</autoload>
+		<autoload name="XRXDataGridColumn">%core.lib_dir%/components/DataGrid/XRXDataGridColumn.class.php</autoload>
 	</ae:configuration>
+
 
 
 	<!-- Development Configurations -->
