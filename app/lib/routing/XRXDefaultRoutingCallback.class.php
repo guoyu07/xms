@@ -4,18 +4,20 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 {
 	public function onMatched(array &$parameters, AgaviExecutionContainer $container)
 	{
+		$ctrl = $container->getContext()->getController();
+
 		// Remove 'Frontend' from default action name in case of admin area called
 		$def_action = array_pop(explode('.', AgaviConfig::get('actions.default_action')));
 		$def_module = AgaviConfig::get('actions.default_module');
-		$params		= explode('/', $parameters['path']);
+		$params		= explode('/', strtolower($parameters['path']));
 		
 		// Format 'Module' & 'Action' names first char to uppercase
-		for ($i = 0; $i < 3; ++$i) {
-			$params[$i] = ucfirst(strtolower($params[$i]));
-		}
+//		for ($i = 0; $i < 3; ++$i) {
+//			$params[$i] = ucfirst(strtolower($params[$i]));
+//		}
 		
 		// If 'admin' is in uri, then select the next index as module name.
-		if ($params[0] == 'Admin') {
+		if ($params[0] == 'admin') {
 			$idx = 1;
 			$section = 'Backend.';
 		}
@@ -23,20 +25,33 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 			$idx = 0;
 			$section = 'Frontend.';
 		}
-		
-		// Assgin the others as parameters
-		for ($i = 2 + $idx; $i < count($params); ++$i) {
-			$parameters[strtolower($params[$i])] = $params[++$i];
-		}
+
 		
 		// Set Module Name
 		$module	= ($params[$idx]) ? $params[$idx] : $def_module;
 		$container->setModuleName($module);
+
 		
 		// Set Action Name
-		$action	= ($params[$idx+1]) ? $params[$idx+1] : $def_action;
-		$action = $section . $action;
-		$container->setActionName($action);
+		$action	= ($params[$idx + 1]) ? $params[$idx + 1] : $def_action;
+
+		if ($ctrl->actionExists($module, $section . $action) == true) {
+			// Action exists, so add it as action
+			$action = $section . $action;
+			$container->setActionName($action);
+		} else {
+			// Action doesn't exists, so assign the default action name as
+			// action and update the index value.
+			$idx--;
+			$action = $section . $def_action;
+			$container->setActionName($action);
+		}
+		
+
+		// Assgin the others as parameters
+		for ($i = 2 + $idx; $i < count($params); ++$i) {
+			$parameters[strtolower($params[$i])] = $params[++$i];
+		}
 		
 		return true;
 	}

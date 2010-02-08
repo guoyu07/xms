@@ -20,10 +20,10 @@
 			<route name="admin" pattern="^/admin$" module="%actions.default_module%" action="Backend.Index" />
 
 			<!-- Page -->
-			<route name="page" pattern="/page/({page:\d+})" stop="false" imply="false" cut="true">
+			<!--<route name="page" pattern="/page/({page:\d+})" stop="false" imply="false" cut="true">-->
 				<!-- assume the "1" by default and tell the routing what the rest of the string will look like when generating a URL -->
 				<!--<default for="page">{1}</default>-->
-			</route>
+			<!--</route>-->
 
 			<!-- Default Routing -->
 			<route name="default" pattern="^/({path:.*})$" imply="true" cut="true">
