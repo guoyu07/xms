@@ -8,6 +8,24 @@
 		
 		<validator_definitions>
 		</validator_definitions>
+
+		<validators>
+
+			<!-- Page Number -->
+			<validator class="number">
+				<arguments>
+					<argument>_p</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+					<ae:parameter name="translation_domain">.default</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>invalid page number</error>
+				</errors>
+			</validator>
+
+		</validators>
 		
 	</ae:configuration>
 </ae:configurations>

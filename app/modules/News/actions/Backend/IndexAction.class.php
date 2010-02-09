@@ -35,7 +35,7 @@ class News_Backend_IndexAction extends XRXNewsBackendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
-		$page		 = $rd->getParameter('page', '1');
+		$page		 = $rd->getParameter('_p', '1');
 		$limit		 = 10;
 		$start		 = ($page - 1) * 10;
 		$language	 = $this->getContext()->getTranslationManager()->getCurrentLocale()->getLocaleLanguage();

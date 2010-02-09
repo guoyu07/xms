@@ -196,8 +196,8 @@ class PaginatorHelper extends XRXHelper
 	public function createURL($pageNumber)
 	{
 		$url	 = $this->view->getContext()->getRequest()->getUrl();
-		$pattern = '/page\/\d*/i';
-		$replace = "page/$pageNumber";
+		$pattern = '/_p\/\d*/i';
+		$replace = "_p/$pageNumber";
 
 		if ( preg_match($pattern, $url) ) {
 			$url = preg_replace($pattern, $replace, $url);
