@@ -13,7 +13,7 @@
 				<? endif; ?>
 			</h5>
 			<small><?= $tm->_d($comment->getDate()) ?></small>
-			<p><?= $comment->getContent() ?></p>
+			<p><?= $vw->escape($comment->getContent()) ?></p>
 		</li>
 	<? endforeach; ?>
 	</ol>

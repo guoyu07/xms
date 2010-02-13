@@ -5,7 +5,7 @@
 		</div>
 
 		<h1 id="xrx-logo">
-			<a href="<?= $ro->getBaseHref(); ?>" title="<?= $tm->_('main page', '.widgets') ?>"><?= AgaviConfig::get('core.app_name') ?></a>
+			<a href="<?= $ro->getBaseHref(); ?>" title="<?= $tm->_('main page', '.widgets') ?>"><?= $us->getAttribute('website_title', 'setting.general') ?></a>
 
 			<?php
 			foreach ($tm->getAvailableLocales() as $lc) {

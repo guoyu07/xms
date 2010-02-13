@@ -11,7 +11,7 @@ class EscapeHelper extends XRXHelper
 {
     public function escape($text)
 	{
-		echo htmlspecialchars($text, ENT_COMPAT, 'UTF-8');
+		return htmlspecialchars($text, ENT_COMPAT, 'UTF-8');
 	}
 }
 

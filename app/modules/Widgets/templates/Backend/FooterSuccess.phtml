@@ -3,5 +3,5 @@
 		<a href="http://agavi.org" target="_blank"><?= sprintf($tm->_('powered by %s', '.widgets'), $t['agavi_plug']) ?></a>
 	</p>
 
-	<p><?= sprintf($tm->_('copyright © 2009-%s the xrx project', '.widgets'), date('Y')) ?></p>
+	<p><?= sprintf($tm->_('copyright © 2009-%s %s', '.widgets'), date('Y'), AgaviConfig::get('core.app_name')) ?></p>
 </div>

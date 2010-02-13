@@ -37,7 +37,7 @@
 		</system_actions>
 
 		<settings>
-			<setting name="app_name">XRX</setting>
+			<setting name="app_name">The XRX Project</setting>
 			<setting name="available">true</setting>
 			<setting name="debug">false</setting>
 			<setting name="use_database">true</setting>

@@ -94,8 +94,18 @@ form fieldset legend input[type="checkbox"] {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
 
 #xrx-menu {
-	width: 200px;
+	width: 190px;
 	background-color: #F9F9F9;
+	clear: left;
+	position: relative;
+}
+
+#xrx-menu.xrx-left {
+	margin: 10px 5px 10px -205px;
+}
+
+#xrx-menu.xrx-right {
+	margin: 10px -205px 10px 5px;
 }
 
 #xrx-menu ul {
@@ -105,7 +115,6 @@ form fieldset legend input[type="checkbox"] {
 }
 
 #xrx-menu > ul {
-	margin: 20px;
 	border: 1px solid #E3E3E3;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -183,6 +192,14 @@ form fieldset legend input[type="checkbox"] {
 	border-style: solid;
 	text-decoration: none;
 	-moz-border-radius: 5px;
+}
+
+#xrx-settings-tab label {
+	width: 200px;
+}
+
+#xrx-settings-tab input[type='text'] {
+	width: 500px;
 }
 
 

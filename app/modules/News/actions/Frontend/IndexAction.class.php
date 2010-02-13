@@ -17,16 +17,21 @@ class News_Frontend_IndexAction extends XRXNewsFrontendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
+		// Pagination
+		$page	= $rd->getParameter('_p', '1');
+		$limit	= 10;
+		$start	= ($page - 1) * 10;
+
 		$locale = $this->getContext()->getTranslationManager()->getCurrentLocale();
 		$cid	= $rd->getParameter('category', null);
-		
-		// Get lastest news
-		$news = $this->getContext()->getModel('NewsManager', 'News')
-					 ->retrieveLatest($locale->getLocaleLanguage(), 10, 0, true, $cid);
+
+		$newsManager = $this->getContext()->getModel('NewsManager', 'News');
 		
 		// Pass to view
-		$this->setAttributeByRef('news', $news);
-
+		$this->setAttributeByRef('news', $newsManager->retrieveLatest($locale->getLocaleLanguage(), $limit, $start, true, $cid));
+		$this->setAttribute('page', $page);
+		$this->setAttribute('total', $newsManager->getTotalCount());
+		
 		return 'Success';
 	}
 }

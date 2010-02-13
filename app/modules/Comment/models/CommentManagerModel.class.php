@@ -161,14 +161,15 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 		$comment = $this->getContext()->getModel('Comment', 'Comment', array($data));
 
 		try {
-			$sql = "INSERT INTO %s (owner_id, module_id, content, date, author_id, author_name, author_email, author_url, language)
-					VALUES(:owner_id, :module_id, :content, NOW(), :author_id, :author_name, :author_email, :author_url, :language)";
+			$sql = "INSERT INTO %s (owner_id, module_id, content, date, status, author_id, author_name, author_email, author_url, language)
+					VALUES(:owner_id, :module_id, :content, NOW(), :status, :author_id, :author_name, :author_email, :author_url, :language)";
 
 			$sql	= sprintf($sql, self::COMMENTS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':owner_id', $comment->getOwnerId(), PDO::PARAM_INT);
 			$stmt->bindValue(':module_id', $comment->getModuleId(), PDO::PARAM_INT);
 			$stmt->bindValue(':content', $comment->getContent(), PDO::PARAM_STR);
+			$stmt->bindValue(':status', $comment->getStatus(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_id', $comment->getAuthorId(), PDO::PARAM_INT);
 			$stmt->bindValue(':author_name', $comment->getAuthorName(), PDO::PARAM_STR);
 			$stmt->bindValue(':author_email', $comment->getAuthorEmail(), PDO::PARAM_STR);

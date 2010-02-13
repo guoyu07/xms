@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/menu/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+
+		<members>
+			<index>5</index>
+			<title>settings</title>
+			<url>admin/setting</url>
+			<icon>/images/setting/setting-16.png</icon>
+
+			<member>
+				<title>manage</title>
+				<url>admin/setting</url>
+			</member>
+		</members>
+
+	</ae:configuration>
+</ae:configurations>

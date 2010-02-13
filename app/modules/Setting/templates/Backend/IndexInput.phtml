@@ -1,0 +1,97 @@
+<script type="text/javascript">
+	<!--
+	$(function() {
+		// Tabs
+		$("#xrx-settings-tab").tabs({
+			cache	: true
+			,spinner: '<img src="/images/general/loading.gif" />'
+		});
+	})
+	// -->
+</script>
+
+
+
+<h2>
+	<img class="xrx-icon-32" src="/images/setting/setting-32.png" alt="<?= $tm->_('settings', '.setting'); ?>" /><?= $tm->_('settings', '.setting'); ?>
+</h2>
+
+<div id="xrx-settings-tab">
+	<ul>
+		<li><a href="#xrx-setting-general">general</a></li>
+		<li><a href="#xrx-setting-news"><span><?= $tm->_('news', '.setting') ?></span></a></li>
+		<li><a href="#xrx-setting-user"><span><?= $tm->_('user', '.setting') ?></span></a></li>
+		<li><a href="#xrx-setting-comment"><span><?= $tm->_('comment', '.setting') ?></span></a></li>
+	</ul>
+
+	<div id="xrx-setting-general">
+
+		<form action="<?= $ro->gen(null) ?>" method="post">
+			<ol>
+				<li>
+					<label for="xrx-setting-website-title"><?= $tm->_('website title', '.setting'); ?></label>
+					<input type="text" id="xrx-setting-website-title" name="website_title" value="<?= $us->getAttribute('website_title', 'setting.general') ?>" />
+				</li>
+				<li>
+					<label for="xrx-setting-items_per_page"><?= $tm->_('number of items per page', '.setting'); ?></label>
+					<input type="text" id="xrx-setting-items_per_page" name="items_per_page" value="<?= $us->getAttribute('items_per_page', 'setting.general') ?>" />
+				</li>
+			</ol>
+
+			<input type="submit" name="general" value="<?= $tm->_('save', '.setting'); ?>" />
+		</form>
+
+	</div>
+
+	<div id="xrx-setting-news">
+
+		<form action="<?= $ro->gen(null) ?>" method="post">
+			<ol>
+
+			</ol>
+
+			<input type="submit" value="<?= $tm->_('save', '.setting'); ?>" />
+		</form>
+
+	</div>
+
+	<div id="xrx-setting-user">
+
+		<form action="<?= $ro->gen(null) ?>" method="post">
+			<ol>
+				<li>
+					<? $pr = $us->getAttribute('public_registration', 'setting.user'); ?>
+					<label><?= $tm->_('public registeration', '.setting'); ?></label>
+					<input type="radio" id="xrx-setting-register-yes" name="general[public_register]" <? if ($pr == true) echo 'checked="checked"' ?> />
+					<label for="xrx-setting-register-yes"><?= $tm->_('yes', '.setting'); ?></label>
+					<input type="radio" id="xrx-setting-register-no" name="general[public_register]" <? if ($pr == false) echo 'checked="checked"' ?> />
+					<label for="xrx-setting-register-no"><?= $tm->_('no', '.setting'); ?></label>
+				</li>
+			</ol>
+
+			<input type="submit" value="<?= $tm->_('save', '.setting'); ?>" />
+		</form>
+
+	</div>
+
+	<div id="xrx-setting-comment">
+
+		<form action="<?= $ro->gen(null) ?>" method="post">
+			<ol>
+				<li>
+					<label for="xrx-setting-comment-status"><?= $tm->_('comments default status', '.setting'); ?></label>
+					<select id="xrx-setting-comment-status" name="default_status">
+						<? $cs = $us->getAttribute('default_status', 'setting.comment'); ?>
+						<option value="pending" <? if ($cs == 'pending') echo 'selected="selected"' ?>>pending</option>
+						<option value="approved" <? if ($cs == 'approved') echo 'selected="selected"' ?>>approved</option>
+						<option value="rejected" <? if ($cs == 'rejected') echo 'selected="selected"' ?>>rejected</option>
+					</select>
+				</li>
+			</ol>
+
+			<input type="submit" name="comment" value="<?= $tm->_('save', '.setting'); ?>" />
+		</form>
+
+	</div>
+</div>
+

@@ -48,16 +48,18 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 
 		// Authenticated?
 		if ($this->getContext()->getUser()->isAuthenticated()) {
-			$params['author_id'] = $this->getContext()->getUser()->getAttribute('userId');
+			$params['author_id'] = $this->us->getAttribute('userId');
 		} else {
 			$params['author_name']	= $rd->getParameter('name');
 			$params['author_email'] = $rd->getParameter('email');
 			$params['author_url']	= $rd->getParameter('url');
 		}
 
+		// Status
+		$params['status'] = $this->us->getAttribute('default_status', 'setting.comment');
+
 		// Get current language
-		$language = $this->getContext()->getTranslationManager()
-						 ->getCurrentLocale()->getLocaleLanguage();
+		$language = $this->tm->getCurrentLocale()->getLocaleLanguage();
 
 		// Add comment in database
 		$this->getContext()->getModel('CommentManager', 'Comment')->create($params, $language);
@@ -102,6 +104,7 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 	{
 		$this->setAttribute('module_id', $rd->getParameter('module_id'));
 		$this->setAttribute('owner_id', $rd->getParameter('owner_id'));
+		$this->setAttribute('parameters', $rd->getParameter('parameters'));
 		
 		return 'Error';
 	}

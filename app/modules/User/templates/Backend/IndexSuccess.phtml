@@ -73,5 +73,11 @@
 		</tbody>
 	</table>
 
-	<input type="submit" class="xrx-button xrx-delete-button" value="<?= $tm->_('delete', '.user') ?>" />
+	<div class="xrx-list-nav">
+		<div class="xrx-pagination xrx-right"><? $vw->paginator($t['page'], $t['total'], $t['limit']) ?></div>
+		<div class="xrx-actions">
+			<input type="submit" class="xrx-button xrx-delete-button" value="<?= $tm->_('delete', '.user') ?>" />
+		</div>
+	</div>
+
 </form>

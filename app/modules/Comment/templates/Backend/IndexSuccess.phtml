@@ -66,7 +66,7 @@
 				<td class="xrx-check-column"><input type="checkbox" name="id[]" value="<?= $comment->id ?>" /></td>
 				<td class="xrx-title-column">
 					<a href="<?= $ro->gen('default', array('path'=>'admin/comment/edit', 'id'=>$comment->id)) ?>"
-					   title="<?= sprintf($tm->_('edit \'%s\'', '.comment'), $comment->content) ?>"><?= $comment->content ?></a>
+					   title="<?= sprintf($tm->_('edit \'%s\'', '.comment'), $comment->content) ?>"><?= $vw->escape($comment->content) ?></a>
 				</td>
 				<td>
 					<? if ($comment->author_id): ?>

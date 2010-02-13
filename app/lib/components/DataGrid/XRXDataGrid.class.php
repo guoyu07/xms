@@ -27,24 +27,28 @@ class XRXDataGrid
 	}
 
 	public function  __toString() {
-		$thead = "";
-		$tbody = "<table width='100%'>";
+		$thead = "<thead><tr>";
+		$tbody = "<tbody>";
 
-		foreach ($this->data as $data) {
+		foreach ($this->data as $idx => $data) {
 			$tbody .= "<tr>";
 
 			foreach ($this->colModel->getColumns() as $column) {
-				$dataIndex = $column->getDataIndex();
+				if ($idx == 0) {
+					$thead .= "<th>" . $column->getHeader() . "</th>";
+				}
 				
-				$tbody .= "<td>" . $data->$dataIndex . "</td>";
+				$tbody .= "<td>" . $column->getDataIndex() . "</td>";
 			}
 
 			$tbody .= "</tr>";
 		}
-		
-		$tbody .= "</table>";
-		
-		return $tbody;
+
+		$thead .= "</tr></thead>";
+		$tbody .= "</tbody>";
+		$table  = "<table class='xrx-table-list'>$thead$tbody</table>";
+
+		return $table;
 	}
 
 }

@@ -56,6 +56,9 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 
 	public function retrieveLatest($language = null, $limit = 10, $start = 0, $published = null, $category_id = null)
 	{
+		$limit = (integer) $limit;
+		$start = (integer) $start;
+
 		try {
 			$sql = "SELECT
 						SQL_CALC_FOUND_ROWS *,

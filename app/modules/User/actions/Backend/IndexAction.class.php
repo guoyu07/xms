@@ -35,10 +35,21 @@ class User_Backend_IndexAction extends XRXUserBackendAction
 	 */
 	public function executeRead(AgaviRequestDataHolder $rd)
 	{
-		// Set Categories
-		$this->setAttribute('users', $this->getContext()
-											   ->getModel('UserManager', 'User')
-											   ->retrieveAll());
+		$userManager = $this->getContext()->getModel('UserManager', 'User');
+
+		// Filters
+		$page	 = $rd->getParameter('_p', '1');
+		$limit	 = $this->us->getAttribute('items_per_page', 'setting.general');
+		$start	 = ($page - 1) * $limit;
+		$filters = array(
+			'start'	=> $start,
+			'limit'	=> $limit
+		);
+
+		$this->setAttribute('users', $userManager->retrieveAll($filters));
+		$this->setAttribute('page', $page);
+		$this->setAttribute('limit', $limit);
+		$this->setAttribute('total', $userManager->getTotalCount());
 
 		return 'Success';
 	}

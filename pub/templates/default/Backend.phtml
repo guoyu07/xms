@@ -4,12 +4,13 @@
 		<meta http-equiv="Content-Type" content="<?= $container->getOutputType()->getParameter('http_headers[Content-Type]', 'text/html; charset=utf-8'); ?>" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		
-		<title><?php if(isset($t['_title'])) echo htmlspecialchars($t['_title']) . ' - '; echo AgaviConfig::get('core.app_name'); ?></title>
+		<title><?php if (isset($t['_title'])) echo $vw->escape($t['_title']) . ' - '; echo $us->getAttribute('website_title', 'setting.general'); ?></title>
 		<base href="<?= $ro->getBaseHref(); ?>" />
 
 		<!-- Cascading Style Sheets -->
 		<link rel="stylesheet" type="text/css" href="templates/default/styles/master.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="templates/default/styles/backend.css" media="screen" />
+		<link rel="Stylesheet" type="text/css" href="/scripts/jQuery/ui/themes/base/ui.all.css" />
 		<?php
 		if (isset ($t['_styles'])) {
 			foreach ($t['_styles'] as $style) {
@@ -19,7 +20,10 @@
 		?>
 
 		<!-- Javascript -->
-		<script type="text/javascript" src="/scripts/jQuery/jquery.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/jquery-1.4.1.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/ui/jquery.ui.tabs.js"></script>
 		<?php
 		if (isset ($t['_scripts'])) {
 			foreach ($t['_scripts'] as $script) {
@@ -31,13 +35,14 @@
 
 	<body>
 		<?= $slots['header']; ?>
+		<div id="xrx-body" class="xrx-body-<?= $t['_align'] ?>">
+			<?= $slots['menu']; ?>
 
-		<?= $slots['menu']; ?>
-
-		<div id="xrx-content" class="<?= $t['_align'] ?>">
-			<?= $inner; ?>
+			<div id="xrx-content" class="xrx-<?= $t['_align'] ?>">
+				<?= $inner; ?>
+			</div>
+			<div class="xrx-clear"></div>
 		</div>
-
 		<?= $slots['footer']; ?>
 	</body>
 </html>

@@ -17,7 +17,31 @@ class XRXBaseModel extends AgaviModel
 
 	const MODULES			= "modules";
 
+	const SETTINGS			= "settings";
+
 	const USERS				= "users";
+	
+	
+	public function getTotalCount()
+	{
+		try {
+			$sql = "SELECT FOUND_ROWS() as c;";
+
+			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+			// No record?
+			if (! $result) {
+				return null;
+			}
+
+			return $result['c'];
+		}
+		catch (PDOException $e) {
+			throw new AgaviDatabaseException($e->getMessage());
+		}
+	}
 }
 
 ?>

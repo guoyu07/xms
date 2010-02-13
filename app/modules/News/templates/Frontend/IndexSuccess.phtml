@@ -23,3 +23,8 @@
 <? else: ?>
 	<p><?= $tm->_("there's no news available for current language.", '.news') ?></p>
 <? endif; ?>
+
+
+<div class="xrx-list-nav">
+	<div class="xrx-pagination xrx-right"><? $vw->paginator($t['page'], $t['total']) ?></div>
+</div>

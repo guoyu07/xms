@@ -48,6 +48,11 @@ class XRXDataGridColumn
 		}
 	}
 
+	public function getAlign()
+	{
+		return $this->align;
+	}
+
 	public function getDataIndex()
 	{
 		return $this->dataIndex;
@@ -56,6 +61,11 @@ class XRXDataGridColumn
 	public function getHeader()
 	{
 		return $this->header;
+	}
+
+	public function isHidden()
+	{
+		return $this->hidden;
 	}
 
 }

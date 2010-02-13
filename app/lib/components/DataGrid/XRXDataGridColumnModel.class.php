@@ -45,7 +45,7 @@ class XRXDataGridColumnModel
 			foreach ($columns as $column) {
 				// Apply without overwriting values
 				$column += $defaults;
-
+				
 				switch ($column['type']) {
 					case self::DATE:
 						$class = 'XRXDataGridDateColumn';

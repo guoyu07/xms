@@ -39,7 +39,7 @@ class PaginatorHelper extends XRXHelper
 	private $template;
 
 	
-    public function paginator($page = null, $totalRecords = null)
+    public function paginator($page = null, $totalRecords = null, $itemsPerPage = null)
 	{
 		if (empty ($page)) {
 			return $this;
@@ -48,17 +48,21 @@ class PaginatorHelper extends XRXHelper
 		if (isset ($totalRecords)) {
 			$this->setTotalRecords($totalRecords);
 		}
+
+		if (isset ($itemsPerPage)) {
+			$this->setItemCountPerPage($itemsPerPage);
+		}
 		
 		// Don't show anything if there's no need!
 		if ($this->totalRecords <= $this->itemCountPerPage) {
 			return;
 		}
 
-
+		
 		$this->first	= 1;
 		$this->current	= (integer) $page;
 		$this->last		= (integer) ceil($this->totalRecords / $this->itemCountPerPage);
-
+		
         // Previous
         if ($this->current - 1 > 0) {
             $this->previous = $this->current - 1;

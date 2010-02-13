@@ -72,6 +72,13 @@ small {
 
 
 
+/* jQuery Overrides */
+.ui-widget {
+    font: 1em Tahoma, Verdana, Arial, Helvetica, sans-serif !important;
+}
+
+
+
 .xrx-hidden {
 	display: none;
 }
@@ -159,21 +166,25 @@ small {
 
 /* Content */
 
+#xrx-body {
+	clear: both;
+}
+
+#xrx-body.xrx-body-left {
+	margin-left: 210px;
+}
+
+#xrx-body.xrx-body-right {
+	margin-right: 210px;
+}
+
 #xrx-content {
-	margin: 20px 10px;
-	padding: 0 10px;
-}
-
-#xrx-content.left {
-	margin-left: 200px;
-}
-
-#xrx-content.right {
-	margin-right: 200px;
+	width: 99%;
+	padding-top: 10px;
 }
 
 #xrx-content h2 {
-	margin: 0px;
+	margin: 0 0 5px;
 	color: #464646;
 	font-style: italic;
 	font-weight: normal;
@@ -201,24 +212,24 @@ select {
 	min-width: 205px;
 }
 
-form fieldset label {
+form label {
 	display: inline-block;
 	width: 120px;
 	line-height: 1.8;
 	vertical-align: top;
 }
 
-form fieldset label.xrx-label-radio {
+form label.xrx-label-radio {
 	width: auto;
 	vertical-align: middle;
 }
 
-form fieldset ol {
+form ol {
 	margin: 0;
 	padding: 0;
 }
 
-form fieldset li {
+form li {
 	list-style: none;
 	margin: 0;
 	padding: 5px;

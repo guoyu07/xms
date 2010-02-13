@@ -1,6 +1,6 @@
 <div id="xrx-header">
 	<h1 class="xrx-<?= $t['_align']; ?>">
-		<a href="<?= $ro->gen('index'); ?>" title="<?= $tm->_('visit site', '.widgets'); ?>"><?= AgaviConfig::get('core.app_name') . " " . $tm->_('administration area', '.widgets'); ?></a>
+		<a href="<?= $ro->gen('index'); ?>" title="<?= $tm->_('visit site', '.widgets'); ?>"><?= $us->getAttribute('website_title', 'setting.general') . " " . $tm->_('administration area', '.widgets'); ?></a>
 
 		<?php
 		foreach ($tm->getAvailableLocales() as $lc) {

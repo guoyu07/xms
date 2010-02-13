@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/Setting/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For Post Method -->
+		<validators method="write">
+
+			<!-- General -->
+			<validator class="isset" provides="general">
+				<arguments>
+					<argument>general</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+			</validator>
+
+
+			<!-- General | Website Title  -->
+			<validator class="string" depends="general" translation_domain=".setting">
+				<arguments>
+					<argument>website_title</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The website title has an invalid value.</error>
+					<error for="required">Please provide website title.</error>
+				</errors>
+			</validator>
+
+
+			<!-- General | Items Per Page  -->
+			<validator class="number" depends="general" translation_domain=".setting">
+				<arguments>
+					<argument>items_per_page</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The items per page has an invalid value.</error>
+					<error for="required">Please provide items per page.</error>
+				</errors>
+			</validator>
+
+		</validators>
+
+		
+
+		<!-- For Post Method -->
+		<validators method="write">
+
+			<!-- Comment -->
+			<validator class="isset" provides="comment">
+				<arguments>
+					<argument>comment</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+			</validator>
+
+			<!-- Comment | Default Status  -->
+			<validator class="inarray" depends="comment" translation_domain=".setting">
+				<arguments>
+					<argument>default_status</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="type">string</ae:parameter>
+					<ae:parameter name="case">true</ae:parameter>
+					<ae:parameter name="values">pending,approved,rejected</ae:parameter>
+					<ae:parameter name="sep">,</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The comments default status has an invalid value.</error>
+					<error for="required">Please provide comments default status.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

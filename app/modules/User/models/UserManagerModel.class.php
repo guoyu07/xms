@@ -31,15 +31,34 @@ class User_UserManagerModel extends XRXUserBaseModel
 	}
 
 
-	public function retrieveAll()
+	public function retrieveAll(array $filters = null)
 	{
+		// Filters
+		if (isset ($filters['start'])) {
+			$start = (integer) $filters['start'];
+		} else {
+			$start = 0;
+		}
+
+		if (isset ($filters['limit'])) {
+			$limit = (integer) $filters['limit'];
+		} else {
+			$limit = 10;
+		}
+
+
 		try {
-			$sql = "SELECT u.*
+			$sql = "SELECT
+						SQL_CALC_FOUND_ROWS *,
+						u.*
 					FROM %s AS u
-					ORDER BY u.username ASC";
+					ORDER BY u.username ASC
+					LIMIT :start, :limit;";
 
 			$sql	= sprintf($sql, self::USERS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
+			$stmt->bindValue(':start', $start, PDO::PARAM_INT);
+			$stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
 
 			$stmt->execute();
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);

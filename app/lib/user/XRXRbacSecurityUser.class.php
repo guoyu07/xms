@@ -24,7 +24,7 @@ class XRXRbacSecurityUser extends AgaviRbacSecurityUser
 
 		$reqData = $this->getContext()->getRequest()->getRequestData();
 
-		if(!$this->isAuthenticated() && $reqData->hasCookie('autologon')) {
+		if (! $this->isAuthenticated() && $reqData->hasCookie('autologon')) {
 			$login = $reqData->getCookie('autologon');
 			try {
 				$this->login($login['username'], $login['password'], true);
@@ -36,6 +36,10 @@ class XRXRbacSecurityUser extends AgaviRbacSecurityUser
 				$response->setCookie('autologon[password]', false);
 			}
 		}
+
+		
+		// Settings
+		$this->initSettings();
 	}
 
 	public function login($username, $password, $isPasswordHashed = false)
@@ -47,15 +51,15 @@ class XRXRbacSecurityUser extends AgaviRbacSecurityUser
 
 		}
 
-		if(!isset($this->user)) {
+		if (! isset($this->user)) {
 			throw new AgaviSecurityException('username');
 		}
 
-		if(!$isPasswordHashed) {
+		if (! $isPasswordHashed) {
 			$password = $this->computeHash($password);
 		}
 
-		if($password != $this->user->getPassword()) {
+		if ($password != $this->user->getPassword()) {
 			throw new AgaviSecurityException('password');
 		}
 
@@ -90,6 +94,17 @@ class XRXRbacSecurityUser extends AgaviRbacSecurityUser
 	{
 		$this->clearCredentials();
 		$this->setAuthenticated(false);
+	}
+
+	public function initSettings($force = null)
+	{
+		if (is_null($this->getAttributeNamespace('setting.general')) || $force === true) {
+			$settings = $this->getContext()->getModel('SettingManager', 'Setting')->retrieveAll();
+
+			foreach($settings as $setting) {
+				$this->setAttribute($setting->name, $setting->value, "setting.$setting->module");
+			}
+		}
 	}
 }
 
