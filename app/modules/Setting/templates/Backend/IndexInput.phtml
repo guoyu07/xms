@@ -63,9 +63,9 @@
 					<? $pr = $us->getAttribute('public_registration', 'setting.user'); ?>
 					<label><?= $tm->_('public registeration', '.setting'); ?></label>
 					<input type="radio" id="xrx-setting-register-yes" name="general[public_register]" <? if ($pr == true) echo 'checked="checked"' ?> />
-					<label for="xrx-setting-register-yes"><?= $tm->_('yes', '.setting'); ?></label>
+					<label for="xrx-setting-register-yes" class="xrx-label-radio"><?= $tm->_('yes', '.setting'); ?></label>
 					<input type="radio" id="xrx-setting-register-no" name="general[public_register]" <? if ($pr == false) echo 'checked="checked"' ?> />
-					<label for="xrx-setting-register-no"><?= $tm->_('no', '.setting'); ?></label>
+					<label for="xrx-setting-register-no" class="xrx-label-radio"><?= $tm->_('no', '.setting'); ?></label>
 				</li>
 			</ol>
 
