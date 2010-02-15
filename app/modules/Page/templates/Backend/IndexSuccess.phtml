@@ -1,0 +1,85 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		// Check All Handler
+		$('.xrx-check-all').click( function() {
+			$('.xrx-check-column').children().attr('checked', $(this).attr('checked'));
+		})
+
+		// Delete Button Handler
+		$('.xrx-delete-button').click( function(e) {
+			var valid = false;
+
+			$('td.xrx-check-column').children().each( function(idx, el) {
+				if ($(el).attr('checked')) {
+					valid = true;
+					return;
+				}
+			})
+
+			if (! valid) {
+				alert('<?= $tm->_('please select a page.', '.page') ?>');
+				e.preventDefault();
+				return false;
+			}
+
+			// Sure?
+			if (! confirm('<?= $tm->_('are you sure?', '.page') ?>')) {
+				e.preventDefault();
+			}
+		})
+	})
+	// -->
+</script>
+
+
+<h2>
+	<img class="xrx-icon-32" src="/images/page/page-32.png" alt="<?= $tm->_('page list', '.page'); ?>" /><?= $tm->_('pages list', '.page'); ?>
+</h2>
+
+<form action="<?= $ro->gen('default', array('path' => 'admin/page/delete')) ?>" method="post">
+	<table class="xrx-table-list">
+		<thead>
+			<tr class="xrx-<?= $t['_align']; ?>-text">
+				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
+				<th class="xrx-title-column"><?= $tm->_('title', '.page') ?></th>
+				<th><?= $tm->_('author', '.page') ?></th>
+				<th><?= $tm->_('published', '.page') ?></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr class="xrx-<?= $t['_align']; ?>-text">
+				<th class="xrx-check-column"><input type="checkbox" class="xrx-check-all" /></th>
+				<th class="xrx-title-column"><?= $tm->_('title', '.page') ?></th>
+				<th><?= $tm->_('author', '.page') ?></th>
+				<th><?= $tm->_('published', '.page') ?></th>
+			</tr>
+		</tfoot>
+		<tbody>
+		<? if ( count ($t['pages']) > 0 ): ?>
+			<? foreach ($t['pages'] as $page): ?>
+			<tr>
+				<td class="xrx-check-column"><input type="checkbox" name="id[]" value="<?= $page->id ?>" /></td>
+				<td class="xrx-title-column">
+					<a href="<?= $ro->gen('default', array('path'=>'admin/page/edit', 'id'=>$page->id)) ?>"
+					   title="<?= sprintf($tm->_('edit \'%s\'', '.page'), $page->title) ?>"><?= $page->title ?></a>
+				</td>
+				<td><a href="<?= $ro->gen('default', array('path'=>'user/edit', 'id'=>$page->author_id)) ?>"><?= $page->username ?></a></td>
+				<td><?= $page->published ? $tm->_('yes', '.page') : $tm->_('no', '.page'); ?></td>
+			</tr>
+			<? endforeach; ?>
+		<? else: ?>
+			<tr>
+				<td colspan="4" class="xrx-center-text xrx-italic-text"><?= $tm->_("there's no page.", '.page') ?></td>
+			</tr>
+		<? endif ?>
+		</tbody>
+	</table>
+
+	<div class="xrx-list-nav">
+		<div class="xrx-pagination xrx-right"><? $vw->paginator($t['page'], $t['total'], $t['limit']) ?></div>
+		<div class="xrx-actions">
+			<input type="submit" class="xrx-button xrx-delete-button" value="<?= $tm->_('delete', '.page') ?>" />
+		</div>
+	</div>
+</form>

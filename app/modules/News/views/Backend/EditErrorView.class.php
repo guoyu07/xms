@@ -11,7 +11,7 @@ class News_Backend_EditErrorView extends XRXNewsBackendView
 		
 		$this->setAttribute('_url', $this->ro->gen('default', array('path' => 'admin/news')));
 		$this->setAttribute('_type', 'error');
-		$this->setAttribute('_title', $this->tm->_('news edit error', '.news'));
+		$this->setAttribute('_title', $this->tm->_('redirecting...', '.news'));
 	}
 }
 

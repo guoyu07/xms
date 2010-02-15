@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations xmlns="http://agavi.org/agavi/config/parts/autoload/1.0" xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0">
+	<ae:configuration>
+		
+		<autoload name="XRXPageBackendAction">%core.module_dir%/Page/lib/action/XRXPageBackendAction.class.php</autoload>
+		<autoload name="XRXPageFrontendAction">%core.module_dir%/Page/lib/action/XRXPageFrontendAction.class.php</autoload>
+		<autoload name="XRXPageBaseModel">%core.module_dir%/Page/lib/model/XRXPageBaseModel.class.php</autoload>
+		<autoload name="XRXPageBackendView">%core.module_dir%/Page/lib/view/XRXPageBackendView.class.php</autoload>
+		<autoload name="XRXPageFrontendView">%core.module_dir%/Page/lib/view/XRXPageFrontendView.class.php</autoload><autoload name="XRXICategoryModel">%core.lib_dir%/model/XRXICategoryModel.interface.php</autoload>
+
+		<!-- Validators -->
+		<autoload name="Page_GenuineIdValidator">%core.module_dir%/Page/lib/validator/GenuineIdValidator.class.php</autoload>
+		
+	</ae:configuration>
+</ae:configurations>

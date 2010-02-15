@@ -3,7 +3,7 @@
 	<ae:configuration>
 
 		<members>
-			<index>5</index>
+			<index>6</index>
 			<title>settings</title>
 			<url>admin/setting</url>
 			<icon>/images/setting/setting-16.png</icon>

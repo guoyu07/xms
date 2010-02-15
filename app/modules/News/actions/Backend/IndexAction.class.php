@@ -38,7 +38,7 @@ class News_Backend_IndexAction extends XRXNewsBackendAction
 		$page		 = $rd->getParameter('_p', '1');
 		$limit		 = $this->us->getAttribute('items_per_page', 'setting.general');
 		$start		 = ($page - 1) * $limit;
-		$language	 = $this->getContext()->getTranslationManager()->getCurrentLocale()->getLocaleLanguage();
+		$language	 = $this->tm->getCurrentLocale()->getLocaleLanguage();
 		$newsManager = $this->getContext()->getModel('NewsManager', 'News');
 		
 		$this->setAttribute('news', $newsManager->retrieveLatest($language, $limit, $start));

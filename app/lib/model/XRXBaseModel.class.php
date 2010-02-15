@@ -11,11 +11,15 @@ class XRXBaseModel extends AgaviModel
 
 	const COMMENTS			= "comments";
 
+	const MODULES			= "modules";
+
 	const NEWS				= "news";
 
 	const NEWS_I18N			= "news_i18n";
 
-	const MODULES			= "modules";
+	const PAGES				= "pages";
+
+	const PAGES_I18N		= "pages_i18n";
 
 	const SETTINGS			= "settings";
 

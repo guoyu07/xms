@@ -2,8 +2,6 @@
 
 class News_NewsI18nModel extends XRXNewsBaseModel
 {
-	const TABLE = "news_i18n";
-
 	private $news_id;
 	private $title;
 	private $summary;

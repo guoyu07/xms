@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ae:configurations
+	xmlns="http://agavi.org/agavi/config/parts/validators/1.0"
+	xmlns:ae="http://agavi.org/agavi/config/global/envelope/1.0"
+	parent="%core.module_dir%/Page/config/validators.xml"
+>
+	<ae:configuration>
+
+		<!-- For POST Method -->
+		<validators method="write">
+
+			<!-- Translation's Checkbox -->
+			<validator class="isset" provides="translation_filled">
+				<arguments base="translation[]">
+					<argument>check</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+			</validator>
+
+
+			<!-- Translation's Title -->
+			<validator class="string" depends="[translation_filled]" translation_domain=".page.validation">
+				<arguments base="translation[]">
+					<argument>title</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="max">200</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The title field has an invalid value.</error>
+					<error for="max">The title must be shorter than 200 characters.</error>
+					<error for="required">Please provide a title.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Translation's Content -->
+			<validator class="string" depends="[translation_filled]" translation_domain=".page.validation">
+				<arguments base="translation[]">
+					<argument>content</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The content field has an invalid value.</error>
+					<error for="required">Please provide a content.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Publish -->
+			<validator class="number" translation_domain=".page.validation">
+				<arguments>
+					<argument>published</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid published value.</error>
+					<error for="required">Please provide published value.</error>
+				</errors>
+			</validator>
+
+		</validators>
+		
+	</ae:configuration>
+</ae:configurations>

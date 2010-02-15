@@ -1,0 +1,93 @@
+<script type="text/javascript">
+	<!--
+	$(document).ready( function() {
+		// Handle fieldset checkboxes
+		var checkBox = $('legend > input[type="checkbox"]');
+
+		checkBox.each( function(idx, item) {
+			if ($(item).attr('checked')) {
+				$(item).parents('fieldset')
+					   .children('ol')
+					   .slideDown();
+			}
+		})
+
+		checkBox.click( function() {
+			$(this).parents('fieldset')
+				   .children('ol')
+				   .slideToggle( checkBox.attr('checked') );
+		})
+
+
+		// Handle "Delete Translation" buttons
+		var btnDelete = $('.xrx-page-delete');
+
+		btnDelete.click( function() {
+			if ( confirm("<?= $tm->_('are you sure?', '.page')?>")) {
+				var lang = this.id.split('-')[3];
+				$('#xrx-page-fieldset-' + lang).remove();
+				$('form').append('<input type="hidden" name="deleted[]" value="' + lang + '"');
+			}
+		})
+	})
+	// -->
+</script>
+
+
+
+<form action="<?= $ro->gen(null); ?>" method="post">
+	<?php foreach ($t['locales'] as $locale): ?>
+	<fieldset id="xrx-page-fieldset-<?= $locale->lang ?>" dir="<?= $locale->dir ?>">
+		<legend>
+			<? if ($locale->id == $t['currentLocale']): ?>
+				<?= $tm->_('edit page', '.page') ?>
+				<input type="checkbox" class="xrx-hidden" name="<?= "translation[$locale->lang][check]" ?>" checked="checked" />
+			<? else: ?>
+				<input type="checkbox" id="xrx-page-translation-<?= $locale->lang ?>" class="xrx-pointer" name="<?= "translation[$locale->lang][check]" ?>" <? if (isset($t['page'][$locale->lang])): ?>checked="checked"<? endif ?> />
+				<label for="xrx-page-translation-<?= $locale->lang ?>" class="xrx-pointer"><?= sprintf($tm->_('translate to %s', '.page', $locale->id), $locale->desc) ?></label>
+			<? endif; ?>
+		</legend>
+		<ol <?= ( $locale->id == $t['currentLocale'] || isset($t['page'][$locale->lang]) ) ? '' : 'class="xrx-hidden"' ?>>
+			<li>
+				<label for="xrx-page-title-<?= $locale->lang ?>"><?= $tm->_('title', '.page', $locale->id) ?><em class="xrx-required">*</em></label>
+				<input type="text" id="xrx-page-title-<?= $locale->lang ?>" class="xrx-page-title" name="<?= "translation[$locale->lang][title]" ?>" value="<?= $t['page'][$locale->lang]->title ?>" maxlength="200" />
+			</li>
+			<li>
+				<label for="xrx-page-content-<?= $locale->lang ?>"><?= $tm->_('content', '.page', $locale->id) ?><em class="xrx-required">*</em></label>
+				<textarea id="xrx-page-content-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][content]" ?>"><?= $t['page'][$locale->lang]->content ?></textarea>
+				<script type="text/javascript">
+					<!--
+					CKEDITOR.replace('xrx-page-content-<?= $locale->lang ?>', {
+						language: '<?= $locale->lang ?>',
+						contentsLangDirection: '<?= $locale->dir ?>'
+					});
+					// -->
+				</script>
+			</li>
+			<? if ($locale->id == $t['currentLocale']): ?>
+			<li>
+				<label><?= $tm->_('published', '.page') ?></label>
+
+				<input id="xrx-page-published-yes" type="radio" name="published" value="1" <? if ($t['page'][$locale->lang]->published): ?>checked="checked"<? endif ?> />
+				<label for="xrx-page-published-yes" class="xrx-label-radio"><?= $tm->_('yes', '.page') ?></label>
+
+				<input id="xrx-page-published-no" type="radio" name="published" value="0" <? if (!$t['page'][$locale->lang]->published): ?>checked="checked"<? endif ?> />
+				<label for="xrx-page-published-no" class="xrx-label-radio"><?= $tm->_('no', '.page') ?></label>
+			</li>
+			<? else: ?>
+			<? if ($locale->translated): ?>
+			<li>
+				<button type="button" id="xrx-page-delete-<?= $locale->lang ?>" class="xrx-page-delete"><?= sprintf($tm->_('delete %s translation', '.page', $locale->lang), $locale->desc) ?></button>
+			</li>
+			<? endif; ?>
+			<? endif; ?>
+		</ol>
+	</fieldset>
+	<?php endforeach; ?>
+
+	<input type="hidden" name="id" value="<?= $t['page'][$t['_language']]->id ?>" />
+	<input type="submit" value="<?= $tm->_('submit', '.page'); ?>" />
+	<a href="<?= $ro->gen('default', array('path' => 'admin/page')) ?>">
+		<input type="button" value="<?= $tm->_('cancel', '.page'); ?>" />
+	</a>
+</form>
