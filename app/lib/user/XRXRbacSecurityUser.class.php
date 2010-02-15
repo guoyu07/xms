@@ -101,8 +101,10 @@ class XRXRbacSecurityUser extends AgaviRbacSecurityUser
 		if (is_null($this->getAttributeNamespace('setting.general')) || $force === true) {
 			$settings = $this->getContext()->getModel('SettingManager', 'Setting')->retrieveAll();
 
-			foreach($settings as $setting) {
-				$this->setAttribute($setting->name, $setting->value, "setting.$setting->module");
+			if (isset ($settings)) {
+				foreach($settings as $setting) {
+					$this->setAttribute($setting->name, $setting->value, "setting.$setting->module");
+				}
 			}
 		}
 	}
