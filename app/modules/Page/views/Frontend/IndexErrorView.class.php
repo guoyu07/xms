@@ -1,6 +1,6 @@
 <?php
 
-class Page_Frontend_ViewSuccessView extends XRXPageFrontendView
+class Page_Frontend_IndexErrorView extends XRXPageFrontendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{

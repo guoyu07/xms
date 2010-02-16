@@ -1,6 +1,6 @@
 <?php
 
-class Page_Frontend_ViewAction extends XRXPageFrontendAction
+class Page_Frontend_IndexAction extends XRXPageFrontendAction
 {
 	/**
 	 * Returns the default view if the action does not serve the request

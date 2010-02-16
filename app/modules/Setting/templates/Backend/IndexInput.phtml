@@ -33,8 +33,12 @@
 					<input type="text" id="xrx-setting-website-title" name="website_title" value="<?= $us->getAttribute('website_title', 'setting.general') ?>" />
 				</li>
 				<li>
-					<label for="xrx-setting-items_per_page"><?= $tm->_('number of items per page', '.setting'); ?></label>
-					<input type="text" id="xrx-setting-items_per_page" name="items_per_page" value="<?= $us->getAttribute('items_per_page', 'setting.general') ?>" />
+					<label for="xrx-setting-items-per-page"><?= $tm->_('number of items per page', '.setting'); ?></label>
+					<input type="text" id="xrx-setting-items-per-page" name="items_per_page" value="<?= $us->getAttribute('items_per_page', 'setting.general') ?>" />
+				</li>
+				<li>
+					<label for="xrx-setting-front-page"><?= $tm->_('front page displays', '.setting'); ?></label>
+					<input type="text" id="xrx-setting-front-page" name="front_page" value="<?= $us->getAttribute('show_on_front', 'setting.general') ?>" />
 				</li>
 			</ol>
 
