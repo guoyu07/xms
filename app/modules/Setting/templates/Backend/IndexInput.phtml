@@ -6,6 +6,24 @@
 			cache	: true
 			,spinner: '<img src="/images/general/loading.gif" />'
 		});
+
+
+		// Show/Hide Page Selector
+		var parent	= $('#xrx-setting-front-page');
+		var li		= $('#xrx-setting-front-page-id').parent('li');
+
+		// ComboBox Handler
+		parent.change( function(e) {
+			if ($(this).val() != 'page') {
+				li.hide('fast');
+			} else {
+				li.show('fast');
+			}
+		});
+
+		if (parent.val() != 'page') {
+			li.hide();
+		}
 	})
 	// -->
 </script>
@@ -38,7 +56,21 @@
 				</li>
 				<li>
 					<label for="xrx-setting-front-page"><?= $tm->_('front page displays', '.setting'); ?></label>
-					<input type="text" id="xrx-setting-front-page" name="front_page" value="<?= $us->getAttribute('show_on_front', 'setting.general') ?>" />
+					<? $sof = $us->getAttribute('show_on_front', 'setting.general'); ?>
+					<select id="xrx-setting-front-page" name="front_page">
+					<? foreach ($t['modules'] as $module): ?>
+						<option value="<?= strtolower($module) ?>" <? if ($sof == strtolower($module)) echo 'selected="selected"'; ?>><?= $module ?></option>
+					<? endforeach; ?>
+					</select>
+				</li>
+				<li <? if (strtolower($sof) != 'page') echo 'class="xrx-hidden"' ?>>
+					<label for="xrx-setting-front-page-id"><?= $tm->_('page to show', '.setting'); ?></label>
+					<? $pid = $us->getAttribute('show_on_front_page_id', 'setting.general'); ?>
+					<select id="xrx-setting-front-page-id" name="front_page_id">
+					<? foreach ($t['pages'] as $id => $title): ?>
+						<option value="<?= $id ?>" <? if ($pid == $id) echo 'selected="selected"'; ?>><?= $title ?></option>
+					<? endforeach; ?>
+					</select>
 				</li>
 			</ol>
 

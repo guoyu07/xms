@@ -23,6 +23,7 @@
 					<error for="required">Please provide an id.</error>
 				</errors>
 			</validator>
+			
 
 			<!-- ID Genuine Validation -->
 			<validator class="News_GenuineIdValidator">

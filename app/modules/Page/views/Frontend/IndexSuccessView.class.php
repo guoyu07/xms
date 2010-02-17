@@ -6,7 +6,10 @@ class Page_Frontend_IndexSuccessView extends XRXPageFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', 'Frontend.View');
+		$page = &$this->getAttribute('page');
+		$page = $page[$this->getAttribute('_language')];
+
+		$this->setAttribute('_title', $page->title);
 	}
 }
 

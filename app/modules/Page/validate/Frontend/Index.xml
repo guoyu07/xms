@@ -5,8 +5,35 @@
 	parent="%core.module_dir%/Page/config/validators.xml"
 >
 	<ae:configuration>
-		
-		<validators>
+
+		<!-- For GET Method -->
+		<validators method="read">
+
+			<!-- ID -->
+			<validator class="number" translation_domain=".page.validation">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+					<ae:parameter name="severity">critical</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The id has an invalid value.</error>
+					<error for="required">Please provide an id.</error>
+				</errors>
+			</validator>
+
+			<!-- ID Genuine Validation -->
+			<validator class="Page_GenuineIdValidator" translation_domain=".page.validation">
+				<arguments>
+					<argument>id</argument>
+				</arguments>
+				<errors>
+					<error>There's no page with provided id in current language.</error>
+				</errors>
+			</validator>
+
 		</validators>
 		
 	</ae:configuration>

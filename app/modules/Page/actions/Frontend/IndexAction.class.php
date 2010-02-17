@@ -3,8 +3,9 @@
 class Page_Frontend_IndexAction extends XRXPageFrontendAction
 {
 	/**
-	 * Returns the default view if the action does not serve the request
-	 * method used.
+	 * Serves Read (GET) requests
+	 *
+	 * @param      AgaviRequestDataHolder the incoming request data
 	 *
 	 * @return     mixed <ul>
 	 *                     <li>A string containing the view name associated
@@ -14,9 +15,40 @@ class Page_Frontend_IndexAction extends XRXPageFrontendAction
 	 *                     executed.</li>
 	 *                   </ul>
 	 */
-	public function getDefaultViewName()
+	public function executeRead(AgaviRequestDataHolder $rd)
 	{
+		$page = $rd->getParameter('page');
+		$lang = $this->tm->getCurrentLocale()->getLocaleLanguage();
+		
+		// If it's not published
+		if (! $page[$lang]->published) {
+			return 'Error';
+		}
+
+		// Set passed page from validator to view
+		$this->setAttributeByRef('page', $page);
+
 		return 'Success';
+	}
+
+
+	/**
+	 * Returns the view if there's an error
+	 *
+	 * @param      AgaviRequestDataHolder the incoming request data
+	 *
+	 * @return     mixed <ul>
+	 *                     <li>A string containing the view name associated
+	 *                     with this action; or</li>
+	 *                     <li>An array with two indices: the parent module
+	 *                     of the view to be executed and the view to be
+	 *                     executed.</li>
+	 *                   </ul>
+	 */
+	public function handleError(AgaviRequestDataHolder $rd)
+	{
+		var_dump($this->getContainer()->getValidationManager()->getErrorMessages());
+		return 'Error';
 	}
 }
 

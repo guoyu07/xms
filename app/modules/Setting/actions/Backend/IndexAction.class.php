@@ -57,8 +57,10 @@ class Setting_Backend_IndexAction extends XRXSettingBackendAction
 		// Prepare params based on submitted module
 		if ( ! is_null($rd->getParameter('general')) ) {
 			$settings = array(
-				array('name' => 'website_title',	'value' => $rd->getParameter('website_title'),	'module' => 'general'),
-				array('name' => 'items_per_page',	'value' => $rd->getParameter('items_per_page'), 'module' => 'general')
+				array('name' => 'website_title',	'value' => $rd->getParameter('website_title'),		'module' => 'general'),
+				array('name' => 'items_per_page',	'value' => $rd->getParameter('items_per_page'),		'module' => 'general'),
+				array('name' => 'show_on_front',	'value' => $rd->getParameter('front_page'),			'module' => 'general'),
+				array('name' => 'show_on_front_id',	'value' => $rd->getParameter('front_page_id', 0),	'module' => 'general')
 			);
 		}
 		else if ( ! is_null($rd->getParameter('comment')) ) {

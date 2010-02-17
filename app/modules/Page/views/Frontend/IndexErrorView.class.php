@@ -4,9 +4,10 @@ class Page_Frontend_IndexErrorView extends XRXPageFrontendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{
-		$this->setupHtml($rd);
-
-		$this->setAttribute('_title', 'Frontend.View');
+		return $this->createForwardContainer(
+			AgaviConfig::get('actions.error404_module'),
+			AgaviConfig::get('actions.error404_action')
+		);
 	}
 }
 
