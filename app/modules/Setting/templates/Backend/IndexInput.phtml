@@ -63,7 +63,7 @@
 					<? endforeach; ?>
 					</select>
 				</li>
-				<li <? if (strtolower($sof) != 'page') echo 'class="xrx-hidden"' ?>>
+				<li <? if (strtolower($sof) == 'news') echo 'class="xrx-hidden"' ?>>
 					<label for="xrx-setting-front-page-id"><?= $tm->_('page to show', '.setting'); ?></label>
 					<? $pid = $us->getAttribute('show_on_front_page_id', 'setting.general'); ?>
 					<select id="xrx-setting-front-page-id" name="front_page_id">

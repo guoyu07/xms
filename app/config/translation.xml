@@ -15,9 +15,11 @@
 			</available_locale>
 
 			<!-- French, France -->
-		<!--<available_locale identifier="fr_FR">
-				<ae:parameter name="description">French</ae:parameter>
-			</available_locale>-->
+			<!--
+			<available_locale identifier="fr_FR">
+					<ae:parameter name="description">French</ae:parameter>
+			</available_locale>
+			-->
 
 		</available_locales>
 		

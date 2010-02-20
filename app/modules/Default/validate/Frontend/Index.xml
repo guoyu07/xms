@@ -7,6 +7,17 @@
 	<ae:configuration>
 		
 		<validators>
+
+			<!-- Front Page Rejected -->
+			<validator class="isset">
+				<arguments>
+					<argument>rejected</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+			</validator>
+
 		</validators>
 		
 	</ae:configuration>

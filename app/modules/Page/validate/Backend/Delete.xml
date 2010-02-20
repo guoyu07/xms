@@ -5,9 +5,24 @@
 	parent="%core.module_dir%/Page/config/validators.xml"
 >
 	<ae:configuration>
-		
-		<validators>
+
+		<validators method="write">
+
+			<!-- ID -->
+			<validator class="number" translation_domain=".page.validation">
+				<arguments base="id[]">
+					<argument />
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>Invalid page id.</error>
+					<error for="required">At least one page id is required.</error>
+				</errors>
+			</validator>
+
 		</validators>
-		
+
 	</ae:configuration>
 </ae:configurations>

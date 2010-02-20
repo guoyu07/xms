@@ -14,13 +14,13 @@ class Page_GenuineIdValidator extends AgaviValidator
 	*/
 	protected function validate()
 	{
-		$id		= $this->getData($this->getArgument());
+		$id		= $this->getData( $this->getArgument() );
 		$page	= $this->getContext()->getModel('PageManager', 'Page')->retrieveById($id);
 		$lang	= $this->getContext()->getTranslationManager()
 					   ->getCurrentLocale()->getLocaleLanguage();
 
 		// Checking for existance!
-		if ($page == null || empty ($page[$lang])) {
+		if ( ($page == null || empty ($page[$lang])) ) {
 			$this->throwError();
 			return false;
 		}

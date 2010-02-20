@@ -67,11 +67,7 @@ class Page_Backend_EditAction extends XRXPageBackendAction
 		$deleted = $rd->getParameter('deleted');
 
 		if ($deleted) {
-			if (count ($deleted) > 1) {
-				$pageManager->deleteAllByLang($id, $deleted);
-			} else {
-				$pageManager->deleteByLang($id, $deleted[0]);
-			}
+			$pageManager->deleteByLang($id, $deleted);
 		}
 
 		return 'Success';

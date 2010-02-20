@@ -17,14 +17,16 @@ class Setting_Backend_IndexInputView extends XRXSettingBackendView
 		}
 
 
-		// Retrieve all pages
-		$pages	= $this->getContext()->getModel('PageManager', 'Page')->retrieveAll();
+		// Retrieve all published pages
+		$filters = array('published' => true);
+		$pages	 = $this->getContext()->getModel('PageManager', 'Page')->retrieveAll($filters);
+
 		$ids	= array();
 		$titles	= array();
 		$pps	= array();
 
 		
-		// Search if there's any pages with translation for all enable locales.
+		// Search if there's any page with translation for all enabled locales.
 		foreach ($pages as $page) {
 			$ids[$page->id][] = $page->language;
 			$titles[$page->id][$page->language] = $page->title;
@@ -35,8 +37,10 @@ class Setting_Backend_IndexInputView extends XRXSettingBackendView
 			}
 		}
 
+		// If there's no page, just fill the ComboBox with dummy value
+		// to prevent the validator to throw an error.
 		if (count($pps) == 0) {
-			$pps[0] = 0;
+			$pps[0] = '-';
 		} else {
 			$modules[]	= 'Page';
 		}

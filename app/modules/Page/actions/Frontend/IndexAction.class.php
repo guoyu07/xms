@@ -47,7 +47,6 @@ class Page_Frontend_IndexAction extends XRXPageFrontendAction
 	 */
 	public function handleError(AgaviRequestDataHolder $rd)
 	{
-		var_dump($this->getContainer()->getValidationManager()->getErrorMessages());
 		return 'Error';
 	}
 }

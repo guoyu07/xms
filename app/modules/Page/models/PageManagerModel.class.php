@@ -64,6 +64,10 @@ class Page_PageManagerModel extends XRXPageBaseModel
 			$limit = (integer) $filters['limit'];
 		}
 
+		if (isset ($filters['published'])) {
+			$published = (boolean) $filters['published'];
+		}
+
 
 		try {
 			$sql = "SELECT
@@ -90,7 +94,7 @@ class Page_PageManagerModel extends XRXPageBaseModel
 			if (isset ($start) && isset($limit)) {
 				$sql .= "LIMIT :start, :limit";
 			}
-
+			
 			$sql	= sprintf($sql, self::PAGES, self::PAGES_I18N, self::USERS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 
@@ -262,20 +266,15 @@ class Page_PageManagerModel extends XRXPageBaseModel
 	}
 
 
-	public function deleteByLang($id, $language)
+	public function deleteByIds(array $ids)
 	{
-		if (empty ($id) || empty ($language))
-			return false;
-
 		try {
-			$sql = "DELETE pi
-					FROM %s AS pi
-					WHERE pi.page_id = :id AND pi.language = :language";
-
-			$sql	= sprintf($sql, self::PAGES_I18N);
+			$sql = "DELETE p
+					FROM %s AS p
+					WHERE p.id IN (%s)";
+			
+			$sql	= sprintf($sql, self::PAGES, implode(",", $ids));
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
-			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-			$stmt->bindValue(':language', $language, PDO::PARAM_STR);
 			$stmt->execute();
 		}
 		catch (PDOException $e) {
@@ -286,7 +285,7 @@ class Page_PageManagerModel extends XRXPageBaseModel
 	}
 
 
-	public function deleteAllByLang($id, array $language)
+	public function deleteByLang($id, array $language)
 	{
 		if (empty ($id) || empty ($language))
 			return false;
@@ -296,9 +295,8 @@ class Page_PageManagerModel extends XRXPageBaseModel
 					FROM %s AS pi
 					WHERE pi.page_id = :id AND pi.language IN (%s)";
 
-			// TODO: Change the way language appended to query!
-			$language	= "'" . implode("','", $language) . "'";
-			$sql		= sprintf($sql, self::PAGES_I18N, $language);
+			$languages	= "'" . implode("','", $language) . "'";
+			$sql		= sprintf($sql, self::PAGES_I18N, $languages);
 			$stmt		= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 			$stmt->execute();

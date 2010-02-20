@@ -11,7 +11,7 @@ class News_Backend_DeleteErrorView extends XRXNewsBackendView
 
 		$this->setAttribute('_url', $this->ro->gen('default', array('path' => 'admin/news')));
 		$this->setAttribute('_type', 'error');
-		$this->setAttribute('_title', $this->tm->_('news delete error', '.news'));
+		$this->setAttribute('_title', $this->tm->_('redirecting...', '.news'));
 	}
 }
 

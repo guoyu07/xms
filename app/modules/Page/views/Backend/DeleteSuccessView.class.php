@@ -4,9 +4,11 @@ class Page_Backend_DeleteSuccessView extends XRXPageBackendView
 {
 	public function executeHtml(AgaviRequestDataHolder $rd)
 	{
-		$this->setupHtml($rd);
+		$this->setupHtml($rd, 'redirect');
 
-		$this->setAttribute('_title', 'Backend.Delete');
+		$this->setAttribute('_url', $this->ro->gen('default', array('path' => 'admin/page')));
+		$this->setAttribute('_type', 'success');
+		$this->setAttribute('_title', $this->tm->_('redirecting...', '.page'));
 	}
 }
 
