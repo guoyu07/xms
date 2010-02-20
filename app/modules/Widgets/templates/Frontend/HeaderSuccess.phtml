@@ -1,6 +1,6 @@
 <div id="xrx-header">
 	<div class="xrx-wrapper">
-		<div class="xrx-<?= $t['_xalign'] ?>">
+		<div class="xrx-date xrx-<?= $t['_xalign'] ?>">
 			<p><?= $tm->_d(time()); ?></p>
 		</div>
 
@@ -16,5 +16,23 @@
 			}
 			?>
 		</h1>
+	</div>
+</div>
+
+<div id="xrx-menu">
+	<div class="xrx-wrapper">
+		<ul class="xrx-<?= $t['_align'] ?>">
+			<li><a href="<?= $ro->gen('index'); ?>"><?= $tm->_('home', '.widgets') ?></a></li>
+			
+			<? if ($t['showOnFront'] != 'news'): ?>
+				<li><a href="<?= $ro->gen('default', array('path' => 'news')); ?>"><?= $tm->_('news', '.widgets') ?></a></li>
+			<? endif; ?>
+
+			<? foreach ($t['pages'] as $page): ?>
+				<? if ($t['showOnFront'] != 'page' || $t['showOnFrontId'] != $page->id): ?>
+					<li><a href="<?= $ro->gen('default', array('path' => 'page', 'id' => $page->id)); ?>"><?= $page->title ?></a></li>
+				<? endif; ?>
+			<? endforeach; ?>
+		</ul>
 	</div>
 </div>
