@@ -11,6 +11,8 @@
 		<autoload name="XRXBackendView">%core.lib_dir%/view/XRXBackendView.class.php</autoload>
 		<autoload name="XRXFrontendView">%core.lib_dir%/view/XRXFrontendView.class.php</autoload>
 
+		<autoload name="XRXFileTemplateLayer">%core.lib_dir%/view/XRXFileTemplateLayer.class.php</autoload>
+
 
 		<!-- Load Routing Callback -->
 		<autoload name="XRXLocaleRoutingCallback">%core.lib_dir%/routing/XRXLocaleRoutingCallback.class.php</autoload>
