@@ -1,0 +1,48 @@
+<div id="xrx-navigation">
+	<ul>
+		<!--<li><a href="<?= $ro->gen('index'); ?>"><?= $tm->_('home', '.widgets') ?></a></li>-->
+
+		<? if ($t['showOnFront'] != 'news'): ?>
+			<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('default', array('path' => 'news')); ?>"><?= $tm->_('news', '.widgets') ?></a></li>
+		<? endif; ?>
+
+		<? if ($t['pages']): ?>
+			<? foreach ($t['pages'] as $page): ?>
+				<? if ($t['showOnFront'] != 'page' || $t['showOnFrontId'] != $page->id): ?>
+					<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('default', array('path' => 'page', 'id' => $page->id)); ?>"><?= $page->title ?></a></li>
+				<? endif; ?>
+			<? endforeach; ?>
+		<? endif ?>
+	</ul>
+</div>
+
+		<!--
+		<div class="xrx-date xrx-<?= $t['_xalign'] ?>">
+			<p><?= $tm->_d(time()); ?></p>
+		</div>
+		-->
+
+<div class="xrx-clear"></div>
+
+<div id="xrx-header">
+	<div class="xrx-inside">
+		<h1 id="xrx-logo">
+			<a href="<?= $ro->getBaseHref(); ?>" title="<?= $tm->_('main page', '.widgets') ?>"><img src="/themes/khashayar/images/xerxes.png" alt="khashayar" /></a>
+			<!--<a href="<?= $ro->getBaseHref(); ?>" title="<?= $tm->_('main page', '.widgets') ?>"><?= $us->getAttribute('website_title', 'setting.general') ?></a>-->
+		</h1>
+
+		<p id="xrx-description" class="xrx-<?= $t['_xalign'] ?>">“Kreativität, Individualität und Flexibilität sind seit jeher der treibende Motor hinter unseren Designs und Leistungen. In diesem Weblog erhalten Sie Informationen über unsere Online-Projekte, Leistungen, Service und Referenzen. Des Weiteren infromieren wir Sie zu aktuellen Trends aus den Bereichen Grafik- und Webdesign.” - Sebastian Erdbories</p>
+
+		<!--
+		<?php
+		foreach ($tm->getAvailableLocales() as $lc) {
+			$href = $ro->gen(null, array('locale' => $lc['identifier']));
+			$flag = $lc['identifierData']['territory'];
+			$desc = $lc['parameters']['description'];
+			echo "<a class='xrx-language-flag xrx-pointer' href='$href'><img src='/images/flags/$flag.png' title='$desc' alt='$desc' /></a>";
+		}
+		?>
+		-->
+	</div>
+</div>
+

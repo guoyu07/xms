@@ -1,0 +1,15 @@
+<div id="xrx-footer">
+	<div class="xrx-inside">
+		<? if ($us->isAuthenticated()): ?>
+		<div class="xrx-logged-box xrx-<?= $t['_xalign'] ?>">
+			<?= $tm->_('you are logged in.', '.widgets'); ?>
+			<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>"><?= $tm->_('log out', '.widgets'); ?></a>
+		</div>
+		<? endif; ?>
+		
+		<p>
+			<?= $tm->_('Copyright © 2009-2010 Khashayar Hajian.', '.widgets') ?><br />
+			<?= $tm->_('Powered by XRX Content Management System.', '.widgets') ?>
+		</p>
+	</div>
+</div>
