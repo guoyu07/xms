@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Language-Team: \n"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:33
+msgid "the title field has an invalid value"
+msgstr "مقدار عنوان نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:34
+msgid "the title must be shorter than 200 characters"
+msgstr "عنوان باید کمتر از 200 کاراکتر باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:35
+msgid "please provide a title"
+msgstr "لطفا عنوان را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:49
+msgid "the summary field has an invalid value"
+msgstr "مقدار خلاصه نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:63
+msgid "the content field has an invalid value"
+msgstr "مقدار محتوا نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:64
+msgid "please provide a content"
+msgstr "لطفا محتوا را وارد نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:79
+msgid "Invalid image."
+msgstr ""
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:80
+msgid "uploaded file is not an image"
+msgstr "فایل ارسال شده ار نوع تصویر نمی باشد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:81
+msgid "image file format is invalid"
+msgstr "فرمت فایل تصویر نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:121
+msgid "invalid date format"
+msgstr "تاریخ نامعتیر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:122
+msgid "please provide date"
+msgstr "لطفا مقدار تاریخ را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:136
+msgid "invalid category"
+msgstr "مقدار دسته نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:137
+msgid "please select a category"
+msgstr "لطفا یک دسته را انتخاب نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:151
+msgid "invalid published value"
+msgstr "وضعیت انتشار نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:152
+msgid "please provide published value"
+msgstr "لطفا وضعیت انتشار را مشخص نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:166
+msgid "invalid comment status"
+msgstr "نظر وارد شده نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Add.xml:167
+msgid "please provide comment status"
+msgstr "لطفا وضعیت نظرات را مشخص کنید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Delete.xml:20
+msgid "invalid news id"
+msgstr "شناسه خبر نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Delete.xml:21
+msgid "at least one news id is required"
+msgstr "حداقل انتخاب یک خبر اجباری است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Edit.xml:34
+msgid "there's no news with provided id in current language"
+msgstr "هیچ خبری با شناسه مورد نظر برای زبان جاری وجود ندارد"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Backend\Edit.xml:47
+msgid "invalid deleted items"
+msgstr "آیتم های حذف شده نامعتبر می باشند"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Frontend\Index.xml:21
+msgid "the category id has an invalid value"
+msgstr "مقدار شناسه دسته نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Frontend\View.xml:21
+msgid "the id has an invalid value"
+msgstr "مقدار شناسه نامعتبر است"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Frontend\View.xml:22
+msgid "please provide an id"
+msgstr "لطفا شناسه را مشخص نمایید"
+
+#: C:\xampp\htdocs\PHP\XmlGetText\content\News\validate\Frontend\View.xml:33
+msgid "there's no news with provided id"
+msgstr "هیچ خبری با شناسه مورد نظر وجود ندارد"
+
