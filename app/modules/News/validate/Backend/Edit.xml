@@ -11,45 +11,40 @@
 		<validators>
 
 			<!-- ID -->
-			<validator class="number">
+			<validator class="number" translation_domain=".news.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="severity">critical</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The id has an invalid value.</error>
-					<error for="required">Please provide an id.</error>
+					<error>the id has an invalid value</error>
+					<error for="required">please provide an id</error>
 				</errors>
 			</validator>
 
 			<!-- ID Genuine Validation -->
-			<validator class="News_GenuineIdValidator" method="read">
+			<validator class="News_GenuineIdValidator" method="read" translation_domain=".news.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
-				<ae:parameters>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
-				</ae:parameters>
 				<errors>
-					<error>There's no news with provided id in current language.</error>
+					<error>there's no news with provided id in current language</error>
 				</errors>
 			</validator>
 
 			<!-- Deleted (Hidden) -->
-			<validator class="string" method="write">
+			<validator class="string" method="write" translation_domain=".news.validation">
 				<arguments base="deleted[]">
 					<argument />
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">false</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid deleted items.</error>
+					<error>invalid deleted items</error>
 				</errors>
 			</validator>
 

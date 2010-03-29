@@ -8,7 +8,7 @@ class News_Backend_AddSuccessView extends XRXNewsBackendView
 
 		$this->setAttribute('_url', $this->ro->gen('default', array('path' => 'admin/news')));
 		$this->setAttribute('_type', 'success');
-		$this->setAttribute('_title', $this->tm->_('news added successfully', '.news'));
+		$this->setAttribute('_title', $this->tm->_('redirecting...', '.news'));
 	}
 }
 

@@ -10,7 +10,7 @@
 		<validators method="read">
 
 			<!-- Module Id -->
-			<validator class="number" translation_domain=".news">
+			<validator class="number" translation_domain=".news.validation">
 				<arguments>
 					<argument>category</argument>
 				</arguments>
@@ -18,7 +18,7 @@
 					<ae:parameter name="required">false</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The category id has an invalid value.</error>
+					<error>the category id has an invalid value</error>
 				</errors>
 			</validator>
 

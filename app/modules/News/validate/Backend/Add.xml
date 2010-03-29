@@ -21,74 +21,70 @@
 
 
 			<!-- Translation's Title -->
-			<validator class="string" depends="[translation_filled]">
+			<validator class="string" depends="[translation_filled]" translation_domain=".news.validation">
 				<arguments base="translation[]">
 					<argument>title</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="max">200</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The title field has an invalid value.</error>
-					<error for="max">The title must be shorter than 200 characters.</error>
-					<error for="required">Please provide a title.</error>
+					<error>the title field has an invalid value</error>
+					<error for="max">the title must be shorter than 200 characters</error>
+					<error for="required">please provide a title</error>
 				</errors>
 			</validator>
 
 
 			<!-- Translation's Summary -->
-			<validator class="string" depends="[translation_filled]">
+			<validator class="string" depends="[translation_filled]" translation_domain=".news.validation">
 				<arguments base="translation[]">
 					<argument>summary</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">false</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The summary field has an invalid value.</error>
+					<error>the summary field has an invalid value</error>
 				</errors>
 			</validator>
 
 
 			<!-- Translation's Content -->
-			<validator class="string" depends="[translation_filled]">
+			<validator class="string" depends="[translation_filled]" translation_domain=".news.validation">
 				<arguments base="translation[]">
 					<argument>content</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The content field has an invalid value.</error>
-					<error for="required">Please provide a content.</error>
+					<error>the content field has an invalid value</error>
+					<error for="required">please provide a content</error>
 				</errors>
 			</validator>
 
 
 			<!-- Image -->
-			<validator class="imagefile">
+			<validator class="imagefile" translation_domain=".news.validation">
 				<arguments>
 					<argument>image</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">false</ae:parameter>
 					<ae:parameter name="format">gif jpeg</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid image.</error>
-					<error for="no_image">Uploaded file is not an image.</error>
-					<error for="format">Image file format is invalid.</error>
+					<error>invalid image</error>
+					<error for="no_image">uploaded file is not an image</error>
+					<error for="format">image file format is invalid</error>
 				</errors>
 			</validator>
 
 
 			<!-- Date -->
-			<validator class="datetime">
+			<validator class="datetime" translation_domain=".news.validation">
 				<arguments>
 					<argument>date</argument>
 				</arguments>
@@ -120,59 +116,55 @@
 						</ae:parameters>
 					</ae:parameter>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid date format.</error>
-					<error for="required">Please provide date.</error>
+					<error>invalid date format</error>
+					<error for="required">please provide date</error>
 				</errors>
 			</validator>
 
 
 			<!-- Category -->
-			<validator class="number">
+			<validator class="number" translation_domain=".news.validation">
 				<arguments>
 					<argument>category</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid category.</error>
-					<error for="required">Please select a category.</error>
+					<error>invalid category</error>
+					<error for="required">please select a category</error>
 				</errors>
 			</validator>
 
 
 			<!-- Publish -->
-			<validator class="number">
+			<validator class="number" translation_domain=".news.validation">
 				<arguments>
 					<argument>published</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid published value.</error>
-					<error for="required">Please provide published value.</error>
+					<error>invalid published value</error>
+					<error for="required">please provide published value</error>
 				</errors>
 			</validator>
 
 
 			<!-- Comments -->
-			<validator class="number">
+			<validator class="number" translation_domain=".news.validation">
 				<arguments>
 					<argument>comments</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid comment status.</error>
-					<error for="required">Please provide comment status.</error>
+					<error>invalid comment status</error>
+					<error for="required">please provide comment status</error>
 				</errors>
 			</validator>
 

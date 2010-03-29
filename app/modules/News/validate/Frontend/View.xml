@@ -9,32 +9,28 @@
 		<validators>
 
 			<!-- ID -->
-			<validator class="number" severity="critical">
+			<validator class="number" severity="critical" translation_domain=".news.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
 					<ae:parameter name="severity">critical</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>The id has an invalid value.</error>
-					<error for="required">Please provide an id.</error>
+					<error>the id has an invalid value</error>
+					<error for="required">please provide an id</error>
 				</errors>
 			</validator>
 			
 
 			<!-- ID Genuine Validation -->
-			<validator class="News_GenuineIdValidator">
+			<validator class="News_GenuineIdValidator" translation_domain=".news.validation">
 				<arguments>
 					<argument>id</argument>
 				</arguments>
-				<ae:parameters>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
-				</ae:parameters>
 				<errors>
-					<error>There's no news with provided id.</error>
+					<error>there's no news with provided id</error>
 				</errors>
 			</validator>
 

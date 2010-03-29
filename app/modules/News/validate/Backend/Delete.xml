@@ -9,17 +9,16 @@
 		<validators method="write">
 
 			<!-- ID -->
-			<validator class="number">
+			<validator class="number" translation_domain=".news.validation">
 				<arguments base="id[]">
 					<argument />
 				</arguments>
 				<ae:parameters>
 					<ae:parameter name="required">true</ae:parameter>
-					<ae:parameter name="translation_domain">.news</ae:parameter>
 				</ae:parameters>
 				<errors>
-					<error>Invalid news id.</error>
-					<error for="required">At least one news id is required.</error>
+					<error>invalid news id</error>
+					<error for="required">at least one news id is required</error>
 				</errors>
 			</validator>
 
