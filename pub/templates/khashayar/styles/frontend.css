@@ -1,84 +1,87 @@
+/* General */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #3C3C3C;
+	font-size: 10px;
+	background-color: #303C44;
+	font-family: Helvetica, Arial, Verdana, Sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+/* Navigation Bar */
+
+#xrx-navigation {
+	width: 920px;
+	margin: 0 auto;
+	font-size: 1.2em;
+	list-style-type: none;
+}
+
+#xrx-navigation li {
+	float: left;
+}
+
+#xrx-navigation a {
+	display: block;
+	padding: 0.5em 1em;
+	color: #DDDDDD;
+	line-height: 2em;
+	font-weight: bold;
+}
+
+#xrx-navigation a:hover {
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #444F56;
+}
+
+
+
 /* Header */
 
 #xrx-header {
-	height: 50px;
-	color: #999;
-	background: #464646 none repeat scroll 0 0;
+	color: #D6CECB;
+	background-color: #F7F7F7;
 }
 
-#xrx-header h1 {
-	margin: 0px;
-	padding: 4px 0px;
-	font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
-}
 
-#xrx-header h1 a {
-	margin-top: 2px;
-	color: #FFF;
-}
 
-#xrx-header a:hover {
-	text-decoration: underline;
-}
+/* Class */
 
-.xrx-language-flag {
-	margin: 0 2px;
-}
-
-.xrx-wrapper {
-	width: 960px;
+.xrx-inside {
+	width: 920px;
 	margin: 0 auto;
-	padding: 5px;
+	padding: 20px 30px;
+	font-size: 1.2em;
+}
+
+.xrx-clear {
 	clear: both;
 }
 
-
-
-/* Content */
-
-#xrx-content {
-	color: #555;
+.xrx-left {
+	float: left;
 }
 
-.xrx-thumbnail-60.xrx-left {
-	margin: 5px 5px 0 0;
-}
-
-.xrx-thumbnail-60.xrx-right {
-	margin: 5px 0 0 5px;
+.xrx-right {
+	float: right;
 }
 
 
 
-/* Footer */
+/* Container */
 
-#xrx-footer {
-	margin: 0px;
-	padding: 1px 5px;
-	height: 46px;
-	color: #999;
-	clear: both;
-	background: #464646 none repeat scroll 0 0;
-}
-
-
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * ** * * * * * * * * * * */
-
-
-
-/* News */
-
-.xrx-news-content {
-	padding: 10px 0px;
-}
-
-.xrx-news-entry {
-	margin: 10px 5px;
-	text-align: justify;
-	line-height: 1.4em;
-}
-
-.xrx-news-toolbox {
-	padding: 10px 0px;
+#xrx-container {
+	color: #3C3C3C;
+	background-color: #FFF;
 }

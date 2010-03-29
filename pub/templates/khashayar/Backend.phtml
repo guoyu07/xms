@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= $t['_language']; ?>" lang="<?= $t['_language']; ?>" dir="<?= $t['_dir']; ?>">
+	<head>
+		<meta http-equiv="Content-Type" content="<?= $container->getOutputType()->getParameter('http_headers[Content-Type]', 'text/html; charset=utf-8'); ?>" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		
+		<title><?php if (isset($t['_title'])) echo $vw->escape($t['_title']) . ' - '; echo $us->getAttribute('website_title', 'setting.general'); ?></title>
+		<base href="<?= $ro->getBaseHref(); ?>" />
+
+		<!-- Cascading Style Sheets -->
+		<link rel="stylesheet" type="text/css" href="templates/default/styles/master.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="templates/default/styles/backend.css" media="screen" />
+		<link rel="Stylesheet" type="text/css" href="/scripts/jQuery/ui/themes/base/ui.all.css" />
+		<?php
+		if (isset ($t['_styles'])) {
+			foreach ($t['_styles'] as $style) {
+				echo "<link rel='stylesheet' type='text/css' href='$style' media='screen' />\n";
+			}
+		}
+		?>
+
+		<!-- Javascript -->
+		<script type="text/javascript" src="/scripts/jQuery/jquery-1.4.1.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/ui/jquery.ui.core.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/ui/jquery.ui.widget.js"></script>
+		<script type="text/javascript" src="/scripts/jQuery/ui/jquery.ui.tabs.js"></script>
+		<?php
+		if (isset ($t['_scripts'])) {
+			foreach ($t['_scripts'] as $script) {
+				echo "<script type='text/javascript' src='$script'></script>\n";
+			}
+		}
+		?>
+	</head>
+
+	<body>
+		<?= $slots['header']; ?>
+		<div id="xrx-body" class="xrx-body-<?= $t['_align'] ?>">
+			<?= $slots['menu']; ?>
+
+			<div id="xrx-content" class="xrx-<?= $t['_align'] ?>">
+				<?= $inner; ?>
+			</div>
+			<div class="xrx-clear"></div>
+		</div>
+		<?= $slots['footer']; ?>
+	</body>
+</html>
