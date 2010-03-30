@@ -6,7 +6,11 @@ class Widgets_Frontend_HeaderSuccessView extends XRXWidgetsFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$filters = array('language' => $this->getAttribute('_language'));
+		$filters = array(
+			'language'	=> $this->getAttribute('_language'),
+			'published'	=> true
+		);
+		
 		$pages	 = $this->getContext()->getModel('PageManager', 'Page')->retrieveAll( $filters );
 
 		$this->setAttribute('pages', $pages);
