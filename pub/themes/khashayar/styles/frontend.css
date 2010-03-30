@@ -77,8 +77,13 @@ ul {
 /* Header */
 
 #xrx-header {
-	color: #D6CECB;
+	color: #B1B2B4;
 	background-color: #F7F7F7;
+}
+
+#xrx-description {
+	padding-top: 20px;
+	text-align: justify;
 }
 
 
