@@ -65,6 +65,7 @@ class News_Backend_AddInputView extends XRXNewsBackendView
 		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/calendar-setup.js");
 		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/lang/calendar-$language.js");
 		$this->appendAttribute("_scripts", "/scripts/CKEditor/ckeditor.js");
+		$this->appendAttribute("_scripts", "/scripts/CKFinder/ckfinder.js");
 	}
 }
 

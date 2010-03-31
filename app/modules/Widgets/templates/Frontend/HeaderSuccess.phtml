@@ -28,11 +28,13 @@
 				<li><a href="<?= $ro->gen('default', array('path' => 'news')); ?>"><?= $tm->_('news', '.widgets') ?></a></li>
 			<? endif; ?>
 
-			<? foreach ($t['pages'] as $page): ?>
-				<? if ($t['showOnFront'] != 'page' || $t['showOnFrontId'] != $page->id): ?>
-					<li><a href="<?= $ro->gen('default', array('path' => 'page', 'id' => $page->id)); ?>"><?= $page->title ?></a></li>
-				<? endif; ?>
-			<? endforeach; ?>
+			<? if ($t['pages']): ?>
+				<? foreach ($t['pages'] as $page): ?>
+					<? if ($t['showOnFront'] != 'page' || $t['showOnFrontId'] != $page->id): ?>
+						<li><a href="<?= $ro->gen('default', array('path' => 'page', 'id' => $page->id)); ?>"><?= $page->title ?></a></li>
+					<? endif; ?>
+				<? endforeach; ?>
+			<? endif; ?>
 		</ul>
 	</div>
 </div>
