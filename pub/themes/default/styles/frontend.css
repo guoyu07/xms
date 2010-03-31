@@ -79,6 +79,11 @@ legend {
 	color: #555;
 }
 
+.xrx-inside {
+	width: 960px;
+	margin: 0 auto;
+}
+
 .xrx-thumbnail-60.xrx-left {
 	margin: 5px 5px 0 0;
 }
