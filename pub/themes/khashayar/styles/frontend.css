@@ -1,4 +1,6 @@
-/* General */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* General
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 @font-face{
 	font-family: Terafik;
@@ -30,9 +32,7 @@ body.rtl {
 	font-family: Terafik, Tahoma, Helvetica, Arial, Verdana, Sans-serif;
 }
 
-fieldset {
-	border-width: 0;
-}
+fieldset { border-width: 0; }
 
 a {
 	color: #3C3C3C;
@@ -44,9 +44,10 @@ a:hover {
 	text-decoration: none;
 }
 
-img {
-	border: 0;
-}
+h1 { font-size: 1.5em; }
+h3 { font-size: 1.4em; }
+
+img { border: 0; }
 
 input[type="text"], textarea {
 	width: 250px;
@@ -59,8 +60,12 @@ ol, ul {
 	list-style-type: none;
 }
 
-ol, ul, p, blackquote {
+ol, ul, p, blockquote {
 	margin: 1em 0;
+}
+
+small {
+	font-size: 0.95em;
 }
 
 textarea {
@@ -68,8 +73,9 @@ textarea {
 }
 
 
-
-/* Navigation Bar */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Navigation Bar
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #xrx-navigation ul {
 	width: 920px;
@@ -92,8 +98,9 @@ textarea {
 }
 
 
-
-/* Header */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Header
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #xrx-header {
 	color: #B1B2B4;
@@ -101,13 +108,13 @@ textarea {
 }
 
 #xrx-description {
-	padding-top: 20px;
 	text-align: justify;
 }
 
 
-
-/* Class */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* General Classes
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .xrx-inside {
 	width: 920px;
@@ -137,8 +144,9 @@ textarea {
 }
 
 
-
-/* Container */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Container
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #xrx-container {
 	color: #3C3C3C;
@@ -167,18 +175,16 @@ textarea {
 	margin-top: 14px;
 }
 
-#xrx-bottom {
-	background: url("/themes/khashayar/images/wrapper-bottom.gif") no-repeat scroll top left transparent;
-}
 
-
-
-/* News */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* News
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .xrx-news-item {
 	margin-bottom: 30px;
 }
 
+.xrx-news-item h1,
 .xrx-news-item h2 {
 	margin-bottom: 2px;
 	padding: 5px 0;
@@ -201,6 +207,14 @@ textarea {
 	border-top: 1px solid #DDD;
 }
 
+.xrx-news-entry a {
+	border-bottom: 1px dotted #3C3C3C;
+}
+
+.xrx-news-entry a:hover {
+	border-bottom: 1px dotted #9D9D9D;
+}
+
 .xrx-news-meta-view {
 	margin: 5px 0;
 	color: #5C5C5C;
@@ -214,9 +228,22 @@ textarea {
 	border-top: 1px solid #DDD;
 }
 
+.xrx-news-entry-view a {
+	border-bottom: 1px dotted #3C3C3C;
+}
+
+.xrx-news-entry-view a:hover {
+	border-bottom: 1px dotted #9D9D9D;
+}
 
 
-/* Comments */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Comments
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#xrx-comments-list {
+	margin-top: 14px;
+}
 
 #xrx-comments-list h3 {
 	margin: 0px;
@@ -234,6 +261,27 @@ textarea {
 	border-top: 1px solid #DDD;
 }
 
+#xrx-comments-list a {
+	border-bottom: 1px dotted #3C3C3C;
+}
+
+#xrx-comments-list a:hover {
+	border-bottom: 1px dotted #9D9D9D;
+}
+
+.xrx-comment-credential {
+	width: 140px;
+	overflow: hidden;
+}
+
+.xrx-comment-credential.xrx-left {
+	margin: 1em 8px 1em 0;
+}
+
+.xrx-comment-credential .xrx-right {
+	margin: 1em 0 1em 8px;
+}
+
 #xrx-comment-form {
 	margin: 50px 0 20px;
 }
@@ -246,8 +294,9 @@ textarea {
 }
 
 
-
-/* Pagination */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Pagination
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 .xrx-list-nav {
 	padding: 20px 0;
@@ -269,8 +318,22 @@ textarea {
 }
 
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Bottom
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* Footer */
+#xrx-bottom {
+	background-color: #F7F7F7;
+}
+
+#xrx-bottom .xrx-inside {
+	background: url("/themes/khashayar/images/wrapper-bottom.gif") no-repeat scroll top left transparent;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Footer
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #xrx-footer {
 	color: #EEE;

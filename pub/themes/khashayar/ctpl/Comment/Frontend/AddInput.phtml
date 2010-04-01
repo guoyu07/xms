@@ -1,38 +1,40 @@
-<h3><?= $tm->_('leave a comment', '.comment') ?></h3>
-<form action="<?= $ro->gen('default', array('path'=>'comment/add')); ?>" method="post">
-	<? if ($us->isAuthenticated()): ?>
-	<p>
-		<input type="text" id="xrx-comment-name" name="name" value="<?= $us->getAttribute('username') ?>" maxlength="60" readonly="readonly" />
-		<input type="hidden" name="author_id" value="<?= $us->getAttribute('userId') ?>" />
-		<label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?> (<?= $tm->_('required', '.comment') ?>)</label>
-	</p>
-	<p>
-		<input type="text" id="xrx-comment-email" name="email" value="<?= $us->getAttribute('email') ?>" maxlength="100" readonly="readonly" />
-		<label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?> (<?= $tm->_('required', '.comment') ?>)</label>
-	</p>
-	<p>
-		<input type="text" id="xrx-comment-url" name="url" value="<?= $us->getAttribute('website') ?>" maxlength="200" readonly="readonly" />
-		<label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label>
-	</p>
-	<? else: ?>
-	<p>
-		<input type="text" id="xrx-comment-name" name="name" maxlength="60" />
-		<label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?><em class="xrx-required">*</em></label>
-	</p>
-	<p>
-		<input type="text" id="xrx-comment-email" name="email" maxlength="100" />
-		<label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?><em class="xrx-required">*</em></label>
-	</p>
-	<p>
-		<input type="text" id="xrx-comment-url" name="url" maxlength="200" />
-		<label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label>
-	</p>
-	<? endif; ?>
-	<p>
-		<textarea id="xrx-comment-content" name="content" rows="10" cols="60"></textarea>
-	</p>
+<div id="xrx-comment-form">
+	<h3><?= $tm->_('leave a comment', '.comment') ?></h3>
+	<form action="<?= $ro->gen('default', array('path'=>'comment/add')); ?>" method="post">
+		<? if ($us->isAuthenticated()): ?>
+		<p>
+			<input type="text" id="xrx-comment-name" name="name" value="<?= $us->getAttribute('username') ?>" maxlength="60" readonly="readonly" />
+			<input type="hidden" name="author_id" value="<?= $us->getAttribute('userId') ?>" />
+			<small><label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?> (<?= $tm->_('required', '.comment') ?>)</label></small>
+		</p>
+		<p>
+			<input type="text" id="xrx-comment-email" name="email" value="<?= $us->getAttribute('email') ?>" maxlength="100" readonly="readonly" />
+			<small><label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?> (<?= $tm->_('required', '.comment') ?>)</label></small>
+		</p>
+		<p>
+			<input type="text" id="xrx-comment-url" name="url" value="<?= $us->getAttribute('website') ?>" maxlength="200" readonly="readonly" />
+			<small><label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label></small>
+		</p>
+		<? else: ?>
+		<p>
+			<input type="text" id="xrx-comment-name" name="name" maxlength="60" />
+			<small><label for="xrx-comment-name"><?= $tm->_('name', '.comment') ?> (<?= $tm->_('required', '.comment') ?>)</label></small>
+		</p>
+		<p>
+			<input type="text" id="xrx-comment-email" name="email" maxlength="100" />
+			<small><label for="xrx-comment-email"><?= $tm->_('email', '.comment') ?> (<?= $tm->_('required', '.comment') ?>)</label></small>
+		</p>
+		<p>
+			<input type="text" id="xrx-comment-url" name="url" maxlength="200" />
+			<small><label for="xrx-comment-url"><?= $tm->_('website', '.comment') ?></label></small>
+		</p>
+		<? endif; ?>
+		<p>
+			<textarea id="xrx-comment-content" name="content" rows="10" cols="60"></textarea>
+		</p>
 
-	<input type="hidden" name="module_id" value="<?= $t['module_id'] ?>" />
-	<input type="hidden" name="owner_id" value="<?= $t['owner_id'] ?>" />
-	<input type="submit" value="<?= $tm->_('submit comment', '.comment') ?>" />
-</form>
+		<input type="hidden" name="module_id" value="<?= $t['module_id'] ?>" />
+		<input type="hidden" name="owner_id" value="<?= $t['owner_id'] ?>" />
+		<input type="submit" value="<?= $tm->_('submit comment', '.comment') ?>" />
+	</form>
+</div>

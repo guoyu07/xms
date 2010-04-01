@@ -30,6 +30,13 @@
 					<layout name="frontend">
 						<!-- content layer without further params. this means the standard template is used, i.e. the one with the same name as the current view -->
 						<layer name="content" />
+						<!-- decorator layer with to add top & buttom decorator -->
+						<layer name="wrapper">
+							<ae:parameters>
+								<ae:parameter name="directory">%core.template_dir%</ae:parameter>
+								<ae:parameter name="template">Wrapper</ae:parameter>
+							</ae:parameters>
+						</layer>
 						<!-- decorator layer with the HTML skeleton, navigation etc; set to a specific template here -->
 						<layer name="decorator">
 							<ae:parameters>
@@ -38,6 +45,8 @@
 							</ae:parameters>
 							<slots>
 								<slot name="header" module="Widgets" action="Frontend.Header" />
+								<slot name="top"	module="Widgets" action="Frontend.Header" />
+								<slot name="bottom" module="Widgets" action="Frontend.Header" />
 								<slot name="footer" module="Widgets" action="Frontend.Footer"/>
 							</slots>
 						</layer>
@@ -58,24 +67,6 @@
 								<slot name="menu" module="Widgets" action="Backend.Menu" />
 								<slot name="footer" module="Widgets" action="Backend.Footer"/>
 							</slots>
-						</layer>
-					</layout>
-					
-					<!-- another example layout that has an intermediate wrapper layer in between content and decorator -->
-					<!-- it also shows how to use slots etc -->
-					<layout name="wrapped">
-						<!-- content layer without further params. this means the standard template is used, i.e. the one with the same name as the current view -->
-						<layer name="content" />
-						<layer name="wrapper">
-							<!-- use CurrentView.wrapper.php instead of CurrentView.php as the template for this one -->
-							<ae:parameter name="extension">.wrapper.php</ae:parameter>
-						</layer>
-						<!-- decorator layer with the HTML skeleton, navigation etc; set to a specific template here -->
-						<layer name="decorator">
-							<ae:parameter name="directory">%core.template_dir%</ae:parameter>
-							<ae:parameter name="template">Master</ae:parameter>
-							<!-- an example for a slot -->
-							<slot name="nav" module="Default" action="Widgets.Navigation" />
 						</layer>
 					</layout>
 

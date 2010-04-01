@@ -12,8 +12,6 @@
 		<meta name="robots" content="index,follow" />
 
 		<!-- Cascading Style Sheets -->
-		<!--<link rel="stylesheet" type="text/css" href="themes/khashayar/styles/reset.css" media="all" />-->
-		<!--<link rel="stylesheet" type="text/css" href="themes/khashayar/styles/master.css" media="screen" />-->
 		<link rel="stylesheet" type="text/css" href="themes/khashayar/styles/frontend.css" media="screen" />
 
 		<!-- Javascript -->
@@ -24,15 +22,8 @@
 	</head>
 
 	<body class="<?php echo $t['_dir']; ?>">
-
 		<?php echo $slots['header']; ?>
-
-		<div id="xrx-container">
-			<div class="xrx-inside"><?php echo $inner; ?></div>
-			<div class="xrx-clear"></div>
-		</div>
-
+		<?php echo $inner; ?>
 		<?php echo $slots['footer']; ?>
-
 	</body>
 </html>

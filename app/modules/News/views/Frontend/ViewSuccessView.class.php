@@ -49,6 +49,7 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 
 
 		// Create a Slot to view the comments
+		$layer = $this->getLayer('wrapper');
 		$layer->setSlot('comments',
 			$this->createSlotContainer('Comment', 'Frontend.List', array(
 				'module_id'	=> $module_id,
@@ -59,6 +60,7 @@ class News_Frontend_ViewSuccessView extends XRXNewsFrontendView
 
 
 		// Create a Slot to view the comments' form
+		$layer = $this->getLayer('wrapper');
 		$layer->setSlot('comment-form',
 			$this->createSlotContainer('Comment', 'Frontend.Add', array(
 				'module_id'	=> $module_id,

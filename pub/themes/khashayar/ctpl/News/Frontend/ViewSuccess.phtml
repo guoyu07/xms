@@ -16,11 +16,11 @@ if ( isset($t['translations']) ) {
 
 <div id="xrx-content" class="xrx-<?= $t['_align'] ?>">
 	<div class="xrx-news-item">
-		<h2><?= $t['news']->title ?></h2>
+		<h1><?= $t['news']->title ?></h1>
 
 		<div class="xrx-news-meta-view">
-			<?= $tm->_d($t['news']->date) ?><br />
-			<?= sprintf($tm->_('category: %s', '.news'), '<a href="' . $ro->gen('default', array('path'=>'news/index', 'category'=>$t['news']->category_id)) . '">' . $t['news']->category_name . '</a>') ?>
+			<small><?= $tm->_d($t['news']->date) ?></small><br />
+			<small><?= sprintf($tm->_('category: %s', '.news'), '<strong><a href="' . $ro->gen('default', array('path'=>'news/index', 'category'=>$t['news']->category_id)) . '">' . $t['news']->category_name . '</a></strong>') ?></small>
 		</div>
 		<div class="xrx-news-entry-view">
 			<p>
@@ -43,15 +43,3 @@ if ( isset($t['translations']) ) {
 		<?= $slots['categories'] ?>
 	</div>
 </div>
-
-
-<div class="xrx-clear"></div>
-
-
-<div id="xrx-comments-list"><?= $slots['comments'] ?></div>
-
-<? if ($t['news']->comment_status): ?>
-	<div id="xrx-comment-form"><?= $slots['comment-form'] ?></div>
-<? else: ?>
-	<div id="xrx-comment-disabled" class="xrx-center-text"><?= $tm->_('sending comments on this news has been disabled') ?></div>
-<? endif ?>

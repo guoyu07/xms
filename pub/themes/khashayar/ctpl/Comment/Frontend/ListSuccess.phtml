@@ -1,26 +1,30 @@
-<h3><?= $tm->_('comments', '.comment') ?></h3>
-<div class="xrx-comment-meta">
-	<?= sprintf($tm->_('%s comment(s).', '.comment'), count($t['comments'])) ?>
-	<a href="#xrx-comment-form"><?= $tm->_('leave a comment.', '.comment') ?></a>
-</div>
+<div id="xrx-comments-list">
+	<h3><?= $tm->_('comments', '.comment') ?></h3>
+	<div class="xrx-comment-meta">
+		<?= sprintf($tm->_('%s comment(s)', '.comment'), count($t['comments'])) ?>.
+		<a href="<?= $ro->gen(null, array(), array('fragment'=>'xrx-comment-form')) ?>"><?= $tm->_('leave a comment', '.comment') ?>.</a>
+	</div>
 
-<? if (isset ($t['comments'])): ?>
-	<ol>
-	<? foreach ($t['comments'] as $comment): ?>
-		<li id="xrx-comment-<?= $comment->getId() ?>">
-			<h5>
-				<? if ($comment->getAuthorUrl()): ?>
-				<a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>"
-				   target="_blank"><?= $comment->getAuthorName() ?></a>
-				<? else: ?>
-					<?= $comment->getAuthorName() ?>
-				<? endif; ?>
-			</h5>
-			<small><?= $tm->_d($comment->getDate()) ?></small>
-			<p><?= $vw->escape($comment->getContent()) ?></p>
-		</li>
-	<? endforeach; ?>
-	</ol>
-<? else: ?>
-	<div><?= $tm->_("there's no comments", ".comment") ?></div>
-<? endif; ?>
+	<? if (isset ($t['comments'])): ?>
+	<ul>
+		<? foreach ($t['comments'] as $comment): ?>
+			<li id="xrx-comment-<?= $comment->getId() ?>">
+				<div class="xrx-comment-credential xrx-<?= $t['_align'] ?>">
+					<cite>
+						<? if ($comment->getAuthorUrl()): ?>
+							<strong><a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>" target="_blank"><?= $comment->getAuthorName() ?></a></strong>
+						<? else: ?>
+							<strong><?= $comment->getAuthorName() ?></strong>
+						<? endif; ?>
+						<br /><?= $tm->_d($comment->getDate()) ?>
+					</cite>
+				</div>
+				<div class="xrx-comment-text">
+					<blockquote><?= $vw->escape($comment->getContent()) ?></blockquote>
+				</div>
+				<div class="xrx-clear"></div>
+			</li>
+		<? endforeach; ?>
+	</ul>
+	<? endif; ?>
+</div>
