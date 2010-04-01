@@ -220,6 +220,21 @@ class PaginatorHelper extends XRXHelper
 		// - - - - - -
 		// Template
 		// - - - - - -
+		
+		if (isset ($this->previous)) {
+			echo "<a href='{$this->createURL($this->previous)}'>Previous</a>";
+		}
+
+		if (isset ($this->next)) {
+			echo "<a href='{$this->createURL($this->next)}'>Next</a>";
+		}
+	}
+
+	public function outOriginal($pages)
+	{
+		// - - - - - -
+		// Template
+		// - - - - - -
 
 		// Display Info
 		$tm		= $this->view->getContext()->getTranslationManager();

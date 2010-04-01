@@ -19,8 +19,8 @@ class News_Frontend_IndexAction extends XRXNewsFrontendAction
 	{
 		// Pagination
 		$page	= $rd->getParameter('_p', '1');
-		$limit	= 10;
-		$start	= ($page - 1) * 10;
+		$limit	= $this->us->getAttribute('items_per_page', 'setting.general');
+		$start	= ($page - 1) * $limit;
 
 		$locale = $this->getContext()->getTranslationManager()->getCurrentLocale();
 		$cid	= $rd->getParameter('category', null);
@@ -30,6 +30,7 @@ class News_Frontend_IndexAction extends XRXNewsFrontendAction
 		// Pass to view
 		$this->setAttributeByRef('news', $newsManager->retrieveLatest($locale->getLocaleLanguage(), $limit, $start, true, $cid));
 		$this->setAttribute('page', $page);
+		$this->setAttribute('limit', $limit);
 		$this->setAttribute('total', $newsManager->getTotalCount());
 		
 		return 'Success';

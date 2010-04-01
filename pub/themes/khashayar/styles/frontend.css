@@ -30,6 +30,10 @@ body.rtl {
 	font-family: Terafik, Tahoma, Helvetica, Arial, Verdana, Sans-serif;
 }
 
+fieldset {
+	border-width: 0;
+}
+
 a {
 	color: #3C3C3C;
 	text-decoration: none;
@@ -44,8 +48,23 @@ img {
 	border: 0;
 }
 
-ul {
+input[type="text"], textarea {
+	width: 250px;
+	padding: 3px;
+	font-size: 1em;
+	border: 1px solid #DDD;
+}
+
+ol, ul {
 	list-style-type: none;
+}
+
+ol, ul, p, blackquote {
+	margin: 1em 0;
+}
+
+textarea {
+	width: 560px;
 }
 
 
@@ -182,6 +201,73 @@ ul {
 	border-top: 1px solid #DDD;
 }
 
+.xrx-news-meta-view {
+	margin: 5px 0;
+	color: #5C5C5C;
+	font-size: 0.95em;
+	line-height: 110%;
+}
+
+.xrx-news-entry-view {
+	width: auto;
+	text-align: justify;
+	border-top: 1px solid #DDD;
+}
+
+
+
+/* Comments */
+
+#xrx-comments-list h3 {
+	margin: 0px;
+	padding: 4px 0;
+	border-top: 1px solid #8F8F8F;
+}
+
+#xrx-comments-list ol {
+	margin: 5px 0;
+}
+
+#xrx-comments-list li {
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #DDD;
+}
+
+#xrx-comment-form {
+	margin: 50px 0 20px;
+}
+
+#xrx-comment-form h3 {
+	margin: 0px;
+	padding: 4px 0;
+	border-top: 1px solid #8F8F8F;
+	border-bottom: 1px solid #DDD;
+}
+
+
+
+/* Pagination */
+
+.xrx-list-nav {
+	padding: 20px 0;
+}
+
+.xrx-pagination {
+	text-align: center;
+}
+
+.xrx-pagination a {
+	margin: 0 10px;
+	padding: 5px 30px;
+	font-weight: bold;
+}
+
+.xrx-pagination a:hover {
+	color: #9D9D9D;
+	background-color: #F1F1F1;
+}
+
 
 
 /* Footer */
@@ -193,6 +279,10 @@ ul {
 
 #xrx-footer .xrx-inside {
 	font-size: 0.95em;
+}
+
+#xrx-footer p {
+	margin: 0px;
 }
 
 #xrx-footer a {
