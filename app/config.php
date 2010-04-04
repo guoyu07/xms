@@ -53,8 +53,10 @@ AgaviConfig::set('core.app_dir', dirname(__FILE__));
 // |  - core.template_dir (defaults to "<core.app_dir>/templates")             |
 // +---------------------------------------------------------------------------+
 
-AgaviConfig::set('core.template_dir', AgaviConfig::get('core.pub_dir') . '/themes/khashayar');
+AgaviConfig::set('core.template_dir',	AgaviConfig::get('core.pub_dir') . '/themes/khashayar');
+AgaviConfig::set('core.upload_dir',		AgaviConfig::get('core.pub_dir') . '/uploads');
 
-AgaviConfig::set('core.upload_dir', AgaviConfig::get('core.pub_dir') . '/uploads');
+// Append /libs to include_path
+ini_set('include_path', ini_get('include_path') . realpath(AgaviConfig::get('core.pub_dir') . '/../libs'));
 
 ?>

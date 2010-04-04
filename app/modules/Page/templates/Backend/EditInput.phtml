@@ -57,10 +57,12 @@
 				<textarea id="xrx-page-content-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][content]" ?>"><?= $t['page'][$locale->lang]->content ?></textarea>
 				<script type="text/javascript">
 					<!--
-					CKEDITOR.replace('xrx-page-content-<?= $locale->lang ?>', {
+					var cke = CKEDITOR.replace('xrx-page-content-<?= $locale->lang ?>', {
 						language: '<?= $locale->lang ?>',
 						contentsLangDirection: '<?= $locale->dir ?>'
 					});
+
+					CKFinder.SetupCKEditor(cke, '/scripts/ckfinder/');
 					// -->
 				</script>
 			</li>

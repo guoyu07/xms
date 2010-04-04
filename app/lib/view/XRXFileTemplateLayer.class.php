@@ -20,12 +20,12 @@ class XRXFileTemplateLayer extends AgaviFileTemplateLayer
 	{
 		$targets = array();
 		if(AgaviConfig::get('core.use_translation')) {
-			$targets[] = AgaviConfig::get('core.template_dir') . '/ctpl/${module}/${locale}/${template}${extension}';
-			$targets[] = AgaviConfig::get('core.template_dir') . '/ctpl/${module}/${template}.${locale}${extension}';
+			$targets[] = AgaviConfig::get('core.template_dir') . '/templates/${module}/${locale}/${template}${extension}';
+			$targets[] = AgaviConfig::get('core.template_dir') . '/templates/${module}/${template}.${locale}${extension}';
 			$targets[] = '${directory}/${locale}/${template}${extension}';
 			$targets[] = '${directory}/${template}.${locale}${extension}';
 		}
-		$targets[] = AgaviConfig::get('core.template_dir') . '/ctpl/${module}/${template}${extension}';
+		$targets[] = AgaviConfig::get('core.template_dir') . '/templates/${module}/${template}${extension}';
 		$targets[] = '${directory}/${template}${extension}';
 		
 		parent::__construct(array_merge(array(

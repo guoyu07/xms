@@ -7,9 +7,9 @@
 			<h5>
 				<? if ($comment->getAuthorUrl()): ?>
 				<a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>"
-				   target="_blank"><?= $comment->getAuthorName() ?></a>
+				   target="_blank"><?= $vw->escape($comment->getAuthorName()) ?></a>
 				<? else: ?>
-					<?= $comment->getAuthorName() ?>
+					<?= $vw->escape($comment->getAuthorName()) ?>
 				<? endif; ?>
 			</h5>
 			<small><?= $tm->_d($comment->getDate()) ?></small>

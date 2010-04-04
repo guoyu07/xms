@@ -37,6 +37,7 @@ class Page_Backend_AddInputView extends XRXPageBackendView
 
 		// Append Scripts
 		$this->appendAttribute("_scripts", "/scripts/CKEditor/ckeditor.js");
+		$this->appendAttribute("_scripts", "/scripts/CKFinder/ckfinder.js");
 	}
 }
 

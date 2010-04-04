@@ -37,7 +37,8 @@
 					<!-- ${htmlnsPrefix} is either empty (for HTML) or something like "html:" for XHTML documents with xmlns="..." notation. Always use this, makes your code more bullet proof. XPath needs the namespaces when the document is namespaced -->
 					
 					<!-- all input fields that are not checkboxes or radios, and all textareas -->
-					<ae:parameter name="self::${htmlnsPrefix}input[not(@type='checkbox' or @type='radio')] | self::${htmlnsPrefix}textarea">
+					<!--<ae:parameter name="self::${htmlnsPrefix}input[not(@type='checkbox' or @type='radio')] | self::${htmlnsPrefix}textarea">-->
+					<ae:parameter name="self::${htmlnsPrefix}p">
 						<!-- if this rule matched, then the node found by the rule is our starting point for inserting the error message(s). -->
 						
 						<!-- can be any of "before", "after" or "child" (to insert as prev, next sibling or last child) -->
