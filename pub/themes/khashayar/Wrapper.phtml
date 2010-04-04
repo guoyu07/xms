@@ -1,10 +1,10 @@
 <div id="xrx-container">
-	<div class="xrx-inside"><?php echo $inner; ?></div>
+	<div class="xrx-inside xrx-<?= $t['_dir'] ?>"><?php echo $inner; ?></div>
 	<div class="xrx-clear"></div>
 </div>
 
 <div id="xrx-bottom">
-	<div class="xrx-inside">
+	<div class="xrx-inside xrx-<?= $t['_dir'] ?>">
 		<? foreach($vw->getLayer('wrapper')->getSlots() as $name => $slot): ?>
 			<?= $slots[$name]; ?>
 		<? endforeach; ?>

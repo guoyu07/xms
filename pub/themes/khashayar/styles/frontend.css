@@ -19,6 +19,10 @@
 	padding: 0;
 }
 
+:focus {
+	outline: none;
+}
+
 body {
 	color: #3C3C3C;
 	font-size: 10px;
@@ -43,6 +47,8 @@ a:hover {
 	color: #9D9D9D;
 	text-decoration: none;
 }
+
+a:active, a:focus { outline: 0; }
 
 h1 { font-size: 1.5em; }
 h3 { font-size: 1.4em; }
@@ -70,6 +76,13 @@ small {
 
 textarea {
 	width: 560px;
+	resize: none;
+}
+
+form[lang="fa"] input,
+form[lang="fa"] textarea,
+form[lang="fa"] button {
+	font-family: Terafik, Tahoma, Helvetica, Arial, Verdana, Sans-serif;
 }
 
 
@@ -108,6 +121,7 @@ textarea {
 }
 
 #xrx-description {
+	width: 700px;
 	text-align: justify;
 }
 
@@ -157,6 +171,10 @@ textarea {
 	background: url("/themes/khashayar/images/wrapper-top.gif") no-repeat scroll top right transparent;
 }
 
+#xrx-container .xrx-inside.xrx-rtl {
+	background: url("/themes/khashayar/images/wrapper-itop.gif") no-repeat scroll top left transparent;
+}
+
 #xrx-sidebar {
 	width: 175px;
 	margin-top: 14px;
@@ -180,6 +198,10 @@ textarea {
 /* News
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+.xrx-news-list {
+	margin: 0;
+}
+
 .xrx-news-item {
 	margin-bottom: 30px;
 }
@@ -198,6 +220,11 @@ textarea {
 	color: #5C5C5C;
 	font-size: 0.95em;
 	font-weight: bold;
+}
+
+.xrx-news-meta.xrx-right {
+	font-size: 0.9em;
+	font-weight: normal;
 }
 
 .xrx-news-entry {
@@ -319,6 +346,35 @@ textarea {
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Page
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.xrx-page-entry {
+	text-align: justify;
+}
+
+.xrx-page-entry a {
+	border-bottom: 1px dotted #3C3C3C;
+}
+
+.xrx-page-entry a:hover {
+	border-bottom: 1px dotted #9D9D9D;
+}
+
+.xrx-contact-icons td {
+	text-align: center;
+}
+
+.xrx-contact-icons a {
+	border-bottom: 0px none;
+}
+
+.xrx-contact-icons a:hover {
+	border-bottom: 0px none;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Bottom
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -328,6 +384,10 @@ textarea {
 
 #xrx-bottom .xrx-inside {
 	background: url("/themes/khashayar/images/wrapper-bottom.gif") no-repeat scroll top left transparent;
+}
+
+#xrx-bottom .xrx-inside.xrx-rtl {
+	background: url("/themes/khashayar/images/wrapper-ibottom.gif") no-repeat scroll top right transparent;
 }
 
 
@@ -355,4 +415,18 @@ textarea {
 #xrx-footer a:hover {
 	color: #FFF;
 	border-bottom: 1px dotted #FFF;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Erros
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.xrx-error {
+	color: red;
+}
+
+input.error,
+textarea.error {
+	border: 1px solid #FFE0E0;
 }
