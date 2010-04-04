@@ -1,11 +1,11 @@
 <div id="xrx-content" class="xrx-<?= $t['_align'] ?>">
 	<? if ($t['news']): ?>
-		<div class="xrx-news-list">
+		<ul class="xrx-news-list">
 		<? foreach ($t['news'] as $news): ?>
-			<div id="xrx-news-<?= $news->id ?>" class="xrx-news-item">
+			<li id="xrx-news-<?= $news->id ?>" class="xrx-news-item">
 				<div class="xrx-news-meta xrx-<?= $t['_align'] ?>">
 					<?= $tm->_d($t['news']->date) ?><br />
-					<?= sprintf($tm->_('category: %s', '.news'), '<a href="' . $ro->gen('default', array('path'=>'news/index', 'category'=>$category->id)) . '">' . $news->category_name . '</a>') ?>
+					<a href="<?= $ro->gen('default', array('path'=>'news/index', 'category'=>$news->category_id)) ?>"><?= $news->category_name ?></a>
 				</div>
 				
 				<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id, 'title'=>$news->title)) ?>"><?= $news->title ?></a></h2>
@@ -16,9 +16,9 @@
 				</div>
 
 				<div class="xrx-clear"></div>
-			</div>
+			</li>
 		<? endforeach; ?>
-		</div>
+		</ul>
 	<? else: ?>
 		<p><?= $tm->_("there's no news available for current language.", '.news') ?></p>
 	<? endif; ?>

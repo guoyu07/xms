@@ -1,6 +1,6 @@
 <div id="xrx-navigation">
 	<ul>
-		<!--<li><a href="<?= $ro->gen('index'); ?>"><?= $tm->_('home', '.widgets') ?></a></li>-->
+		<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('index'); ?>"><?= $tm->_('home', '.widgets') ?></a></li>
 
 		<? if ($t['showOnFront'] != 'news'): ?>
 			<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('default', array('path' => 'news')); ?>"><?= $tm->_('news', '.widgets') ?></a></li>
@@ -12,7 +12,15 @@
 					<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('default', array('path' => 'page', 'id' => $page->id)); ?>"><?= $page->title ?></a></li>
 				<? endif; ?>
 			<? endforeach; ?>
-		<? endif ?>
+		<? endif; ?>
+
+		<? foreach ($tm->getAvailableLocales() as $lc): ?>
+			<? if ($lc['identifier'] != $tm->getCurrentLocaleIdentifier()): ?>
+				<? $href = $ro->gen(null, array('locale' => $lc['identifier'])); ?>
+				<? $desc = $lc['parameters']['description']; ?>
+				<li class="xrx-<?= $t['_xalign'] ?>"><a href='<?= $href ?>'><?= $desc ?></a></li>
+			<? endif; ?>
+		<? endforeach; ?>
 	</ul>
 </div>
 
@@ -31,7 +39,8 @@
 			<!--<a href="<?= $ro->getBaseHref(); ?>" title="<?= $tm->_('main page', '.widgets') ?>"><?= $us->getAttribute('website_title', 'setting.general') ?></a>-->
 		</h1>
 
-		<p id="xrx-description">“Kreativität, Individualität und Flexibilität sind seit jeher der treibende Motor hinter unseren Designs und Leistungen. In diesem Weblog erhalten Sie Informationen über unsere Online-Projekte, Leistungen, Service und Referenzen. Des Weiteren infromieren wir Sie zu aktuellen Trends aus den Bereichen Grafik- und Webdesign.” - Sebastian Erdbories</p>
+		<p class="xrx-date xrx-<?= $t['_xalign'] ?>"><?= $tm->_d(time()); ?></p>
+		<p id="xrx-description">“Creativity, individuality and flexibility have always been the driving force behind my development and services. In this blog you will find information about my online projects, services and references. Furthermore, I inform you on current trends in the field of web development.”</p>
 
 		<!--
 		<?php

@@ -1,6 +1,6 @@
 <div id="xrx-comment-form">
 	<h3><?= $tm->_('leave a comment', '.comment') ?></h3>
-	<form action="<?= $ro->gen('default', array('path'=>'comment/add')); ?>" method="post">
+	<form action="<?= $ro->gen('default', array('path'=>'comment/add')); ?>" method="post" lang="<?= $t['_language']; ?>">
 		<? if ($us->isAuthenticated()): ?>
 		<p>
 			<input type="text" id="xrx-comment-name" name="name" value="<?= $us->getAttribute('username') ?>" maxlength="60" readonly="readonly" />

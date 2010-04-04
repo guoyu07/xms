@@ -12,9 +12,9 @@
 				<div class="xrx-comment-credential xrx-<?= $t['_align'] ?>">
 					<cite>
 						<? if ($comment->getAuthorUrl()): ?>
-							<strong><a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>" target="_blank"><?= $comment->getAuthorName() ?></a></strong>
+							<strong><a href="<?= $comment->getAuthorUrl() ?>" title="<?= $comment->getAuthorUrl() ?>" target="_blank"><?= $vw->escape($comment->getAuthorName()) ?></a></strong>
 						<? else: ?>
-							<strong><?= $comment->getAuthorName() ?></strong>
+							<strong><?= $vw->escape($comment->getAuthorName()) ?></strong>
 						<? endif; ?>
 						<br /><?= $tm->_d($comment->getDate()) ?>
 					</cite>
