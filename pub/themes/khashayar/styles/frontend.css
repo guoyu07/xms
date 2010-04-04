@@ -96,6 +96,10 @@ form[lang="fa"] button {
 	font-size: 1.2em;
 }
 
+#xrx-navigation ul.xrx-rtl {
+	font-size: 1.1em;
+}
+
 #xrx-navigation a {
 	display: block;
 	padding: 0.5em 1em;

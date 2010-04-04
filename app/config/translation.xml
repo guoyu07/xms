@@ -33,7 +33,7 @@
 					<ae:parameter name="type">date</ae:parameter>
 					<ae:parameter name="format">
 						<ae:parameter name="en">full</ae:parameter>
-						<ae:parameter name="fa">long</ae:parameter>
+						<ae:parameter name="fa">EEEE d MMMM yyyy</ae:parameter>
 					</ae:parameter>
 				</date_formatter>
 				

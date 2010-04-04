@@ -1,7 +1,7 @@
 <div id="xrx-navigation">
-	<ul>
+	<ul class="xrx-<?= $t['_dir'] ?>">
 		<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('index'); ?>"><?= $tm->_('home', '.widgets') ?></a></li>
-
+		
 		<? if ($t['showOnFront'] != 'news'): ?>
 			<li class="xrx-<?= $t['_align'] ?>"><a href="<?= $ro->gen('default', array('path' => 'news')); ?>"><?= $tm->_('news', '.widgets') ?></a></li>
 		<? endif; ?>
@@ -24,12 +24,6 @@
 	</ul>
 </div>
 
-		<!--
-		<div class="xrx-date xrx-<?= $t['_xalign'] ?>">
-			<p><?= $tm->_d(time()); ?></p>
-		</div>
-		-->
-
 <div class="xrx-clear"></div>
 
 <div id="xrx-header">
@@ -40,18 +34,6 @@
 		</h1>
 
 		<p class="xrx-date xrx-<?= $t['_xalign'] ?>"><?= $tm->_d(time()); ?></p>
-		<p id="xrx-description">“Creativity, individuality and flexibility have always been the driving force behind my development and services. In this blog you will find information about my online projects, services and references. Furthermore, I inform you on current trends in the field of web development.”</p>
-
-		<!--
-		<?php
-		foreach ($tm->getAvailableLocales() as $lc) {
-			$href = $ro->gen(null, array('locale' => $lc['identifier']));
-			$flag = $lc['identifierData']['territory'];
-			$desc = $lc['parameters']['description'];
-			echo "<a class='xrx-language-flag xrx-pointer' href='$href'><img src='/images/flags/$flag.png' title='$desc' alt='$desc' /></a>";
-		}
-		?>
-		-->
+		<p id="xrx-description"><?= $tm->_('Creativity, individuality and flexibility have always been the driving force behind my development and services. In this blog you will find information about my online projects, services and references. Furthermore, I inform you on current trends in the field of web development.', '.widgets'); ?></p>
 	</div>
 </div>
-
