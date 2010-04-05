@@ -41,7 +41,6 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 	 */
 	public function executeWrite(AgaviRequestDataHolder $rd)
 	{
-		$file	= $rd->getFile('image');
 		$trans	= $rd->getParameter('translation');
 
 		// Prepare translatable values to send to model
@@ -54,37 +53,11 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 			}
 		}
 
-		// Handle image file
-		if ($file) {
-			$dir = AgaviConfig::get('core.upload_dir') . '/news/';
-
-			switch ($file->getType()) {
-				case 'image/jpeg':
-				case 'image/pjpeg':
-					$name	= md5(microtime(true));
-					$ext	= '.jpg';
-					break;
-
-				case 'image/gif':
-					$name	= md5(microtime(true));
-					$ext	= '.gif';
-					break;
-			}
-
-			// Save image on disk
-			$fname	= "$dir/$name$ext";
-			$file->move($fname);
-
-			// let's make some thumbnails
-			WideImage::load($fname)->resize(40, 40)->saveToFile("$dir/$name" . "_40$ext");
-			WideImage::load($fname)->resize(60, 60)->saveToFile("$dir/$name" . "_60$ext");
-		}
-
 		$params = array(
 			'date'			=> $rd->getParameter('date'),
 			'published'		=> (boolean) $rd->getParameter('published'),
 			'comment_status'=> (boolean) $rd->getParameter('comments'),
-			'image'			=> $name . $ext,
+			'image'			=> $rd->getParameter('image'),
 			'author_id'		=> $this->getContext()->getUser()->getAttribute('userId'),
 			'category_id'	=> $rd->getParameter('category'),
 			'translations'	=> $trans

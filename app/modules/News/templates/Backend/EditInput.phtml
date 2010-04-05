@@ -29,7 +29,17 @@
 				$('form').append('<input type="hidden" name="deleted[]" value="' + lang + '"');
 			}
 		})
+
+		// Image Field
+		$('#xrx-news-browse').click( function() {
+			var finder = new CKFinder() ;
+			finder.BasePath = '/scripts/ckfinder/';
+			finder.SelectFunction = cbSelect;
+			finder.Popup();
+		});
 	})
+
+	function cbSelect(p) { document.getElementById('xrx-news-image').value = p };
 	// -->
 </script>
 
@@ -74,9 +84,10 @@
 			<li>
 				<label for="xrx-news-image"><?= $tm->_('image', '.news') ?></label>
 				<? if (empty ($t['news'][$t['_language']]->image)): ?>
-					<input type="file" id="xrx-news-image" name="image" />
+					<input id="xrx-news-image" type="text" name="image" readonly="readonly" />
+					<input id="xrx-news-browse" type="button" value="<?= $tm->_('browse', '.news') ?>" />
 				<? else: ?>
-					<img class="xrx-thumbnail-40" src="/uploads/news/<?= $t['news'][$t['_language']]->image ?>" />
+					<img class="xrx-thumbnail-40" src="<?= $t['news'][$t['_language']]->image ?>" />
 				<? endif; ?>
 			</li>
 			<li>

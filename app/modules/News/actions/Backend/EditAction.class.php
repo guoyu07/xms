@@ -62,6 +62,7 @@ class News_Backend_EditAction extends XRXNewsBackendAction
 			'date'			=> $rd->getParameter('date'),
 			'published'		=> (boolean) $rd->getParameter('published'),
 			'comment_status'=> (boolean) $rd->getParameter('comments'),
+			'image'			=> $rd->getParameter('image'),
 			'category_id'	=> $rd->getParameter('category'),
 			'translations'	=> $trans
 		);

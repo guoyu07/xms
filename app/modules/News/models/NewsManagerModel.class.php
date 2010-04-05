@@ -233,6 +233,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 						n.modified = NOW(),
 						n.published = :published,
 						n.comment_status = :comment_status,
+						n.image = :image,
 						n.category_id = :category_id
 					WHERE n.id = :id";
 
@@ -242,6 +243,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 			$stmt->bindValue(':date', $news->getDate(), PDO::PARAM_STR);
 			$stmt->bindValue(':published', $news->getPublished(), PDO::PARAM_BOOL);
 			$stmt->bindValue(':comment_status', $news->getCommentStatus(), PDO::PARAM_BOOL);
+			$stmt->bindValue(':image', $news->getImage(), PDO::PARAM_STR);
 			$stmt->bindValue(':category_id', $news->getCategoryId(), PDO::PARAM_INT);
 			$stmt->execute();
 			

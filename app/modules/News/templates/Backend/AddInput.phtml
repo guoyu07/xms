@@ -9,14 +9,24 @@
 					   .children('ol')
 					   .slideDown();
 			}
-		})
+		});
 
 		checkBox.click(function() {
 			$(this).parents('fieldset')
 				   .children('ol')
 				   .slideToggle( checkBox.attr('checked') );
-		})
+		});
+
+		// Image Field
+		$('#xrx-news-browse').click( function() {
+			var finder = new CKFinder() ;
+			finder.BasePath = '/scripts/ckfinder/';
+			finder.SelectFunction = cbSelect;
+			finder.Popup();
+		});
 	})
+
+	function cbSelect(p) { document.getElementById('xrx-news-image').value = p };
 	// -->
 </script>
 
@@ -60,7 +70,8 @@
 			<? if ($locale->id == $t['currentLocale']): ?>
 			<li>
 				<label for="xrx-news-image"><?= $tm->_('image', '.news') ?></label>
-				<input type="file" id="xrx-news-image" name="image" />
+				<input id="xrx-news-image" type="text" name="image" readonly="readonly" />
+				<input id="xrx-news-browse" type="button" value="<?= $tm->_('browse', '.news') ?>" />
 			</li>
 			<li>
 				<label for="xrx-news-date"><?= $tm->_('date', '.news') ?><em class="xrx-required">*</em></label>

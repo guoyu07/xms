@@ -20,7 +20,7 @@ if ( isset($t['translations']) ) {
 
 <div class="xrx-news-entry">
 	<? if ($t['news']->image): ?>
-		<img class="xrx-<?= $t['_align'] ?>" src="/uploads/news/<?= $t['news']->image ?>" />
+		<img class="xrx-<?= $t['_align'] ?>" src="<?= $t['news']->image ?>" />
 	<? endif; ?>
 	<p><strong><?= $t['news']->summary ?></strong></p>
 	<?= $t['news']->content ?>

@@ -55,7 +55,9 @@ h3 { font-size: 1.4em; }
 
 img { border: 0; }
 
-input[type="text"], textarea {
+input[type="text"],
+input[type="password"],
+textarea {
 	width: 250px;
 	padding: 3px;
 	font-size: 1em;

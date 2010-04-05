@@ -13,7 +13,7 @@
 			
 			<div class="xrx-news-entry">
 				<? if ($news->image): ?>
-					<img class="xrx-thumbnail-60 xrx-<?= $t['_align'] ?>" src="/uploads/news/<?= $news->image ?>" />
+					<img class="xrx-thumbnail-60 xrx-<?= $t['_align'] ?>" src="<?= $news->image ?>" />
 				<? endif; ?>
 				<?= ($news->summary) ? $news->summary : $news->content; ?>
 			</div>

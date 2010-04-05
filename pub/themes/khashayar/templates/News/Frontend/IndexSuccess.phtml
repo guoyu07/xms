@@ -11,7 +11,7 @@
 				<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id, 'title'=>$news->title)) ?>"><?= $news->title ?></a></h2>
 
 				<div class="xrx-news-entry xrx-<?= $t['_xalign'] ?>">
-					<? if ($news->image): ?><img class="xrx-thumbnail-60 xrx-<?= $t['_align'] ?>" src="/uploads/news/<?= $news->image ?>" /><? endif; ?>
+					<? if ($news->image): ?><img class="xrx-thumbnail-60 xrx-<?= $t['_align'] ?>" src="<?= $news->image ?>" /><? endif; ?>
 					<?= ($news->summary) ? $news->summary : $news->content; ?>
 				</div>
 

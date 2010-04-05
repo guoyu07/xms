@@ -1,0 +1,20 @@
+<div id="xrx-user-form">
+	<h3><?= $tm->_('user login', '.user'); ?></h3>
+	<form action="<?= $ro->gen('default', array('path' => 'user/login')); ?>" method="post">
+		<p>
+			<input type="text" id="username" name="username" maxlength="60" />
+			<label for="username"><?= $tm->_('username', '.user'); ?> <small>(<?= $tm->_('required', '.comment') ?>)</small></label>
+		</p>
+		<p>
+			<input type="password" id="password" name="password" maxlength="64" />
+			<label for="password"><?= $tm->_('password', '.user'); ?> <small>(<?= $tm->_('required', '.comment') ?>)</small></label>
+		</p>
+		<p>
+			<input type="checkbox" id="remember" name="remember" />
+			<label for="remember"><?= $tm->_('remember me', '.user'); ?></label>
+		</p>
+		<p>
+			<input type="submit" value="<?= $tm->_('submit', '.user'); ?>" />
+		</p>
+	</form>
+</div>
