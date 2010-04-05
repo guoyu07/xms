@@ -1,143 +1,169 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\AddSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (11).php:1
 msgid "news has been successfully added"
 msgstr "News has been successfully added"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\DeleteSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (13).php:1
 msgid "news has been successfully deleted"
 msgstr "News has been successfully deleted"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:47
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:47
 msgid "translate to %s"
 msgstr "Translate to %s"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:56
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:56
 msgid "summary"
 msgstr "Summary"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:60
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:60
 msgid "content"
 msgstr "Content"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:73
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:75
 msgid "image"
 msgstr "Image"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:83
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:85
 msgid "date selector"
 msgstr "Date selector"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:117
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:119
 msgid "allow comments"
 msgstr "Allow comments"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:128
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:130
 msgid "delete %s translation"
 msgstr "Delete %s translation"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:137
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:139
 msgid "submit"
 msgstr "Submit"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:139
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:141
 msgid "cancel"
 msgstr "Cancel"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (8).php:1
 msgid "news has been successfully updated"
 msgstr "News has been successfully updated"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:21
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:21
 msgid "please select a news"
 msgstr "Please select a news"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:27
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:27
 msgid "are you sure?"
 msgstr "Are you sure?"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:55
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:55
 msgid "title"
 msgstr "Title"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:56
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:56
 msgid "category"
 msgstr "Category"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:57
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:57
 msgid "date"
 msgstr "Date"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:58
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:58
 msgid "author"
 msgstr "Author"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:59
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:59
 msgid "published"
 msgstr "Published"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:73
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:73
 msgid "edit '%s'"
 msgstr "Edit '%s'"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:77
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:77
 msgid "no"
 msgstr "No"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:77
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:77
 msgid "yes"
 msgstr "Yes"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:82
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:82
 msgid "there's no news"
 msgstr "There's no news"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:91
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:91
 msgid "delete"
 msgstr "Delete"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Frontend\IndexSuccess.php:2
-msgid "categories"
-msgstr "Categories"
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccessx.php:23
+msgid "there's no news available for current language."
+msgstr "There's no news available for current language."
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Frontend\IndexSuccess.php:24
-msgid "there's no news available for current language"
-msgstr "There's no news available for current language"
+#: C:\xampp\htdocs\XmlGetText\files\News\ViewSuccess.php:23
+msgid "category: %s"
+msgstr "Category: %s"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Frontend\ViewSuccess.php:12
-msgid "this news also available in %s"
-msgstr "This news also available in %s"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\AddInputView.class.php:52
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\AddInputView.class.php:52
 msgid "add news"
 msgstr "Add news"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\EditInputView.class.php:82
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\EditInputView.class.php:82
 msgid "edit news"
 msgstr "Edit news"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\EditSuccessView.class.php:11
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\EditSuccessView.class.php:11
 msgid "redirecting..."
 msgstr "Redirecting..."
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\IndexSuccessView.class.php:9
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\IndexSuccessView.class.php:9
 msgid "news list"
 msgstr "News list"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Frontend\IndexSuccessView.class.php:28
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Frontend\IndexSuccessView.class.php:52
 msgid "lastest news"
 msgstr "Lastest news"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Frontend\ViewSuccessView.class.php:62
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Frontend\IndexSuccessView.class.php:57
+msgid "the latest news from %s website"
+msgstr "The latest news from %s website"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Frontend\ViewSuccessView.class.php:76
 msgid "view news: %s"
 msgstr "View news: %s"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\xViewSuccess.php:12
+msgid "this news also available in %s"
+msgstr "This news also available in %s"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\zViewSuccess
+#: (1).php:2
+msgid "categories"
+msgstr "Categories"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\zViewSuccess
+#: (1).php:24
+msgid "there's no news available for current language"
+msgstr "There's no news available for current language"
 

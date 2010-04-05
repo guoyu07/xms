@@ -1,143 +1,169 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\AddSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (11).php:1
 msgid "news has been successfully added"
 msgstr "خبر با موفقیت اضافه شد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\DeleteSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (13).php:1
 msgid "news has been successfully deleted"
 msgstr "خبر با موفقیت خذف شد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:47
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:47
 msgid "translate to %s"
 msgstr "ترجمه به %s"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:56
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:56
 msgid "summary"
 msgstr "خلاصه"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:60
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:60
 msgid "content"
 msgstr "محتوا"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:73
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:75
 msgid "image"
 msgstr "عکس"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:83
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:85
 msgid "date selector"
 msgstr "انتخابگر تاریخ"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:117
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:119
 msgid "allow comments"
 msgstr "اجازه ارسال نظر"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:128
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:130
 msgid "delete %s translation"
 msgstr "حذف ترجمه %s"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:137
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:139
 msgid "submit"
 msgstr "ارسال"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditInput.php:139
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (15).php:141
 msgid "cancel"
 msgstr "انصراف"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\EditSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess
+#: (8).php:1
 msgid "news has been successfully updated"
 msgstr "خبر با موفقیت به روز شد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:21
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:21
 msgid "please select a news"
 msgstr "لطفا یک خبر را انتخاب کنید"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:27
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:27
 msgid "are you sure?"
 msgstr "آیا مطمئن هستید؟"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:55
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:55
 msgid "title"
 msgstr "عنوان"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:56
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:56
 msgid "category"
 msgstr "دسته"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:57
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:57
 msgid "date"
 msgstr "تاریخ"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:58
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:58
 msgid "author"
 msgstr "نویسنده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:59
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:59
 msgid "published"
 msgstr "منتشر شود"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:73
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:73
 msgid "edit '%s'"
 msgstr "ویرایش '%s'"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:77
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:77
 msgid "no"
 msgstr "خیر"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:77
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:77
 msgid "yes"
 msgstr "بله"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:82
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:82
 msgid "there's no news"
 msgstr "هیچ خبری وجود ندارد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Backend\IndexSuccess.php:91
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccess.php:91
 msgid "delete"
 msgstr "حذف"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Frontend\IndexSuccess.php:2
-msgid "categories"
-msgstr "دسته ها"
+#: C:\xampp\htdocs\XmlGetText\files\News\IndexSuccessx.php:23
+msgid "there's no news available for current language."
+msgstr "هیچ خبری برای زبان جاری وجود ندارد."
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Frontend\IndexSuccess.php:24
-msgid "there's no news available for current language"
-msgstr "هیچ خبری برای زبان جاری وجود ندارد"
+#: C:\xampp\htdocs\XmlGetText\files\News\ViewSuccess.php:23
+msgid "category: %s"
+msgstr "دسته: %s"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\templates\Frontend\ViewSuccess.php:12
-msgid "this news also available in %s"
-msgstr "این خبر برای زبان %s نیز موجود می باشد"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\AddInputView.class.php:52
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\AddInputView.class.php:52
 msgid "add news"
 msgstr "افزودن خبر"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\EditInputView.class.php:82
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\EditInputView.class.php:82
 msgid "edit news"
 msgstr "ویرایش خبر"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\EditSuccessView.class.php:11
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\EditSuccessView.class.php:11
 msgid "redirecting..."
 msgstr "در حال انتقال..."
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Backend\IndexSuccessView.class.php:9
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Backend\IndexSuccessView.class.php:9
 msgid "news list"
 msgstr "لیست اخبار"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Frontend\IndexSuccessView.class.php:28
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Frontend\IndexSuccessView.class.php:52
 msgid "lastest news"
 msgstr "آخرین اخبار"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\News\views\Frontend\ViewSuccessView.class.php:62
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Frontend\IndexSuccessView.class.php:57
+msgid "the latest news from %s website"
+msgstr "آخرین اخبار وب سایت %s"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\views\Frontend\ViewSuccessView.class.php:76
 msgid "view news: %s"
 msgstr "نمایش خبر: %s"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\xViewSuccess.php:12
+msgid "this news also available in %s"
+msgstr "این خبر برای زبان %s نیز موجود می باشد"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\zViewSuccess
+#: (1).php:2
+msgid "categories"
+msgstr "دسته ها"
+
+#: C:\xampp\htdocs\XmlGetText\files\News\zViewSuccess
+#: (1).php:24
+msgid "there's no news available for current language"
+msgstr "هیچ خبری برای زبان جاری وجود ندارد"
 

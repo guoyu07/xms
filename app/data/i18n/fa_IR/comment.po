@@ -1,155 +1,163 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Khashayar <me@khashayar.me>\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\DeleteSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\DeleteSuccess.php:1
 msgid "comment(s) has been successfully deleted"
 msgstr "نظر(ات) با موفقیت حذف شد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:26
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:26
 msgid "author type"
 msgstr "نوع نویسنده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:29
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:29
 msgid "registered"
 msgstr "ثبت نام شده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:32
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:32
 msgid "guest"
 msgstr "مهمان"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:60
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:60
 msgid "pending"
 msgstr "در انتظار"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:63
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:63
 msgid "approved"
 msgstr "تایید شده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:66
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:66
 msgid "rejected"
 msgstr "رد شده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:77
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:77
 msgid "submit"
 msgstr "ارسال"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditInput.php:79
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:79
 msgid "cancel"
 msgstr "انصراف"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\EditSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditSuccess.php:1
 msgid "comment has been successfully updated"
 msgstr "نظر با موفقیت به روز شد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:21
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:21
 msgid "please select a comment."
 msgstr "لطفا یک نطر را انتخاب کنید"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:27
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:27
 msgid "are you sure?"
 msgstr "اطمینان دارید؟"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:37
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:37
 msgid "comment list"
 msgstr "لیست نظرات"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:37
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:37
 msgid "comment list for %s"
 msgstr "لیست نظرهای '%s'"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:56
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:56
 msgid "author"
 msgstr "نویسنده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:57
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:57
 msgid "date"
 msgstr "تاریخ"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:58
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:58
 msgid "status"
 msgstr "وضعیت"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:59
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:59
 msgid "owner"
 msgstr "دارنده"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:74
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:74
 msgid "edit profile '%s'"
 msgstr "ویرایش مشخصات '%s'"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:87
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:85
 msgid "edit '%s'"
 msgstr "ویرایش '%s'"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:95
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:93
 msgid "There's no comment."
 msgstr "هیچ نظری وجود ندارد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Backend\IndexSuccess.php:101
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:99
 msgid "delete"
 msgstr "حذف"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:3
-msgid "leave a comment"
-msgstr "ارسال نظر"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:21
-msgid "name"
-msgstr "نام"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:25
-msgid "email"
-msgstr "پست الکترونیکی"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:29
-msgid "website"
-msgstr "وب سایت"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:34
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\AddInput.php:34
 msgid "comment"
 msgstr "نظر"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddInput.php:42
-msgid "submit comment"
-msgstr "ارسال نظر"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\AddSuccess.php:1
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\AddSuccess.php:1
 msgid "your comment has been successfully added"
 msgstr "نظر شما با موفقیت ارسال شد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\ListSuccess.php:1
-msgid "comments"
-msgstr "نظرات"
-
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\templates\Frontend\ListSuccess.php:21
+#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\ListSuccess.php:21
 msgid "there's no comments"
 msgstr "هیچ نظری وجود ندارد"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Backend\EditInputView.class.php:11
+#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Backend\EditInputView.class.php:11
 msgid "edit comment"
 msgstr "ویرایش نظر"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Backend\IndexSuccessView.class.php:9
+#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Backend\IndexSuccessView.class.php:9
 msgid "comments' list"
 msgstr "لیست نظرات"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Frontend\AddInputView.class.php:26
+#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\AddInputView.class.php:26
 msgid "add comment"
 msgstr "نظر جدید"
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Frontend\AddSuccessView.class.php:36
+#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\AddSuccessView.class.php:36
 msgid "redirecting..."
 msgstr "در حال انتقال..."
 
-#: C:\xampp\htdocs\PHP\XmlGetText\content\Comment\views\Frontend\ListSuccessView.class.php:9
+#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\ListSuccessView.class.php:9
 msgid "list comments"
 msgstr "فهرست نظرات"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:21
+msgid "name"
+msgstr "نام"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:25
+msgid "email"
+msgstr "پست الکترونیکی"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:25
+msgid "required"
+msgstr "اجباری"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:29
+msgid "website"
+msgstr "وب سایت"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:38
+msgid "submit comment"
+msgstr "ارسال نظر"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:2
+msgid "comments"
+msgstr "نظرات"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:4
+msgid "%s comment(s)"
+msgstr "%s نظر"
+
+#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:5
+msgid "leave a comment"
+msgstr "ارسال نظر"
 
