@@ -32,16 +32,11 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
-(7, 'khashayar', '2636735edd651071f75f5f68c00fea7ed74a9ad1', 'me@khashayar.me'),
-(22, 'gholi', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'gholi@yahoo.com'),
-(23, 'javid', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'javid@yahoo.com'),
-(24, 'sara', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'me@khashaxyar.me'),
-(26, 'ندا', '38b043aa95997ab6e6d825f7ca9cabf2f319446f', 'neda@geroyan.com'),
-(27, 'tabasom', 'a4bfd90079b4564e319dca5329d7e7e1a386e603', 'tabasom12@yahoo.com');
+(1, 'khashayar', '2636735edd651071f75f5f68c00fea7ed74a9ad1', 'me@khashayar.me');

@@ -10,11 +10,6 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
 --
 -- Database: `xrx`
 --
@@ -32,6 +27,10 @@ CREATE TABLE IF NOT EXISTS `settings` (
   UNIQUE KEY `name_module` (`name`,`module`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `settings` (`name`, `value`, `module`) VALUES
+('default_status', 'approved', 'comment'),
+('items_per_page', '10', 'general'),
+('show_on_front', 'news', 'general'),
+('show_on_front_id', '1', 'general'),
+('website_title', 'XRX', 'general');
