@@ -29,6 +29,8 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 		
 		// Set Module Name
 		$module	= ($params[$idx]) ? $params[$idx] : $def_module;
+		$module = ucfirst($module);
+
 		if ($ctrl->moduleExists($module) == true) {
 			// Valid Module Name
 			$container->setModuleName($module);
@@ -40,6 +42,7 @@ class XRXDefaultRoutingCallback extends AgaviRoutingCallback
 		
 		// Set Action Name
 		$action	= ($params[$idx + 1]) ? $params[$idx + 1] : $def_action;
+		$action = ucfirst($action);
 
 		if ($ctrl->actionExists($module, $section . $action) == true) {
 			// Action exists, so add it as action
