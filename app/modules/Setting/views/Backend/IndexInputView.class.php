@@ -27,13 +27,15 @@ class Setting_Backend_IndexInputView extends XRXSettingBackendView
 
 		
 		// Search if there's any page with translation for all enabled locales.
-		foreach ($pages as $page) {
-			$ids[$page->id][] = $page->language;
-			$titles[$page->id][$page->language] = $page->title;
+		if ($pages) {
+			foreach ($pages as $page) {
+				$ids[$page->id][] = $page->language;
+				$titles[$page->id][$page->language] = $page->title;
 
-			// Let's check if this page has all translations
-			if ($ids[$page->id] == $locales) {
-				$pps[$page->id]	= $titles[$page->id][$this->getAttribute('_language')];
+				// Let's check if this page has all translations
+				if ($ids[$page->id] == $locales) {
+					$pps[$page->id]	= $titles[$page->id][$this->getAttribute('_language')];
+				}
 			}
 		}
 
