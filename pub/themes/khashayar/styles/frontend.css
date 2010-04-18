@@ -163,6 +163,11 @@ form[lang="fa"] button {
 	float: right;
 }
 
+.xrx-loading {
+	padding: 0 10px;
+	background: transparent url("/themes/khashayar/images/loading.gif") no-repeat center center;
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Container

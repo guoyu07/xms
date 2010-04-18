@@ -14,7 +14,7 @@
 			</route>
 
 			<!-- JSON Routing -->
-			<route pattern="application/json" source="_SERVER[HTTP_ACCEPT]" output_type="json" stop="false" />
+			<route pattern="application/json" source="_SERVER[HTTP_ACCEPT]" stop="false" output_type="json" />
 
 			<!-- RSS Routing -->
 			<route name="rss" pattern=".rss$" cut="true" stop="false" output_type="rss" />
