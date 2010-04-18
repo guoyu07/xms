@@ -53,11 +53,13 @@ $(function() {
 			,type		: 'post'
 			,data		: form.serialize()
 			,success	: function(data) {
+				if (!data) { return }
+
 				// failure?
-				if (data && data.success === false) {
-					if (data.errors) {
-						XRX.addErrors(data, form);
-					}
+				if (data.success === false) {
+					XRX.addErrors(data, form);
+				} else {
+					
 				}
 
 				btn.removeAttr('disabled');

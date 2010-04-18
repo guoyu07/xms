@@ -57,6 +57,6 @@ AgaviConfig::set('core.template_dir',	AgaviConfig::get('core.pub_dir') . '/theme
 AgaviConfig::set('core.upload_dir',		AgaviConfig::get('core.pub_dir') . '/uploads');
 
 // Append /libs to include_path
-ini_set('include_path', ini_get('include_path') . realpath(AgaviConfig::get('core.pub_dir') . '/../libs'));
+ini_set('include_path', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'libs' . PATH_SEPARATOR . ini_get('include_path'));
 
 ?>
