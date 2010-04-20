@@ -29,6 +29,25 @@ class User_Frontend_LoginSuccessView extends XRXUserFrontendView
 		$this->setAttribute('_type', 'success');
 		$this->setAttribute('_url', $url);
 	}
+
+	public function executeJson(AgaviRequestDataHolder $rd)
+	{
+		// Find redirect url
+		if ($this->us->hasAttribute('redirect', 'org.agavi.XRX.login')) {
+			// Get original request URL redirect
+			$url = $this->us->removeAttribute('redirect', 'org.agavi.XRX.login');
+		}
+		else {
+			// Generate Redirect URL
+			$url = $this->ro->gen('admin');
+		}
+
+		$data = array(
+			'redirect'	=> $url
+		);
+
+		return $data;
+	}
 }
 
 ?>

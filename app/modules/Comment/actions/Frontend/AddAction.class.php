@@ -44,7 +44,7 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 		$params['owner_id']	= $rd->getParameter('owner_id');
 		$params['module_id']= $rd->getParameter('module_id');
 		$params['content']	= $rd->getParameter('content');
-
+		FirePHP::getInstance(true)->log(nl2br($rd->getParameter('content')));
 
 		// Authenticated?
 		if ($this->getContext()->getUser()->isAuthenticated()) {
@@ -62,7 +62,9 @@ class Comment_Frontend_AddAction extends XRXCommentFrontendAction
 		$language = $this->tm->getCurrentLocale()->getLocaleLanguage();
 
 		// Add comment in database
-		$this->getContext()->getModel('CommentManager', 'Comment')->create($params, $language);
+		$comment = $this->getContext()->getModel('CommentManager', 'Comment')->create($params, $language);
+
+		$this->setAttribute('comment', $comment);
 
 		return 'Success';
 	}

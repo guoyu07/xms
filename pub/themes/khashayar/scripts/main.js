@@ -32,6 +32,42 @@ var XRX = {
 		form.find(':input').removeClass('error');
 		form.children('.xrx-errors').remove();
 	}
+
+	,handleResponse : function(data) {
+		if (data.redirect) {
+			window.location = data.redirect;
+		}
+		
+		if (data.alert) {
+
+		}
+
+		if (data.message && data.msgTarget) {
+			$(data.msgTarget).html(data.message);
+		}
+
+		if (data.content && data.ctTarget) {
+			data.location = data.location || '';
+			
+			switch (data.location) {
+				case 'before':
+					$(data.ctTarget).before(data.content);
+					break;
+
+				case 'after':
+					$(data.ctTarget).after(data.content);
+					break;
+
+				case 'child:first':
+					$(data.ctTarget).prepend(data.content);
+					break;
+
+				case 'child:last':
+				default:
+					$(data.ctTarget).append(data.content).slideDown();
+			}
+		}
+	}
 }
 
 
@@ -53,13 +89,17 @@ $(function() {
 			,type		: 'post'
 			,data		: form.serialize()
 			,success	: function(data) {
-				if (!data) { return }
+				if (!data) {return}
 
-				// failure?
-				if (data.status == 'failure') {
-					XRX.addErrors(data, form);
-				} else {
-					form[0].reset();
+				switch (data.status) {
+					case 'failure':
+						XRX.addErrors(data, form);
+						break;
+
+					case 'success':
+						XRX.handleResponse(data);
+						form[0].reset();
+						break;
 				}
 
 				btn.removeAttr('disabled');

@@ -176,6 +176,12 @@ class Comment_CommentManagerModel extends XRXCommentBaseModel
 			$stmt->bindValue(':author_url', $comment->getAuthorUrl(), PDO::PARAM_STR);
 			$stmt->bindValue(':language', $language, PDO::PARAM_STR);
 			$stmt->execute();
+
+			// Update the id & date
+			$comment->setId( $this->getContext()->getDatabaseConnection()->lastInsertId() );
+			$comment->setDate( date('Y-m-d') );
+			
+			return $comment;
 		}
 		catch (PDOException $e) {
 			throw new AgaviDatabaseException($e->getMessage());

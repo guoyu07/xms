@@ -38,24 +38,29 @@ class Comment_Frontend_AddSuccessView extends XRXCommentFrontendView
 
 	public function executeJson(AgaviRequestDataHolder $rd)
 	{
+		$comment = $this->getAttribute('comment');
+		$align	 = $this->getAttribute('_align');
 		$content = '
-			<li id="xrx-comment-23">
-				<div class="xrx-comment-credential xrx-left">
+			<li id="xrx-comment-%1$s">
+				<div class="xrx-comment-credential xrx-%2$s">
 					<cite>
 						<strong>
-							<a target="_blank" title="http://ko-em.org" href="http://ko-em.org">Joe</a>
+							<a target="_blank" title="http://ko-em.org" href="http://ko-em.org">%3$s</a>
 						</strong>
-						<br>Monday, April 19, 2010
+						<br>%4$s
 					</cite>
 				</div>
 				<div class="xrx-comment-text">
-				<blockquote>hi there. whats up?</blockquote>
+				<blockquote>%5$s</blockquote>
 				</div>
 				<div class="xrx-clear"></div>
 			</li>';
 
 		$data = array(
-			'alert'	=> $this->tm->_('comment sucessfully submitted', '.comment'),
+			'alert'		=> $this->tm->_('comment sucessfully submitted', '.comment'),
+			'content'	=> sprintf($content, $comment->getId(), $align, $comment->getAuthorName(), $this->tm->_d($comment->getDate()), $comment->getContent()),
+			'ctTarget'	=> '#xrx-comments-list ul',
+			'location'	=> 'child:last'
 		);
 
 		return $data;

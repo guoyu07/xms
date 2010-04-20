@@ -320,6 +320,11 @@ form[lang="fa"] button {
 	margin: 1em 0 1em 8px;
 }
 
+.xrx-comment-text {
+	overflow: hidden;
+	position: relative;
+}
+
 #xrx-comment-form {
 	margin: 50px 0 20px;
 }
