@@ -99,34 +99,7 @@ class XRXBaseView extends AgaviView
 	 */
 	public function executeJson(AgaviRequestDataHolder $rd)
 	{
-		$rm		= $this->getContext()->getRequest()->getMethod();
-		$vm		= $this->getContainer()->getValidationManager();
-
-		// Only when a form submitted and error raised.
-		if ($rm == 'write' && $vm->hasErrors()) {
-			// Get dirty fields
-			$fields = $vm->getFailedFields();
-			$errors = array();
-
-			// Create an array of failed fields and append their error messages
-			foreach ($fields as $field) {
-				$e = $vm->getFieldErrors($field);
-				$m = array();
-
-				foreach ($e as $fe) {
-					$m[] = $fe->getMessage();
-				}
-
-				$errors[$field] = $m;
-			}
-
-			$data = array(
-				'success'	=> false,
-				'errors'	=> $errors
-			);
-
-			return json_encode($data);
-		}
+		return array();
 	}
 
 	/**

@@ -95,9 +95,18 @@
                     <ae:parameter name="indent">true</ae:parameter>
 					<ae:parameter name="wrap">0</ae:parameter>
 				</ae:parameter>
-				
+
 				<!-- default encoding to use on any web apps is utf-8 of course -->
 				<ae:parameter name="tidy_encoding">utf8</ae:parameter>
+			</filter>
+
+
+			<!-- Json -->
+			<filter name="JsonFilter" class="XRXJsonFilter">
+				<!-- only run on JSON instead of HTML -->
+                <ae:parameter name="output_types">
+                    <ae:parameter>json</ae:parameter>
+                </ae:parameter>
 			</filter>
 
 		</filters>

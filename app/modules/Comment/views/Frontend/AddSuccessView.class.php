@@ -35,6 +35,31 @@ class Comment_Frontend_AddSuccessView extends XRXCommentFrontendView
 		$this->setAttribute('_type', 'success');
 		$this->setAttribute('_title', $this->tm->_('redirecting...', '.comment'));
 	}
+
+	public function executeJson(AgaviRequestDataHolder $rd)
+	{
+		$content = '
+			<li id="xrx-comment-23">
+				<div class="xrx-comment-credential xrx-left">
+					<cite>
+						<strong>
+							<a target="_blank" title="http://ko-em.org" href="http://ko-em.org">Joe</a>
+						</strong>
+						<br>Monday, April 19, 2010
+					</cite>
+				</div>
+				<div class="xrx-comment-text">
+				<blockquote>hi there. whats up?</blockquote>
+				</div>
+				<div class="xrx-clear"></div>
+			</li>';
+
+		$data = array(
+			'alert'	=> $this->tm->_('comment sucessfully submitted', '.comment'),
+		);
+
+		return $data;
+	}
 }
 
 ?>

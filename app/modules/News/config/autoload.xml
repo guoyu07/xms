@@ -15,7 +15,7 @@
 		<autoload name="News_GenuineIdValidator">%core.module_dir%/News/lib/validator/GenuineIdValidator.class.php</autoload>
 
 		<!-- Image Manipulation Library -->
-		<autoload name="WideImage">%core.app_dir%/../libs/WideImage/WideImage.php</autoload>
+		<!-- <autoload name="WideImage">%core.app_dir%/../libs/WideImage/WideImage.php</autoload> -->
 		
 	</ae:configuration>
 </ae:configurations>

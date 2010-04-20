@@ -56,10 +56,10 @@ $(function() {
 				if (!data) { return }
 
 				// failure?
-				if (data.success === false) {
+				if (data.status == 'failure') {
 					XRX.addErrors(data, form);
 				} else {
-					
+					form[0].reset();
 				}
 
 				btn.removeAttr('disabled');
