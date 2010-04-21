@@ -29,6 +29,10 @@
 		<!-- Load Helper -->
 		<autoload name="XRXIHelper">%core.lib_dir%/helper/XRXIHelper.interface.php</autoload>
 		<autoload name="XRXHelper">%core.lib_dir%/helper/XRXHelper.class.php</autoload>
+
+		
+		<!-- Load Validators -->
+		<autoload name="XRXRecaptchaValidator">%core.lib_dir%/validator/XRXRecaptchaValidator.class.php</autoload>
 	</ae:configuration>
 
 

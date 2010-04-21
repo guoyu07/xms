@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $t['_language']; ?>" lang="<?php echo $t['_language']; ?>" dir="<?php echo $t['_dir']; ?>">
 	<head>
 		<base href="<?= $ro->getBaseHref(); ?>" />
-		<title><?php if (isset($t['_title'])) echo $vw->escape($t['_title']) . ' - '; echo $us->getAttribute('website_title', 'setting.general'); ?></title>
+		<title><?php if (isset($t['_title'])) echo $vw->escape($t['_title']) . ' | '; echo $us->getAttribute('website_title', 'setting.general'); ?></title>
 
 		<meta http-equiv="Content-Type" content="<?php echo $container->getOutputType()->getParameter('http_headers[Content-Type]', 'text/html; charset=utf-8'); ?>" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />

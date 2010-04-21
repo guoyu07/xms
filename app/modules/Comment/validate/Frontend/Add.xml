@@ -158,6 +158,18 @@
 				</errors>
 			</validator>
 
+
+			<!-- Captcha -->
+			<validator class="recaptcha" translation_domain=".comment.validation">
+				<arguments>
+					<argument>recaptcha_challenge_field</argument>
+					<argument>recaptcha_response_field</argument>
+				</arguments>
+				<errors>
+					<error>the captcha has an invalid value</error>
+				</errors>
+			</validator>
+
 		</validators>
 		
 	</ae:configuration>

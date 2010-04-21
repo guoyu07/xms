@@ -7,7 +7,15 @@
 	<ae:configuration>
 		
 		<validator_definitions>
+
+			<validator_definition name="recaptcha" class="XRXRecaptchaValidator">
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+			</validator_definition>
+
 		</validator_definitions>
+		
 
 		<validators>
 

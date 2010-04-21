@@ -32,6 +32,9 @@
 		<p>
 			<textarea id="xrx-comment-content" name="content" rows="10" cols="60"></textarea>
 		</p>
+		<p>
+			<?= $vw->recaptcha(); ?>
+		</p>
 
 		<input type="hidden" name="module_id" value="<?= $t['module_id'] ?>" />
 		<input type="hidden" name="owner_id" value="<?= $t['owner_id'] ?>" />
