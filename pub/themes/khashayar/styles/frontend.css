@@ -336,6 +336,10 @@ form[lang="fa"] button {
 	border-bottom: 1px solid #DDD;
 }
 
+#xrx-comment-form li {
+	margin: 1em 0;
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Pagination

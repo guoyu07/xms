@@ -167,6 +167,7 @@
 				</arguments>
 				<errors>
 					<error>the captcha has an invalid value</error>
+					<error for="required">please enter captcha value</error>
 				</errors>
 			</validator>
 

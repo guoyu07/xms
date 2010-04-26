@@ -34,6 +34,11 @@
 				<label for="xrx-comment-content"><?= $tm->_('comment', '.comment') ?><em class="xrx-required">*</em></label>
 				<textarea id="xrx-comment-content" name="content"></textarea>
 			</li>
+			<li>
+				<? if ($t['captcha']): ?>
+					<?= $vw->recaptcha(); ?>
+				<? endif; ?>
+			</li>
 		</ol>
 	</fieldset>
 

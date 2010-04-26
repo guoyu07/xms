@@ -20,7 +20,7 @@
 			</validator>
 
 
-			<!-- General | Website Title  -->
+			<!-- General | Website Title -->
 			<validator class="string" depends="general" translation_domain=".setting">
 				<arguments>
 					<argument>website_title</argument>
@@ -35,7 +35,7 @@
 			</validator>
 
 
-			<!-- General | Items Per Page  -->
+			<!-- General | Items Per Page -->
 			<validator class="number" depends="general" translation_domain=".setting">
 				<arguments>
 					<argument>items_per_page</argument>
@@ -50,7 +50,7 @@
 			</validator>
 
 
-			<!-- General | Front Page  -->
+			<!-- General | Front Page -->
 			<validator class="inarray" depends="general" translation_domain=".setting">
 				<arguments>
 					<argument>front_page</argument>
@@ -68,7 +68,7 @@
 				</errors>
 			</validator>
 
-			<!-- General | Front Page ID  -->
+			<!-- General | Front Page ID -->
 			<validator class="number" depends="general" translation_domain=".setting">
 				<arguments>
 					<argument>front_page_id</argument>
@@ -79,6 +79,34 @@
 				<errors>
 					<error>The front page id has an invalid value.</error>
 					<error for="required">Please provide front page id.</error>
+				</errors>
+			</validator>
+
+
+			<!-- General | reCaptcha Public Key -->
+			<validator class="string" depends="general" translation_domain=".setting">
+				<arguments>
+					<argument>recaptcha_public</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The public key has an invalid value.</error>
+				</errors>
+			</validator>
+
+
+			<!-- General | reCaptcha Private Key -->
+			<validator class="string" depends="general" translation_domain=".setting">
+				<arguments>
+					<argument>recaptcha_private</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">false</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The private key has an invalid value.</error>
 				</errors>
 			</validator>
 
@@ -100,7 +128,7 @@
 			</validator>
 
 
-			<!-- Comment | Default Status  -->
+			<!-- Comment | Default Status -->
 			<validator class="inarray" depends="comment" translation_domain=".setting">
 				<arguments>
 					<argument>default_status</argument>
@@ -115,6 +143,21 @@
 				<errors>
 					<error>The comments default status has an invalid value.</error>
 					<error for="required">Please provide comments default status.</error>
+				</errors>
+			</validator>
+
+
+			<!-- Comment | reCaptcha -->
+			<validator class="number" depends="comment" translation_domain=".setting">
+				<arguments>
+					<argument>use_recaptcha</argument>
+				</arguments>
+				<ae:parameters>
+					<ae:parameter name="required">true</ae:parameter>
+				</ae:parameters>
+				<errors>
+					<error>The recaptcha has an invalid value.</error>
+					<error for="required">Please provide recaptcha status.</error>
 				</errors>
 			</validator>
 

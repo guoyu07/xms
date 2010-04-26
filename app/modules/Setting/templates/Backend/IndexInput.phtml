@@ -72,6 +72,14 @@
 					<? endforeach; ?>
 					</select>
 				</li>
+				<li>
+					<label for="xrx-setting-recaptcha-key-public"><?= $tm->_('recaptcha public key', '.setting'); ?></label>
+					<input type="text" id="xrx-setting-recaptcha-key-public" name="recaptcha_public" value="<?= $us->getAttribute('recaptcha_public_key', 'setting.general') ?>" />
+				</li>
+				<li>
+					<label for="xrx-setting-recaptcha-key-private"><?= $tm->_('recaptcha private key', '.setting'); ?></label>
+					<input type="text" id="xrx-setting-recaptcha-key-private" name="recaptcha_private" value="<?= $us->getAttribute('recaptcha_private_key', 'setting.general') ?>" />
+				</li>
 			</ol>
 
 			<input type="submit" name="general" value="<?= $tm->_('save', '.setting'); ?>" />
@@ -122,6 +130,16 @@
 						<option value="approved" <? if ($cs == 'approved') echo 'selected="selected"' ?>>approved</option>
 						<option value="rejected" <? if ($cs == 'rejected') echo 'selected="selected"' ?>>rejected</option>
 					</select>
+				</li>
+				<li>
+					<? $rc = $us->getAttribute('use_recaptcha', 'setting.comment'); ?>
+					<label><?= $tm->_('use recaptcha', '.setting'); ?></label>
+
+					<input type="radio" id="xrx-setting-recaptcha-yes" name="use_recaptcha" value="1" <? if ($rc) echo 'checked="checked"' ?> />
+					<label for="xrx-setting-recaptcha-yes" class="xrx-label-radio"><?= $tm->_('yes', '.setting'); ?></label>
+					
+					<input type="radio" id="xrx-setting-recaptcha-no" name="use_recaptcha" value="0" <? if (!$rc) echo 'checked="checked"' ?> />
+					<label for="xrx-setting-recaptcha-no" class="xrx-label-radio"><?= $tm->_('no', '.setting'); ?></label>
 				</li>
 			</ol>
 

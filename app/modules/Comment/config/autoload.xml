@@ -10,6 +10,7 @@
 
 		<!-- Validators -->
 		<autoload name="Comment_GenuineIdValidator">%core.module_dir%/Comment/lib/validator/GenuineIdValidator.class.php</autoload>
+		<autoload name="XRXRecaptchaValidator">%core.lib_dir%/validator/XRXRecaptchaValidator.class.php</autoload>
 
 		<!-- Config Handlers -->
 		<autoload name="XRXCommentConfigHandler">%core.app_dir%/lib/config/XRXCommentConfigHandler.class.php</autoload>

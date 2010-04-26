@@ -25,13 +25,19 @@ class XRXRecaptchaValidator extends AgaviValidator
 
 		require 'reCaptcha/recaptchalib.php';
 
-		$privateKey = '6LcAnQwAAAAAABxSqPxIo0mzKeZAR6SpEF8I5KPY';
+		$user		= $this->getContext()->getUser();
+		$privateKey = $user->getAttribute('recaptcha_private_key', 'setting.default');
 		$resp		= recaptcha_check_answer($privateKey,
 											 $_SERVER['REMOTE_ADDR'],
 											 $challenge,
 											 $response);
-		FirePHP::getInstance(true)->log($resp);
-		return $resp->is_valid;
+		
+		if (! $resp->is_valid) {
+			$this->throwError(null, $args[1]);
+			return false;
+		}
+
+		return true;
 	}
 }
 

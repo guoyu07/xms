@@ -57,15 +57,18 @@ class Setting_Backend_IndexAction extends XRXSettingBackendAction
 		// Prepare params based on submitted module
 		if ( ! is_null($rd->getParameter('general')) ) {
 			$settings = array(
-				array('name' => 'website_title',	'value' => $rd->getParameter('website_title'),		'module' => 'general'),
-				array('name' => 'items_per_page',	'value' => $rd->getParameter('items_per_page'),		'module' => 'general'),
-				array('name' => 'show_on_front',	'value' => $rd->getParameter('front_page'),			'module' => 'general'),
-				array('name' => 'show_on_front_id',	'value' => $rd->getParameter('front_page_id', 0),	'module' => 'general')
+				array('name' => 'website_title',		'value' => $rd->getParameter('website_title'),		'module' => 'general'),
+				array('name' => 'items_per_page',		'value' => $rd->getParameter('items_per_page'),		'module' => 'general'),
+				array('name' => 'show_on_front',		'value' => $rd->getParameter('front_page'),			'module' => 'general'),
+				array('name' => 'show_on_front_id',		'value' => $rd->getParameter('front_page_id', 0),	'module' => 'general'),
+				array('name' => 'recaptcha_public_key',	'value' => $rd->getParameter('recaptcha_public'),	'module' => 'general'),
+				array('name' => 'recaptcha_private_key','value' => $rd->getParameter('recaptcha_private'),	'module' => 'general')
 			);
 		}
 		else if ( ! is_null($rd->getParameter('comment')) ) {
 			$settings = array(
 				array('name' => 'default_status',	'value' => $rd->getParameter('default_status'),	'module' => 'comment'),
+				array('name' => 'use_recaptcha',	'value' => $rd->getParameter('use_recaptcha'),	'module' => 'comment'),
 			);
 		}
 		else {

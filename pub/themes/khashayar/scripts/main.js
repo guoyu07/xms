@@ -20,9 +20,21 @@ var XRX = {
 
 					ct += '</div>';
 					$(el).addClass('error');
-					$(el).parent().after(ct);
+
+					// If the form created by li, append erros to them
+					// else append error to it's parent
+					if ($(el).parents('li')) {
+						$(el).parents('li').append(ct);
+					} else {
+						$(el).parent().after(ct);
+					}
 				}
 			})
+		}
+
+		// If reCaptcha enabled
+		if (typeof Recaptcha != 'undefined') {
+			Recaptcha.reload();
 		}
 	}
 
@@ -30,6 +42,7 @@ var XRX = {
 		form = form || document;
 		
 		form.find(':input').removeClass('error');
+		form.find('.xrx-errors').remove();
 		form.children('.xrx-errors').remove();
 	}
 
@@ -39,7 +52,7 @@ var XRX = {
 		}
 		
 		if (data.alert) {
-
+			window.alert(data.alert);
 		}
 
 		if (data.message && data.msgTarget) {
@@ -64,7 +77,7 @@ var XRX = {
 
 				case 'child:last':
 				default:
-					$(data.ctTarget).append(data.content).slideDown();
+					$(data.ctTarget).append(data.content);
 			}
 		}
 	}

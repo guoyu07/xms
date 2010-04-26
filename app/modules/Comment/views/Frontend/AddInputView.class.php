@@ -23,6 +23,25 @@ class Comment_Frontend_AddInputView extends XRXCommentFrontendView
 			$this->us->setAttribute($module_id . $owner_id, $parameters, 'comment');
 		}
 
+
+		// reCaptcha
+		$captcha = (boolean) $this->us->getAttribute('use_recaptcha', 'setting.comment');
+		if ($captcha) {
+			// Template path
+			$template = AgaviConfig::get('core.template_dir') .
+						DIRECTORY_SEPARATOR . 'templates' .
+						DIRECTORY_SEPARATOR . 'reCaptcha.phtml';
+
+			// Set options
+			$this->recaptcha()->setOptions(array(
+				'theme'					=> 'custom',
+				'template'				=> $template,
+				'custom_theme_widget'	=> 'recaptcha_widget'
+			));
+		}
+		
+		
+		$this->setAttribute('captcha', $captcha);
 		$this->setAttribute('_title', $this->tm->_('add comment', '.comment'));
 	}
 }
