@@ -1,12 +1,15 @@
 <div id="xrx-footer">
 	<div class="xrx-inside">
+		<a id="xrx-hosting" class="xrx-<?= $t['_xalign'] ?>" href="http://www.mediatemple.net/" target="_blank" title="<?= $tm->_('hosted by mediatemple', '.widgets'); ?>"></a>
+		<!--
 		<? if ($us->isAuthenticated()): ?>
 		<div class="xrx-logged-box xrx-<?= $t['_xalign'] ?>">
 			<?= $tm->_('you are logged in.', '.widgets'); ?>
 			<a href="<?= $ro->gen('default', array('module'=>'user', 'action'=>'logout')); ?>"><?= $tm->_('log out', '.widgets'); ?></a>
 		</div>
 		<? endif; ?>
-		
+		-->
+
 		<p>
 			<?= sprintf($tm->_('copyright © 2009-%s khashayar hajian.', '.widgets'), date('Y')) ?><br />
 			<?= $tm->_('powered by xrx content management system.', '.widgets') ?>

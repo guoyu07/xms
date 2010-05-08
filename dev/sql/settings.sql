@@ -31,6 +31,10 @@ CREATE TABLE IF NOT EXISTS `settings` (
 INSERT INTO `settings` (`name`, `value`, `module`) VALUES
 ('default_status', 'approved', 'comment'),
 ('items_per_page', '10', 'general'),
+('public_registration', '1', 'user'),
+('recaptcha_private_key', '', 'general'),
+('recaptcha_public_key', '', 'general'),
 ('show_on_front', 'news', 'general'),
-('show_on_front_id', '1', 'general'),
+('show_on_front_id', '0', 'general'),
+('use_recaptcha', '0', 'comment'),
 ('website_title', 'XRX', 'general');

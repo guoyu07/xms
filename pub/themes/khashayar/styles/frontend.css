@@ -437,6 +437,18 @@ form[lang="fa"] button {
 	border-bottom: 1px dotted #FFF;
 }
 
+#xrx-hosting {
+	width: 60px;
+	height: 36px;
+	display: block;
+	background: url("/themes/khashayar/images/mt.png") no-repeat scroll 0 -37px transparent;
+}
+
+#xrx-hosting:hover {
+	border-bottom: none !important;
+	background-position: 0 0;
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /* Erros
