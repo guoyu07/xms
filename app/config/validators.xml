@@ -19,6 +19,11 @@
 
 		<validators>
 
+			<!-- HTTP_USER_AGENT -->
+			<validator source="headers">
+				<argument>USER_AGENT</argument>
+			</validator>
+
 			<!-- Page Number -->
 			<validator class="number" translation_domain=".global.validation">
 				<arguments>

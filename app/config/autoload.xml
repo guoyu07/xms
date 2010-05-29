@@ -14,6 +14,10 @@
 
 
 		<!-- Load Routing Callback -->
+		<autoload name="XRXBrowser">%core.app_dir%/../libs/XRX/XRXBrowser.class.php</autoload>
+
+
+		<!-- Load Routing Callback -->
 		<autoload name="XRXLocaleRoutingCallback">%core.lib_dir%/routing/XRXLocaleRoutingCallback.class.php</autoload>
 		<autoload name="XRXDefaultRoutingCallback">%core.lib_dir%/routing/XRXDefaultRoutingCallback.class.php</autoload>
 
@@ -23,6 +27,7 @@
 
 
 		<!-- Load Filters -->
+		<autoload name="XRXBrowserFilter">%core.lib_dir%/filter/XRXBrowserFilter.class.php</autoload>
 		<autoload name="XRXJsonFilter">%core.lib_dir%/filter/XRXJsonFilter.class.php</autoload>
 
 

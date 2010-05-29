@@ -5,6 +5,9 @@
 	<ae:configuration environment="development.*" context="web">
 		<filters>
 
+			<!-- Browser -->
+			<filter name="BrowserFilter" class="XRXBrowserFilter" />
+
 			<filter name="ExecutionTimeFilter" class="AgaviExecutionTimeFilter">
 				<!-- insert a comment with the container runtime -->
 				<ae:parameter name="comment">true</ae:parameter>
