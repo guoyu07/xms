@@ -5,13 +5,14 @@
 @font-face{
 	font-family: Terafik;
 	src: url("/themes/khashayar/fonts/terafik.eot");
-	src: url("/themes/khashayar/fonts/terafik.ttf") format("truetype");
+	src: local('Terafik'), url("/themes/khashayar/fonts/terafik.ttf") format("truetype");
 }
 
 @font-face{
 	font-family: Terafik;
 	font-weight: bold;
-	src: url("/themes/khashayar/fonts/terafikb.ttf") format("truetype");
+	src: url("/themes/khashayar/fonts/terafikb.eot");
+	src: local('Terafik Bold'), url("/themes/khashayar/fonts/terafikb.ttf") format("truetype");
 }
 
 * {
