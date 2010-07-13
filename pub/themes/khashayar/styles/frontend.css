@@ -433,18 +433,18 @@ form[lang="fa"] button {
 	width: 0px;
 	height: 0px;
 	position: relative;
+	border-top: 17px solid #FFF;
 	border-left: 17px solid transparent;
 	border-right: 17px solid transparent;
-	border-bottom: 17px solid #F1F1F1;
 }
 
 #xrx-bottom .xrx-arrow-down.xrx-ltr {
-	top: -37px;
+	top: -20px;
 	right: -30px;
 }
 
 #xrx-bottom .xrx-arrow-down.xrx-rtl {
-	top: -37px;
+	top: -20px;
 	left: -30px;
 }
 
