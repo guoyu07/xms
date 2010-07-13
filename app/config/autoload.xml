@@ -27,7 +27,7 @@
 
 
 		<!-- Load Filters -->
-		<autoload name="XRXBrowserFilter">%core.lib_dir%/filter/XRXBrowserFilter.class.php</autoload>
+		<!--<autoload name="XRXBrowserFilter">%core.lib_dir%/filter/XRXBrowserFilter.class.php</autoload>-->
 		<autoload name="XRXJsonFilter">%core.lib_dir%/filter/XRXJsonFilter.class.php</autoload>
 
 
