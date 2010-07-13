@@ -1,7 +1,9 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/*!
+ * XRX Content Management System
+ * Written by Khashayar Hajian <me@khashayar.me>
+ * Copyright(c) 2010 XRX CMS.
  */
+
 
 var XRX = {
 	addErrors : function(data, form) {
