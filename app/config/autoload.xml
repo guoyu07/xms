@@ -14,7 +14,7 @@
 
 
 		<!-- Load Routing Callback -->
-		<autoload name="XRXBrowser">%core.app_dir%/../libs/XRX/XRXBrowser.class.php</autoload>
+		<!--<autoload name="XRXBrowser">%core.app_dir%/../libs/XRX/XRXBrowser.class.php</autoload>-->
 
 
 		<!-- Load Routing Callback -->
