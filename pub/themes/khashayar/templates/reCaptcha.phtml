@@ -1,15 +1,6 @@
 <style type="text/css">
-	#recaptcha_widget {
-		width: 430px;
-	}
-
-	#recaptcha_tools {
-		float: right;
-	}
-
 	#recaptcha_links {
 		width: 25px;
-		float: left;
 		padding: 11px 10px;
 		line-height: 50%;
 	}
@@ -27,7 +18,7 @@
 	#recaptcha_image {
 		width: 300px;
 		height: 57px;
-		padding: 7px;
+		padding: 5px;
 		background-color: white;
 	}
 
@@ -38,9 +29,39 @@
 	#recaptcha_response_field {
 		margin: 5px 0;
 	}
+
+	#blank_space {
+		width: 20%
+	}
 </style>
 
-<div id="recaptcha_widget">
+<table>
+	<tr>
+		<td><div id="recaptcha_image"></div></td>
+		<td id="recaptcha_links">
+			<a id="recaptcha_reload_btn" href="javascript:Recaptcha.reload();" title="Get a new challenge">
+				<img width="25" height="18" alt="Get a new challenge" id="recaptcha_reload" src="http://api.recaptcha.net/img/clean/refresh.png" />
+			</a>
+			<a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" href="javascript:Recaptcha.switch_type('audio');" title="Get an audio challenge">
+				<img width="25" height="15" alt="Get an audio challenge" id="recaptcha_switch_audio" src="http://api.recaptcha.net/img/clean/audio.png" />
+			</a>
+			<a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" href="javascript:Recaptcha.switch_type('image');" title="Get a visual challenge">
+				<img width="25" height="15" alt="Get a visual challenge" id="recaptcha_switch_img" src="http://api.recaptcha.net/img/clean/text.png" />
+			</a>
+			<a id="recaptcha_whatsthis_btn" href="http://recaptcha.net/popuphelp/" target="_blank" title="Help">
+				<img width="25" height="16" id="recaptcha_whatsthis" src="http://api.recaptcha.net/img/clean/help.png" alt="Help" />
+			</a>
+		</td>
+		<td id="blank_space"></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<input id="recaptcha_response_field" type="text" name="recaptcha_response_field" autocomplete="off" />
+			<small><label for="recaptcha_response_field">Enter the words above</label></small>
+		</td>
+	</tr>
+</table>
+<!--<div id="recaptcha_widget">
 	<div id="recaptcha_tools">
 		<div id="recaptcha_links">
 			<a id="recaptcha_reload_btn" href="javascript:Recaptcha.reload();" title="Get a new challenge">
@@ -63,4 +84,4 @@
 	<div id="recaptcha_image"></div>
 	<input id="recaptcha_response_field" type="text" name="recaptcha_response_field" autocomplete="off" />
 	<small><label for="recaptcha_response_field">Enter the words above</label></small>
-</div>
+</div>-->

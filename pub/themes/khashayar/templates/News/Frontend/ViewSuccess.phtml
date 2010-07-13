@@ -23,11 +23,11 @@ if ( isset($t['translations']) ) {
 			<small><?= sprintf($tm->_('category: %s', '.news'), '<a href="' . $ro->gen('default', array('path'=>'news/index', 'category'=>$t['news']->category_id)) . '">' . $t['news']->category_name . '</a>') ?></small>
 		</div>
 		<div class="xrx-news-entry-view">
-			<p>
+			<p class="xrx-news-summary-view">
 				<? if ($t['news']->image): ?>
-					<img class="xrx-<?= $t['_align'] ?>" src="<?= $t['news']->image ?>" />
+					<img class="xrx-<?= $t['_align'] ?>" src="<?= $t['news']->image ?>" alt="" />
 				<? endif; ?>
-				<strong><?= $t['news']->summary ?></strong>
+				<?= $t['news']->summary ?>
 			</p>
 			<?= $t['news']->content ?>
 		</div>

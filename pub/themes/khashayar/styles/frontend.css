@@ -130,6 +130,7 @@ form[lang="fa"] button {
 #xrx-description {
 	width: 700px;
 	text-align: justify;
+	text-shadow: 0 1px 0 #FFF;
 }
 
 
@@ -269,10 +270,24 @@ form[lang="fa"] button {
 
 .xrx-news-entry-view a {
 	border-bottom: 1px dotted #3C3C3C;
+	background-color: #F8F7F6;
 }
 
 .xrx-news-entry-view a:hover {
 	border-bottom: 1px dotted #9D9D9D;
+	background-color: #FFF;
+}
+
+.xrx-news-summary-view {
+	padding: 5px;
+	text-shadow: 0 1px 0 #FFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background-color: #EEE;
+	background-image: -moz-linear-gradient(center top, #EEE 0%, #FFF 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EEE), color-stop(1, #FFF));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#EEEEEEEE, endColorstr=#FFFFFFFF)";
 }
 
 

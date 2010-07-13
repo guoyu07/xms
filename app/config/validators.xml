@@ -20,7 +20,7 @@
 		<validators>
 
 			<!-- HTTP_USER_AGENT -->
-			<validator source="headers">
+			<validator class="string" source="headers">
 				<argument>USER_AGENT</argument>
 			</validator>
 
