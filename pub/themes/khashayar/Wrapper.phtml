@@ -5,9 +5,9 @@
 
 <div id="xrx-bottom">
 	<div class="xrx-inside">
+		<div class="xrx-arrow-down xrx-<?= $t['_dir'] ?>"></div>
 		<? foreach($vw->getLayer('wrapper')->getSlots() as $name => $slot): ?>
 			<?= $slots[$name]; ?>
 		<? endforeach; ?>
-		<div class="xrx-arrow-down xrx-<?= $t['_dir'] ?>"></div>
 	</div>
 </div>
