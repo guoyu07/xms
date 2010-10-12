@@ -51,10 +51,10 @@ a:hover {
 
 a:active, a:focus { outline: 0; }
 
+abbr { border: medium none; }
 h1 { font-size: 1.5em; }
 h3 { font-size: 1.4em; }
-
-img { border: 0; }
+img { border: medium none; }
 
 input[type="text"],
 input[type="password"],
@@ -65,17 +65,9 @@ textarea {
 	border: 1px solid #DDD;
 }
 
-ol, ul {
-	list-style-type: none;
-}
-
-ol, ul, p, blockquote {
-	margin: 1em 0;
-}
-
-small {
-	font-size: 0.95em;
-}
+ol, ul { list-style-type: none; }
+ol, ul, p, blockquote { margin: 1em 0; }
+small { font-size: 0.95em; }
 
 textarea {
 	width: 560px;
@@ -291,6 +283,12 @@ form[lang="fa"] button {
 .xrx-news-entry-view a:hover {
 	border-bottom: 1px dotted #9D9D9D;
 	background-color: #FFF;
+}
+
+.xrx-news-entry-view ul,
+.xrx-news-entry-view ol {
+	list-style-type: square;
+	padding: 0 30px;
 }
 
 .xrx-news-summary-view {
