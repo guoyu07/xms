@@ -46,8 +46,9 @@ class GeshiHelper extends XRXHelper
 			}
 
 			// Get the source code
-			$source = substr ($content, $start, $stop - $start) ;
+			$source = substr ($content, $start, $stop - $start);
 			$source = html_entity_decode($source, ENT_QUOTES);
+			$source = trim($source);
 
 
 			if (end($langs) == $lang) {
@@ -93,7 +94,7 @@ class GeshiHelper extends XRXHelper
 			// Search for next loop
 			$START = strpos($content, $fulltag) ;
 		}
-		
+
 		return $content;
 	}
 
