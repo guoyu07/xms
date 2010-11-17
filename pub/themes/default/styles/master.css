@@ -143,6 +143,12 @@ small {
 	max-height: 60px;
 }
 
+.xrx-code {
+	background-color: #FCFCFC;
+	font-size: 10pt;
+	padding: 10px;
+}
+
 
 
 /* Validation Messages */

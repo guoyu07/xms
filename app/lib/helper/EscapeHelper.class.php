@@ -2,7 +2,7 @@
 
 /**
  * Helper class
- * Escapes passed value and echos it
+ * Escapes special chars on passed value.
  *
  * @author Khashayar Hajian <me@khashayar.me>
  * 

@@ -11,6 +11,7 @@ CKEDITOR.editorConfig = function( config )
 
 	config.toolbar			= 'Portal';
 	config.skin				= 'kama';
+	config.extraPlugins		= 'geshi';
 	config.toolbar_Portal	=
 	[
 		['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
@@ -22,6 +23,7 @@ CKEDITOR.editorConfig = function( config )
 		['Styles','Format','Font','FontSize'],
 		['TextColor','BGColor'],
 		['Maximize','Templates','ShowBlocks'],
+		['Code'],
 		['Source']
 	];
 };

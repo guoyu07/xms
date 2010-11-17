@@ -23,7 +23,7 @@ if ( isset($t['translations']) ) {
 		<img class="xrx-<?= $t['_align'] ?>" src="<?= $t['news']->image ?>" />
 	<? endif; ?>
 	<p><strong><?= $t['news']->summary ?></strong></p>
-	<?= $t['news']->content ?>
+	<?= $vw->geshi($t['news']->content) ?>
 </div>
 
 <small><?= sprintf('last updated on %s', $tm->_d($t['news']->modified)) ?></small>
