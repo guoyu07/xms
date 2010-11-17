@@ -54,7 +54,7 @@
 			</li>
 			<li>
 				<label for="xrx-page-content-<?= $locale->lang ?>"><?= $tm->_('content', '.page', $locale->id) ?><em class="xrx-required">*</em></label>
-				<textarea id="xrx-page-content-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][content]" ?>"><?= $t['page'][$locale->lang]->content ?></textarea>
+				<textarea id="xrx-page-content-<?= $locale->lang ?>" name="<?= "translation[$locale->lang][content]" ?>"><?= $vw->escape($t['page'][$locale->lang]->content) ?></textarea>
 				<script type="text/javascript">
 					<!--
 					var cke = CKEDITOR.replace('xrx-page-content-<?= $locale->lang ?>', {
