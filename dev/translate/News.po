@@ -1,106 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-19 21:22+0330\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
-"Language-Team: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../../app/modules/News/templates/Frontend/IndexSuccess.phtml:2
 msgid "categories"
-msgstr "دسته ها"
+msgstr ""
 
 #: ../../app/modules/News/templates/Frontend/IndexSuccess.phtml:11
 #: ../../app/modules/News/templates/Frontend/ViewSuccess.phtml:18
 #, php-format
 msgid "written by %s in %s"
-msgstr "نوشته شده توسط %s در %s"
+msgstr ""
 
 #: ../../app/modules/News/templates/Frontend/IndexSuccess.phtml:24
 msgid "there's no news available for current language"
-msgstr "هیچ خبری برای زبان جاری وجود ندارد."
+msgstr ""
 
 #: ../../app/modules/News/templates/Frontend/ViewSuccess.phtml:12
 #, php-format
 msgid "this news also available in %s"
-msgstr "این خبر به زبان %s نیز موجود می باشد"
+msgstr ""
 
 #: ../../app/modules/News/templates/Frontend/ViewSuccess.phtml:29
 #, php-format
 msgid "last updated on %s"
-msgstr "آخرین به روز رسانی در %s"
+msgstr ""
 
 #: ../../app/modules/News/templates/Frontend/ViewSuccess.phtml:36
 msgid "sending comments on this news has been disabled"
-msgstr "ارسال نظر برای این خبر غیرفعال شده است."
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:40
 #: ../../app/modules/News/views/Backend/AddInputView.class.php:52
 msgid "add news"
-msgstr "افزودن خبر"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:44
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:57
 #, php-format
 msgid "translate to %s"
-msgstr "ترجمه به %s"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:49
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:62
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:45
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:55
 msgid "title"
-msgstr "عنوان"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:53
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:66
 msgid "summary"
-msgstr "خلاصه"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:57
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:70
 msgid "content"
-msgstr "محتوا"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:72
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:85
 msgid "image"
-msgstr "عکس"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:74
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:88
 msgid "browse"
-msgstr "مرور"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:77
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:94
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:47
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:57
 msgid "date"
-msgstr "تاریخ"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:79
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:96
 msgid "date selector"
-msgstr "انتخابگر تاریخ"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:94
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:111
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:46
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:56
 msgid "category"
-msgstr "دسته"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:104
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:121
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:49
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:59
 msgid "published"
-msgstr "منتشر شود"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:107
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:116
@@ -108,7 +114,7 @@ msgstr "منتشر شود"
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:133
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:77
 msgid "yes"
-msgstr "بله"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:110
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:119
@@ -116,92 +122,92 @@ msgstr "بله"
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:136
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:77
 msgid "no"
-msgstr "خیر"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:113
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:130
 msgid "allow comments"
-msgstr "اجازه ارسال نظر"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:126
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:150
 msgid "submit"
-msgstr "ارسال"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:127
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:152
 msgid "cancel"
-msgstr "انصراف"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/AddSuccess.phtml:1
 msgid "news has been successfully added"
-msgstr "خبر با موفقیت اضافه شد."
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/DeleteSuccess.phtml:1
 msgid "news has been successfully deleted"
-msgstr "خبر با موفقیت حذف شد."
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:26
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:27
 msgid "are you sure?"
-msgstr "آیا مطمئن هستید؟"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:53
 #: ../../app/modules/News/views/Backend/EditInputView.class.php:77
 msgid "edit news"
-msgstr "ویرایش خبر"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:141
 #, php-format
 msgid "delete %s translation"
-msgstr "حذف ترجمه %s"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/EditSuccess.phtml:1
 msgid "news has been successfully updated"
-msgstr "خبر با موفقیت به روز شد."
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:21
 msgid "please select a news"
-msgstr "لطفا یک خبر را انتخاب کنید."
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:37
 #: ../../app/modules/News/views/Backend/IndexSuccessView.class.php:9
 msgid "news list"
-msgstr "لیست اخبار"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:48
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:58
 msgid "author"
-msgstr "نویسنده"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:69
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:73
 #, php-format
 msgid "edit '%s'"
-msgstr "ویرایش '%s'"
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:82
 msgid "there's no news"
-msgstr "هیچ خبری وجود ندارد."
+msgstr ""
 
 #: ../../app/modules/News/templates/Backend/IndexSuccess.phtml:91
 msgid "delete"
-msgstr "حذف"
+msgstr ""
 
 #: ../../app/modules/News/views/Frontend/IndexSuccessView.class.php:17
 #: ../../app/modules/News/views/Frontend/IndexSuccessView.class.php:41
 msgid "lastest news"
-msgstr "آخرین اخبار"
+msgstr ""
 
 #: ../../app/modules/News/views/Frontend/IndexSuccessView.class.php:46
 #, php-format
 msgid "the latest news from %s website"
-msgstr "آخرین اخبار وب سایت %s"
+msgstr ""
 
 #: ../../app/modules/News/views/Frontend/ViewSuccessView.class.php:76
 #, php-format
 msgid "view news: %s"
-msgstr "نمایش خبر: %s"
+msgstr ""
 
 #: ../../app/modules/News/views/Backend/AddSuccessView.class.php:11
 #: ../../app/modules/News/views/Backend/DeleteErrorView.class.php:14
@@ -209,10 +215,4 @@ msgstr "نمایش خبر: %s"
 #: ../../app/modules/News/views/Backend/EditErrorView.class.php:14
 #: ../../app/modules/News/views/Backend/EditSuccessView.class.php:11
 msgid "redirecting..."
-msgstr "در حال انتقال..."
-
-#~ msgid "there's no news available for current language."
-#~ msgstr "هیچ خبری برای زبان جاری وجود ندارد."
-
-#~ msgid "category: %s"
-#~ msgstr "دسته: %s"
+msgstr ""

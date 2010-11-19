@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-19 19:10+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: \n"
@@ -9,155 +10,181 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\DeleteSuccess.php:1
-msgid "comment(s) has been successfully deleted"
-msgstr "نظر(ات) با موفقیت حذف شد"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:26
-msgid "author type"
-msgstr "نوع نویسنده"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:29
-msgid "registered"
-msgstr "ثبت نام شده"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:32
-msgid "guest"
-msgstr "مهمان"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:60
-msgid "pending"
-msgstr "در انتظار"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:63
-msgid "approved"
-msgstr "تایید شده"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:66
-msgid "rejected"
-msgstr "رد شده"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:77
-msgid "submit"
-msgstr "ارسال"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:79
-msgid "cancel"
-msgstr "انصراف"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditSuccess.php:1
-msgid "comment has been successfully updated"
-msgstr "نظر با موفقیت به روز شد"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:21
-msgid "please select a comment."
-msgstr "لطفا یک نطر را انتخاب کنید"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:27
-msgid "are you sure?"
-msgstr "اطمینان دارید؟"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:37
-msgid "comment list"
-msgstr "لیست نظرات"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:37
-msgid "comment list for %s"
-msgstr "لیست نظرهای '%s'"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:56
-msgid "author"
-msgstr "نویسنده"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:57
-msgid "date"
-msgstr "تاریخ"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:58
-msgid "status"
-msgstr "وضعیت"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:59
-msgid "owner"
-msgstr "دارنده"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:74
-msgid "edit profile '%s'"
-msgstr "ویرایش مشخصات '%s'"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:85
-msgid "edit '%s'"
-msgstr "ویرایش '%s'"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:93
-msgid "There's no comment."
-msgstr "هیچ نظری وجود ندارد"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:99
-msgid "delete"
-msgstr "حذف"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\AddInput.php:34
-msgid "comment"
-msgstr "نظر"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\AddSuccess.php:1
-msgid "your comment has been successfully added"
-msgstr "نظر شما با موفقیت ارسال شد"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\ListSuccess.php:21
-msgid "there's no comments"
-msgstr "هیچ نظری وجود ندارد"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Backend\EditInputView.class.php:11
-msgid "edit comment"
-msgstr "ویرایش نظر"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Backend\IndexSuccessView.class.php:9
-msgid "comments' list"
-msgstr "لیست نظرات"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\AddInputView.class.php:26
-msgid "add comment"
-msgstr "نظر جدید"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\AddSuccessView.class.php:36
-msgid "redirecting..."
-msgstr "در حال انتقال..."
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\ListSuccessView.class.php:9
-msgid "list comments"
-msgstr "فهرست نظرات"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:21
-msgid "name"
-msgstr "نام"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:25
-msgid "email"
-msgstr "پست الکترونیکی"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:25
-msgid "required"
-msgstr "اجباری"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:29
-msgid "website"
-msgstr "وب سایت"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:38
-msgid "submit comment"
-msgstr "ارسال نظر"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:2
-msgid "comments"
-msgstr "نظرات"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:4
-msgid "%s comment(s)"
-msgstr "%s نظر"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:5
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:3
 msgid "leave a comment"
 msgstr "ارسال نظر"
 
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:7
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:21
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:35
+msgid "name"
+msgstr "نام"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:12
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:25
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:45
+msgid "email"
+msgstr "پست الکترونیکی"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:16
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:29
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:49
+msgid "website"
+msgstr "وب سایت"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:34
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:69
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:45
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:55
+msgid "comment"
+msgstr "نظر"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:47
+msgid "submit comment"
+msgstr "ارسال نظر"
+
+#: ../../app/modules/Comment/templates/Frontend/AddSuccess.phtml:1
+msgid "your comment has been successfully added"
+msgstr "نظر شما با موفقیت ارسال شد."
+
+#: ../../app/modules/Comment/templates/Frontend/ListSuccess.phtml:1
+msgid "comments"
+msgstr "نظرات"
+
+#: ../../app/modules/Comment/templates/Frontend/ListSuccess.phtml:21
+msgid "there's no comments"
+msgstr "هیچ نظری وجود ندارد."
+
+#: ../../app/modules/Comment/templates/Backend/DeleteSuccess.phtml:1
+msgid "comment(s) has been successfully deleted"
+msgstr "نظر(ات) با موفقیت حذف شد."
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:23
+#: ../../app/modules/Comment/views/Backend/EditInputView.class.php:11
+msgid "edit comment"
+msgstr "ویرایش نظر"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:26
+msgid "author type"
+msgstr "نوع نویسنده"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:29
+msgid "registered"
+msgstr "ثبت نام شده"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:32
+msgid "guest"
+msgstr "مهمان"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:53
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:47
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:57
+msgid "date"
+msgstr "تاریخ"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:57
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:48
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:58
+msgid "status"
+msgstr "وضعیت"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:60
+msgid "pending"
+msgstr "در انتظار"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:63
+msgid "approved"
+msgstr "تایید شده"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:66
+msgid "rejected"
+msgstr "رد شده"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:77
+msgid "submit"
+msgstr "ارسال"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:79
+msgid "cancel"
+msgstr "انصراف"
+
+#: ../../app/modules/Comment/templates/Backend/EditSuccess.phtml:1
+msgid "comment has been successfully updated"
+msgstr "نظر با موفقیت به روز شد."
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:21
+msgid "please select a comment."
+msgstr "لطفا یک نطر را انتخاب کنید."
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:27
+msgid "are you sure?"
+msgstr "اطمینان دارید؟"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:37
+msgid "comment list"
+msgstr "لیست نظرات"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:37
+#, php-format
+msgid "comment list for %s"
+msgstr "لیست نظرهای '%s'"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:46
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:56
+msgid "author"
+msgstr "نویسنده"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:49
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:59
+msgid "owner"
+msgstr "دارنده"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:69
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:85
+#, php-format
+msgid "edit '%s'"
+msgstr "ویرایش '%s'"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:74
+#, php-format
+msgid "edit profile '%s'"
+msgstr "ویرایش مشخصات '%s'"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:93
+msgid "There's no comment."
+msgstr "هیچ نظری وجود ندارد"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:99
+msgid "delete"
+msgstr "حذف"
+
+#: ../../app/modules/Comment/views/Frontend/AddInputView.class.php:45
+msgid "add comment"
+msgstr "نظر جدید"
+
+#: ../../app/modules/Comment/views/Frontend/AddSuccessView.class.php:36
+#: ../../app/modules/Comment/views/Backend/DeleteErrorView.class.php:14
+#: ../../app/modules/Comment/views/Backend/DeleteSuccessView.class.php:11
+#: ../../app/modules/Comment/views/Backend/EditErrorView.class.php:14
+#: ../../app/modules/Comment/views/Backend/EditSuccessView.class.php:12
+#: ../../app/modules/Comment/views/Backend/IndexErrorView.class.php:14
+msgid "redirecting..."
+msgstr "در حال انتقال..."
+
+#: ../../app/modules/Comment/views/Frontend/AddSuccessView.class.php:60
+msgid "comment sucessfully submitted"
+msgstr "نظر با موفقیت ارسال شد."
+
+#: ../../app/modules/Comment/views/Frontend/ListSuccessView.class.php:9
+msgid "list comments"
+msgstr "فهرست نظرات"
+
+#: ../../app/modules/Comment/views/Backend/IndexSuccessView.class.php:9
+msgid "comments' list"
+msgstr "لیست نظرات"
+
+#~ msgid "required"
+#~ msgstr "اجباری"
+
+#~ msgid "%s comment(s)"
+#~ msgstr "%s نظر"

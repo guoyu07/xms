@@ -7,111 +7,116 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2010-04-04 15:40+0330\n"
+"POT-Creation-Date: 2010-11-19 20:49+0330\n"
+"PO-Revision-Date: 2010-11-19 20:50+0330\n"
 "Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\FooterSuccess.php:11
-msgid "copyright © 2009-%s khashayar hajian."
-msgstr "تمامی حقوق برای خشایار حاجیان محفوظ می باشد."
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\FooterSuccess.php:12
-msgid "powered by xrx content management system."
-msgstr "نیرو گرفته از سیستم مدیریت محتوای XRX"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:37
-msgid "Creativity, individuality and flexibility have always been the driving force behind my development and services. In this blog you will find information about my online projects, services and references. Furthermore, I inform you on current trends in the field of web development."
-msgstr "خلاقیت ، فردیت و انعطاف پذیری همواره نیروی محرک من در توسعه وب و ارایه خدمات بوده است. در این وبلاگ شما می توانید اطلاعاتی در مورد پروژه های آنلاین من، خدمات و منابع مرتبط پیدا کنید. علاوه بر این، سعی من بر این است که شما را در جریان آخرین اخبار و رویدادهای مرتبط با توسعه وب قرار دهم."
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:41
-msgid "previous entries"
-msgstr "مطالب قبلی"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:42
-msgid "next entries"
-msgstr "مطالب بعدی"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:43
-msgid "dashboard"
-msgstr "داشبورد"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:44
-msgid "categories"
-msgstr "دسته ها"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:45
-msgid "add"
-msgstr "افزودن"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:46
-msgid "manage"
-msgstr "مدیریت"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:47
-msgid "comments"
-msgstr "نظرات"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:48
-msgid "pages"
-msgstr "صفحه ها"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:49
-msgid "users"
-msgstr "کاربران"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\HeaderSuccess.php:50
-msgid "settings"
-msgstr "تنظیمات"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Backend\FooterSuccess.php:3
-msgid "powered by %s"
-msgstr "نیرو گرفته توسط %s"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Backend\FooterSuccess.php:6
-msgid "copyright © 2009-%s %s"
-msgstr "تمامی حقوق محفوظ می باشد © 2009-%s %s"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Backend\HeaderSuccess.php:3
-msgid "administration area"
-msgstr "بخش مدیریت"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Backend\HeaderSuccess.php:3
-msgid "visit site"
-msgstr "مشاهده سایت"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Backend\HeaderSuccess.php:19
-msgid "you are logged in as %s"
-msgstr "وارد شده با نام کاربری"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Backend\HeaderSuccess.php:20
-msgid "edit your profile"
-msgstr "ویرایش مشخصات کاربری"
-
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Frontend\FooterSuccess.php:5
+#: ../../app/modules/Widgets/templates/Frontend/FooterSuccess.phtml:5
 msgid "you are logged in."
 msgstr "وارد شده با نام کاربری"
 
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Frontend\FooterSuccess.php:7
+#: ../../app/modules/Widgets/templates/Frontend/FooterSuccess.phtml:7
+#: ../../app/modules/Widgets/templates/Backend/HeaderSuccess.phtml:28
+#: ../../app/modules/Widgets/templates/Backend/HeaderSuccess.phtml:29
 msgid "log out"
 msgstr "خروج"
 
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Frontend\FooterSuccess.php:12
+#: ../../app/modules/Widgets/templates/Frontend/FooterSuccess.phtml:12
 msgid "Copyright © 2009-2010 XRX Content Management System"
 msgstr "Copyright © 2009-2010 XRX Content Management System"
 
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Frontend\HeaderSuccess.php:8
+#: ../../app/modules/Widgets/templates/Frontend/HeaderSuccess.phtml:8
 msgid "main page"
 msgstr "صفحه اصلی"
 
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Frontend\HeaderSuccess.php:25
+#: ../../app/modules/Widgets/templates/Frontend/HeaderSuccess.phtml:25
 msgid "home"
 msgstr "وبلاگ"
 
-#: C:\xampp\htdocs\XmlGetText\files\Widgets\templates\Frontend\HeaderSuccess.php:28
+#: ../../app/modules/Widgets/templates/Frontend/HeaderSuccess.phtml:28
 msgid "news"
 msgstr "اخبار"
 
+#: ../../app/modules/Widgets/templates/Backend/FooterSuccess.phtml:3
+#, php-format
+msgid "powered by %s"
+msgstr "نیرو گرفته توسط %s"
+
+#: ../../app/modules/Widgets/templates/Backend/FooterSuccess.phtml:6
+#, php-format
+msgid "copyright © 2009-%s %s"
+msgstr "تمامی حقوق محفوظ می باشد © 2009-%s %s"
+
+#: ../../app/modules/Widgets/templates/Backend/HeaderSuccess.phtml:3
+msgid "visit site"
+msgstr "مشاهده سایت"
+
+#: ../../app/modules/Widgets/templates/Backend/HeaderSuccess.phtml:3
+msgid "administration area"
+msgstr "بخش مدیریت"
+
+#: ../../app/modules/Widgets/templates/Backend/HeaderSuccess.phtml:23
+msgid "edit your profile"
+msgstr "ویرایش مشخصات کاربری"
+
+#: ../../app/modules/Widgets/templates/Backend/HeaderSuccess.phtml:32
+#, php-format
+msgid "you are logged in as %s"
+msgstr "شما با نام کاریری %s وارد شده اید."
+
+#: ../../app/modules/Widgets/templates/Backend/MenuSuccess.phtml:23
+#: ../../app/modules/Widgets/templates/Backend/MenuSuccess.phtml:29
+msgid "title"
+msgstr "عنوان"
+
+#~ msgid "copyright © 2009-%s khashayar hajian."
+#~ msgstr "تمامی حقوق برای خشایار حاجیان محفوظ می باشد."
+
+#~ msgid "powered by xrx content management system."
+#~ msgstr "نیرو گرفته از سیستم مدیریت محتوای XRX"
+
+#~ msgid ""
+#~ "Creativity, individuality and flexibility have always been the driving "
+#~ "force behind my development and services. In this blog you will find "
+#~ "information about my online projects, services and references. "
+#~ "Furthermore, I inform you on current trends in the field of web "
+#~ "development."
+#~ msgstr ""
+#~ "خلاقیت ، فردیت و انعطاف پذیری همواره نیروی محرک من در توسعه وب و ارایه "
+#~ "خدمات بوده است. در این وبلاگ شما می توانید اطلاعاتی در مورد پروژه های "
+#~ "آنلاین من، خدمات و منابع مرتبط پیدا کنید. علاوه بر این، سعی من بر این است "
+#~ "که شما را در جریان آخرین اخبار و رویدادهای مرتبط با توسعه وب قرار دهم."
+
+#~ msgid "previous entries"
+#~ msgstr "مطالب قبلی"
+
+#~ msgid "next entries"
+#~ msgstr "مطالب بعدی"
+
+#~ msgid "dashboard"
+#~ msgstr "داشبورد"
+
+#~ msgid "categories"
+#~ msgstr "دسته ها"
+
+#~ msgid "add"
+#~ msgstr "افزودن"
+
+#~ msgid "manage"
+#~ msgstr "مدیریت"
+
+#~ msgid "comments"
+#~ msgstr "نظرات"
+
+#~ msgid "pages"
+#~ msgstr "صفحه ها"
+
+#~ msgid "users"
+#~ msgstr "کاربران"
+
+#~ msgid "settings"
+#~ msgstr "تنظیمات"

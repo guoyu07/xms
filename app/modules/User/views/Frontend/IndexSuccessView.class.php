@@ -6,7 +6,7 @@ class User_Frontend_IndexSuccessView extends XRXUserFrontendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', $this->tm->_('Frontend.Index', '.user'));
+		$this->setAttribute('_title', Frontend.Index);
 	}
 }
 

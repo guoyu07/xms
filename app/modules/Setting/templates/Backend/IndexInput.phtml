@@ -36,7 +36,7 @@
 
 <div id="xrx-settings-tab">
 	<ul>
-		<li><a href="#xrx-setting-general">general</a></li>
+		<li><a href="#xrx-setting-general"><?= $tm->_('general', '.setting') ?></a></li>
 		<li><a href="#xrx-setting-news"><span><?= $tm->_('news', '.setting') ?></span></a></li>
 		<li><a href="#xrx-setting-user"><span><?= $tm->_('user', '.setting') ?></span></a></li>
 		<li><a href="#xrx-setting-comment"><span><?= $tm->_('comment', '.setting') ?></span></a></li>
@@ -126,9 +126,9 @@
 					<label for="xrx-setting-comment-status"><?= $tm->_('comments default status', '.setting'); ?></label>
 					<select id="xrx-setting-comment-status" name="default_status">
 						<? $cs = $us->getAttribute('default_status', 'setting.comment'); ?>
-						<option value="pending" <? if ($cs == 'pending') echo 'selected="selected"' ?>>pending</option>
-						<option value="approved" <? if ($cs == 'approved') echo 'selected="selected"' ?>>approved</option>
-						<option value="rejected" <? if ($cs == 'rejected') echo 'selected="selected"' ?>>rejected</option>
+						<option value="pending" <? if ($cs == 'pending') echo 'selected="selected"' ?>><?= $tm->_('pending', '.setting'); ?></option>
+						<option value="approved" <? if ($cs == 'approved') echo 'selected="selected"' ?>><?= $tm->_('approved', '.setting'); ?></option>
+						<option value="rejected" <? if ($cs == 'rejected') echo 'selected="selected"' ?>><?= $tm->_('rejected', '.setting'); ?></option>
 					</select>
 				</li>
 				<li>

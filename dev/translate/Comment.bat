@@ -1,0 +1,1 @@
+xgettext --language=PHP --from-code=UTF-8 --keyword=_ --keyword=__:1,2 --output=Comment.po ../../app/modules/Comment/templates/Frontend/*.phtml ../../app/modules/Comment/templates/Backend/*.phtml ../../app/modules/Comment/views/Frontend/*.class.php ../../app/modules/Comment/views/Backend/*.class.php

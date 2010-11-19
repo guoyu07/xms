@@ -1,0 +1,1 @@
+xgettext --language=PHP --from-code=UTF-8 --keyword=_ --keyword=__:1,2 --output=News.po ../../app/modules/News/templates/Frontend/*.phtml ../../app/modules/News/templates/Backend/*.phtml ../../app/modules/News/views/Frontend/*.class.php ../../app/modules/News/views/Backend/*.class.php

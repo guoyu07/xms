@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-19 19:10+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: \n"
@@ -9,155 +10,181 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\DeleteSuccess.php:1
-msgid "comment(s) has been successfully deleted"
-msgstr "Comment(s) has been successfully deleted"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:26
-msgid "author type"
-msgstr "Author type"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:29
-msgid "registered"
-msgstr "Registered"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:32
-msgid "guest"
-msgstr "Guest"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:60
-msgid "pending"
-msgstr "Pending"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:63
-msgid "approved"
-msgstr "Approved"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:66
-msgid "rejected"
-msgstr "Rejected"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:77
-msgid "submit"
-msgstr "Submit"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditInput.php:79
-msgid "cancel"
-msgstr "Cancel"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\EditSuccess.php:1
-msgid "comment has been successfully updated"
-msgstr "Comment has been successfully updated"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:21
-msgid "please select a comment."
-msgstr "Please select a comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:27
-msgid "are you sure?"
-msgstr "Are you sure?"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:37
-msgid "comment list"
-msgstr "Comment list"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:37
-msgid "comment list for %s"
-msgstr "Comment list for %s"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:56
-msgid "author"
-msgstr "Author"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:57
-msgid "date"
-msgstr "Date"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:58
-msgid "status"
-msgstr "Status"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:59
-msgid "owner"
-msgstr "Owner"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:74
-msgid "edit profile '%s'"
-msgstr "Edit profile '%s'"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:85
-msgid "edit '%s'"
-msgstr "Edit '%s'"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:93
-msgid "There's no comment."
-msgstr "There's no comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Backend\IndexSuccess.php:99
-msgid "delete"
-msgstr "Delete"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\AddInput.php:34
-msgid "comment"
-msgstr "Comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\AddSuccess.php:1
-msgid "your comment has been successfully added"
-msgstr "Your comment has been successfully added"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\templates\Frontend\ListSuccess.php:21
-msgid "there's no comments"
-msgstr "There's no comments"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Backend\EditInputView.class.php:11
-msgid "edit comment"
-msgstr "Edit comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Backend\IndexSuccessView.class.php:9
-msgid "comments' list"
-msgstr "Comments' list"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\AddInputView.class.php:26
-msgid "add comment"
-msgstr "Add comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\AddSuccessView.class.php:36
-msgid "redirecting..."
-msgstr "Redirecting..."
-
-#: C:\xampp\htdocs\XmlGetText\files\Comment\views\Frontend\ListSuccessView.class.php:9
-msgid "list comments"
-msgstr "List comments"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:21
-msgid "name"
-msgstr "Name"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:25
-msgid "email"
-msgstr "Email"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:25
-msgid "required"
-msgstr "Required"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:29
-msgid "website"
-msgstr "Website"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\AddInput.php:38
-msgid "submit comment"
-msgstr "Submit comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:2
-msgid "comments"
-msgstr "Comments"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:4
-msgid "%s comment(s)"
-msgstr "%s Comment(s)"
-
-#: C:\xampp\htdocs\XmlGetText\files\Frontend\ListSuccess.php:5
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:3
 msgid "leave a comment"
 msgstr "Leave a comment"
 
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:7
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:21
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:35
+msgid "name"
+msgstr "Name"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:12
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:25
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:45
+msgid "email"
+msgstr "Email"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:16
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:29
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:49
+msgid "website"
+msgstr "Website"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:34
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:69
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:45
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:55
+msgid "comment"
+msgstr "Comment"
+
+#: ../../app/modules/Comment/templates/Frontend/AddInput.phtml:47
+msgid "submit comment"
+msgstr "Submit comment"
+
+#: ../../app/modules/Comment/templates/Frontend/AddSuccess.phtml:1
+msgid "your comment has been successfully added"
+msgstr "Your comment has been successfully added"
+
+#: ../../app/modules/Comment/templates/Frontend/ListSuccess.phtml:1
+msgid "comments"
+msgstr "Comments"
+
+#: ../../app/modules/Comment/templates/Frontend/ListSuccess.phtml:21
+msgid "there's no comments"
+msgstr "There's no comments"
+
+#: ../../app/modules/Comment/templates/Backend/DeleteSuccess.phtml:1
+msgid "comment(s) has been successfully deleted"
+msgstr "Comment(s) has been successfully deleted"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:23
+#: ../../app/modules/Comment/views/Backend/EditInputView.class.php:11
+msgid "edit comment"
+msgstr "Edit comment"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:26
+msgid "author type"
+msgstr "Author type"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:29
+msgid "registered"
+msgstr "Registered"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:32
+msgid "guest"
+msgstr "Guest"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:53
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:47
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:57
+msgid "date"
+msgstr "Date"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:57
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:48
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:58
+msgid "status"
+msgstr "Status"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:60
+msgid "pending"
+msgstr "Pending"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:63
+msgid "approved"
+msgstr "Approved"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:66
+msgid "rejected"
+msgstr "Rejected"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:77
+msgid "submit"
+msgstr "Submit"
+
+#: ../../app/modules/Comment/templates/Backend/EditInput.phtml:79
+msgid "cancel"
+msgstr "Cancel"
+
+#: ../../app/modules/Comment/templates/Backend/EditSuccess.phtml:1
+msgid "comment has been successfully updated"
+msgstr "Comment has been successfully updated"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:21
+msgid "please select a comment."
+msgstr "Please select a comment"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:27
+msgid "are you sure?"
+msgstr "Are you sure?"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:37
+msgid "comment list"
+msgstr "Comment list"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:37
+#, php-format
+msgid "comment list for %s"
+msgstr "Comment list for %s"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:46
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:56
+msgid "author"
+msgstr "Author"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:49
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:59
+msgid "owner"
+msgstr "Owner"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:69
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:85
+#, php-format
+msgid "edit '%s'"
+msgstr "Edit '%s'"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:74
+#, php-format
+msgid "edit profile '%s'"
+msgstr "Edit profile '%s'"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:93
+msgid "There's no comment."
+msgstr "There's no comment"
+
+#: ../../app/modules/Comment/templates/Backend/IndexSuccess.phtml:99
+msgid "delete"
+msgstr "Delete"
+
+#: ../../app/modules/Comment/views/Frontend/AddInputView.class.php:45
+msgid "add comment"
+msgstr "Add comment"
+
+#: ../../app/modules/Comment/views/Frontend/AddSuccessView.class.php:36
+#: ../../app/modules/Comment/views/Backend/DeleteErrorView.class.php:14
+#: ../../app/modules/Comment/views/Backend/DeleteSuccessView.class.php:11
+#: ../../app/modules/Comment/views/Backend/EditErrorView.class.php:14
+#: ../../app/modules/Comment/views/Backend/EditSuccessView.class.php:12
+#: ../../app/modules/Comment/views/Backend/IndexErrorView.class.php:14
+msgid "redirecting..."
+msgstr "Redirecting..."
+
+#: ../../app/modules/Comment/views/Frontend/AddSuccessView.class.php:60
+msgid "comment sucessfully submitted"
+msgstr "Comment successfully submitted."
+
+#: ../../app/modules/Comment/views/Frontend/ListSuccessView.class.php:9
+msgid "list comments"
+msgstr "List comments"
+
+#: ../../app/modules/Comment/views/Backend/IndexSuccessView.class.php:9
+msgid "comments' list"
+msgstr "Comments' list"
+
+#~ msgid "required"
+#~ msgstr "Required"
+
+#~ msgid "%s comment(s)"
+#~ msgstr "%s Comment(s)"

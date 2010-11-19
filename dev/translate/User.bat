@@ -1,0 +1,1 @@
+xgettext --language=PHP --from-code=UTF-8 --keyword=_ --keyword=__:1,2 --output=User.po ../../app/modules/User/templates/Frontend/*.phtml ../../app/modules/User/templates/Backend/*.phtml ../../app/modules/User/views/Frontend/*.class.php ../../app/modules/User/views/Backend/*.class.php

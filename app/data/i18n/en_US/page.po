@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-19 19:31+0330\n"
+"PO-Revision-Date: 2010-11-19 19:36+0330\n"
+"Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:30
+#: ../../app/modules/Page/views/Backend/AddInputView.class.php:36
+msgid "add page"
+msgstr "Add page"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:34
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:47
+#, php-format
+msgid "translate to %s"
+msgstr "Translate to %s"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:39
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:52
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:45
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:53
+msgid "title"
+msgstr "Title"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:43
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:56
+msgid "content"
+msgstr "Content"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:58
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:71
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:47
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:55
+msgid "published"
+msgstr "Published"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:61
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:74
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:68
+msgid "yes"
+msgstr "Yes"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:64
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:77
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:68
+msgid "no"
+msgstr "No"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:71
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:91
+msgid "submit"
+msgstr "Submit"
+
+#: ../../app/modules/Page/templates/Backend/AddInput.phtml:72
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:93
+msgid "cancel"
+msgstr "Cancel"
+
+#: ../../app/modules/Page/templates/Backend/AddSuccess.phtml:1
+msgid "page has been successfully added"
+msgstr "Page has been successfully added."
+
+#: ../../app/modules/Page/templates/Backend/DeleteSuccess.phtml:1
+msgid "page has been successfully deleted"
+msgstr "Page has been successfully deleted."
+
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:26
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:27
+msgid "are you sure?"
+msgstr "Are you sure?"
+
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:43
+#: ../../app/modules/Page/views/Backend/EditInputView.class.php:44
+msgid "edit page"
+msgstr "Edit page"
+
+#: ../../app/modules/Page/templates/Backend/EditInput.phtml:82
+#, php-format
+msgid "delete %s translation"
+msgstr "Delete %s translation"
+
+#: ../../app/modules/Page/templates/Backend/EditSuccess.phtml:1
+msgid "page has been successfully updated"
+msgstr "Page has been successfully updated."
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:21
+msgid "please select a page."
+msgstr "Please select a page."
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:37
+msgid "page list"
+msgstr "Page list"
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:37
+#: ../../app/modules/Page/views/Backend/IndexSuccessView.class.php:9
+msgid "pages list"
+msgstr "Pages list"
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:46
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:54
+msgid "author"
+msgstr "Author"
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:65
+#, php-format
+msgid "edit '%s'"
+msgstr "Edit '%s'"
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:73
+msgid "there's no page."
+msgstr "There's no page."
+
+#: ../../app/modules/Page/templates/Backend/IndexSuccess.phtml:82
+msgid "delete"
+msgstr "Delete"
+
+#: ../../app/modules/Page/views/Backend/AddSuccessView.class.php:11
+msgid "page added successfully"
+msgstr "Page added successfully."
+
+#: ../../app/modules/Page/views/Backend/DeleteErrorView.class.php:14
+#: ../../app/modules/Page/views/Backend/DeleteSuccessView.class.php:11
+#: ../../app/modules/Page/views/Backend/EditErrorView.class.php:14
+#: ../../app/modules/Page/views/Backend/EditSuccessView.class.php:11
+msgid "redirecting..."
+msgstr "Redirecting..."
+

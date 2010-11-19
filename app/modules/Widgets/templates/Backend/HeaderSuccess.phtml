@@ -16,10 +16,20 @@
 
 	<div id="xrx-user-info" class="xrx-<?= $t['_xalign']; ?>">
 		<p>
-			<?= $tm->_('you are logged in as %s', '.widgets'); ?>
-			<a href='<?= $ro->gen("default", array("path"=>"user/index")); ?>' title='<?= $tm->_("edit your profile", ".widgets"); ?>'><?= $us->getAttribute('username'); ?></a>
-			|
-			<a href="<?= $ro->gen('default', array("path"=>"user/logout")); ?>" title="<?= $tm->_('log out', '.widgets'); ?>"><?= $tm->_('log out', '.widgets'); ?></a>
+			<?php
+
+			$user	= sprintf('<a href="%s" title="%s">%s</a>',
+						$ro->gen("default", array("path" => "user/index")),
+						$tm->_("edit your profile", ".widgets"),
+						$us->getAttribute('username'));
+
+			$logout = sprintf('<a href="%s" title="%s">%s</a>',
+						$ro->gen('default', array("path" => "user/logout")),
+						$tm->_('log out', '.widgets'),
+						$tm->_('log out', '.widgets'));
+			?>
+
+			<?= sprintf($tm->_('you are logged in as %s', '.widgets'), $user); ?> | <?= $logout ?>
 		</p>
 	</div>
 </div>

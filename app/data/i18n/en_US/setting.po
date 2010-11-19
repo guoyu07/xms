@@ -1,71 +1,106 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-19 19:53+0330\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Khashayar Hajian <me@khashayar.me>\n"
 "Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:40
-msgid "news"
-msgstr "News"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:41
-msgid "user"
-msgstr "User"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:42
-msgid "comment"
-msgstr "Comment"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:50
-msgid "website title"
-msgstr "Website title"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:54
-msgid "number of items per page"
-msgstr "Number of items per page"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:58
-msgid "front page displays"
-msgstr "Front page displays"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:67
-msgid "page to show"
-msgstr "Page to show"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:100
-msgid "public registeration"
-msgstr "Public registeration"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:102
-msgid "yes"
-msgstr "Yes"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:104
-msgid "no"
-msgstr "No"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:118
-msgid "comments default status"
-msgstr "Comments default status"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexInput.php:128
-msgid "save"
-msgstr "Save"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\templates\Backend\IndexSuccess.php:1
-msgid "settings has been successfully updated"
-msgstr "Settings has been successfully updated"
-
-#: C:\xampp\htdocs\XmlGetText\files\Setting\views\Backend\IndexInputView.class.php:51
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:34
+#: ../../app/modules/Setting/views/Backend/IndexInputView.class.php:53
 msgid "settings"
 msgstr "Settings"
 
-#: C:\xampp\htdocs\XmlGetText\files\Setting\views\Backend\IndexSuccessView.class.php:11
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:39
+msgid "general"
+msgstr "General"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:40
+msgid "news"
+msgstr "News"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:41
+msgid "user"
+msgstr "User"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:42
+msgid "comment"
+msgstr "Comment"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:50
+msgid "website title"
+msgstr "Website title"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:54
+msgid "number of items per page"
+msgstr "Number of items per page"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:58
+msgid "front page displays"
+msgstr "Front page displays"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:67
+msgid "page to show"
+msgstr "Page to show"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:76
+msgid "recaptcha public key"
+msgstr "reCaptcha Public key"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:80
+msgid "recaptcha private key"
+msgstr "reCaptcha Private key"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:85
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:97
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:116
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:146
+msgid "save"
+msgstr "Save"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:108
+msgid "public registeration"
+msgstr "Public registeration"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:110
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:139
+msgid "yes"
+msgstr "Yes"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:112
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:142
+msgid "no"
+msgstr "No"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:126
+msgid "comments default status"
+msgstr "Comments default status"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:129
+msgid "pending"
+msgstr "Pending"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:130
+msgid "approved"
+msgstr "Approved"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:131
+msgid "rejected"
+msgstr "Rejected"
+
+#: ../../app/modules/Setting/templates/Backend/IndexInput.phtml:136
+msgid "use recaptcha"
+msgstr "Use reCaptcha"
+
+#: ../../app/modules/Setting/templates/Backend/IndexSuccess.phtml:1
+msgid "settings has been successfully updated"
+msgstr "Settings has been successfully updated."
+
+#: ../../app/modules/Setting/views/Backend/IndexSuccessView.class.php:11
 msgid "redirecting..."
 msgstr "Redirecting..."
 

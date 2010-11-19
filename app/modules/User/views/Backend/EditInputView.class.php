@@ -6,7 +6,7 @@ class User_Backend_EditInputView extends XRXUserBackendView
 	{
 		$this->setupHtml($rd);
 
-		$this->setAttribute('_title', 'Backend.Edit');
+		$this->setAttribute('_title', $this->tm->_('edit user', '.user'));
 	}
 }
 
