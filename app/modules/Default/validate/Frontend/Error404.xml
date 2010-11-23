@@ -10,12 +10,12 @@
 
 			<!-- HTTP_REFERER -->
 			<validator class="string" source="headers">
-				<argument>HTTP_REFERER</argument>
+				<argument>REFERER</argument>
 			</validator>
 
 			<!-- HTTP_HOST -->
 			<validator class="string" source="headers">
-				<argument>HTTP_HOST</argument>
+				<argument>HOST</argument>
 			</validator>
 		
 		</validators>
