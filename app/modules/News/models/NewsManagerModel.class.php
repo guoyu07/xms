@@ -229,8 +229,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 
 			// 1. Update News Table data
 			$sql = "UPDATE %s AS n
-					SET n.date = :date,
-						n.modified = NOW(),
+					SET n.modified = :modified,
 						n.published = :published,
 						n.comment_status = :comment_status,
 						n.image = :image,
@@ -240,7 +239,7 @@ class News_NewsManagerModel extends XRXNewsBaseModel implements XRXICategoryMode
 			$sql	= sprintf($sql, self::NEWS);
 			$stmt	= $this->getContext()->getDatabaseConnection()->prepare($sql);
 			$stmt->bindValue(':id', $news->getId(), PDO::PARAM_INT);
-			$stmt->bindValue(':date', $news->getDate(), PDO::PARAM_STR);
+			$stmt->bindValue(':modified', $news->getModified(), PDO::PARAM_STR);
 			$stmt->bindValue(':published', $news->getPublished(), PDO::PARAM_BOOL);
 			$stmt->bindValue(':comment_status', $news->getCommentStatus(), PDO::PARAM_BOOL);
 			$stmt->bindValue(':image', $news->getImage(), PDO::PARAM_STR);

@@ -46,17 +46,6 @@
 			<setting name="use_translation">true</setting>
 		</settings>
 
-
-
-		<!-- Custom Settings -->
-		<settings prefix="XRX.dateFormat.">
-			<setting name="db">yyyy-MM-dd HH:mm:ss</setting>
-			<setting name="en">MM/dd/yyyy HH:mm:ss</setting>
-			<setting name="fa">yyyy/MM/dd HH:mm:ss</setting>
-		</settings>
-
-
-
 		<exception_templates>
 			<!-- this is the exception template that's used by default unless one for a specific context has been defined, or for the current output type -->
 			<!-- note that exceptions that occur before a context is even fully initialized, or an exception that happens before the output types are loaded and determined, will use a template defined here -->

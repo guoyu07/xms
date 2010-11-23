@@ -7,6 +7,17 @@
 	<ae:configuration>
 		
 		<validators>
+
+			<!-- HTTP_REFERER -->
+			<validator class="string" source="headers">
+				<argument>HTTP_REFERER</argument>
+			</validator>
+
+			<!-- HTTP_HOST -->
+			<validator class="string" source="headers">
+				<argument>HTTP_HOST</argument>
+			</validator>
+		
 		</validators>
 		
 	</ae:configuration>

@@ -9,7 +9,7 @@
 		<li class="xrx-news-content">
 			<h2><a href="<?= $ro->gen('default', array('path'=>'news/view', 'id'=>$news->id, 'title'=>$news->title)) ?>"><?= $news->title ?></a></h2>
 			<small><?= sprintf($tm->_('written by %s in %s', '.news'), $news->username, $news->category_name) ?></small><br />
-			<small><?= $tm->_d($t['news']->date) ?></small>
+			<small><?= $tm->_d($news->date) ?></small>
 			
 			<div class="xrx-news-entry">
 				<? if ($news->image): ?>

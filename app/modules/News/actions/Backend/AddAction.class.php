@@ -54,7 +54,7 @@ class News_Backend_AddAction extends XRXNewsBackendAction
 		}
 
 		$params = array(
-			'date'			=> $rd->getParameter('date'),
+			'date'			=> date(DATE_ATOM),
 			'published'		=> (boolean) $rd->getParameter('published'),
 			'comment_status'=> (boolean) $rd->getParameter('comments'),
 			'image'			=> $rd->getParameter('image'),

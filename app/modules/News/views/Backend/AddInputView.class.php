@@ -8,19 +8,6 @@ class News_Backend_AddInputView extends XRXNewsBackendView
 
 		$language = $this->getAttribute('_language');
 
-		// Calendar attributes
-		if ($language == 'fa') {
-			// Set client-side calendar as Jalali
-			$this->setAttribute('jalali', true);
-
-			// Set client-side calendar date format
-			$this->setAttribute('dateFormat', '%Y/%m/%d %H:%M:%S');
-		} else {
-			// Set client-side calendar date format for the others
-			$this->setAttribute('dateFormat', '%m/%d/%Y %H:%M:%S');
-		}
-
-
 
 		// Prepare locales
 		$current = $this->tm->getCurrentLocaleIdentifier();
@@ -50,20 +37,7 @@ class News_Backend_AddInputView extends XRXNewsBackendView
 		
 		// Set Title
 		$this->setAttribute('_title', $this->tm->_('add news', '.news'));
-
-
-		// Append Styles
-		$this->appendAttribute("_styles", "/scripts/JalaliJSCalendar/skins/calendar-system.css");
 		
-
-		// Append Scripts
-		if ($this->getAttribute('jalali')) {
-			$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/jalali.js");
-		}
-		
-		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/calendar.js");
-		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/calendar-setup.js");
-		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/lang/calendar-$language.js");
 		$this->appendAttribute("_scripts", "/scripts/CKEditor/ckeditor.js");
 		$this->appendAttribute("_scripts", "/scripts/CKFinder/ckfinder.js");
 	}

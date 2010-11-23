@@ -80,47 +80,6 @@
 			</validator>
 
 
-			<!-- Date -->
-			<validator class="datetime" translation_domain=".news.validation">
-				<arguments>
-					<argument>date</argument>
-				</arguments>
-				<ae:parameters>
-					<ae:parameter name="formats">
-						<ae:parameters>
-							<ae:parameter>
-								<!-- English Date Format -->
-								<ae:parameter name="locale">en_US</ae:parameter>
-								<ae:parameter name="type">datetime</ae:parameter>
-								<ae:parameter name="format">%XRX.dateFormat.en%</ae:parameter>
-								<ae:parameter name="required">true</ae:parameter>
-							</ae:parameter>
-							<ae:parameter>
-								<!-- Persian Date Format -->
-								<ae:parameter name="locale">fa_IR</ae:parameter>
-								<ae:parameter name="type">datetime</ae:parameter>
-								<ae:parameter name="format">%XRX.dateFormat.fa%</ae:parameter>
-								<ae:parameter name="required">true</ae:parameter>
-							</ae:parameter>
-						</ae:parameters>
-					</ae:parameter>
-					<ae:parameter name="export">date</ae:parameter>
-					<ae:parameter name="cast_to">
-						<ae:parameters>
-							<ae:parameter name="type">datetime</ae:parameter>
-							<ae:parameter name="format">%XRX.dateFormat.db%</ae:parameter>
-							<ae:parameter name="required">true</ae:parameter>
-						</ae:parameters>
-					</ae:parameter>
-					<ae:parameter name="required">true</ae:parameter>
-				</ae:parameters>
-				<errors>
-					<error>invalid date format</error>
-					<error for="required">please provide date</error>
-				</errors>
-			</validator>
-
-
 			<!-- Category -->
 			<validator class="number" translation_domain=".news.validation">
 				<arguments>

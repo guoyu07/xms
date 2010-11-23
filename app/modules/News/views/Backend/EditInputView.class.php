@@ -9,39 +9,7 @@ class News_Backend_EditInputView extends XRXNewsBackendView
 		$news	 = $this->getAttribute('news');
 		$current = $this->tm->getCurrentLocaleIdentifier();
 		$locales = $this->tm->getAvailableLocales();
-
-		
-		try {
-			// Format the datetime to spicified one for current locale
-			$locale	= $this->tm->getCurrentLocale();
-			$lang	= $locale->getLocaleLanguage();
-			$prefix = 'XRX.dateFormat.';
-			
-			$format	= new AgaviDateFormat(AgaviConfig::get($prefix . 'db'));
-			$cal	= $format->parse($news[$lang]->date, $locale, false);
-
-			$format	= new AgaviDateFormat(AgaviConfig::get($prefix . $lang));
-			$news[$lang]->date	= $format->format($cal, $cal->getType(), $locale);
-		}
-		catch (AgaviException $e) {
-			// Error happened cause the datetime format was not correct
-			// Ain't need to do anything, cause FPF will handle the rest...
-		}
-
-
 		$language = $this->getAttribute('_language');
-
-		// Calendar attributes
-		if ($language == 'fa') {
-			// Set client-side calendar as Jalali
-			$this->setAttribute('jalali', true);
-
-			// Set client-side calendar date format
-			$this->setAttribute('dateFormat', '%Y/%m/%d %H:%M:%S');
-		} else {
-			// Set client-side calendar date format for the others
-			$this->setAttribute('dateFormat', '%m/%d/%Y %H:%M:%S');
-		}
 
 
 		// Prepare locales
@@ -72,23 +40,9 @@ class News_Backend_EditInputView extends XRXNewsBackendView
 		$this->setAttribute('locales', $availableLocales);
 
 
-
 		// Set Title
 		$this->setAttribute('_title', $this->tm->_('edit news', '.news'));
 
-
-		// Append Styles
-		$this->appendAttribute("_styles", "/scripts/JalaliJSCalendar/skins/calendar-system.css");
-
-
-		// Append Scripts
-		if ($this->getAttribute('jalali')) {
-			$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/jalali.js");
-		}
-
-		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/calendar.js");
-		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/calendar-setup.js");
-		$this->appendAttribute("_scripts", "/scripts/JalaliJSCalendar/lang/calendar-$language.js");
 		$this->appendAttribute("_scripts", "/scripts/CKEditor/ckeditor.js");
 		$this->appendAttribute("_scripts", "/scripts/CKFinder/ckfinder.js");
 	}

@@ -69,7 +69,7 @@ msgstr "محتوا"
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:72
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:85
 msgid "image"
-msgstr "عکس"
+msgstr "تصویر"
 
 #: ../../app/modules/News/templates/Backend/AddInput.phtml:74
 #: ../../app/modules/News/templates/Backend/EditInput.phtml:88

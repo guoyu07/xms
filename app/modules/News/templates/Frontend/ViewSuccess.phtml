@@ -33,5 +33,5 @@ if ( isset($t['translations']) ) {
 <? if ($t['news']->comment_status): ?>
 	<div id="xrx-comment-form"><?= $slots['comment-form'] ?></div>
 <? else: ?>
-	<div id="xrx-comment-disabled" class="xrx-center-text"><?= $tm->_('sending comments on this news has been disabled') ?></div>
+	<div id="xrx-comment-disabled" class="xrx-center-text"><?= $tm->_('sending comments on this news has been disabled', '.news') ?></div>
 <? endif ?>

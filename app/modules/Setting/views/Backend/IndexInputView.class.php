@@ -51,6 +51,11 @@ class Setting_Backend_IndexInputView extends XRXSettingBackendView
 		$this->setAttribute('modules', $modules);
 		$this->setAttribute('pages', $pps);
 		$this->setAttribute('_title', $this->tm->_('settings', '.setting'));
+
+		$this->appendAttribute("_styles", "/scripts/jQuery/ui/themes/base/ui.all.css");
+		$this->appendAttribute("_scripts", "/scripts/jQuery/ui/jquery.ui.core.js");
+		$this->appendAttribute("_scripts", "/scripts/jQuery/ui/jquery.ui.widget.js");
+		$this->appendAttribute("_scripts", "/scripts/jQuery/ui/jquery.ui.tabs.js");
 	}
 }
 
